@@ -1,28 +1,53 @@
 import requests
 import base64
 import os
+import re
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
 
-# تنظیمات
+# --- تنظیمات ---
 SOURCES_FILE = 'sources.txt'
-OUTPUT_FILE = 'live_servers.txt'  # نام جدید فایل
+OUTPUT_FILE = 'live_servers.txt'
+TIMEOUT = 15
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 
-def decode_base64(data):
+def get_session():
+    """ایجاد نشست با قابلیت تلاش مجدد برای جلوگیری از قطعی‌های لحظه‌ای"""
+    session = requests.Session()
+    retry = Retry(connect=3, backoff_factor=0.5)
+    adapter = HTTPAdapter(max_retries=retry)
+    session.mount('http://', adapter)
+    session.mount('https://', adapter)
+    session.headers.update({'User-Agent': USER_AGENT})
+    return session
+
+def safe_decode(data):
+    """دکود قدرتمند برای انواع فرمت‌های Base64 (استاندارد و URL-Safe)"""
+    data = data.strip()
+    # تبدیل کاراکترهای URL-Safe به استاندارد
+    data = data.replace('-', '+').replace('_', '/')
+    
+    # اصلاح پدینگ (Padding)
+    missing_padding = len(data) % 4
+    if missing_padding:
+        data += '=' * (4 - missing_padding)
+        
     try:
-        missing_padding = len(data) % 4
-        if missing_padding:
-            data += '=' * (4 - missing_padding)
         return base64.b64decode(data).decode('utf-8')
-    except:
+    except Exception:
+        # اگر دکود نشد، شاید اصلا بیس۶۴ نیست، خود متن را برگردان
         return data
 
 def collect_configs():
     unique_configs = set()
-    print("🚀 Starting Collection...")
+    session = get_session()
+    
+    print("🚀 Starting Advanced Collection...")
 
     if not os.path.exists(SOURCES_FILE):
-        # ساخت فایل نمونه اگر نباشد
         with open(SOURCES_FILE, 'w') as f: f.write("")
-        print(f"⚠️ {SOURCES_FILE} created empty.")
+        print("⚠️ Sources file created.")
+        return
 
     with open(SOURCES_FILE, 'r') as f:
         urls = [line.strip() for line in f if line.strip() and not line.startswith('#')]
@@ -30,28 +55,40 @@ def collect_configs():
     for url in urls:
         try:
             print(f"📥 Fetching: {url}")
-            response = requests.get(url, timeout=15)
+            response = session.get(url, timeout=TIMEOUT)
+            
             if response.status_code == 200:
                 content = response.text.strip()
-                if "vmess://" not in content and "vless://" not in content:
-                    content = decode_base64(content)
+                
+                # تشخیص هوشمند محتوای Base64
+                # اگر در متن vmess/vless دیده نشد، احتمالا کد شده است
+                if not any(proto in content for proto in ["vmess://", "vless://", "trojan://", "ss://", "hysteria2://"]):
+                    content = safe_decode(content)
                 
                 for line in content.splitlines():
                     line = line.strip()
-                    if line.startswith(('vmess://', 'vless://', 'trojan://', 'ss://')):
+                    # حذف کاراکترهای غیرقابل چاپ و فاصله‌های عجیب
+                    line = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', line)
+                    
+                    if line.startswith(('vmess://', 'vless://', 'trojan://', 'ss://', 'hysteria2://')):
                         unique_configs.add(line)
+            else:
+                print(f"⚠️ Failed: {response.status_code}")
+                
         except Exception as e:
-            print(f"❌ Error: {e}")
+            print(f"❌ Error: {str(e)[:100]}...") # نمایش خلاصه خطا
 
-    # همیشه فایل را بساز، حتی اگر خالی باشد یا تکراری
+    # ذخیره فایل
     with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         if unique_configs:
-            for config in unique_configs:
+            # مرتب‌سازی برای زیبایی و نظم فایل
+            sorted_configs = sorted(list(unique_configs))
+            for config in sorted_configs:
                 f.write(config + '\n')
-            print(f"✅ Saved {len(unique_configs)} configs to {OUTPUT_FILE}")
+            print(f"✅ Success! Saved {len(unique_configs)} unique configs.")
         else:
-            f.write("") # ساخت فایل خالی
-            print("⚠️ No configs found, created empty file.")
+            f.write("")
+            print("⚠️ No configs found.")
 
 if __name__ == "__main__":
     collect_configs()
