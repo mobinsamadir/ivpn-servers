@@ -29,15 +29,21 @@ jobs:
       run: |
         python collector.py
 
-    - name: List files (Debug)
-      run: ls -R
+    - name: Debug File List (Check if file exists)
+      run: ls -lh
 
     - name: Commit and Push changes
       run: |
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
-        # اضافه کردن همه فایل‌های جدید (شامل live_servers.txt)
+        
+        # اضافه کردن تمام فایل‌های جدید و تغییر کرده
         git add .
-        # کامیت کردن حتی اگر فایل جدید باشد
-        git commit -m "🔄 Update servers list" || echo "No changes to commit"
-        git push
+        
+        # بررسی وضعیت و کامیت کردن
+        if output=$(git status --porcelain) && [ -z "$output" ]; then
+          echo "⚠️ No changes detected to commit."
+        else
+          git commit -m "🔄 Update server list [$(date)]"
+          git push
+        fi
