@@ -1,0 +1,6 @@
+xray
+geoip.dat
+geosite.dat
+xray.zip
+__pycache__/
+*.pyc
