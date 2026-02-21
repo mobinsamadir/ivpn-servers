@@ -9,41 +9,53 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  update-configs:
     runs-on: ubuntu-latest
+    timeout-minutes: 360 # 6 hours max
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    - name: Set up Python
+    - name: Set up Python 3.11
       uses: actions/setup-python@v4
       with:
-        python-version: '3.9'
+        python-version: '3.11'
+        cache: 'pip' # cache pip dependencies
+
+    - name: Cache Xray Core
+      id: cache-xray
+      uses: actions/cache@v3
+      with:
+        path: |
+          xray
+          geoip.dat
+          geosite.dat
+        key: xray-core-linux-64-v1
 
     - name: Install Dependencies
       run: |
         pip install -r requirements.txt
 
-    - name: Run Collector
+    - name: Run Aggregator
       run: |
-        python collector.py
+        python aggregator.py
 
-    - name: Debug File List (Check if file exists)
-      run: ls -lh
-
-    - name: Commit and Push changes
+    - name: Run Tester
       run: |
-        git config --global user.name "GitHub Action"
-        git config --global user.email "action@github.com"
+        python tester.py
+
+    - name: Commit and Push Changes
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
         
-        # اضافه کردن تمام فایل‌های جدید و تغییر کرده
-        git add .
+        git add all_configs.txt tcp_passed.txt real_delay_passed.txt
         
-        # بررسی وضعیت و کامیت کردن
-        if output=$(git status --porcelain) && [ -z "$output" ]; then
-          echo "⚠️ No changes detected to commit."
+        # Check if there are changes
+        if git diff --staged --quiet; then
+          echo "⚠️ No changes to commit."
         else
-          git commit -m "🔄 Update server list [$(date)]"
+          git commit -m "🔄 Update configs [$(date)]"
           git push
         fi
