@@ -16,6 +16,12 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
 
+    - name: Cache Xray Binary
+      uses: actions/cache@v3
+      with:
+        path: bin/
+        key: xray-${{ runner.os }}-v1.8.4
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -33,8 +39,8 @@ jobs:
       run: |
         python tester.py
       env:
-        TCP_CONCURRENCY: 500
-        REAL_DELAY_CONCURRENCY: 50
+        TCP_CONCURRENCY: 800
+        REAL_DELAY_CONCURRENCY: 150
         TCP_TIMEOUT: 3.0
         REAL_DELAY_TIMEOUT: 5.0
 
