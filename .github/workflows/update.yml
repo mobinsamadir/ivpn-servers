@@ -2,7 +2,7 @@ name: Auto Update Configs
 
 on:
   schedule:
-    - cron: '0 */6 * * *'
+    - cron: '0 */12 * * *'
   workflow_dispatch:
 
 permissions:
@@ -25,11 +25,20 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Run Collector
+    - name: Run Aggregator
       run: |
-        python collector.py
+        python aggregator.py
 
-    - name: Debug File List (Check if file exists)
+    - name: Run Tester
+      run: |
+        python tester.py
+      env:
+        TCP_CONCURRENCY: 500
+        REAL_DELAY_CONCURRENCY: 50
+        TCP_TIMEOUT: 3.0
+        REAL_DELAY_TIMEOUT: 5.0
+
+    - name: Debug File List
       run: ls -lh
 
     - name: Commit and Push changes
@@ -37,10 +46,8 @@ jobs:
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
         
-        # اضافه کردن تمام فایل‌های جدید و تغییر کرده
         git add .
         
-        # بررسی وضعیت و کامیت کردن
         if output=$(git status --porcelain) && [ -z "$output" ]; then
           echo "⚠️ No changes detected to commit."
         else
