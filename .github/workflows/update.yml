@@ -39,10 +39,11 @@ jobs:
       run: |
         python tester.py
       env:
-        TCP_CONCURRENCY: 800
-        REAL_DELAY_CONCURRENCY: 150
-        TCP_TIMEOUT: 3.0
-        REAL_DELAY_TIMEOUT: 5.0
+        TCP_CONCURRENCY: 1500
+        REAL_DELAY_BATCH_SIZE: 150
+        REAL_DELAY_INSTANCES: 4
+        TCP_TIMEOUT: 1.5
+        REAL_DELAY_TIMEOUT: 3.0
 
     - name: Debug File List
       run: ls -lh
