@@ -12,6 +12,7 @@ import zipfile
 import stat
 import time
 import requests
+import resource
 from urllib.parse import urlparse, parse_qs, unquote
 
 # Constants
@@ -20,6 +21,19 @@ XRAY_VERSION = "v1.8.4"
 BIN_DIR = "bin"
 XRAY_EXECUTABLE = "xray.exe" if platform.system() == "Windows" else "xray"
 XRAY_PATH = os.path.join(BIN_DIR, XRAY_EXECUTABLE)
+
+def increase_file_limit():
+    """Increases the maximum number of open file descriptors."""
+    if platform.system() == "Windows":
+        return
+
+    try:
+        soft, hard = resource.getrlimit(resource.RLIMIT_NOFILE)
+        target = hard
+        resource.setrlimit(resource.RLIMIT_NOFILE, (target, hard))
+        print(f"✅ File limit increased from {soft} to {target}")
+    except Exception as e:
+        print(f"⚠️ Failed to increase file limit: {e}")
 
 def safe_decode(data):
     """Robust Base64 decoding (standard and URL-safe)."""
@@ -32,6 +46,49 @@ def safe_decode(data):
         return base64.b64decode(data).decode('utf-8')
     except Exception:
         return data
+
+def sanitize_host(host):
+    """
+    Sanitizes and validates a hostname/IP.
+    Returns None if invalid.
+    """
+    if not host:
+        return None
+
+    host = host.strip()
+
+    # Remove protocol prefixes
+    host = re.sub(r'^https?://', '', host)
+
+    # Remove paths, query params, fragments
+    if '/' in host:
+        host = host.split('/')[0]
+    if '?' in host:
+        host = host.split('?')[0]
+    if '#' in host:
+        host = host.split('#')[0]
+
+    # Remove port if included (e.g. example.com:443)
+    if ':' in host:
+        # Check if it's IPv6 (contains multiple colons)
+        if host.count(':') > 1 and '[' in host:
+            # IPv6 literal [::1]:80
+            match = re.match(r'^\[(.*?)\](?::\d+)?$', host)
+            if match:
+                host = match.group(1)
+        elif host.count(':') == 1:
+            # IPv4 or hostname with port
+            host = host.split(':')[0]
+
+    # Basic validation: allowed chars are alphanumeric, dots, hyphens, colons (IPv6)
+    # If it contains anything else, it's garbage
+    if re.search(r'[^a-zA-Z0-9.\-:]', host):
+        return None
+
+    if not host:
+        return None
+
+    return host
 
 def get_config_hash(config_data):
     """
@@ -61,10 +118,13 @@ def parse_vmess(vmess_url):
         json_str = safe_decode(b64_part)
         data = json.loads(json_str)
 
+        add = sanitize_host(data.get("add", ""))
+        if not add: return None
+
         # Normalize fields
         return {
             "protocol": "vmess",
-            "add": data.get("add", ""),
+            "add": add,
             "port": int(data.get("port", 0)),
             "id": data.get("id", ""),
             "aid": data.get("aid", "0"),
@@ -86,9 +146,12 @@ def parse_vless_trojan(url, protocol):
         parsed = urlparse(url)
         params = parse_qs(parsed.query)
 
+        add = sanitize_host(parsed.hostname)
+        if not add: return None
+
         config = {
             "protocol": protocol,
-            "add": parsed.hostname,
+            "add": add,
             "port": parsed.port,
             "id": parsed.username,
             "net": params.get("type", ["tcp"])[0],
@@ -131,6 +194,9 @@ def parse_ss(url):
                      host = addr
                      port = 80
 
+                 host = sanitize_host(host)
+                 if not host: return None
+
                  return {
                      "protocol": "shadowsocks",
                      "add": host,
@@ -154,6 +220,9 @@ def parse_ss(url):
                      method, password = user_info.split(':', 1)
                  else:
                      return None
+
+             host = sanitize_host(host)
+             if not host: return None
 
              return {
                  "protocol": "shadowsocks",
@@ -246,11 +315,11 @@ def check_and_install_xray():
         print(f"❌ Failed to install Xray: {e}")
         return False
 
-def generate_xray_config(inbound_port, outbound_config):
-    """Generates a minimal Xray config for testing."""
+def _create_outbound_object(outbound_config, tag):
+    """Helper to create a single Xray outbound object."""
     protocol = outbound_config['protocol']
     outbound = {
-        "tag": "proxy",
+        "tag": tag,
         "protocol": protocol,
         "settings": {},
         "streamSettings": {
@@ -341,18 +410,56 @@ def generate_xray_config(inbound_port, outbound_config):
             }]
         }
 
-    config = {
-        "log": {"loglevel": "none"},
-        "inbounds": [{
-            "port": inbound_port,
+    return outbound
+
+def generate_xray_batch_config(batch_configs, start_port):
+    """
+    Generates a single Xray config for a batch of proxies.
+    Maps multiple inbounds (http) to multiple outbounds (proxy) via routing rules.
+    """
+    inbounds = []
+    outbounds = []
+    rules = []
+
+    for i, config_data in enumerate(batch_configs):
+        if not config_data:
+            continue
+
+        local_port = start_port + i
+        inbound_tag = f"in_{i}"
+        outbound_tag = f"out_{i}"
+
+        # Create Inbound
+        inbounds.append({
+            "port": local_port,
             "protocol": "http",
             "settings": {},
-            "tag": "http_in"
-        }],
-        "outbounds": [outbound]
+            "tag": inbound_tag,
+            "listen": "127.0.0.1" # Secure to localhost
+        })
+
+        # Create Outbound
+        outbound = _create_outbound_object(config_data, outbound_tag)
+        outbounds.append(outbound)
+
+        # Create Routing Rule
+        rules.append({
+            "type": "field",
+            "inboundTag": [inbound_tag],
+            "outboundTag": outbound_tag
+        })
+
+    config = {
+        "log": {"loglevel": "none"},
+        "inbounds": inbounds,
+        "outbounds": outbounds,
+        "routing": {
+            "domainStrategy": "AsIs",
+            "rules": rules
+        }
     }
 
-    return json.dumps(config, indent=2)
+    return json.dumps(config)
 
 async def test_tcp_connection(host, port, timeout=3):
     """Tests TCP connection to host:port."""
@@ -364,77 +471,3 @@ async def test_tcp_connection(host, port, timeout=3):
         return True
     except:
         return False
-
-async def test_real_delay(config_line, local_port, timeout=5, test_url="http://cp.cloudflare.com/generate_204", session=None):
-    """
-    Tests real delay by starting an Xray instance (stdin config) and proxying a request.
-    Returns delay in ms, or None if failed.
-    """
-    parsed = parse_config_line(config_line)
-    if not parsed:
-        return None, "Parse failed"
-
-    config_json = generate_xray_config(local_port, parsed)
-
-    process = None
-    try:
-        if not os.path.exists(XRAY_PATH):
-             return None, "Xray not found"
-
-        # Use -c stdin: to read config from stdin
-        process = subprocess.Popen(
-            [XRAY_PATH, "-c", "stdin:"],
-            stdin=subprocess.PIPE,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL
-        )
-
-        # Send config to stdin and close it
-        process.stdin.write(config_json.encode('utf-8'))
-        process.stdin.close()
-
-        # Give it a moment to start
-        # Optimization: maybe retry connection instead of fixed sleep?
-        # But sleep 0.5 is safe for now.
-        await asyncio.sleep(0.5)
-
-        start_time = time.time()
-        proxies = f"http://127.0.0.1:{local_port}"
-
-        # Use shared session if provided, else create new
-        if session:
-            try:
-                async with session.get(test_url, proxy=proxies, timeout=timeout) as response:
-                    if response.status == 204 or response.status == 200:
-                        delay = (time.time() - start_time) * 1000
-                        return delay, None
-                    else:
-                        return None, f"Status {response.status}"
-            except asyncio.TimeoutError:
-                return None, "Timeout"
-            except Exception as e:
-                return None, str(e)
-        else:
-            async with aiohttp.ClientSession() as local_session:
-                try:
-                    async with local_session.get(test_url, proxy=proxies, timeout=timeout) as response:
-                        if response.status == 204 or response.status == 200:
-                            delay = (time.time() - start_time) * 1000
-                            return delay, None
-                        else:
-                            return None, f"Status {response.status}"
-                except asyncio.TimeoutError:
-                    return None, "Timeout"
-                except Exception as e:
-                    return None, str(e)
-
-    except Exception as e:
-        return None, f"Process error: {e}"
-    finally:
-        if process:
-            process.terminate()
-            try:
-                # wait for it to exit
-                process.wait(timeout=1)
-            except:
-                process.kill()
