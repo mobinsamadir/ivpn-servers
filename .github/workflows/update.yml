@@ -20,7 +20,7 @@ jobs:
       uses: actions/cache@v3
       with:
         path: bin/
-        key: xray-${{ runner.os }}-v24.11.21
+        key: xray-Linux-v24.11.21
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -42,7 +42,7 @@ jobs:
       env:
         TCP_CONCURRENCY: 1500
         REAL_DELAY_BATCH_SIZE: 150
-        REAL_DELAY_INSTANCES: 4
+        REAL_DELAY_INSTANCES: 2
         TCP_TIMEOUT: 1.5
         REAL_DELAY_TIMEOUT: 3.0
 
