@@ -256,8 +256,11 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session, failur
         if process:
             try:
                 process.terminate()
-                # Async wait for termination
-                await process.wait()
+                try:
+                    await asyncio.wait_for(process.wait(), timeout=2.0)
+                except asyncio.TimeoutError:
+                    process.kill()
+                    await process.wait()
 
                 if should_read_stderr:
                     stderr_output = await process.stderr.read()
@@ -303,6 +306,8 @@ async def run_real_delay_tests(configs):
                 # We wrap ports modulo 30000 to stay within safe range 10000-40000
                 port_offset = (batch_index * REAL_DELAY_BATCH_SIZE) % 20000
                 batch_start_port = START_PORT + port_offset
+
+                await asyncio.sleep(0.05)
 
                 results = await test_batch_real_delay(batch, batch_start_port, session, failure_reasons, batch_index)
                 await counter.increment(len(batch))
