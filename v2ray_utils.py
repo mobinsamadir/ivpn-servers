@@ -419,7 +419,7 @@ def generate_xray_batch_config(batch_configs, start_port):
     """
     inbounds = []
     outbounds = []
-    rules = []
+    routing_rules = []
 
     for i, config_data in enumerate(batch_configs):
         if not config_data:
@@ -443,19 +443,19 @@ def generate_xray_batch_config(batch_configs, start_port):
         outbounds.append(outbound)
 
         # Create Routing Rule
-        rules.append({
+        routing_rules.append({
             "type": "field",
             "inboundTag": [inbound_tag],
             "outboundTag": outbound_tag
         })
 
     config = {
-        "log": {"loglevel": "none"},
+        "log": {"loglevel": "warning"},
         "inbounds": inbounds,
         "outbounds": outbounds,
         "routing": {
             "domainStrategy": "AsIs",
-            "rules": rules
+            "rules": routing_rules
         }
     }
 
