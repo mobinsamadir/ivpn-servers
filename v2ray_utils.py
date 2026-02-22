@@ -13,6 +13,7 @@ import stat
 import time
 import requests
 import resource
+import uuid
 from urllib.parse import urlparse, parse_qs, unquote
 
 # Constants
@@ -92,12 +93,15 @@ def sanitize_host(host):
 
 def validate_uuid(uuid_str):
     """
-    Validates if the string is a valid UUID (8-4-4-4-12 format).
+    Validates if the string is a valid UUID using the uuid library.
     """
     if not uuid_str:
         return False
-    # Strict UUID regex
-    return bool(re.match(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$', uuid_str))
+    try:
+        uuid.UUID(uuid_str)
+        return True
+    except ValueError:
+        return False
 
 def validate_password(password):
     """
@@ -388,6 +392,12 @@ def check_and_install_xray():
 
 def _create_outbound_object(outbound_config, tag):
     """Helper to create a single Xray outbound object."""
+
+    # Generic Whitespace Trimming
+    for key, value in outbound_config.items():
+        if isinstance(value, str):
+            outbound_config[key] = value.strip()
+
     # --- Schema Validation ---
     protocol = outbound_config.get('protocol')
     net = outbound_config.get('net', 'tcp')
@@ -494,12 +504,24 @@ def _create_outbound_object(outbound_config, tag):
             if not pub_key:
                 return None  # Discard if publicKey is missing
 
+            # Robust REALITY Defaults
+            fp = outbound_config.get('fp')
+            if not fp:
+                fp = 'chrome'
+
+            sid = outbound_config.get('sid', '')
+            # Strict shortId validation
+            if sid:
+                # Check if hex and even length
+                if len(sid) % 2 != 0 or not all(c in '0123456789abcdefABCDEF' for c in sid):
+                    return None # Discard config
+
             outbound['streamSettings']['realitySettings'] = {
                 "show": False,
-                "fingerprint": outbound_config.get('fp', 'chrome'),
+                "fingerprint": fp,
                 "serverName": outbound_config.get('sni') or outbound_config.get('add'),
                 "publicKey": pub_key,
-                "shortId": outbound_config.get('sid', ''),
+                "shortId": sid,
                 "spiderX": outbound_config.get('spx', '')
             }
 
