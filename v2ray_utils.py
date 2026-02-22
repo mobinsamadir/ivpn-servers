@@ -90,6 +90,23 @@ def sanitize_host(host):
 
     return host
 
+def validate_uuid(uuid_str):
+    """
+    Validates if the string is a valid UUID (8-4-4-4-12 format).
+    """
+    if not uuid_str:
+        return False
+    # Strict UUID regex
+    return bool(re.match(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$', uuid_str))
+
+def validate_password(password):
+    """
+    Validates if the password contains only printable ASCII characters (33-126).
+    """
+    if not password:
+        return False
+    return all(33 <= ord(c) <= 126 for c in password)
+
 def get_config_hash(config_data):
     """
     Generates a unique hash for a config dict to identify duplicates.
@@ -121,12 +138,17 @@ def parse_vmess(vmess_url):
         add = sanitize_host(data.get("add", ""))
         if not add: return None, "VMess_InvalidHost"
 
+        # Validate UUID
+        id_val = unquote(data.get("id", ""))
+        if not validate_uuid(id_val):
+            return None, "VMess_InvalidUUID"
+
         # Normalize fields
         return {
             "protocol": "vmess",
             "add": add,
             "port": int(data.get("port", 0)),
-            "id": unquote(data.get("id", "")),
+            "id": id_val,
             "aid": int(data.get("aid", "0")),
             "net": data.get("net", "tcp"),
             "type": data.get("type", "none"),
@@ -154,16 +176,28 @@ def parse_vless_trojan(url, protocol):
         except (ValueError, TypeError):
             return None, f"{protocol}_InvalidPort"
 
+        id_val = unquote(parsed.username) if parsed.username else ""
+        if protocol == "vless":
+             if not validate_uuid(id_val):
+                 return None, "VLESS_InvalidUUID"
+        elif protocol == "trojan":
+             if not validate_password(id_val):
+                 return None, "Trojan_InvalidPassword"
+
+        sec = params.get("security", [""])[0]
+        # Allow 'reality' to be passed through for proper Flow validation later
+        tls_val = sec if sec in ["tls", "reality"] else ""
+
         config = {
             "protocol": protocol,
             "add": add,
             "port": port,
-            "id": unquote(parsed.username) if parsed.username else "",
+            "id": id_val,
             "net": params.get("type", ["tcp"])[0],
             "type": params.get("headerType", ["none"])[0], # for tcp
             "host": params.get("host", [""])[0],
             "path": params.get("path", [""])[0],
-            "tls": "tls" if params.get("security", [""])[0] == "tls" else "",
+            "tls": tls_val,
             "sni": params.get("sni", [""])[0],
             "flow": params.get("flow", [""])[0],
             "ps": unquote(parsed.fragment)
@@ -205,6 +239,9 @@ def parse_ss(url):
                  if not password:
                      return None, "SS_MissingPassword"
 
+                 if not validate_password(unquote(password)):
+                     return None, "SS_InvalidPassword"
+
                  return {
                      "protocol": "shadowsocks",
                      "add": host,
@@ -239,6 +276,9 @@ def parse_ss(url):
 
              if not password:
                  return None, "SS_MissingPassword"
+
+                 if not validate_password(unquote(password)):
+                     return None, "SS_InvalidPassword"
 
              return {
                  "protocol": "shadowsocks",
@@ -350,7 +390,7 @@ def _create_outbound_object(outbound_config, tag):
         return None
 
     # 2. Check for deprecated ciphers and invalid characters
-    if cipher in ['aes-256-cfb', 'rc4-md5', 'chacha20-ietf']:
+    if cipher in ['aes-128-cfb', 'aes-256-cfb', 'rc4-md5', 'chacha20-ietf', 'ss']:
         return None
 
     if cipher and re.search(r'[^a-zA-Z0-9\-]', cipher):
@@ -380,7 +420,7 @@ def _create_outbound_object(outbound_config, tag):
                 "users": [{
                     "id": outbound_config['id'],
                     "alterId": int(outbound_config.get('aid', 0)),
-                    "security": "auto"
+                    "security": "aes-128-gcm"
                 }]
             }]
         }
@@ -406,6 +446,11 @@ def _create_outbound_object(outbound_config, tag):
             }
 
     elif protocol == 'vless':
+        # Flow/Vision Fix
+        if outbound_config.get('flow') == 'xtls-rprx-vision':
+             if outbound_config.get('tls') not in ['tls', 'reality']:
+                 return None
+
         outbound['settings'] = {
             "vnext": [{
                 "address": outbound_config['add'],
