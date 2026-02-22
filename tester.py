@@ -116,7 +116,7 @@ async def run_tcp_tests(configs):
     print(f"✅ TCP tests complete. {len(passed)}/{total} passed.")
     return passed
 
-async def test_batch_real_delay(batch_configs, batch_start_port, session, failure_reasons):
+async def test_batch_real_delay(batch_configs, batch_start_port, session, failure_reasons, batch_index=0):
     """
     Tests a batch of configs using a single Xray process.
     """
@@ -175,8 +175,24 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session, failur
             stderr_str = stderr_data.decode().strip() if stderr_data else ""
 
             print(f"FATAL: Xray crashed on startup!")
-            print(f"STDOUT: {stdout_str}")
-            print(f"STDERR: {stderr_str}")
+
+            # --- Advanced Telemetry ---
+            start_idx = batch_index * REAL_DELAY_BATCH_SIZE
+            end_idx = start_idx + len(batch_configs) - 1
+            print(f"👉 Config Range: {start_idx} - {end_idx}")
+
+            error_found = False
+            for line in (stdout_str + "\n" + stderr_str).split('\n'):
+                line_lower = line.lower()
+                if "failed to" in line_lower or "invalid" in line_lower or "panic" in line_lower or "error" in line_lower:
+                    print(f"❌ Error Detail: {line.strip()}")
+                    error_found = True
+                    break
+
+            if not error_found:
+                 print(f"STDOUT: {stdout_str}")
+                 print(f"STDERR: {stderr_str}")
+            # --------------------------
 
             # CRITICAL: Save the corrupted JSON to disk so we can debug it in the CI/CD artifacts!
             with open(f"crashed_batch_{batch_start_port}.json", "w") as f:
@@ -288,7 +304,7 @@ async def run_real_delay_tests(configs):
                 port_offset = (batch_index * REAL_DELAY_BATCH_SIZE) % 20000
                 batch_start_port = START_PORT + port_offset
 
-                results = await test_batch_real_delay(batch, batch_start_port, session, failure_reasons)
+                results = await test_batch_real_delay(batch, batch_start_port, session, failure_reasons, batch_index)
                 await counter.increment(len(batch))
                 return results
 

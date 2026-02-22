@@ -17,7 +17,7 @@ from urllib.parse import urlparse, parse_qs, unquote
 
 # Constants
 # Using a stable version. Update this as needed.
-XRAY_VERSION = "v1.8.4"
+XRAY_VERSION = "v24.11.21"
 BIN_DIR = "bin"
 XRAY_EXECUTABLE = "xray.exe" if platform.system() == "Windows" else "xray"
 XRAY_PATH = os.path.join(BIN_DIR, XRAY_EXECUTABLE)
@@ -202,6 +202,9 @@ def parse_ss(url):
                  host = sanitize_host(host)
                  if not host: return None, "SS_InvalidHost"
 
+                 if not password:
+                     return None, "SS_MissingPassword"
+
                  return {
                      "protocol": "shadowsocks",
                      "add": host,
@@ -233,6 +236,9 @@ def parse_ss(url):
                  port = int(port)
              except (ValueError, TypeError):
                  return None, "SS_InvalidPort"
+
+             if not password:
+                 return None, "SS_MissingPassword"
 
              return {
                  "protocol": "shadowsocks",
@@ -334,13 +340,31 @@ def check_and_install_xray():
 
 def _create_outbound_object(outbound_config, tag):
     """Helper to create a single Xray outbound object."""
-    protocol = outbound_config['protocol']
+    # --- Schema Validation ---
+    protocol = outbound_config.get('protocol')
+    net = outbound_config.get('net', 'tcp')
+    cipher = outbound_config.get('method', '')
+
+    # 1. Check for missing password in Shadowsocks
+    if protocol == 'shadowsocks' and not outbound_config.get('id'):
+        return None
+
+    # 2. Check for deprecated ciphers
+    if cipher in ['aes-256-cfb', 'rc4-md5']:
+        return None
+
+    # 3. Check for supported transport protocols
+    valid_nets = {'tcp', 'ws', 'grpc', 'http', 'quic', 'httpupgrade'}
+    if net not in valid_nets:
+        return None
+    # -------------------------
+
     outbound = {
         "tag": tag,
         "protocol": protocol,
         "settings": {},
         "streamSettings": {
-            "network": outbound_config.get('net', 'tcp'),
+            "network": net,
             "security": outbound_config.get('tls', 'none') or 'none',
         }
     }
@@ -457,6 +481,9 @@ def generate_xray_batch_config(batch_configs, start_port):
 
         # Create Outbound
         outbound = _create_outbound_object(config_data, outbound_tag)
+        if not outbound:
+            continue
+
         outbounds.append(outbound)
 
         # Create Routing Rule
