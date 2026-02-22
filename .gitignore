@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 bin/
 local_results/
+crashed_batch_*.json
