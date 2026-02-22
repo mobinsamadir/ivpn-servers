@@ -54,7 +54,7 @@ jobs:
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
         
-        git add .
+        git add all_configs.txt tcp_passed.txt real_delay_passed.txt sources.txt
         
         if output=$(git status --porcelain) && [ -z "$output" ]; then
           echo "⚠️ No changes detected to commit."

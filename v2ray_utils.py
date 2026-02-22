@@ -286,12 +286,15 @@ def get_xray_download_url():
 
 def check_and_install_xray():
     """Checks if Xray is installed, downloads if not."""
-    if os.path.exists(XRAY_PATH):
+    geoip_path = os.path.join(BIN_DIR, "geoip.dat")
+    geosite_path = os.path.join(BIN_DIR, "geosite.dat")
+
+    if os.path.exists(XRAY_PATH) and os.path.exists(geoip_path) and os.path.exists(geosite_path):
         if platform.system() != "Windows" and not os.access(XRAY_PATH, os.X_OK):
             os.chmod(XRAY_PATH, stat.S_IEXEC | stat.S_IRUSR | stat.S_IWUSR)
         return True
 
-    print(f"⚠️ Xray not found at {XRAY_PATH}. Downloading {XRAY_VERSION}...")
+    print(f"⚠️ Xray or assets (geoip/geosite) not found. Downloading {XRAY_VERSION}...")
 
     if not os.path.exists(BIN_DIR):
         os.makedirs(BIN_DIR)
@@ -318,6 +321,10 @@ def check_and_install_xray():
                 os.chmod(XRAY_PATH, 0o755)
             else:
                 pass
+
+        # Verify assets
+        if not os.path.exists(os.path.join(BIN_DIR, "geoip.dat")) or not os.path.exists(os.path.join(BIN_DIR, "geosite.dat")):
+             print("⚠️ Warning: geoip.dat or geosite.dat missing after extraction. Xray may crash.")
 
         print("✅ Xray installed successfully.")
         return True
