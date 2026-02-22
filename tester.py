@@ -14,7 +14,7 @@ from collections import Counter
 TCP_CONCURRENCY = int(os.environ.get('TCP_CONCURRENCY', 1500))
 # Real Delay Concurrency: 4 instances * 150 requests = 600 concurrent connections
 REAL_DELAY_BATCH_SIZE = int(os.environ.get('REAL_DELAY_BATCH_SIZE', 50))
-REAL_DELAY_INSTANCES = int(os.environ.get('REAL_DELAY_INSTANCES', 2))
+REAL_DELAY_INSTANCES = int(os.environ.get('REAL_DELAY_INSTANCES', 1))
 
 TCP_TIMEOUT = float(os.environ.get('TCP_TIMEOUT', 1.5))
 REAL_DELAY_TIMEOUT = float(os.environ.get('REAL_DELAY_TIMEOUT', 3.0))
@@ -307,7 +307,7 @@ async def run_real_delay_tests(configs):
                 port_offset = (batch_index * REAL_DELAY_BATCH_SIZE) % 20000
                 batch_start_port = START_PORT + port_offset
 
-                await asyncio.sleep(0.1)
+                await asyncio.sleep(0.2)
 
                 results = await test_batch_real_delay(batch, batch_start_port, session, failure_reasons, batch_index)
                 await counter.increment(len(batch))
