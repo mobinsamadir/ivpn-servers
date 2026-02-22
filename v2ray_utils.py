@@ -119,7 +119,7 @@ def parse_vmess(vmess_url):
         data = json.loads(json_str)
 
         add = sanitize_host(data.get("add", ""))
-        if not add: return None
+        if not add: return None, "VMess_InvalidHost"
 
         # Normalize fields
         return {
@@ -135,9 +135,9 @@ def parse_vmess(vmess_url):
             "tls": data.get("tls", ""),
             "sni": data.get("sni", ""), # vmess json sometimes has sni
             "ps": data.get("ps", "")
-        }
+        }, None
     except Exception:
-        return None
+        return None, "VMess_ParseError"
 
 def parse_vless_trojan(url, protocol):
     """Parses vless:// and trojan:// URLs."""
@@ -147,7 +147,7 @@ def parse_vless_trojan(url, protocol):
         params = parse_qs(parsed.query)
 
         add = sanitize_host(parsed.hostname)
-        if not add: return None
+        if not add: return None, f"{protocol}_InvalidHost"
 
         config = {
             "protocol": protocol,
@@ -163,9 +163,9 @@ def parse_vless_trojan(url, protocol):
             "flow": params.get("flow", [""])[0],
             "ps": unquote(parsed.fragment)
         }
-        return config
+        return config, None
     except Exception:
-        return None
+        return None, f"{protocol}_ParseError"
 
 def parse_ss(url):
     """Parses ss:// URLs."""
@@ -195,7 +195,7 @@ def parse_ss(url):
                      port = 80
 
                  host = sanitize_host(host)
-                 if not host: return None
+                 if not host: return None, "SS_InvalidHost"
 
                  return {
                      "protocol": "shadowsocks",
@@ -205,7 +205,7 @@ def parse_ss(url):
                      "method": method,
                      "net": "tcp",
                      "ps": unquote(parsed.fragment)
-                 }
+                 }, None
 
         # New style: user_info is base64(method:password) or just method:password
         if user_info:
@@ -219,10 +219,10 @@ def parse_ss(url):
                  if ':' in user_info:
                      method, password = user_info.split(':', 1)
                  else:
-                     return None
+                     return None, "SS_AuthParseError"
 
              host = sanitize_host(host)
-             if not host: return None
+             if not host: return None, "SS_InvalidHost"
 
              return {
                  "protocol": "shadowsocks",
@@ -232,11 +232,11 @@ def parse_ss(url):
                  "method": method,
                  "net": "tcp",
                  "ps": unquote(parsed.fragment)
-             }
+             }, None
 
-        return None
+        return None, "SS_InvalidFormat"
     except Exception:
-        return None
+        return None, "SS_ParseError"
 
 def parse_config_line(line):
     """Parses a config line and returns a dict."""
@@ -249,7 +249,7 @@ def parse_config_line(line):
         return parse_vless_trojan(line, "trojan")
     elif line.startswith("ss://"):
         return parse_ss(line)
-    return None
+    return None, "Unsupported_Protocol"
 
 def get_xray_download_url():
     """Returns the download URL for Xray based on OS."""
@@ -419,15 +419,15 @@ def generate_xray_batch_config(batch_configs, start_port):
     """
     inbounds = []
     outbounds = []
-    rules = []
+    routing_rules = []
 
     for i, config_data in enumerate(batch_configs):
         if not config_data:
             continue
 
         local_port = start_port + i
-        inbound_tag = f"in_{i}"
-        outbound_tag = f"out_{i}"
+        inbound_tag = f"inbound-{local_port}"
+        outbound_tag = f"outbound-{local_port}"
 
         # Create Inbound
         inbounds.append({
@@ -443,19 +443,19 @@ def generate_xray_batch_config(batch_configs, start_port):
         outbounds.append(outbound)
 
         # Create Routing Rule
-        rules.append({
+        routing_rules.append({
             "type": "field",
             "inboundTag": [inbound_tag],
             "outboundTag": outbound_tag
         })
 
     config = {
-        "log": {"loglevel": "none"},
+        "log": {"loglevel": "warning"},
         "inbounds": inbounds,
         "outbounds": outbounds,
         "routing": {
             "domainStrategy": "AsIs",
-            "rules": rules
+            "rules": routing_rules
         }
     }
 
