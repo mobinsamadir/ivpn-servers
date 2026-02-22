@@ -156,6 +156,21 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session, failur
         # Increased startup wait to ensure ports are bound
         await asyncio.sleep(1.0)
 
+        try:
+            # If it exits within 0.1s of checking, it crashed!
+            await asyncio.wait_for(process.wait(), timeout=0.1)
+            stderr_output = await process.stderr.read()
+            print(f"FATAL: Xray crashed on startup! Error: {stderr_output.decode()}")
+
+            # CRITICAL: Save the corrupted JSON to disk so we can debug it in the CI/CD artifacts!
+            with open(f"crashed_batch_{batch_start_port}.json", "w") as f:
+                f.write(config_json)
+
+            return [None] * len(batch_configs)
+        except asyncio.TimeoutError:
+            # Process is still running normally, proceed with aiohttp requests
+            pass
+
         # 3. Concurrent Requests (using shared session)
         tasks = []
         for i in range(len(parsed_batch)):
