@@ -41,7 +41,7 @@ jobs:
         python tester.py
       env:
         TCP_CONCURRENCY: 1500
-        REAL_DELAY_BATCH_SIZE: 150
+        REAL_DELAY_BATCH_SIZE: 100
         REAL_DELAY_INSTANCES: 2
         TCP_TIMEOUT: 1.5
         REAL_DELAY_TIMEOUT: 3.0
