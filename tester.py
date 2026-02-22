@@ -13,8 +13,8 @@ from collections import Counter
 # TCP Concurrency: High because it's just handshake
 TCP_CONCURRENCY = int(os.environ.get('TCP_CONCURRENCY', 1500))
 # Real Delay Concurrency: 4 instances * 150 requests = 600 concurrent connections
-REAL_DELAY_BATCH_SIZE = int(os.environ.get('REAL_DELAY_BATCH_SIZE', 150))
-REAL_DELAY_INSTANCES = int(os.environ.get('REAL_DELAY_INSTANCES', 4))
+REAL_DELAY_BATCH_SIZE = int(os.environ.get('REAL_DELAY_BATCH_SIZE', 50))
+REAL_DELAY_INSTANCES = int(os.environ.get('REAL_DELAY_INSTANCES', 8))
 
 TCP_TIMEOUT = float(os.environ.get('TCP_TIMEOUT', 1.5))
 REAL_DELAY_TIMEOUT = float(os.environ.get('REAL_DELAY_TIMEOUT', 3.0))
@@ -55,7 +55,7 @@ async def check_tcp_task(sem, config_line, resolver, counter):
     1. Resolves DNS (cached/async).
     2. Tries TCP connect to IP.
     """
-    parsed = v2ray_utils.parse_config_line(config_line)
+    parsed, _ = v2ray_utils.parse_config_line(config_line)
     if not parsed:
         await counter.increment()
         return None
@@ -125,7 +125,7 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session, failur
     valid_indices = [] # Map index in parsed_batch to index in batch_configs
 
     for i, line in enumerate(batch_configs):
-        parsed = v2ray_utils.parse_config_line(line)
+        parsed, _ = v2ray_utils.parse_config_line(line)
         if parsed:
             parsed_batch.append(parsed)
             valid_indices.append(i)
@@ -139,12 +139,13 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session, failur
 
     # 2. Start Xray (Async Subprocess)
     process = None
+    should_read_stderr = False
     try:
         process = await asyncio.create_subprocess_exec(
             v2ray_utils.XRAY_PATH, "-c", "stdin:",
             stdin=asyncio.subprocess.PIPE,
             stdout=asyncio.subprocess.DEVNULL,
-            stderr=asyncio.subprocess.DEVNULL
+            stderr=asyncio.subprocess.PIPE
         )
 
         # Write config to stdin
@@ -181,6 +182,7 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session, failur
                      error_type = "Timeout"
                 elif isinstance(res, aiohttp.ClientProxyConnectionError):
                      error_type = "ProxyConnectionError"
+                     should_read_stderr = True
                 elif isinstance(res, aiohttp.ClientConnectorError):
                      error_type = "ConnectorError"
 
@@ -193,11 +195,15 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session, failur
             else:
                 failure_reasons['UnknownError'] += 1
 
+        if process.returncode is not None:
+            should_read_stderr = True
+
         return batch_results
 
     except Exception as e:
         # print(f"⚠️ Batch Error: {e}")
         failure_reasons['BatchCrash'] += 1
+        should_read_stderr = True
         return [None] * len(batch_configs)
     finally:
         if process:
@@ -205,6 +211,11 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session, failur
                 process.terminate()
                 # Async wait for termination
                 await process.wait()
+
+                if should_read_stderr:
+                    stderr_output = await process.stderr.read()
+                    if stderr_output:
+                        print(f"⚠️ Xray Crash/Exit (Code {process.returncode}): {stderr_output.decode().strip()}")
             except ProcessLookupError:
                 pass
             except Exception:

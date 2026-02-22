@@ -31,6 +31,9 @@ def collect_configs():
         print(f"⚠️ {SOURCES_FILE} not found.")
         return
 
+    from collections import Counter
+    error_counter = Counter()
+
     with open(SOURCES_FILE, 'r') as f:
         urls = [line.strip() for line in f if line.strip() and not line.startswith('#')]
 
@@ -62,13 +65,15 @@ def collect_configs():
                     # Parse just to verify it's valid, but we count everything that *looks* like a config
                     # Actually user said "X configs extracted"
                     # We should probably only count valid ones.
-                    parsed = v2ray_utils.parse_config_line(line)
+                    parsed, error = v2ray_utils.parse_config_line(line)
                     if parsed:
                         extracted_count += 1
                         total_fetched += 1
                         config_hash = v2ray_utils.get_config_hash(parsed)
                         if config_hash not in unique_configs:
                             unique_configs[config_hash] = line
+                    elif error:
+                        error_counter[error] += 1
 
                 print(f"[{url}] -> {extracted_count} configs extracted")
 
@@ -84,6 +89,13 @@ def collect_configs():
     print("-" * 50)
     print(f"Total fetched: {total_fetched} | Duplicates removed: {duplicates_removed} | Final unique configs: {final_unique}")
     print("-" * 50)
+
+    # Parsing Failure Summary
+    if error_counter:
+        print("\n⚠️ Parsing Failure Summary:")
+        for err, count in error_counter.most_common():
+             print(f"  - {err}: {count}")
+        print("-" * 50)
 
     # Write output
     print(f"Writing {final_unique} configs to {OUTPUT_FILE}...")
