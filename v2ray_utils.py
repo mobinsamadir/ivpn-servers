@@ -126,7 +126,7 @@ def parse_vmess(vmess_url):
             "protocol": "vmess",
             "add": add,
             "port": int(data.get("port", 0)),
-            "id": data.get("id", ""),
+            "id": unquote(data.get("id", "")),
             "aid": int(data.get("aid", "0")),
             "net": data.get("net", "tcp"),
             "type": data.get("type", "none"),
@@ -158,7 +158,7 @@ def parse_vless_trojan(url, protocol):
             "protocol": protocol,
             "add": add,
             "port": port,
-            "id": parsed.username,
+            "id": unquote(parsed.username) if parsed.username else "",
             "net": params.get("type", ["tcp"])[0],
             "type": params.get("headerType", ["none"])[0], # for tcp
             "host": params.get("host", [""])[0],
@@ -209,7 +209,7 @@ def parse_ss(url):
                      "protocol": "shadowsocks",
                      "add": host,
                      "port": int(port),
-                     "id": password,
+                     "id": unquote(password),
                      "method": method,
                      "net": "tcp",
                      "ps": unquote(parsed.fragment)
@@ -244,7 +244,7 @@ def parse_ss(url):
                  "protocol": "shadowsocks",
                  "add": host,
                  "port": int(port),
-                 "id": password,
+                 "id": unquote(password),
                  "method": method,
                  "net": "tcp",
                  "ps": unquote(parsed.fragment)
@@ -345,12 +345,15 @@ def _create_outbound_object(outbound_config, tag):
     net = outbound_config.get('net', 'tcp')
     cipher = outbound_config.get('method', '')
 
-    # 1. Check for missing password in Shadowsocks
-    if protocol == 'shadowsocks' and not outbound_config.get('id'):
+    # 1. Check for missing password in Shadowsocks or Trojan
+    if (protocol == 'shadowsocks' or protocol == 'trojan') and not outbound_config.get('id'):
         return None
 
-    # 2. Check for deprecated ciphers
-    if cipher in ['aes-256-cfb', 'rc4-md5']:
+    # 2. Check for deprecated ciphers and invalid characters
+    if cipher in ['aes-256-cfb', 'rc4-md5', 'chacha20-ietf']:
+        return None
+
+    if cipher and re.search(r'[^a-zA-Z0-9\-]', cipher):
         return None
 
     # 3. Check for supported transport protocols
