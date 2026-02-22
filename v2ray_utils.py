@@ -127,7 +127,7 @@ def parse_vmess(vmess_url):
             "add": add,
             "port": int(data.get("port", 0)),
             "id": data.get("id", ""),
-            "aid": data.get("aid", "0"),
+            "aid": int(data.get("aid", "0")),
             "net": data.get("net", "tcp"),
             "type": data.get("type", "none"),
             "host": data.get("host", ""),
@@ -149,10 +149,15 @@ def parse_vless_trojan(url, protocol):
         add = sanitize_host(parsed.hostname)
         if not add: return None, f"{protocol}_InvalidHost"
 
+        try:
+            port = int(parsed.port)
+        except (ValueError, TypeError):
+            return None, f"{protocol}_InvalidPort"
+
         config = {
             "protocol": protocol,
             "add": add,
-            "port": parsed.port,
+            "port": port,
             "id": parsed.username,
             "net": params.get("type", ["tcp"])[0],
             "type": params.get("headerType", ["none"])[0], # for tcp
@@ -176,7 +181,7 @@ def parse_ss(url):
         port = parsed.port
 
         # Check if the whole authority is base64 encoded (old style)
-        if not host and not port and parsed.netloc:
+        if not user_info and not port and parsed.netloc:
              decoded = safe_decode(parsed.netloc)
              if '@' in decoded:
                  parts = decoded.split('@')
@@ -200,7 +205,7 @@ def parse_ss(url):
                  return {
                      "protocol": "shadowsocks",
                      "add": host,
-                     "port": port,
+                     "port": int(port),
                      "id": password,
                      "method": method,
                      "net": "tcp",
@@ -224,10 +229,15 @@ def parse_ss(url):
              host = sanitize_host(host)
              if not host: return None, "SS_InvalidHost"
 
+             try:
+                 port = int(port)
+             except (ValueError, TypeError):
+                 return None, "SS_InvalidPort"
+
              return {
                  "protocol": "shadowsocks",
                  "add": host,
-                 "port": port,
+                 "port": int(port),
                  "id": password,
                  "method": method,
                  "net": "tcp",
@@ -332,7 +342,7 @@ def _create_outbound_object(outbound_config, tag):
         outbound['settings'] = {
             "vnext": [{
                 "address": outbound_config['add'],
-                "port": outbound_config['port'],
+                "port": int(outbound_config['port']),
                 "users": [{
                     "id": outbound_config['id'],
                     "alterId": int(outbound_config.get('aid', 0)),
@@ -365,7 +375,7 @@ def _create_outbound_object(outbound_config, tag):
         outbound['settings'] = {
             "vnext": [{
                 "address": outbound_config['add'],
-                "port": outbound_config['port'],
+                "port": int(outbound_config['port']),
                 "users": [{
                     "id": outbound_config['id'],
                     "encryption": "none",
@@ -390,7 +400,7 @@ def _create_outbound_object(outbound_config, tag):
         outbound['settings'] = {
             "servers": [{
                 "address": outbound_config['add'],
-                "port": outbound_config['port'],
+                "port": int(outbound_config['port']),
                 "password": outbound_config['id']
             }]
         }
@@ -404,7 +414,7 @@ def _create_outbound_object(outbound_config, tag):
         outbound['settings'] = {
             "servers": [{
                 "address": outbound_config['add'],
-                "port": outbound_config['port'],
+                "port": int(outbound_config['port']),
                 "method": outbound_config.get('method', 'aes-256-gcm'),
                 "password": outbound_config['id']
             }]
@@ -431,7 +441,7 @@ def generate_xray_batch_config(batch_configs, start_port):
 
         # Create Inbound
         inbounds.append({
-            "port": local_port,
+            "port": int(local_port),
             "protocol": "http",
             "settings": {},
             "tag": inbound_tag,
