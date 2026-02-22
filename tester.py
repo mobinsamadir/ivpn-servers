@@ -140,18 +140,27 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session, failur
     # 2. Start Xray (Async Subprocess)
     process = None
     should_read_stderr = False
+
+    # Set asset location
+    xray_assets_path = os.path.dirname(os.path.abspath(v2ray_utils.XRAY_PATH))
+    print(f"DEBUG: Setting XRAY_LOCATION_ASSET to: {xray_assets_path}")
+    env = os.environ.copy()
+    env["XRAY_LOCATION_ASSET"] = xray_assets_path
+
     try:
         process = await asyncio.create_subprocess_exec(
             v2ray_utils.XRAY_PATH, "-c", "stdin:",
             stdin=asyncio.subprocess.PIPE,
-            stdout=asyncio.subprocess.DEVNULL,
-            stderr=asyncio.subprocess.PIPE
+            stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE,
+            env=env
         )
 
         # Write config to stdin
         process.stdin.write(config_json.encode('utf-8'))
         await process.stdin.drain()
         process.stdin.close()
+        await process.stdin.wait_closed()
 
         # Increased startup wait to ensure ports are bound
         await asyncio.sleep(1.0)
@@ -161,8 +170,13 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session, failur
             await asyncio.wait_for(process.wait(), timeout=0.1)
             # It crashed: capture stderr immediately
             stdout_data, stderr_data = await process.communicate()
-            stderr_output = stderr_data if stderr_data else b""
-            print(f"FATAL: Xray crashed on startup! Error: {stderr_output.decode()}")
+
+            stdout_str = stdout_data.decode().strip() if stdout_data else ""
+            stderr_str = stderr_data.decode().strip() if stderr_data else ""
+
+            print(f"FATAL: Xray crashed on startup!")
+            print(f"STDOUT: {stdout_str}")
+            print(f"STDERR: {stderr_str}")
 
             # CRITICAL: Save the corrupted JSON to disk so we can debug it in the CI/CD artifacts!
             with open(f"crashed_batch_{batch_start_port}.json", "w") as f:
