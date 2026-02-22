@@ -31,7 +31,7 @@ TCP_OUTPUT_FILE = 'tcp_passed.txt'
 REAL_DELAY_OUTPUT_FILE = 'real_delay_passed.txt'
 
 # Base port for local testing
-START_PORT = 10000
+START_PORT = 20000
 
 class ProgressCounter:
     def __init__(self, total, name):
@@ -159,7 +159,9 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session, failur
         try:
             # If it exits within 0.1s of checking, it crashed!
             await asyncio.wait_for(process.wait(), timeout=0.1)
-            stderr_output = await process.stderr.read()
+            # It crashed: capture stderr immediately
+            stdout_data, stderr_data = await process.communicate()
+            stderr_output = stderr_data if stderr_data else b""
             print(f"FATAL: Xray crashed on startup! Error: {stderr_output.decode()}")
 
             # CRITICAL: Save the corrupted JSON to disk so we can debug it in the CI/CD artifacts!

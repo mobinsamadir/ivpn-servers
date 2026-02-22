@@ -460,7 +460,7 @@ def generate_xray_batch_config(batch_configs, start_port):
         })
 
     config = {
-        "log": {"loglevel": "warning"},
+        "log": {"loglevel": "debug"},
         "inbounds": inbounds,
         "outbounds": outbounds,
         "routing": {
