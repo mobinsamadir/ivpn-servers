@@ -188,6 +188,8 @@ def parse_vless_trojan(url, protocol):
         # Allow 'reality' to be passed through for proper Flow validation later
         tls_val = sec if sec in ["tls", "reality"] else ""
 
+        flow_val = params.get("flow", [""])[0].strip()
+
         config = {
             "protocol": protocol,
             "add": add,
@@ -199,7 +201,11 @@ def parse_vless_trojan(url, protocol):
             "path": params.get("path", [""])[0],
             "tls": tls_val,
             "sni": params.get("sni", [""])[0],
-            "flow": params.get("flow", [""])[0],
+            "flow": flow_val,
+            "pbk": params.get("pbk", [""])[0],
+            "sid": params.get("sid", [""])[0],
+            "fp": params.get("fp", [""])[0],
+            "spx": params.get("spx", [""])[0],
             "ps": unquote(parsed.fragment)
         }
         return config, None
@@ -239,14 +245,15 @@ def parse_ss(url):
                  if not password:
                      return None, "SS_MissingPassword"
 
-                 if not validate_password(unquote(password)):
+                 pwd = unquote(password)
+                 if not validate_password(pwd):
                      return None, "SS_InvalidPassword"
 
                  return {
                      "protocol": "shadowsocks",
                      "add": host,
                      "port": int(port),
-                     "id": unquote(password),
+                     "id": pwd,
                      "method": method,
                      "net": "tcp",
                      "ps": unquote(parsed.fragment)
@@ -277,14 +284,15 @@ def parse_ss(url):
              if not password:
                  return None, "SS_MissingPassword"
 
-                 if not validate_password(unquote(password)):
-                     return None, "SS_InvalidPassword"
+             pwd = unquote(password)
+             if not validate_password(pwd):
+                 return None, "SS_InvalidPassword"
 
              return {
                  "protocol": "shadowsocks",
                  "add": host,
                  "port": int(port),
-                 "id": unquote(password),
+                 "id": pwd,
                  "method": method,
                  "net": "tcp",
                  "ps": unquote(parsed.fragment)
@@ -451,15 +459,20 @@ def _create_outbound_object(outbound_config, tag):
              if outbound_config.get('tls') not in ['tls', 'reality']:
                  return None
 
+        # Clean Flow Logic: Only include 'flow' if truthy
+        user_obj = {
+            "id": outbound_config['id'],
+            "encryption": "none"
+        }
+        flow_val = outbound_config.get('flow')
+        if flow_val:
+            user_obj["flow"] = flow_val
+
         outbound['settings'] = {
             "vnext": [{
                 "address": outbound_config['add'],
                 "port": int(outbound_config['port']),
-                "users": [{
-                    "id": outbound_config['id'],
-                    "encryption": "none",
-                    "flow": outbound_config.get('flow', '')
-                }]
+                "users": [user_obj]
             }]
         }
         net = outbound_config.get('net', 'tcp')
@@ -469,10 +482,25 @@ def _create_outbound_object(outbound_config, tag):
                 "path": outbound_config.get('path', '/'),
                 "headers": {"Host": outbound_config.get('host', '')}
             }
+
         if outbound_config.get('tls') == 'tls':
             outbound['streamSettings']['tlsSettings'] = {
                 "serverName": outbound_config.get('sni') or outbound_config.get('host') or outbound_config.get('add'),
                 "allowInsecure": True
+            }
+        elif outbound_config.get('tls') == 'reality':
+            # Hardened REALITY Validation
+            pub_key = outbound_config.get('pbk')
+            if not pub_key:
+                return None  # Discard if publicKey is missing
+
+            outbound['streamSettings']['realitySettings'] = {
+                "show": False,
+                "fingerprint": outbound_config.get('fp', 'chrome'),
+                "serverName": outbound_config.get('sni') or outbound_config.get('add'),
+                "publicKey": pub_key,
+                "shortId": outbound_config.get('sid', ''),
+                "spiderX": outbound_config.get('spx', '')
             }
 
     elif protocol == 'trojan':
