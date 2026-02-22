@@ -5,7 +5,9 @@ import v2ray_utils
 import aiohttp
 import aiodns
 import time
+import random
 from itertools import count
+from collections import Counter
 
 # Configuration
 # TCP Concurrency: High because it's just handshake
@@ -16,7 +18,13 @@ REAL_DELAY_INSTANCES = int(os.environ.get('REAL_DELAY_INSTANCES', 4))
 
 TCP_TIMEOUT = float(os.environ.get('TCP_TIMEOUT', 1.5))
 REAL_DELAY_TIMEOUT = float(os.environ.get('REAL_DELAY_TIMEOUT', 3.0))
-TEST_URL = os.environ.get('TEST_URL', 'http://cp.cloudflare.com/generate_204')
+
+TEST_URLS = [
+    'http://cp.cloudflare.com/generate_204',
+    'http://clients3.google.com/generate_204',
+    'http://www.gstatic.com/generate_204',
+    'http://www.apple.com/library/test/success.html'
+]
 
 INPUT_FILE = 'all_configs.txt'
 TCP_OUTPUT_FILE = 'tcp_passed.txt'
@@ -108,7 +116,7 @@ async def run_tcp_tests(configs):
     print(f"✅ TCP tests complete. {len(passed)}/{total} passed.")
     return passed
 
-async def test_batch_real_delay(batch_configs, batch_start_port, session):
+async def test_batch_real_delay(batch_configs, batch_start_port, session, failure_reasons):
     """
     Tests a batch of configs using a single Xray process.
     """
@@ -122,7 +130,7 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session):
             parsed_batch.append(parsed)
             valid_indices.append(i)
         else:
-            pass
+            failure_reasons['ParseError'] += 1
 
     if not parsed_batch:
         return [None] * len(batch_configs)
@@ -144,16 +152,18 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session):
         await process.stdin.drain()
         process.stdin.close()
 
-        # Fast startup wait
-        await asyncio.sleep(0.5)
+        # Increased startup wait to ensure ports are bound
+        await asyncio.sleep(1.0)
 
         # 3. Concurrent Requests (using shared session)
         tasks = []
         for i in range(len(parsed_batch)):
             port = batch_start_port + i
             proxy_url = f"http://127.0.0.1:{port}"
+            # Rotate URLs
+            target_url = random.choice(TEST_URLS)
             tasks.append(
-                session.get(TEST_URL, proxy=proxy_url, timeout=REAL_DELAY_TIMEOUT)
+                session.get(target_url, proxy=proxy_url, timeout=REAL_DELAY_TIMEOUT)
             )
 
         # Run all requests
@@ -165,18 +175,29 @@ async def test_batch_real_delay(batch_configs, batch_start_port, session):
         for i, res in enumerate(responses):
             original_idx = valid_indices[i]
             if isinstance(res, Exception):
-                # Request failed
-                pass
-            elif hasattr(res, 'status') and res.status in (200, 204):
-                batch_results[original_idx] = batch_configs[original_idx]
+                # Classify Exception
+                error_type = type(res).__name__
+                if isinstance(res, asyncio.TimeoutError):
+                     error_type = "Timeout"
+                elif isinstance(res, aiohttp.ClientProxyConnectionError):
+                     error_type = "ProxyConnectionError"
+                elif isinstance(res, aiohttp.ClientConnectorError):
+                     error_type = "ConnectorError"
+
+                failure_reasons[error_type] += 1
+            elif hasattr(res, 'status'):
+                if res.status in (200, 204, 301, 302):
+                    batch_results[original_idx] = batch_configs[original_idx]
+                else:
+                    failure_reasons[f"HTTP_{res.status}"] += 1
             else:
-                # HTTP Error
-                pass
+                failure_reasons['UnknownError'] += 1
 
         return batch_results
 
     except Exception as e:
         # print(f"⚠️ Batch Error: {e}")
+        failure_reasons['BatchCrash'] += 1
         return [None] * len(batch_configs)
     finally:
         if process:
@@ -207,14 +228,16 @@ async def run_real_delay_tests(configs):
 
     passed_results = []
     counter = ProgressCounter(total, "Real Delay")
+    failure_reasons = Counter()
 
     # Create Batches
     batches = [configs[i:i + REAL_DELAY_BATCH_SIZE] for i in range(0, total, REAL_DELAY_BATCH_SIZE)]
 
     sem = asyncio.Semaphore(REAL_DELAY_INSTANCES)
 
-    # Use a single session for all batches (connection pooling!)
-    async with aiohttp.ClientSession() as session:
+    # Use TCPConnector with limit=0 (Unlimited)
+    connector = aiohttp.TCPConnector(limit=0)
+    async with aiohttp.ClientSession(connector=connector) as session:
         async def run_batch_with_sem(batch_index, batch):
             async with sem:
                 # Dynamic port allocation: START_PORT + (batch_index * BATCH_SIZE)
@@ -223,7 +246,7 @@ async def run_real_delay_tests(configs):
                 port_offset = (batch_index * REAL_DELAY_BATCH_SIZE) % 20000
                 batch_start_port = START_PORT + port_offset
 
-                results = await test_batch_real_delay(batch, batch_start_port, session)
+                results = await test_batch_real_delay(batch, batch_start_port, session, failure_reasons)
                 await counter.increment(len(batch))
                 return results
 
@@ -238,6 +261,14 @@ async def run_real_delay_tests(configs):
             passed_results.extend([r for r in res if r])
 
     print(f"✅ Real Delay tests complete. {len(passed_results)}/{total} passed.")
+
+    print("\n📊 Failure Summary:")
+    if failure_reasons:
+        for reason, count in failure_reasons.most_common():
+            print(f"  - {reason}: {count}")
+    else:
+        print("  No failures recorded.")
+
     return passed_results
 
 async def main():
