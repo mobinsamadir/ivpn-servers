@@ -46,13 +46,20 @@ jobs:
         python tester.py
       env:
         TCP_CONCURRENCY: 1500
-        REAL_DELAY_BATCH_SIZE: 100
-        REAL_DELAY_INSTANCES: 1
+        REAL_DELAY_BATCH_SIZE: 250
+        REAL_DELAY_INSTANCES: 8
         TCP_TIMEOUT: 1.5
         REAL_DELAY_TIMEOUT: 3.0
 
     - name: Debug File List
       run: ls -lh
+
+    - name: Prune Empty Artifacts
+      if: always()
+      run: |
+        if [ ! -s debug_poison_configs.txt ]; then
+          rm -f debug_poison_configs.txt
+        fi
 
     - name: Upload Debug Artifacts
       if: always()
