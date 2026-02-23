@@ -36,18 +36,31 @@ jobs:
       run: |
         python aggregator.py
 
+    - name: Optimize Network Stack
+      run: |
+        sudo sysctl -w net.ipv4.tcp_tw_reuse=1
+        sudo sysctl -w net.ipv4.tcp_fin_timeout=15
+
     - name: Run Tester
       run: |
         python tester.py
       env:
         TCP_CONCURRENCY: 1500
         REAL_DELAY_BATCH_SIZE: 100
-        REAL_DELAY_INSTANCES: 2
+        REAL_DELAY_INSTANCES: 1
         TCP_TIMEOUT: 1.5
         REAL_DELAY_TIMEOUT: 3.0
 
     - name: Debug File List
       run: ls -lh
+
+    - name: Upload Debug Artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: debug-logs
+        path: debug_poison_configs.txt
+        if-no-files-found: ignore
 
     - name: Commit and Push changes
       run: |

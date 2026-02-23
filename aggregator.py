@@ -110,10 +110,11 @@ def collect_configs():
                 lines = content.splitlines()
                 for line in lines:
                     line = line.strip()
-                    # Basic cleanup
-                    line = re.sub(r'[\x00-\x1f\x7f-\x9f]', '', line)
-
                     if not line:
+                        continue
+
+                    # Strict Purity: Discard if non-ASCII or control chars present
+                    if any(not (32 <= ord(c) <= 126) for c in line):
                         continue
 
                     parsed, error = v2ray_utils.parse_config_line(line)

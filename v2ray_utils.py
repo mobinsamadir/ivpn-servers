@@ -633,8 +633,8 @@ def _create_outbound_object(outbound_config, tag):
         elif outbound_config.get('tls') == 'reality':
             # Hardened REALITY Validation
             pub_key = outbound_config.get('pbk')
-            if not pub_key:
-                return None  # Discard if publicKey is missing
+            if not pub_key or len(pub_key) not in [43, 44]:
+                return None  # Discard if publicKey is missing or invalid length
 
             # Robust REALITY Defaults
             fp = outbound_config.get('fp')
