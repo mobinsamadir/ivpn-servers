@@ -64,6 +64,12 @@ echo.
 
 :: 5. Deploy
 echo [5/5] Deploying Results...
+
+:: Capture SSID for Commit Message
+set SSID=Unknown
+for /f "tokens=2 delims=:" %%A in ('netsh wlan show interfaces ^| findstr "SSID" ^| findstr /v "BSSID"') do set SSID=%%A
+if not "%SSID%"=="Unknown" set SSID=%SSID:~1%
+
 if exist real_delay_passed.txt (
     if not exist tested_configs mkdir tested_configs
     move /Y real_delay_passed.txt tested_configs\fast_servers.txt >nul
@@ -71,6 +77,15 @@ if exist real_delay_passed.txt (
 ) else (
     echo ⚠️ No results file found.
 )
+
+echo.
+echo [Git Sync]
+echo ☁️  Pushing results to GitHub...
+if exist local_reports\*.txt git add local_reports\*.txt
+if exist tested_configs\*.txt git add tested_configs\*.txt
+git add README.md
+git commit -m "🔄 Local Audit Sync: %DATE% %TIME% [SSID: %SSID%]"
+git push origin main
 
 echo.
 echo ========================================================

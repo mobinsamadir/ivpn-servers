@@ -479,7 +479,7 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats, avg_
         with open("README.md", "r", encoding="utf-8") as f:
             content = f.read()
 
-        now = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
+        now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
         success_rate = (real_delay_passed_count / tcp_passed_count * 100) if tcp_passed_count > 0 else 0
 
         if tcp_passed_count == 0:
@@ -555,7 +555,7 @@ def save_local_report(results, ssid, avg_latency, total_tcp_count):
     if not os.path.exists(LOCAL_REPORTS_DIR):
         os.makedirs(LOCAL_REPORTS_DIR)
 
-    timestamp = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d_%H-%M")
+    timestamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d_%H-%M")
     # Clean SSID for filename
     safe_ssid = "".join([c for c in ssid if c.isalnum() or c in (' ', '-', '_')]).strip()
     if not safe_ssid: safe_ssid = "Unknown"
@@ -567,7 +567,7 @@ def save_local_report(results, ssid, avg_latency, total_tcp_count):
     try:
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(f"# Local Audit Report\n")
-            f.write(f"# Date: {datetime.datetime.now(datetime.UTC)}\n")
+            f.write(f"# Date: {datetime.datetime.now(datetime.timezone.utc)}\n")
             f.write(f"# Network (SSID): {ssid}\n")
             f.write(f"# Avg Latency: {avg_latency:.0f}ms\n")
             f.write(f"# Success Rate: {success_rate:.1f}%\n")
@@ -589,7 +589,7 @@ async def main():
     sys.stderr = sys.stdout # Redirect stderr too
 
     check_vpn_active()
-    print(f"Starting Test on [{get_ssid()}] at [{datetime.datetime.now(datetime.UTC)}]")
+    print(f"Starting Test on [{get_ssid()}] at [{datetime.datetime.now(datetime.timezone.utc)}]")
 
     # Cleanup previous debug logs
     if os.path.exists("debug_poison_configs.txt"):
