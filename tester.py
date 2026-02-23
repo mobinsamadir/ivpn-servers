@@ -1,6 +1,7 @@
 import asyncio
 import os
 import sys
+import re
 import v2ray_utils
 import aiohttp
 import aiodns
@@ -16,8 +17,8 @@ import datetime
 # TCP Concurrency: High because it's just handshake
 TCP_CONCURRENCY = int(os.environ.get('TCP_CONCURRENCY', 1500))
 # Real Delay Concurrency: 4 instances * 200 requests = 800 concurrent connections
-REAL_DELAY_BATCH_SIZE = int(os.environ.get('REAL_DELAY_BATCH_SIZE', 200))
-REAL_DELAY_INSTANCES = int(os.environ.get('REAL_DELAY_INSTANCES', 1))
+REAL_DELAY_BATCH_SIZE = int(os.environ.get('REAL_DELAY_BATCH_SIZE', 250))
+REAL_DELAY_INSTANCES = int(os.environ.get('REAL_DELAY_INSTANCES', 6))
 
 TCP_TIMEOUT = float(os.environ.get('TCP_TIMEOUT', 1.5))
 REAL_DELAY_TIMEOUT = float(os.environ.get('REAL_DELAY_TIMEOUT', 3.0))
@@ -201,7 +202,7 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
     for attempt in range(MAX_RETRIES):
         # INTELLIGENT PORT HUNTING (Global Override)
         # We override start_port_base with a guaranteed free block for EVERY attempt
-        current_start_port = find_free_port_block(len(parsed_batch))
+        current_start_port = find_free_port_block(len(parsed_batch), min_port=start_port_base)
 
         config_json = v2ray_utils.generate_xray_batch_config(parsed_batch, current_start_port)
 
@@ -362,7 +363,7 @@ async def recursive_test_batch(batch, start_port_base, session, failure_reasons,
         res_left = await recursive_test_batch(left, start_port_base, session, failure_reasons, batch_index, depth + 1)
 
         # Add offset for right batch to minimize TIME_WAIT issues, or use random
-        right_port_base = start_port_base + len(left) + 50
+        right_port_base = start_port_base + len(left) + 300
         res_right = await recursive_test_batch(right, right_port_base, session, failure_reasons, batch_index, depth + 1)
 
         return res_left + res_right
@@ -441,7 +442,9 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats):
         # Calculate System Health
         success_rate = (real_delay_passed_count / tcp_passed_count * 100) if tcp_passed_count > 0 else 0
 
-        if success_rate >= 50:
+        if tcp_passed_count == 0:
+            health = "❓ Unknown"
+        elif success_rate >= 50:
             health = "🟢 Excellent"
         elif success_rate >= 20:
             health = "🟡 Degraded"
@@ -500,6 +503,13 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats):
         print(f"⚠️ Failed to update README: {e}")
 
 async def main():
+    # Cleanup previous debug logs
+    if os.path.exists("debug_poison_configs.txt"):
+        try:
+            os.remove("debug_poison_configs.txt")
+        except OSError:
+            pass
+
     # Optimize environment
     v2ray_utils.increase_file_limit()
     v2ray_utils.check_and_download_geoip_db() # Ensure DB for stats
