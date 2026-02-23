@@ -7,6 +7,7 @@ import aiodns
 import time
 import random
 import glob
+import socket
 from itertools import count
 from collections import Counter
 import datetime
@@ -16,7 +17,7 @@ import datetime
 TCP_CONCURRENCY = int(os.environ.get('TCP_CONCURRENCY', 1500))
 # Real Delay Concurrency: 4 instances * 200 requests = 800 concurrent connections
 REAL_DELAY_BATCH_SIZE = int(os.environ.get('REAL_DELAY_BATCH_SIZE', 200))
-REAL_DELAY_INSTANCES = int(os.environ.get('REAL_DELAY_INSTANCES', 4))
+REAL_DELAY_INSTANCES = int(os.environ.get('REAL_DELAY_INSTANCES', 1))
 
 TCP_TIMEOUT = float(os.environ.get('TCP_TIMEOUT', 1.5))
 REAL_DELAY_TIMEOUT = float(os.environ.get('REAL_DELAY_TIMEOUT', 3.0))
@@ -33,7 +34,7 @@ TCP_OUTPUT_FILE = 'tcp_passed.txt'
 REAL_DELAY_OUTPUT_FILE = 'real_delay_passed.txt'
 
 # Base port for local testing
-START_PORT = 30000
+START_PORT = 10000
 
 # Max recursion depth for batch splitting
 MAX_RECURSION_DEPTH = 8
@@ -44,6 +45,46 @@ class XrayBatchCrash(Exception):
         self.message = message
         self.is_config_error = is_config_error
         super().__init__(self.message)
+
+def find_free_port_block(count, min_port=10000, max_port=60000):
+    """
+    Finds a contiguous block of `count` free ports.
+    Tries random start ports within the range.
+    """
+    MAX_ATTEMPTS = 100
+    for _ in range(MAX_ATTEMPTS):
+        # Ensure we don't go out of bounds
+        if min_port + count > max_port:
+             # Should not happen with current constants
+             return min_port
+
+        start_port = random.randint(min_port, max_port - count)
+        is_block_free = True
+
+        # Verify the entire block
+        for port in range(start_port, start_port + count):
+            s = None
+            try:
+                # Try to bind to 127.0.0.1 (where Xray listens)
+                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                # Ensure we can reuse address quickly if we just closed it
+                s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+                s.bind(('127.0.0.1', port))
+            except OSError:
+                is_block_free = False
+                break
+            finally:
+                if s:
+                    s.close()
+
+        if not is_block_free:
+            continue
+
+        return start_port
+
+    # Fallback to random if we fail to find a guaranteed block
+    print(f"⚠️ Could not find guaranteed free port block of size {count} after {MAX_ATTEMPTS} attempts. Using random.")
+    return random.randint(min_port, max_port - count)
 
 class ProgressCounter:
     def __init__(self, total, name):
@@ -151,7 +192,6 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
 
     # Retry Logic for Port Conflicts
     MAX_RETRIES = 3
-    current_start_port = start_port_base
 
     # Set asset location
     xray_assets_path = os.path.dirname(os.path.abspath(v2ray_utils.XRAY_PATH))
@@ -159,6 +199,10 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
     env["XRAY_LOCATION_ASSET"] = xray_assets_path
 
     for attempt in range(MAX_RETRIES):
+        # INTELLIGENT PORT HUNTING (Global Override)
+        # We override start_port_base with a guaranteed free block for EVERY attempt
+        current_start_port = find_free_port_block(len(parsed_batch))
+
         config_json = v2ray_utils.generate_xray_batch_config(parsed_batch, current_start_port)
 
         process = None
@@ -180,7 +224,7 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
             await process.stdin.wait_closed()
 
             # Startup wait
-            await asyncio.sleep(0.5) # Reduced from 1.0s to 0.5s for speed, but safe enough
+            await asyncio.sleep(0.8) # Increased to 0.8s for stability
 
             # Check if crashed immediately
             try:
@@ -194,10 +238,8 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
 
                 # SYSTEM ERRORS: Do NOT split, just retry with new port
                 if "address already in use" in combined_log or "too many open files" in combined_log:
-                    # Pick a random port between 30000 and 50000 to avoid congestion
-                    new_port = random.randint(30000, 50000)
-                    print(f"⚠️ [PORT RETRY] Port {current_start_port} busy/system error, trying {new_port} ({attempt+1}/{MAX_RETRIES})...")
-                    current_start_port = new_port
+                    print(f"⚠️ [PORT RETRY] Port {current_start_port} busy/system error. Retrying with new block ({attempt+1}/{MAX_RETRIES})...")
+                    # No need to manually pick port, next loop iteration calls find_free_port_block again
                     await asyncio.sleep(0.5)
                     continue # Retry loop
 
