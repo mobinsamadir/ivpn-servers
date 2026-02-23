@@ -3,3 +3,4 @@ aiohttp[speedups]
 psutil
 aiodns
 brotli
+geoip2

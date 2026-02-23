@@ -14,7 +14,8 @@ import time
 import requests
 import resource
 import uuid
-from urllib.parse import urlparse, parse_qs, unquote
+from urllib.parse import urlparse, parse_qs, unquote, quote
+import geoip2.database
 
 # Constants
 # Using a stable version. Update this as needed.
@@ -192,6 +193,12 @@ def parse_vless_trojan(url, protocol):
         # Allow 'reality' to be passed through for proper Flow validation later
         tls_val = sec if sec in ["tls", "reality"] else ""
 
+        # Validate REALITY pbk length
+        pbk_val = params.get("pbk", [""])[0]
+        if tls_val == "reality":
+            if len(pbk_val) not in [43, 44]:
+                return None, f"{protocol}_InvalidRealityKey"
+
         flow_val = params.get("flow", [""])[0].strip()
 
         config = {
@@ -206,7 +213,7 @@ def parse_vless_trojan(url, protocol):
             "tls": tls_val,
             "sni": params.get("sni", [""])[0],
             "flow": flow_val,
-            "pbk": params.get("pbk", [""])[0],
+            "pbk": pbk_val,
             "sid": params.get("sid", [""])[0],
             "fp": params.get("fp", [""])[0],
             "spx": params.get("spx", [""])[0],
@@ -318,6 +325,131 @@ def parse_config_line(line):
     elif line.startswith("ss://"):
         return parse_ss(line)
     return None, "Unsupported_Protocol"
+
+def construct_config_line(config):
+    """Reconstructs a config string from a parsed dictionary."""
+    protocol = config.get("protocol")
+
+    if protocol == "vmess":
+        data = {
+            "v": "2",
+            "ps": config.get("ps", ""),
+            "add": config.get("add", ""),
+            "port": str(config.get("port", "")),
+            "id": config.get("id", ""),
+            "aid": str(config.get("aid", 0)),
+            "scy": "auto",
+            "net": config.get("net", "tcp"),
+            "type": config.get("type", "none"),
+            "host": config.get("host", ""),
+            "path": config.get("path", ""),
+            "tls": config.get("tls", ""),
+            "sni": config.get("sni", ""),
+            "alpn": ""
+        }
+        json_str = json.dumps(data)
+        b64_str = base64.b64encode(json_str.encode("utf-8")).decode("utf-8")
+        return f"vmess://{b64_str}"
+
+    elif protocol in ["vless", "trojan"]:
+        # protocol://id@add:port?params#ps
+        query = []
+        if config.get("tls"):
+            query.append(f"security={config['tls']}")
+        if config.get("net"):
+            query.append(f"type={config['net']}")
+
+        # TCP Header type
+        if config.get("type") and config.get("type") != "none":
+            query.append(f"headerType={config['type']}")
+
+        if config.get("host"):
+            query.append(f"host={quote(config['host'])}")
+        if config.get("path"):
+            query.append(f"path={quote(config['path'])}")
+        if config.get("sni"):
+            query.append(f"sni={config['sni']}")
+        if config.get("flow"):
+            query.append(f"flow={config['flow']}")
+
+        # REALITY params
+        if config.get("pbk"):
+            query.append(f"pbk={config['pbk']}")
+        if config.get("fp"):
+            query.append(f"fp={config['fp']}")
+        if config.get("sid"):
+            query.append(f"sid={config['sid']}")
+        if config.get("spx"):
+            query.append(f"spx={quote(config['spx'])}")
+
+        query_str = "&".join(query)
+        ps_encoded = quote(config.get("ps", ""))
+
+        return f"{protocol}://{config['id']}@{config['add']}:{config['port']}?{query_str}#{ps_encoded}"
+
+    elif protocol == "shadowsocks":
+        # ss://base64(method:password)@host:port#ps
+        user_pass = f"{config.get('method', '')}:{config.get('id', '')}"
+        b64_auth = base64.b64encode(user_pass.encode("utf-8")).decode("utf-8")
+        ps_encoded = quote(config.get("ps", ""))
+        return f"ss://{b64_auth}@{config['add']}:{config['port']}#{ps_encoded}"
+
+    return None
+
+def check_and_download_geoip_db():
+    """Downloads GeoLite2-Country.mmdb if missing."""
+    mmdb_path = os.path.join(BIN_DIR, "Country.mmdb")
+    if os.path.exists(mmdb_path):
+        return True
+
+    print("⚠️ Country.mmdb not found. Downloading...")
+    if not os.path.exists(BIN_DIR):
+        os.makedirs(BIN_DIR)
+
+    url = "https://github.com/P3TERX/GeoLite.mmdb/raw/download/GeoLite2-Country.mmdb"
+    try:
+        response = requests.get(url, stream=True, timeout=30)
+        response.raise_for_status()
+        with open(mmdb_path, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+        print("✅ Country.mmdb downloaded.")
+        return True
+    except Exception as e:
+        print(f"❌ Failed to download Country.mmdb: {e}")
+        return False
+
+def get_country_code(ip, db_path=None):
+    """
+    Returns the ISO country code for an IP address.
+    """
+    if not db_path:
+        db_path = os.path.join(BIN_DIR, "Country.mmdb")
+
+    if not os.path.exists(db_path):
+        return None
+
+    try:
+        with geoip2.database.Reader(db_path) as reader:
+            response = reader.country(ip)
+            return response.country.iso_code
+    except Exception:
+        return None
+
+def get_country_flag(country_code):
+    """Returns the flag emoji for a country code."""
+    if not country_code:
+        return "🚩"
+
+    country_code = country_code.upper()
+    if len(country_code) != 2:
+        return "🚩"
+
+    # Regional Indicator Symbol Letter A is 127462
+    base = 127397
+    first = ord(country_code[0]) + base
+    second = ord(country_code[1]) + base
+    return chr(first) + chr(second)
 
 def get_xray_download_url():
     """Returns the download URL for Xray based on OS."""
