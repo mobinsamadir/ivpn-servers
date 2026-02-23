@@ -3,3 +3,4 @@ __pycache__/
 bin/
 local_results/
 crashed_batch_*.json
+debug_poison_configs.txt
