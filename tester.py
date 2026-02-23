@@ -18,7 +18,7 @@ import datetime
 TCP_CONCURRENCY = int(os.environ.get('TCP_CONCURRENCY', 1500))
 # Real Delay Concurrency: 4 instances * 200 requests = 800 concurrent connections
 REAL_DELAY_BATCH_SIZE = int(os.environ.get('REAL_DELAY_BATCH_SIZE', 250))
-REAL_DELAY_INSTANCES = int(os.environ.get('REAL_DELAY_INSTANCES', 6))
+REAL_DELAY_INSTANCES = int(os.environ.get('REAL_DELAY_INSTANCES', 8))
 
 TCP_TIMEOUT = float(os.environ.get('TCP_TIMEOUT', 1.5))
 REAL_DELAY_TIMEOUT = float(os.environ.get('REAL_DELAY_TIMEOUT', 3.0))
@@ -262,8 +262,18 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
                 port = current_start_port + i
                 proxy_url = f"http://127.0.0.1:{port}"
                 target_url = random.choice(TEST_URLS)
+
+                async def measure_request(url, proxy, timeout):
+                    start_t = time.time()
+                    try:
+                        resp = await session.get(url, proxy=proxy, timeout=timeout)
+                        latency = (time.time() - start_t) * 1000
+                        return resp, latency
+                    except Exception as e:
+                        return e, None
+
                 tasks.append(
-                    session.get(target_url, proxy=proxy_url, timeout=REAL_DELAY_TIMEOUT)
+                    measure_request(target_url, proxy_url, REAL_DELAY_TIMEOUT)
                 )
 
             # Run all requests
@@ -272,8 +282,16 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
             # 4. Process Results
             batch_results = [None] * len(batch_configs)
 
-            for i, res in enumerate(responses):
+            for i, res_tuple in enumerate(responses):
                 original_idx = valid_indices[i]
+
+                # Check if it was an exception in wrapper
+                if isinstance(res_tuple, Exception):
+                     res = res_tuple
+                     latency = None
+                else:
+                     res, latency = res_tuple
+
                 if isinstance(res, Exception):
                     error_type = type(res).__name__
                     if isinstance(res, asyncio.TimeoutError):
@@ -287,7 +305,8 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
                     failure_reasons[error_type] += 1
                 elif hasattr(res, 'status'):
                     if res.status in (200, 204, 301, 302):
-                        batch_results[original_idx] = batch_configs[original_idx]
+                        # Return tuple (config, latency)
+                        batch_results[original_idx] = (batch_configs[original_idx], latency)
                     else:
                         failure_reasons[f"HTTP_{res.status}"] += 1
                 else:
@@ -303,19 +322,18 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
             failure_reasons['BatchCrash'] += 1
             return [None] * len(batch_configs)
         finally:
-            if process:
+            if process and process.returncode is None:
                 try:
                     process.terminate()
+                    # Drain pipes and wait for exit
+                    await asyncio.wait_for(process.communicate(), timeout=2.0)
+                except asyncio.TimeoutError:
                     try:
-                        await asyncio.wait_for(process.wait(), timeout=2.0)
-                    except asyncio.TimeoutError:
                         process.kill()
-                        await process.wait()
-
-                    if should_read_stderr and process.returncode != 0:
-                         # Just consume stderr to avoid pipe deadlock if not read yet
-                         await process.stderr.read()
-                except:
+                        await process.communicate()
+                    except:
+                        pass
+                except Exception:
                     pass
 
     # If we exhausted retries
@@ -412,11 +430,21 @@ async def run_real_delay_tests(configs):
         batch_results = await asyncio.gather(*tasks, return_exceptions=True)
 
     # Flatten results
+    latencies = []
+    final_configs = []
+
     for res in batch_results:
         if isinstance(res, list):
-            passed_results.extend([r for r in res if r])
+            for item in res:
+                if item:
+                    # Item is (config, latency)
+                    config, latency = item
+                    final_configs.append(config)
+                    if latency is not None:
+                        latencies.append(latency)
 
-    print(f"✅ Real Delay tests complete. {len(passed_results)}/{total} passed.")
+    avg_latency = sum(latencies) / len(latencies) if latencies else 0
+    print(f"✅ Real Delay tests complete. {len(final_configs)}/{total} passed. Avg Latency: {avg_latency:.0f}ms")
 
     print("\n📊 Failure Summary:")
     if failure_reasons:
@@ -425,9 +453,9 @@ async def run_real_delay_tests(configs):
     else:
         print("  No failures recorded.")
 
-    return passed_results
+    return final_configs, avg_latency
 
-def update_readme(tcp_passed_count, real_delay_passed_count, country_stats):
+def update_readme(tcp_passed_count, real_delay_passed_count, country_stats, avg_latency=0):
     """Updates README.md with the latest statistics."""
     if not os.path.exists("README.md"):
         return
@@ -458,6 +486,7 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats):
 | :--- | :--- |
 | **TCP Passed** | `{tcp_passed_count}` |
 | **Real Delay Passed** | `{real_delay_passed_count}` |
+| **Average Latency** | `{avg_latency:.0f} ms` |
 | **Success Rate** | `{success_rate:.1f}%` |
 | **System Health** | {health} |
 
@@ -529,7 +558,7 @@ async def main():
             f.write(c + '\n')
 
     # 2. Real Delay Test
-    real_delay_passed = await run_real_delay_tests(tcp_passed)
+    real_delay_passed, avg_latency = await run_real_delay_tests(tcp_passed)
 
     with open(REAL_DELAY_OUTPUT_FILE, 'w', encoding='utf-8') as f:
         for c in real_delay_passed:
@@ -556,7 +585,7 @@ async def main():
             else:
                 country_stats['Unknown'] += 1
 
-    update_readme(len(tcp_passed), len(real_delay_passed), country_stats)
+    update_readme(len(tcp_passed), len(real_delay_passed), country_stats, avg_latency)
 
     print("🎉 All tests finished.")
 
@@ -567,3 +596,5 @@ if __name__ == "__main__":
         asyncio.run(main())
     except KeyboardInterrupt:
         print("\n⚠️ Interrupted.")
+    finally:
+        print("👋 Shutdown complete.")
