@@ -12,7 +12,8 @@ import zipfile
 import stat
 import time
 import requests
-import resource
+if sys.platform != 'win32':
+    import resource
 import uuid
 from urllib.parse import urlparse, parse_qs, unquote, quote
 import geoip2.database
@@ -21,12 +22,12 @@ import geoip2.database
 # Using a stable version. Update this as needed.
 XRAY_VERSION = "v24.11.21"
 BIN_DIR = "bin"
-XRAY_EXECUTABLE = "xray.exe" if platform.system() == "Windows" else "xray"
-XRAY_PATH = os.path.join(BIN_DIR, XRAY_EXECUTABLE)
+XRAY_EXECUTABLE = "xray.exe" if os.name == 'nt' else "xray"
+XRAY_PATH = os.path.abspath(os.path.join(BIN_DIR, XRAY_EXECUTABLE))
 
 def increase_file_limit():
     """Increases the maximum number of open file descriptors."""
-    if platform.system() == "Windows":
+    if os.name == 'nt':
         return
 
     try:
@@ -480,7 +481,7 @@ def check_and_install_xray():
     geosite_path = os.path.join(BIN_DIR, "geosite.dat")
 
     if os.path.exists(XRAY_PATH) and os.path.exists(geoip_path) and os.path.exists(geosite_path):
-        if platform.system() != "Windows" and not os.access(XRAY_PATH, os.X_OK):
+        if os.name != 'nt' and not os.access(XRAY_PATH, os.X_OK):
             os.chmod(XRAY_PATH, stat.S_IEXEC | stat.S_IRUSR | stat.S_IWUSR)
         return True
 
@@ -506,7 +507,7 @@ def check_and_install_xray():
 
         os.remove(zip_path)
 
-        if platform.system() != "Windows":
+        if os.name != 'nt':
             if os.path.exists(XRAY_PATH):
                 os.chmod(XRAY_PATH, 0o755)
             else:

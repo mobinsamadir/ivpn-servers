@@ -24,7 +24,7 @@ TCP_TIMEOUT = float(os.environ.get('TCP_TIMEOUT', 1.5))
 REAL_DELAY_TIMEOUT = float(os.environ.get('REAL_DELAY_TIMEOUT', 3.0))
 
 # Latency Guard: Max allowed latency in ms
-MAX_ALLOWED_LATENCY = 3000
+MAX_ALLOWED_LATENCY = 1200
 
 TEST_URLS = [
     'http://cp.cloudflare.com/generate_204',
@@ -300,7 +300,7 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
 
                     failure_reasons[error_type] += 1
                 elif hasattr(res, 'status'):
-                    if res.status in (200, 204, 301, 302):
+                    if res.status in (200, 204):
                         # LATENCY GUARD: Discard if too slow
                         if latency is not None and latency <= MAX_ALLOWED_LATENCY:
                             batch_results[original_idx] = (batch_configs[original_idx], latency)
