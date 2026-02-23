@@ -24,7 +24,7 @@ TCP_TIMEOUT = float(os.environ.get('TCP_TIMEOUT', 1.5))
 REAL_DELAY_TIMEOUT = float(os.environ.get('REAL_DELAY_TIMEOUT', 3.0))
 
 # Latency Guard: Max allowed latency in ms
-MAX_ALLOWED_LATENCY = 1200
+MAX_ALLOWED_LATENCY = 3000
 
 TEST_URLS = [
     'http://cp.cloudflare.com/generate_204',
