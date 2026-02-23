@@ -35,9 +35,15 @@ REAL_DELAY_OUTPUT_FILE = 'real_delay_passed.txt'
 # Base port for local testing
 START_PORT = 30000
 
+# Max recursion depth for batch splitting
+MAX_RECURSION_DEPTH = 8
+
 class XrayBatchCrash(Exception):
     """Raised when Xray crashes on startup."""
-    pass
+    def __init__(self, message="Xray startup failed", is_config_error=False):
+        self.message = message
+        self.is_config_error = is_config_error
+        super().__init__(self.message)
 
 class ProgressCounter:
     def __init__(self, total, name):
@@ -181,24 +187,27 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
                 await asyncio.wait_for(process.wait(), timeout=0.1)
                 # It crashed
                 stdout_data, stderr_data = await process.communicate()
-                stdout_str = stdout_data.decode().strip() if stdout_data else ""
-                stderr_str = stderr_data.decode().strip() if stderr_data else ""
+                # Use errors='replace' to avoid crashes on non-UTF-8 output
+                stdout_str = stdout_data.decode(errors='replace').strip() if stdout_data else ""
+                stderr_str = stderr_data.decode(errors='replace').strip() if stderr_data else ""
+                combined_log = (stdout_str + "\n" + stderr_str).lower()
 
-                # Check for "address already in use"
-                if "address already in use" in stderr_str.lower() or "bind: address already in use" in stderr_str.lower():
-                    print(f"⚠️ Port conflict at {current_start_port}. Retrying ({attempt+1}/{MAX_RETRIES})...")
-                    current_start_port += len(parsed_batch) + 1 # Jump ahead
+                # SYSTEM ERRORS: Do NOT split, just retry with new port
+                if "address already in use" in combined_log or "too many open files" in combined_log:
+                    # Pick a random port between 30000 and 50000 to avoid congestion
+                    new_port = random.randint(30000, 50000)
+                    print(f"⚠️ [PORT RETRY] Port {current_start_port} busy/system error, trying {new_port} ({attempt+1}/{MAX_RETRIES})...")
+                    current_start_port = new_port
+                    await asyncio.sleep(0.5)
                     continue # Retry loop
 
-                # If not port conflict, it's a fatal crash
-                # Only log if it's the last attempt or if we want to debug
+                # CONFIG ERRORS: Proceed with Recursive Splitting
+                if "failed to load config files" in combined_log or "invalid uuid" in combined_log or "unknown protocol" in combined_log:
+                    raise XrayBatchCrash(f"Config Error: {stderr_str[:100]}", is_config_error=True)
+
+                # If not explicitly identified, treat as crash (likely config error)
                 # print(f"FATAL: Xray crashed on startup! STDERR: {stderr_str[:200]}")
-
-                # Save crashed config for debug (optional, can be disabled to save space)
-                # with open(f"crashed_batch_{current_start_port}.json", "w") as f:
-                #    f.write(config_json)
-
-                raise XrayBatchCrash("Xray startup failed")
+                raise XrayBatchCrash(f"Unknown Crash: {stderr_str[:100]}", is_config_error=True)
 
             except asyncio.TimeoutError:
                 # Process is running
@@ -271,41 +280,48 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
     failure_reasons['PortExhaustion'] += 1
     return [None] * len(batch_configs)
 
-async def recursive_test_batch(batch, start_port_base, session, failure_reasons, batch_index):
+async def recursive_test_batch(batch, start_port_base, session, failure_reasons, batch_index, depth=0):
     """
     Recursively splits the batch if Xray crashes on startup.
     """
     try:
         return await test_batch_real_delay(batch, start_port_base, session, failure_reasons, batch_index)
     except XrayBatchCrash:
+        # Base case 1: Single item batch means we found the poison config
         if len(batch) <= 1:
             # Poison config found
-            # print(f"💀 Poison config discarded: {batch[0][:50]}...")
             failure_reasons['PoisonConfig'] += 1
+            # Log to debug file
+            with open("debug_poison_configs.txt", "a", encoding="utf-8") as f:
+                f.write(f"[POISON] {batch[0]}\n")
             return [None]
+
+        # Base case 2: Max recursion depth reached
+        if depth >= MAX_RECURSION_DEPTH:
+            print(f"⚠️ [RECURSION] Max depth {depth} reached. Discarding batch of {len(batch)}.")
+            failure_reasons['MaxRecursionDiscard'] += 1
+            # Log discarded batch
+            with open("debug_poison_configs.txt", "a", encoding="utf-8") as f:
+                f.write(f"[DISCARDED_BATCH] Size: {len(batch)}\n")
+                for c in batch:
+                    f.write(f"{c}\n")
+            return [None] * len(batch)
 
         # Split
         mid = len(batch) // 2
         left = batch[:mid]
         right = batch[mid:]
 
-        # print(f"⚠️ Batch crashed. Splitting into {len(left)} and {len(right)}...")
+        print(f"⚠️ [RECURSION] Splitting batch of size {len(batch)} due to config error (Depth {depth})...")
 
-        # We need unique ports for sub-batches.
-        # But since we run them sequentially inside this recursion (or concurrent?),
-        # wait, if we run them sequentially, we can reuse ports or increment.
-        # But we are inside a semaphore in the main loop.
-        # So this recursive call occupies ONE slot of the semaphore.
-        # We can run sub-batches sequentially safely.
+        # We execute sequentially to respect the semaphore (1 slot per batch)
+        # Use random port jumps or simple offset. Since we are sequential, we can just bump ports.
 
-        # Note: We need to ensure ports don't overlap if we were parallel,
-        # but here we are sequential.
-        # However, we should shift ports for the second batch to avoid TIME_WAIT issues?
-        # Or just rely on OS.
+        res_left = await recursive_test_batch(left, start_port_base, session, failure_reasons, batch_index, depth + 1)
 
-        res_left = await recursive_test_batch(left, start_port_base, session, failure_reasons, batch_index)
-        # Shift port base for right batch to minimize reuse conflicts immediately
-        res_right = await recursive_test_batch(right, start_port_base + len(left) + 10, session, failure_reasons, batch_index)
+        # Add offset for right batch to minimize TIME_WAIT issues, or use random
+        right_port_base = start_port_base + len(left) + 50
+        res_right = await recursive_test_batch(right, right_port_base, session, failure_reasons, batch_index, depth + 1)
 
         return res_left + res_right
 
@@ -343,7 +359,7 @@ async def run_real_delay_tests(configs):
                 # Reduced stagger
                 await asyncio.sleep(0.1)
 
-                results = await recursive_test_batch(batch, batch_start_port, session, failure_reasons, batch_index)
+                results = await recursive_test_batch(batch, batch_start_port, session, failure_reasons, batch_index, depth=0)
                 await counter.increment(len(batch))
                 return results
 
@@ -381,9 +397,14 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats):
         now = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
 
         # Calculate System Health
-        # We don't have total fetched count here easily unless we pass it, but we can assume 'tcp_passed_count' is a baseline
-        # or just use a simple metric.
-        health = "🟢 Excellent"
+        success_rate = (real_delay_passed_count / tcp_passed_count * 100) if tcp_passed_count > 0 else 0
+
+        if success_rate >= 50:
+            health = "🟢 Excellent"
+        elif success_rate >= 20:
+            health = "🟡 Degraded"
+        else:
+            health = "🔴 Critical"
 
         stats_md = f"""
 ## 📊 Statistics (Last Updated: {now})
@@ -392,6 +413,7 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats):
 | :--- | :--- |
 | **TCP Passed** | `{tcp_passed_count}` |
 | **Real Delay Passed** | `{real_delay_passed_count}` |
+| **Success Rate** | `{success_rate:.1f}%` |
 | **System Health** | {health} |
 
 ### 🌍 Server Distribution
