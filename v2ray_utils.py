@@ -21,9 +21,9 @@ import geoip2.database
 # Constants
 # Using a stable version. Update this as needed.
 XRAY_VERSION = "v24.11.21"
-BIN_DIR = "bin"
+BIN_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bin")
 XRAY_EXECUTABLE = "xray.exe" if os.name == 'nt' else "xray"
-XRAY_PATH = os.path.abspath(os.path.join(BIN_DIR, XRAY_EXECUTABLE))
+XRAY_PATH = os.path.join(BIN_DIR, XRAY_EXECUTABLE)
 
 def increase_file_limit():
     """Increases the maximum number of open file descriptors."""

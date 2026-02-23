@@ -54,7 +54,7 @@ TEST_URLS = [
 # --- Logging & SSID Helpers ---
 
 def check_vpn_active():
-    """Checks for active VPN/Proxy ports to prevent interference."""
+    """Checks for active VPN/Proxy ports and identifies the process."""
     if IS_GITHUB_ACTIONS:
         return
 
@@ -70,6 +70,36 @@ def check_vpn_active():
 
     if detected:
         print(f"\n\033[1;31m[CRITICAL WARNING] VPN/Proxy Detected on port(s): {detected}\033[0m")
+
+        # Smart Process Identification (Windows)
+        if sys.platform == 'win32':
+            try:
+                for port in detected:
+                    # Find PID
+                    pid_out = subprocess.check_output(f"netstat -ano | findstr :{port}", shell=True).decode('utf-8', errors='ignore')
+                    pid = None
+                    for line in pid_out.splitlines():
+                        if f":{port}" in line and "LISTENING" in line:
+                            parts = line.strip().split()
+                            if parts:
+                                pid = parts[-1]
+                                break
+
+                    if pid:
+                        # Find Process Name
+                        task_out = subprocess.check_output(f"tasklist /FI \"PID eq {pid}\" /FO CSV /NH", shell=True).decode('utf-8', errors='ignore')
+                        if task_out:
+                            proc_name = task_out.split(',')[0].strip('"')
+                            print(f"   ↳ Port {port} is used by: {proc_name} (PID: {pid})")
+
+                            keywords = ['xray', 'v2ray', 'clash', 'nekoray', 'v2rayN', 'sing-box']
+                            if any(k.lower() in proc_name.lower() for k in keywords):
+                                print(f"   ⚠️  v2rayN/Proxy app is detected as ACTIVE on port {port}.")
+                                print(f"       Even if System Proxy is CLEAR, the APP IS STILL RUNNING.")
+                                print(f"       Please CLOSE the app completely for best results.")
+            except Exception as e:
+                print(f"   (Could not identify process details: {e})")
+
         print("\033[1;31mPLEASE DISABLE ALL VPNs/PROXIES BEFORE CONTINUING!\033[0m")
         try:
             input("Press Enter to acknowledge and continue (or Ctrl+C to exit)...")
@@ -525,7 +555,7 @@ def save_local_report(results, ssid, avg_latency, total_tcp_count):
     if not os.path.exists(LOCAL_REPORTS_DIR):
         os.makedirs(LOCAL_REPORTS_DIR)
 
-    timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M")
+    timestamp = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d_%H-%M")
     # Clean SSID for filename
     safe_ssid = "".join([c for c in ssid if c.isalnum() or c in (' ', '-', '_')]).strip()
     if not safe_ssid: safe_ssid = "Unknown"
@@ -537,7 +567,7 @@ def save_local_report(results, ssid, avg_latency, total_tcp_count):
     try:
         with open(filepath, "w", encoding="utf-8") as f:
             f.write(f"# Local Audit Report\n")
-            f.write(f"# Date: {datetime.datetime.now()}\n")
+            f.write(f"# Date: {datetime.datetime.now(datetime.UTC)}\n")
             f.write(f"# Network (SSID): {ssid}\n")
             f.write(f"# Avg Latency: {avg_latency:.0f}ms\n")
             f.write(f"# Success Rate: {success_rate:.1f}%\n")
@@ -559,7 +589,7 @@ async def main():
     sys.stderr = sys.stdout # Redirect stderr too
 
     check_vpn_active()
-    print(f"Starting Test on [{get_ssid()}] at [{datetime.datetime.now()}]")
+    print(f"Starting Test on [{get_ssid()}] at [{datetime.datetime.now(datetime.UTC)}]")
 
     # Cleanup previous debug logs
     if os.path.exists("debug_poison_configs.txt"):
@@ -598,13 +628,15 @@ async def main():
 
     # Golden List (<500ms)
     ultra_fast = [c for c, l in real_delay_results if l is not None and l < 500]
+    if not os.path.exists('tested_configs'):
+        os.makedirs('tested_configs')
+    with open('tested_configs/ultra_fast.txt', 'w', encoding='utf-8') as f:
+        for c in ultra_fast:
+            f.write(c + '\n')
     if ultra_fast:
-        if not os.path.exists('tested_configs'):
-            os.makedirs('tested_configs')
-        with open('tested_configs/ultra_fast.txt', 'w', encoding='utf-8') as f:
-            for c in ultra_fast:
-                f.write(c + '\n')
         print(f"🌟 Saved {len(ultra_fast)} ultra-fast configs (<500ms) to tested_configs/ultra_fast.txt")
+    else:
+        print("ℹ️  No ultra-fast configs (<500ms) found. Cleared Golden List.")
 
     if not IS_GITHUB_ACTIONS:
         # Local Mode: Save Detailed Report
@@ -637,7 +669,7 @@ async def main():
 
 if __name__ == "__main__":
     if sys.platform == 'win32':
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+        asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
     try:
         asyncio.run(main())
     except KeyboardInterrupt:

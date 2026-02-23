@@ -465,7 +465,7 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats, avg_
             content = f.read()
 
         # Generate Stats Section
-        now = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+        now = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
 
         # Calculate System Health
         success_rate = (real_delay_passed_count / tcp_passed_count * 100) if tcp_passed_count > 0 else 0
@@ -591,7 +591,7 @@ async def main():
 
 if __name__ == "__main__":
     if sys.platform == 'win32':
-        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+        asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
