@@ -53,14 +53,7 @@ if %errorlevel% neq 0 (
 echo.
 
 :: 4. Aggregate & Test
-echo [4/5] Running Aggregator ^& Local Engine...
-%PYTHON_CMD% aggregator.py
-if %errorlevel% neq 0 (
-    echo ❌ Aggregator failed.
-    pause
-    exit /b 1
-)
-
+echo [4/5] Running Local Engine...
 %PYTHON_CMD% local_test.py
 if %errorlevel% neq 0 (
     echo ❌ Local Engine failed.

@@ -11,6 +11,7 @@ import glob
 import socket
 import datetime
 import subprocess
+import traceback
 from collections import Counter
 from itertools import count
 
@@ -51,6 +52,31 @@ TEST_URLS = [
 ]
 
 # --- Logging & SSID Helpers ---
+
+def check_vpn_active():
+    """Checks for active VPN/Proxy ports to prevent interference."""
+    if IS_GITHUB_ACTIONS:
+        return
+
+    vpn_ports = [1080, 2080, 7890, 10808, 10809]
+    detected = []
+
+    print("🛡️  Running Pre-Flight VPN Check...")
+    for port in vpn_ports:
+        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+            s.settimeout(0.5)
+            if s.connect_ex(('127.0.0.1', port)) == 0:
+                detected.append(port)
+
+    if detected:
+        print(f"\n\033[1;31m[CRITICAL WARNING] VPN/Proxy Detected on port(s): {detected}\033[0m")
+        print("\033[1;31mPLEASE DISABLE ALL VPNs/PROXIES BEFORE CONTINUING!\033[0m")
+        try:
+            input("Press Enter to acknowledge and continue (or Ctrl+C to exit)...")
+        except EOFError:
+            pass
+    else:
+        print("✅ No active VPN detected.")
 
 class DualLogger:
     """Writes to both console and file."""
@@ -165,7 +191,7 @@ async def check_tcp_task(sem, config_line, resolver, counter):
                 ipaddress.ip_address(host)
             except ValueError:
                 try:
-                    result = await resolver.query(host, 'A')
+                    result = await resolver.query_dns(host, 'A')
                     if result:
                         ip_addr = result[0].host
                 except Exception:
@@ -314,6 +340,7 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
             raise
         except Exception as e:
             print(f"⚠️ Unexpected Batch Error: {e}")
+            print(traceback.format_exc())
             failure_reasons['BatchCrash'] += 1
             return [None] * len(batch_configs)
         finally:
@@ -422,7 +449,7 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats, avg_
         with open("README.md", "r", encoding="utf-8") as f:
             content = f.read()
 
-        now = datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S UTC")
+        now = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
         success_rate = (real_delay_passed_count / tcp_passed_count * 100) if tcp_passed_count > 0 else 0
 
         if tcp_passed_count == 0:
@@ -474,7 +501,26 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats, avg_
     except Exception as e:
         print(f"⚠️ Failed to update README: {e}")
 
-def save_local_report(results, ssid, avg_latency):
+def cleanup_old_reports():
+    """Deletes local reports older than 7 days."""
+    if not os.path.exists(LOCAL_REPORTS_DIR):
+        return
+
+    now = time.time()
+    cutoff = now - (7 * 86400)
+
+    deleted = 0
+    for f in glob.glob(os.path.join(LOCAL_REPORTS_DIR, "*")):
+        try:
+            if os.path.getmtime(f) < cutoff:
+                os.remove(f)
+                deleted += 1
+        except Exception:
+            pass
+    if deleted > 0:
+        print(f"🧹 Cleaned up {deleted} old reports.")
+
+def save_local_report(results, ssid, avg_latency, total_tcp_count):
     """Saves timestamped report to local_reports/."""
     if not os.path.exists(LOCAL_REPORTS_DIR):
         os.makedirs(LOCAL_REPORTS_DIR)
@@ -486,6 +532,7 @@ def save_local_report(results, ssid, avg_latency):
 
     filename = f"Result_{timestamp}_{safe_ssid}.txt"
     filepath = os.path.join(LOCAL_REPORTS_DIR, filename)
+    success_rate = (len(results) / total_tcp_count * 100) if total_tcp_count > 0 else 0
 
     try:
         with open(filepath, "w", encoding="utf-8") as f:
@@ -493,6 +540,7 @@ def save_local_report(results, ssid, avg_latency):
             f.write(f"# Date: {datetime.datetime.now()}\n")
             f.write(f"# Network (SSID): {ssid}\n")
             f.write(f"# Avg Latency: {avg_latency:.0f}ms\n")
+            f.write(f"# Success Rate: {success_rate:.1f}%\n")
             f.write(f"# Total Passed: {len(results)}\n\n")
 
             # Sort by latency
@@ -510,6 +558,7 @@ async def main():
     sys.stdout = DualLogger(DEBUG_LOG_FILE)
     sys.stderr = sys.stdout # Redirect stderr too
 
+    check_vpn_active()
     print(f"Starting Test on [{get_ssid()}] at [{datetime.datetime.now()}]")
 
     # Cleanup previous debug logs
@@ -547,9 +596,20 @@ async def main():
         for c in final_configs:
             f.write(c + '\n')
 
+    # Golden List (<500ms)
+    ultra_fast = [c for c, l in real_delay_results if l is not None and l < 500]
+    if ultra_fast:
+        if not os.path.exists('tested_configs'):
+            os.makedirs('tested_configs')
+        with open('tested_configs/ultra_fast.txt', 'w', encoding='utf-8') as f:
+            for c in ultra_fast:
+                f.write(c + '\n')
+        print(f"🌟 Saved {len(ultra_fast)} ultra-fast configs (<500ms) to tested_configs/ultra_fast.txt")
+
     if not IS_GITHUB_ACTIONS:
         # Local Mode: Save Detailed Report
-        save_local_report(real_delay_results, get_ssid(), avg_latency)
+        save_local_report(real_delay_results, get_ssid(), avg_latency, len(tcp_passed))
+        cleanup_old_reports()
 
     # 3. Cleanup
     for f in glob.glob("crashed_batch_*.json"):
