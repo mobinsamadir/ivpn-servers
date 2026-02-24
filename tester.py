@@ -465,7 +465,7 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats, avg_
             content = f.read()
 
         # Generate Stats Section
-        now = datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%d %H:%M:%S UTC")
+        now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
 
         # Calculate System Health
         success_rate = (real_delay_passed_count / tcp_passed_count * 100) if tcp_passed_count > 0 else 0

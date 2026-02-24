@@ -1,5 +1,7 @@
 @echo off
 setlocal
+git config user.email "action@github.com"
+git config user.name "GitHub Action Local"
 chcp 65001 >nul
 cls
 
@@ -54,6 +56,18 @@ echo.
 
 :: 4. Aggregate & Test
 echo [4/5] Running Local Engine...
+
+:: File Restoration Guard
+if not exist real_delay_passed.txt (
+    echo ⚠️ real_delay_passed.txt missing. Restoring from Git...
+    git checkout HEAD -- real_delay_passed.txt >nul 2>&1
+    if exist real_delay_passed.txt (
+        echo ✅ Restored real_delay_passed.txt from Git history.
+    ) else (
+        echo ❌ Failed to restore real_delay_passed.txt.
+    )
+)
+
 %PYTHON_CMD% local_test.py
 if %errorlevel% neq 0 (
     echo ❌ Local Engine failed.
@@ -72,7 +86,7 @@ if not "%SSID%"=="Unknown" set SSID=%SSID:~1%
 
 if exist real_delay_passed.txt (
     if not exist tested_configs mkdir tested_configs
-    move /Y real_delay_passed.txt tested_configs\fast_servers.txt >nul
+    copy /Y real_delay_passed.txt tested_configs\fast_servers.txt >nul
     echo ✅ fast_servers.txt saved to 'tested_configs' folder.
 ) else (
     echo ⚠️ No results file found.
