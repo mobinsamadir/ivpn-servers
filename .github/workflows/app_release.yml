@@ -1,0 +1,111 @@
+name: iVPN App Release
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Get Dependencies
+        run: |
+          cd ivpn_app
+          flutter pub get
+
+      - name: Build APK
+        run: |
+          cd ivpn_app
+          flutter build apk --release --no-tree-shake-icons
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-apk
+          path: ivpn_app/build/app/outputs/flutter-apk/app-release.apk
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
+
+      - name: Download Xray Assets
+        run: |
+          mkdir -p ivpn_app/assets/bin
+          Invoke-WebRequest -Uri "https://github.com/XTLS/Xray-core/releases/download/v24.11.21/Xray-windows-64.zip" -OutFile "xray.zip"
+          Expand-Archive -Path "xray.zip" -DestinationPath "xray_temp" -Force
+          Copy-Item "xray_temp/xray.exe" -Destination "ivpn_app/assets/bin/"
+          Copy-Item "xray_temp/geoip.dat" -Destination "ivpn_app/assets/bin/"
+          Copy-Item "xray_temp/geosite.dat" -Destination "ivpn_app/assets/bin/"
+          Remove-Item "xray.zip"
+          Remove-Item "xray_temp" -Recurse -Force
+        shell: powershell
+
+      - name: Get Dependencies
+        run: |
+          cd ivpn_app
+          flutter pub get
+
+      - name: Build Windows
+        run: |
+          cd ivpn_app
+          flutter build windows --release
+
+      - name: Package Windows Release
+        run: |
+          # Navigate to release output directory (adjusting for potential x64 subdirectory)
+          $releaseDir = Get-ChildItem -Path "ivpn_app/build/windows" -Recurse -Directory -Filter "release" | Select-Object -First 1
+          if ($releaseDir) {
+            Write-Host "Found release directory: $($releaseDir.FullName)"
+            Compress-Archive -Path "$($releaseDir.FullName)/*" -DestinationPath "ivpn_app/ivpn-windows-release.zip" -Force
+          } else {
+            Write-Error "Release directory not found!"
+            exit 1
+          }
+        shell: powershell
+
+      - name: Upload Windows Zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-release-windows
+          path: ivpn_app/ivpn-windows-release.zip
+
+  create-release:
+    needs: [build-android, build-windows]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: startsWith(github.ref, 'refs/tags/v') || github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            artifacts/app-release-apk/app-release.apk
+            artifacts/app-release-windows/ivpn-windows-release.zip
+          tag_name: v${{ github.run_number }}
+          name: Release v${{ github.run_number }}
+          body: "Automated build from main branch."
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
