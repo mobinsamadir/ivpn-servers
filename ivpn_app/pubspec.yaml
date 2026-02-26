@@ -1,0 +1,36 @@
+name: ivpn_app
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.7
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  http: ^1.6.0
+  provider: ^6.1.5+1
+  shared_preferences: ^2.5.4
+  path_provider: ^2.1.5
+  archive: ^4.0.9
+  window_manager: ^0.5.1
+  flutter_v2ray: ^1.0.10
+  win32_registry: ^2.1.0
+  process_run: ^1.3.1+1
+  flutter_svg: ^2.2.3
+  google_fonts: ^8.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/bin/xray.exe
+    - assets/bin/geoip.dat
+    - assets/bin/geosite.dat
