@@ -141,10 +141,7 @@ def check_vpn_active():
                 log("ERROR", "Pre-Flight", f"Could not identify process details: {e}")
 
         print("\033[1;31mPLEASE DISABLE ALL VPNs/PROXIES BEFORE CONTINUING!\033[0m")
-        try:
-            input("Press Enter to acknowledge and continue (or Ctrl+C to exit)...")
-        except EOFError:
-            pass
+        # Non-blocking execution: Removed input()
     else:
         log("INFO", "Pre-Flight", "No active VPN detected.")
 
@@ -268,10 +265,15 @@ class PersistenceManager:
         self._cleanup()
 
         # Filter by SSID
-        relevant_items = [
-            v for v in self.data["whitelist"].values()
-            if v.get("ssid") == current_ssid or v.get("ssid") == "Ethernet_or_Unknown" # Fallback if unknown
-        ]
+        relevant_items = []
+        for v in self.data["whitelist"].values():
+            if not IS_GITHUB_ACTIONS:
+                # Local Mode: Return ALL whitelist configs regardless of SSID
+                relevant_items.append(v)
+            else:
+                # GitHub Mode: Strict SSID filtering
+                if v.get("ssid") == current_ssid or v.get("ssid") == "Ethernet_or_Unknown":
+                    relevant_items.append(v)
 
         # Sort by latency
         relevant_items.sort(key=lambda x: x.get("latency", 9999))
@@ -798,13 +800,14 @@ async def main():
     skipped_blacklist = 0
     skipped_whitelist = 0
 
-    phase0_config_set = set([c for c, _ in phase0_results])
+    # Phase 0 Exclusion Set: All configs ATTEMPTED in Phase 0 (not just passed)
+    phase0_attempted_set = set(whitelist_configs)
 
     for c in raw_configs:
         if pm.is_blacklisted(c):
             skipped_blacklist += 1
             continue
-        if c in phase0_config_set:
+        if c in phase0_attempted_set:
             skipped_whitelist += 1
             continue
         configs_to_test.append(c)
@@ -874,6 +877,9 @@ async def main():
                 country_stats['Unknown'] += 1
 
     update_readme(len(whitelist_configs) + len(tcp_passed), len(total_passed_configs), country_stats, global_avg_latency)
+
+    # Final Observability Metric
+    log("INFO", "Metrics", f"Memory Efficiency: {skipped_blacklist} bad configs skipped via Blacklist.")
 
     if len(total_passed_configs) > 0:
         log("INFO", "Main", "Process Finished Successfully")

@@ -1531,9 +1531,9 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "ac52bffd7eb96301859e4e01b4f27af4": {
-      "config": "vless://e384913f-8863-47b4-8858-a84b68abb4a6@144.31.130.49:23335?security=reality&type=tcp&sni=icloud.com&flow=xtls-rprx-vision&pbk=7Gi8eiUU9TIVbGuvSU16gl5-Aqt7tcCSB9x6CSxyvik&fp=qq&sid=67b1e94e4dd1ef90#%5B%F0%9F%87%B8%F0%9F%87%AA%20SE%5D%20%40vpnclashfa%20-%204042",
-      "timestamp": 1772208608.5772173,
-      "latency": 586.9338512420654,
+      "config": "vless://e384913f-8863-47b4-8858-a84b68abb4a6@144.31.130.49:23335?security=reality&type=tcp&sni=icloud.com&flow=xtls-rprx-vision&pbk=7Gi8eiUU9TIVbGuvSU16gl5-Aqt7tcCSB9x6CSxyvik&fp=chrome&sid=67b1e94e4dd1ef90#%5B%F0%9F%87%B8%F0%9F%87%AA%20SE%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20975963",
+      "timestamp": 1772210472.5763533,
+      "latency": 656.1205387115479,
       "ssid": "Ethernet_or_Unknown"
     },
     "44ce29d9a099145204e2d86735a71f3c": {
@@ -4878,15 +4878,15 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "85dfd62be2c10b27bf3b1676c9453670": {
-      "config": "ss://YWVzLTI1Ni1nY206bGRqbXdvTnFnUXFxYzQzag==@149.102.132.184:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20674188",
-      "timestamp": 1772208608.544708,
-      "latency": 192.89374351501465,
+      "config": "ss://YWVzLTI1Ni1nY206bGRqbXdvTnFnUXFxYzQzag==@149.102.132.184:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20316101",
+      "timestamp": 1772210472.5754378,
+      "latency": 354.81882095336914,
       "ssid": "Ethernet_or_Unknown"
     },
     "5715a6d10cd9e2b94a9019cdd8bc3204": {
-      "config": "vless://405ba2d6-7fcb-4cdd-9c77-4ecc616d77c8@93.94.51.210:443?security=tls&type=tcp&path=/&sni=deu549.worldbypass.org&flow=xtls-rprx-vision#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20733959",
-      "timestamp": 1772208608.5475929,
-      "latency": 318.3474540710449,
+      "config": "vless://405ba2d6-7fcb-4cdd-9c77-4ecc616d77c8@93.94.51.210:443?security=tls&type=tcp&path=/&sni=deu549.worldbypass.org&flow=xtls-rprx-vision#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20356242",
+      "timestamp": 1772210472.575109,
+      "latency": 591.2990570068359,
       "ssid": "Ethernet_or_Unknown"
     },
     "0febe98ac2b93150a5b086163c975b49": {
@@ -4920,9 +4920,9 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "5c7f46317bc4861c0db8b0675afa892d": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@193.29.139.157:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20211509",
-      "timestamp": 1772208608.5445633,
-      "latency": 220.36290168762207,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@193.29.139.157:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20961586",
+      "timestamp": 1772210472.5749066,
+      "latency": 302.8900623321533,
       "ssid": "Ethernet_or_Unknown"
     },
     "6f1607111915a3cf237062d9c6dabfae": {
@@ -4932,9 +4932,9 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "2d7ea0bf459eb76d921149aea3f16993": {
-      "config": "vless://42a7df85-0739-4760-a248-32a491abfa2a@94.228.210.70:443?security=reality&type=tcp&path=/&sni=hls-svod.itunes.apple.com&flow=xtls-rprx-vision&pbk=mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg&fp=chrome&sid=86e999a2cdc2#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20963361",
-      "timestamp": 1772208608.5443583,
-      "latency": 309.9985122680664,
+      "config": "vless://42a7df85-0739-4760-a248-32a491abfa2a@94.228.210.70:443?security=reality&type=tcp&path=/&sni=hls-svod.itunes.apple.com&flow=xtls-rprx-vision&pbk=mLmBhbVFfNuo2eUgBh6r9-5Koz9mUCn3aSzlR6IejUg&fp=chrome&sid=86e999a2cdc2#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20849738",
+      "timestamp": 1772210472.575389,
+      "latency": 546.7066764831543,
       "ssid": "Ethernet_or_Unknown"
     },
     "9778baf2c337f91eff3ab10dfc51e264": {
@@ -4944,15 +4944,15 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "7a1681e2b9113baf10d91bece791b2ef": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@193.29.139.217:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20940865",
-      "timestamp": 1772208608.5446,
-      "latency": 197.2184181213379,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjdklJODVUclc2bjBPR3lmcEhWUzF1@193.29.139.217:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20296736",
+      "timestamp": 1772210472.574971,
+      "latency": 307.2175979614258,
       "ssid": "Ethernet_or_Unknown"
     },
     "4a5b1e8d92330d10af92149fcd4f01c5": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkMTIxMzg1ZjcwMGE2OTE1@163.171.213.46:11201#%5B%F0%9F%87%AE%F0%9F%87%B1%20IL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20532479",
-      "timestamp": 1772208608.5454571,
-      "latency": 902.5530815124512,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkMTIxMzg1ZjcwMGE2OTE1@163.171.213.46:11201#%5B%F0%9F%87%AE%F0%9F%87%B1%20IL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20711512",
+      "timestamp": 1772210472.5750215,
+      "latency": 390.0330066680908,
       "ssid": "Ethernet_or_Unknown"
     },
     "cebe45a70ead9df461eabd9be13134a1": {
@@ -4974,21 +4974,21 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "f85de204580405a2cd8acb9c893f2c78": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTowY2RkZTY5NTg3MzU2NWVl@38.54.59.38:11203#%5B%F0%9F%87%AA%F0%9F%87%AC%20EG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20556928",
-      "timestamp": 1772208608.5450902,
-      "latency": 371.02794647216797,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTowY2RkZTY5NTg3MzU2NWVl@38.54.59.38:11203#%5B%F0%9F%87%AA%F0%9F%87%AC%20EG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20432925",
+      "timestamp": 1772210472.575807,
+      "latency": 508.11243057250977,
       "ssid": "Ethernet_or_Unknown"
     },
     "acad8da515649dd4f08496495f22fe85": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTowY2RkZTY5NTg3MzU2NWVl@38.54.59.38:11204#%5B%F0%9F%87%AA%F0%9F%87%AC%20EG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20766443",
-      "timestamp": 1772208608.5451264,
-      "latency": 372.5605010986328,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTowY2RkZTY5NTg3MzU2NWVl@38.54.59.38:11204#%5B%F0%9F%87%AA%F0%9F%87%AC%20EG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20434123",
+      "timestamp": 1772210472.5754814,
+      "latency": 428.15423011779785,
       "ssid": "Ethernet_or_Unknown"
     },
     "bcff2ef9588229c6f80871789281d5af": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTowY2RkZTY5NTg3MzU2NWVl@38.54.59.38:11205#%5B%F0%9F%87%AA%F0%9F%87%AC%20EG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20959874",
-      "timestamp": 1772208608.5451636,
-      "latency": 371.6137409210205,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTowY2RkZTY5NTg3MzU2NWVl@38.54.59.38:11205#%5B%F0%9F%87%AA%F0%9F%87%AC%20EG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20713945",
+      "timestamp": 1772210472.5758467,
+      "latency": 474.346399307251,
       "ssid": "Ethernet_or_Unknown"
     },
     "713a87d165cf2e96bb013bdf1d804130": {
@@ -5004,27 +5004,27 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "affa80cc662948d4b24b739e0d6fb362": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYjQyNThkYzFiNTM2MTNj@163.171.207.11:29461#%5B%F0%9F%87%B8%F0%9F%87%A6%20SA%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20302890",
-      "timestamp": 1772208608.548498,
-      "latency": 606.7559719085693,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYjQyNThkYzFiNTM2MTNj@163.171.207.11:29461#%5B%F0%9F%87%B8%F0%9F%87%A6%20SA%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20662252",
+      "timestamp": 1772210472.5773118,
+      "latency": 674.9370098114014,
       "ssid": "Ethernet_or_Unknown"
     },
     "b9b212baf538c74fb75a71ee2b3b4eaf": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYjQyNThkYzFiNTM2MTNj@163.171.207.11:29462#%5B%F0%9F%87%B8%F0%9F%87%A6%20SA%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20225933",
-      "timestamp": 1772208608.5485334,
-      "latency": 597.3937511444092,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYjQyNThkYzFiNTM2MTNj@163.171.207.11:29462#%5B%F0%9F%87%B8%F0%9F%87%A6%20SA%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20570331",
+      "timestamp": 1772210472.5770571,
+      "latency": 929.3315410614014,
       "ssid": "Ethernet_or_Unknown"
     },
     "9ac68e261d2e5c205e03ba390fe0e0c0": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYjQyNThkYzFiNTM2MTNj@163.171.207.11:29463#%5B%F0%9F%87%B8%F0%9F%87%A6%20SA%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20961180",
-      "timestamp": 1772208608.5485666,
-      "latency": 612.3273372650146,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYjQyNThkYzFiNTM2MTNj@163.171.207.11:29463#%5B%F0%9F%87%B8%F0%9F%87%A6%20SA%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20831760",
+      "timestamp": 1772210472.576635,
+      "latency": 902.9603004455566,
       "ssid": "Ethernet_or_Unknown"
     },
     "497d4f3e2882b885ea3395ea6c487bec": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYjQyNThkYzFiNTM2MTNj@163.171.207.11:29464#%5B%F0%9F%87%B8%F0%9F%87%A6%20SA%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20762895",
-      "timestamp": 1772208608.5485995,
-      "latency": 607.4686050415039,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYjQyNThkYzFiNTM2MTNj@163.171.207.11:29464#%5B%F0%9F%87%B8%F0%9F%87%A6%20SA%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20734147",
+      "timestamp": 1772210472.577015,
+      "latency": 751.2478828430176,
       "ssid": "Ethernet_or_Unknown"
     },
     "2990049001568d2f65c5d946fc8a12d3": {
@@ -5136,33 +5136,33 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "f44c6781ae7b04026396e75dd1866d5b": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozYjcyYWQ1NzAzNTgzNWM3@38.54.93.66:49693#%5B%F0%9F%87%B0%F0%9F%87%AD%20KH%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20932254",
-      "timestamp": 1772208608.548144,
-      "latency": 712.9733562469482,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozYjcyYWQ1NzAzNTgzNWM3@38.54.93.66:49693#%5B%F0%9F%87%B0%F0%9F%87%AD%20KH%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20343368",
+      "timestamp": 1772210472.5776687,
+      "latency": 615.2360439300537,
       "ssid": "Ethernet_or_Unknown"
     },
     "d2a8ad7aa91971c5cda48eee05f6d781": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozYjcyYWQ1NzAzNTgzNWM3@38.54.93.66:49694#%5B%F0%9F%87%B0%F0%9F%87%AD%20KH%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20871819",
-      "timestamp": 1772208608.5481808,
-      "latency": 707.3206901550293,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozYjcyYWQ1NzAzNTgzNWM3@38.54.93.66:49694#%5B%F0%9F%87%B0%F0%9F%87%AD%20KH%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20739869",
+      "timestamp": 1772210472.5775387,
+      "latency": 616.6870594024658,
       "ssid": "Ethernet_or_Unknown"
     },
     "8ae3b05e75fa8a598324eb95ba309e0f": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozYjcyYWQ1NzAzNTgzNWM3@38.54.93.66:49695#%5B%F0%9F%87%B0%F0%9F%87%AD%20KH%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20208357",
-      "timestamp": 1772208608.5482135,
-      "latency": 721.6751575469971,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozYjcyYWQ1NzAzNTgzNWM3@38.54.93.66:49695#%5B%F0%9F%87%B0%F0%9F%87%AD%20KH%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20126727",
+      "timestamp": 1772210472.5775833,
+      "latency": 630.8019161224365,
       "ssid": "Ethernet_or_Unknown"
     },
     "74d3d01b4e179f568414f88cb6357014": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozYjcyYWQ1NzAzNTgzNWM3@38.54.93.66:49696#%5B%F0%9F%87%B0%F0%9F%87%AD%20KH%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20320959",
-      "timestamp": 1772208608.5482545,
-      "latency": 724.0018844604492,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTozYjcyYWQ1NzAzNTgzNWM3@38.54.93.66:49696#%5B%F0%9F%87%B0%F0%9F%87%AD%20KH%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20540358",
+      "timestamp": 1772210472.5776284,
+      "latency": 613.0335330963135,
       "ssid": "Ethernet_or_Unknown"
     },
     "25038e658c6a5e688d3d205775d28188": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYTVhNWVmYWUwMGE4MzJi@112.197.26.106:45310#%5B%F0%9F%87%BB%F0%9F%87%B3%20VN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20636219",
-      "timestamp": 1772208608.546628,
-      "latency": 594.019889831543,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYTVhNWVmYWUwMGE4MzJi@112.197.26.106:45310#%5B%F0%9F%87%BB%F0%9F%87%B3%20VN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20957815",
+      "timestamp": 1772210472.5773933,
+      "latency": 549.8008728027344,
       "ssid": "Ethernet_or_Unknown"
     },
     "67a8fec81c795c6be0fa014466840709": {
@@ -5172,15 +5172,15 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "4e314893203cc0290a1115b161a7853f": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYTVhNWVmYWUwMGE4MzJi@112.197.26.106:45312#%5B%F0%9F%87%BB%F0%9F%87%B3%20VN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20926013",
-      "timestamp": 1772208608.546701,
-      "latency": 531.9411754608154,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYTVhNWVmYWUwMGE4MzJi@112.197.26.106:45312#%5B%F0%9F%87%BB%F0%9F%87%B3%20VN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20827780",
+      "timestamp": 1772210472.577489,
+      "latency": 547.7926731109619,
       "ssid": "Ethernet_or_Unknown"
     },
     "e327e90caaa7daad9d8517360a445a6e": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYTVhNWVmYWUwMGE4MzJi@112.197.26.106:45313#%5B%F0%9F%87%BB%F0%9F%87%B3%20VN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20298608",
-      "timestamp": 1772208608.54674,
-      "latency": 601.2496948242188,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjYTVhNWVmYWUwMGE4MzJi@112.197.26.106:45313#%5B%F0%9F%87%BB%F0%9F%87%B3%20VN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20267510",
+      "timestamp": 1772210472.5771346,
+      "latency": 568.4521198272705,
       "ssid": "Ethernet_or_Unknown"
     },
     "5d52af51f2fb23f6eff9b7de20f86128": {
@@ -5190,87 +5190,87 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "42c29ded6c0cc07f9d1a4cdea0536a77": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5N2ZlNmIwN2NiZmFmN2U3@157.185.173.60:18424#%5B%F0%9F%87%A7%F0%9F%87%B7%20BR%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20918324",
-      "timestamp": 1772208608.5479383,
-      "latency": 254.0576457977295,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5N2ZlNmIwN2NiZmFmN2U3@157.185.173.60:18424#%5B%F0%9F%87%A7%F0%9F%87%B7%20BR%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20435099",
+      "timestamp": 1772210472.5756443,
+      "latency": 424.46160316467285,
       "ssid": "Ethernet_or_Unknown"
     },
     "9426bf67928c41f88907dd5f8800175e": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5N2ZlNmIwN2NiZmFmN2U3@157.185.173.60:18425#%5B%F0%9F%87%A7%F0%9F%87%B7%20BR%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20758618",
-      "timestamp": 1772208608.5479755,
-      "latency": 253.587007522583,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5N2ZlNmIwN2NiZmFmN2U3@157.185.173.60:18425#%5B%F0%9F%87%A7%F0%9F%87%B7%20BR%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20126838",
+      "timestamp": 1772210472.5755236,
+      "latency": 380.76138496398926,
       "ssid": "Ethernet_or_Unknown"
     },
     "55ab3c6c92c7aef7c37e8518cab49def": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5N2ZlNmIwN2NiZmFmN2U3@157.185.173.60:18426#%5B%F0%9F%87%A7%F0%9F%87%B7%20BR%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20835762",
-      "timestamp": 1772208608.5480092,
-      "latency": 251.81221961975098,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5N2ZlNmIwN2NiZmFmN2U3@157.185.173.60:18426#%5B%F0%9F%87%A7%F0%9F%87%B7%20BR%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20700639",
+      "timestamp": 1772210472.5756047,
+      "latency": 425.29773712158203,
       "ssid": "Ethernet_or_Unknown"
     },
     "f80b8f6e2187556f82909aaa916b2954": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5N2ZlNmIwN2NiZmFmN2U3@157.185.173.60:18427#%5B%F0%9F%87%A7%F0%9F%87%B7%20BR%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20457293",
-      "timestamp": 1772208608.5480444,
-      "latency": 252.0742416381836,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5N2ZlNmIwN2NiZmFmN2U3@157.185.173.60:18427#%5B%F0%9F%87%A7%F0%9F%87%B7%20BR%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20740926",
+      "timestamp": 1772210472.575565,
+      "latency": 418.53833198547363,
       "ssid": "Ethernet_or_Unknown"
     },
     "d38bbc23a767a837c642bbbf89dd1b3d": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ODMyMmU0YjkzNDg3MGI2@154.26.156.99:47385#%5B%F0%9F%87%A6%F0%9F%87%BA%20AU%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20833189",
-      "timestamp": 1772208608.5477786,
-      "latency": 560.3809356689453,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ODMyMmU0YjkzNDg3MGI2@154.26.156.99:47385#%5B%F0%9F%87%A6%F0%9F%87%BA%20AU%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20211871",
+      "timestamp": 1772210472.576715,
+      "latency": 548.924446105957,
       "ssid": "Ethernet_or_Unknown"
     },
     "8f7435980f6f23240aa74cbabcd1ed5e": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ODMyMmU0YjkzNDg3MGI2@154.26.156.99:47386#%5B%F0%9F%87%A6%F0%9F%87%BA%20AU%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20552606",
-      "timestamp": 1772208608.5478144,
-      "latency": 544.6035861968994,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ODMyMmU0YjkzNDg3MGI2@154.26.156.99:47386#%5B%F0%9F%87%A6%F0%9F%87%BA%20AU%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20318843",
+      "timestamp": 1772210472.5766747,
+      "latency": 495.62788009643555,
       "ssid": "Ethernet_or_Unknown"
     },
     "dfe9a853bdf43c8b344d135388778449": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ODMyMmU0YjkzNDg3MGI2@154.26.156.99:47387#%5B%F0%9F%87%A6%F0%9F%87%BA%20AU%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20905464",
-      "timestamp": 1772208608.5478659,
-      "latency": 549.4523048400879,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ODMyMmU0YjkzNDg3MGI2@154.26.156.99:47387#%5B%F0%9F%87%A6%F0%9F%87%BA%20AU%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20810308",
+      "timestamp": 1772210472.5768857,
+      "latency": 521.7154026031494,
       "ssid": "Ethernet_or_Unknown"
     },
     "5c15b3d4781272068b1896a8c2f40b39": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ODMyMmU0YjkzNDg3MGI2@154.26.156.99:47388#%5B%F0%9F%87%A6%F0%9F%87%BA%20AU%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20193883",
-      "timestamp": 1772208608.5479033,
-      "latency": 577.8734683990479,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ODMyMmU0YjkzNDg3MGI2@154.26.156.99:47388#%5B%F0%9F%87%A6%F0%9F%87%BA%20AU%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20137600",
+      "timestamp": 1772210472.5767949,
+      "latency": 536.1943244934082,
       "ssid": "Ethernet_or_Unknown"
     },
     "441eadc04c50dbb436a42e7a3ed9b4f0": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjOTBkNjNkYzdhNjIwM2Fm@46.250.241.55:45720#%5B%F0%9F%87%A6%F0%9F%87%BA%20AU%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20388617",
-      "timestamp": 1772208608.5484622,
-      "latency": 595.2730178833008,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjOTBkNjNkYzdhNjIwM2Fm@46.250.241.55:45720#%5B%F0%9F%87%A6%F0%9F%87%BA%20AU%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20792274",
+      "timestamp": 1772210472.576754,
+      "latency": 516.2949562072754,
       "ssid": "Ethernet_or_Unknown"
     },
     "e0d1ace85f69ad5d9976d601adbb3e1a": {
-      "config": "ss://YWVzLTI1Ni1nY206bUs3ZU4zejI3NlRyMHZWQQ==@154.12.240.141:80#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20415497",
-      "timestamp": 1772208608.546226,
-      "latency": 248.37756156921387,
+      "config": "ss://YWVzLTI1Ni1nY206bUs3ZU4zejI3NlRyMHZWQQ==@154.12.240.141:80#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20706062",
+      "timestamp": 1772210472.5752783,
+      "latency": 340.97790718078613,
       "ssid": "Ethernet_or_Unknown"
     },
     "3eb42db01dc0092bc2fdefbb53b19bb9": {
-      "config": "ss://YWVzLTI1Ni1nY206cUt2Zlg3eVFuVDk5T011Mw==@194.233.75.190:80#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20261190",
-      "timestamp": 1772208608.5488026,
-      "latency": 585.2015018463135,
+      "config": "ss://YWVzLTI1Ni1nY206cUt2Zlg3eVFuVDk5T011Mw==@194.233.75.190:80#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20465273",
+      "timestamp": 1772210472.57771,
+      "latency": 510.60986518859863,
       "ssid": "Ethernet_or_Unknown"
     },
     "4156f55f238de31548e95b37cad49a92": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkZWQ3MThmY2IyYmIxN2I3@154.26.132.38:27882#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20700034",
-      "timestamp": 1772208608.5486343,
-      "latency": 856.8189144134521,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkZWQ3MThmY2IyYmIxN2I3@154.26.132.38:27882#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20820527",
+      "timestamp": 1772210472.5773535,
+      "latency": 854.2132377624512,
       "ssid": "Ethernet_or_Unknown"
     },
     "babdd4b3fa8056e89105b4348458a443": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkZWQ3MThmY2IyYmIxN2I3@154.26.132.38:27883#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20316244",
-      "timestamp": 1772208608.5486698,
-      "latency": 861.7258071899414,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkZWQ3MThmY2IyYmIxN2I3@154.26.132.38:27883#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20341370",
+      "timestamp": 1772210472.577262,
+      "latency": 886.5983486175537,
       "ssid": "Ethernet_or_Unknown"
     },
     "4e39f401794ce58218e979689776cef7": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkZWQ3MThmY2IyYmIxN2I3@154.26.132.38:27884#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20415531",
-      "timestamp": 1772208608.5487022,
-      "latency": 1198.410987854004,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpkZWQ3MThmY2IyYmIxN2I3@154.26.132.38:27884#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20733155",
+      "timestamp": 1772210472.5772114,
+      "latency": 912.5385284423828,
       "ssid": "Ethernet_or_Unknown"
     },
     "75a756c79d13f84a4251ad5ab5f7657f": {
@@ -5298,9 +5298,9 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "b2665667c2d91ed2994be1dc1b060286": {
-      "config": "vless://14818654-7689-453a-9a1f-4c72f89782d5@94.131.104.229:2040?security=reality&type=tcp&path=/&sni=tradingview.com&pbk=1RJ2ulM9UyAC8PFy194dV0RTZI6xF6U4CGClhNz9fTg&fp=qq&sid=50ed6f6007515d63&spx=/#%5B%F0%9F%87%B1%F0%9F%87%BB%20LV%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20313024",
-      "timestamp": 1772208608.5472784,
-      "latency": 533.5865020751953,
+      "config": "vless://14818654-7689-453a-9a1f-4c72f89782d5@94.131.104.229:2040?security=reality&type=tcp&path=/&sni=tradingview.com&pbk=1RJ2ulM9UyAC8PFy194dV0RTZI6xF6U4CGClhNz9fTg&fp=qq&sid=50ed6f6007515d63&spx=/#%5B%F0%9F%87%B1%F0%9F%87%BB%20LV%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20136765",
+      "timestamp": 1772210472.5765474,
+      "latency": 704.8912048339844,
       "ssid": "Ethernet_or_Unknown"
     },
     "bda96848cd6f4f7cd939fdb6dfeab24a": {
@@ -5310,9 +5310,9 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "ea15394c93c60f302c03a3499a817d2e": {
-      "config": "vless://309fa273-6579-4cb2-9143-7cad50401eba@45.88.183.100:8443?security=reality&type=tcp&path=/&sni=www.cloudflare.com&flow=xtls-rprx-vision&pbk=gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY&fp=chrome&sid=7cad5040#%5B%F0%9F%87%AE%F0%9F%87%B3%20IN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20300822",
-      "timestamp": 1772208608.5473855,
-      "latency": 639.9016380310059,
+      "config": "vless://309fa273-6579-4cb2-9143-7cad50401eba@45.88.183.100:8443?security=reality&type=tcp&path=/&sni=www.cloudflare.com&flow=xtls-rprx-vision&pbk=gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY&fp=chrome&sid=7cad5040#%5B%F0%9F%87%AE%F0%9F%87%B3%20IN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20703832",
+      "timestamp": 1772210472.5777848,
+      "latency": 826.5566825866699,
       "ssid": "Ethernet_or_Unknown"
     },
     "407f11ac3fb237088f3df47c992cf906": {
@@ -5322,9 +5322,9 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "0f716eefd221997d1d55b897b7ef0c8e": {
-      "config": "vless://309fa273-6579-4cb2-9143-7cad50401eba@91.99.106.117:443?security=reality&type=tcp&path=/&sni=www.cloudflare.com&flow=xtls-rprx-vision&pbk=gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY&fp=chrome&sid=7cad5040#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20405487",
-      "timestamp": 1772208608.5474935,
-      "latency": 400.1960754394531,
+      "config": "vless://309fa273-6579-4cb2-9143-7cad50401eba@91.99.106.117:443?security=reality&type=tcp&path=/&sni=www.cloudflare.com&flow=xtls-rprx-vision&pbk=gZGVp5PUdafgsmi1gawa1yLuha_XhXRc_W9SvPiGmTY&fp=chrome&sid=7cad5040#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20975214",
+      "timestamp": 1772210472.5759518,
+      "latency": 517.8322792053223,
       "ssid": "Ethernet_or_Unknown"
     },
     "a056bb1c6628ad92ca9c39ee416c6bc2": {
@@ -5340,27 +5340,27 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "aaa9916fe3e3b1483db1f0d9ef0d79db": {
-      "config": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@57.129.53.180:23576?security=reality&type=tcp&path=/&sni=fuck.rkn&flow=xtls-rprx-vision&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&fp=chrome&sid=01&spx=/---Join---PLANB_NET---Join---PLANB_NET---Join---PLANB_NET#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20246456",
-      "timestamp": 1772208608.5446627,
-      "latency": 288.58137130737305,
+      "config": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@57.129.53.180:23576?security=reality&type=tcp&path=/&sni=fuck.rkn&flow=xtls-rprx-vision&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&fp=chrome&sid=01&spx=/---Join---PLANB_NET---Join---PLANB_NET---Join---PLANB_NET#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20833522",
+      "timestamp": 1772210472.5757205,
+      "latency": 445.2359676361084,
       "ssid": "Ethernet_or_Unknown"
     },
     "a7554b921d31e7d76b2a1ac9ef6f5535": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3MTgwNzcxOGY1OTNkM2U2@154.205.148.202:11204#%5B%F0%9F%87%B9%F0%9F%87%B7%20TR%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20230547",
-      "timestamp": 1772208608.5476756,
-      "latency": 288.3610725402832,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3MTgwNzcxOGY1OTNkM2U2@154.205.148.202:11204#%5B%F0%9F%87%B9%F0%9F%87%B7%20TR%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20813657",
+      "timestamp": 1772210472.575766,
+      "latency": 484.9274158477783,
       "ssid": "Ethernet_or_Unknown"
     },
     "087b9c4893c1e3803bf7d762129a3047": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3MTgwNzcxOGY1OTNkM2U2@154.205.148.202:11205#%5B%F0%9F%87%B9%F0%9F%87%B7%20TR%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20587382",
-      "timestamp": 1772208608.5477104,
-      "latency": 281.16536140441895,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3MTgwNzcxOGY1OTNkM2U2@154.205.148.202:11205#%5B%F0%9F%87%B9%F0%9F%87%B7%20TR%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20592239",
+      "timestamp": 1772210472.5758862,
+      "latency": 450.17361640930176,
       "ssid": "Ethernet_or_Unknown"
     },
     "23f1273b6d00e3fce93addd26e61765d": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3MzU1ODJlNTEzMjhhZjk5@163.171.206.24:28028#%5B%F0%9F%87%AE%F0%9F%87%B3%20IN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20994948",
-      "timestamp": 1772208608.5477445,
-      "latency": 427.2949695587158,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3MzU1ODJlNTEzMjhhZjk5@163.171.206.24:28028#%5B%F0%9F%87%AE%F0%9F%87%B3%20IN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20592862",
+      "timestamp": 1772210472.5764802,
+      "latency": 581.0213088989258,
       "ssid": "Ethernet_or_Unknown"
     },
     "6a21322ded975a0d20ecf2caef3e796b": {
@@ -5400,45 +5400,45 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "67f1b250933a09eab3b8e3bc4275983f": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5ZDk3NDMzNjg4ZTdlZmQ1@163.171.206.24:44234#%5B%F0%9F%87%AE%F0%9F%87%B3%20IN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20432856",
-      "timestamp": 1772208608.5480793,
-      "latency": 523.6203670501709,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5ZDk3NDMzNjg4ZTdlZmQ1@163.171.206.24:44234#%5B%F0%9F%87%AE%F0%9F%87%B3%20IN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20935876",
+      "timestamp": 1772210472.5764394,
+      "latency": 597.4440574645996,
       "ssid": "Ethernet_or_Unknown"
     },
     "361bcb8b57610fc406656a9e65e93cac": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5ZDk3NDMzNjg4ZTdlZmQ1@163.171.206.24:44236#%5B%F0%9F%87%AE%F0%9F%87%B3%20IN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20252486",
-      "timestamp": 1772208608.5481114,
-      "latency": 503.36670875549316,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5ZDk3NDMzNjg4ZTdlZmQ1@163.171.206.24:44236#%5B%F0%9F%87%AE%F0%9F%87%B3%20IN%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20428076",
+      "timestamp": 1772210472.5763986,
+      "latency": 569.6098804473877,
       "ssid": "Ethernet_or_Unknown"
     },
     "0a5d122610a2aeb0ac2150d7e25b82c0": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxYTE3YzFmNzRjZGM1MWQ1@91.106.109.17:48210#%5B%F0%9F%87%AF%F0%9F%87%B4%20JO%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20918999",
-      "timestamp": 1772208608.545494,
-      "latency": 452.0535469055176,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxYTE3YzFmNzRjZGM1MWQ1@91.106.109.17:48210#%5B%F0%9F%87%AF%F0%9F%87%B4%20JO%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20291488",
+      "timestamp": 1772210472.575995,
+      "latency": 502.1800994873047,
       "ssid": "Ethernet_or_Unknown"
     },
     "39f9d82c306d1596812fa46221f6e282": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxYTE3YzFmNzRjZGM1MWQ1@91.106.109.17:48211#%5B%F0%9F%87%AF%F0%9F%87%B4%20JO%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20901934",
-      "timestamp": 1772208608.5455265,
-      "latency": 447.37768173217773,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxYTE3YzFmNzRjZGM1MWQ1@91.106.109.17:48211#%5B%F0%9F%87%AF%F0%9F%87%B4%20JO%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20788099",
+      "timestamp": 1772210472.5760899,
+      "latency": 568.8767433166504,
       "ssid": "Ethernet_or_Unknown"
     },
     "c0f2575d0debee8ad990ff681303e890": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxYTE3YzFmNzRjZGM1MWQ1@91.106.109.17:48212#%5B%F0%9F%87%AF%F0%9F%87%B4%20JO%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20403030",
-      "timestamp": 1772208608.5455651,
-      "latency": 466.9837951660156,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxYTE3YzFmNzRjZGM1MWQ1@91.106.109.17:48212#%5B%F0%9F%87%AF%F0%9F%87%B4%20JO%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20130456",
+      "timestamp": 1772210472.5760343,
+      "latency": 520.958423614502,
       "ssid": "Ethernet_or_Unknown"
     },
     "28324afb4fc1ceefb36baa447667ffce": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxYTE3YzFmNzRjZGM1MWQ1@91.106.109.17:48213#%5B%F0%9F%87%AF%F0%9F%87%B4%20JO%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20432280",
-      "timestamp": 1772208608.545603,
-      "latency": 464.3223285675049,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxYTE3YzFmNzRjZGM1MWQ1@91.106.109.17:48213#%5B%F0%9F%87%AF%F0%9F%87%B4%20JO%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20714097",
+      "timestamp": 1772210472.5761359,
+      "latency": 541.6617393493652,
       "ssid": "Ethernet_or_Unknown"
     },
     "e8850264a8557d1ade4f2982688b7470": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxZTY4ZDRiZDAwMjQzN2Fi@149.104.71.134:11201#%5B%F0%9F%87%B8%F0%9F%87%A6%20SA%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20248048",
-      "timestamp": 1772208608.5457613,
-      "latency": 521.0168361663818,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNToxZTY4ZDRiZDAwMjQzN2Fi@149.104.71.134:11201#%5B%F0%9F%87%B8%F0%9F%87%A6%20SA%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20451983",
+      "timestamp": 1772210472.577096,
+      "latency": 577.3017406463623,
       "ssid": "Ethernet_or_Unknown"
     },
     "9b5d595a94bd12656db6a3139cbb45e0": {
@@ -5448,27 +5448,27 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "6edb919218d994eace247ee1644d2126": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@154.205.159.100:990#%5B%F0%9F%87%AE%F0%9F%87%A9%20ID%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20933192",
-      "timestamp": 1772208608.546381,
-      "latency": 544.999361038208,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@154.205.159.100:990#%5B%F0%9F%87%AE%F0%9F%87%A9%20ID%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20606974",
+      "timestamp": 1772210472.57693,
+      "latency": 683.086633682251,
       "ssid": "Ethernet_or_Unknown"
     },
     "3833aff17b5fc79ccbc260a00dca5959": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@154.205.150.157:990#%5B%F0%9F%87%BF%F0%9F%87%A6%20ZA%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20804009",
-      "timestamp": 1772208608.5468097,
-      "latency": 553.8921356201172,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@154.205.150.157:990#%5B%F0%9F%87%BF%F0%9F%87%A6%20ZA%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20343066",
+      "timestamp": 1772210472.5765939,
+      "latency": 617.3737049102783,
       "ssid": "Ethernet_or_Unknown"
     },
     "47a099ea118ae068a60061332aa86106": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@38.54.59.107:990#%5B%F0%9F%87%AA%F0%9F%87%AC%20EG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20525730",
-      "timestamp": 1772208608.5453765,
-      "latency": 572.0796585083008,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@38.54.59.107:990#%5B%F0%9F%87%AA%F0%9F%87%AC%20EG%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20885572",
+      "timestamp": 1772210472.5769725,
+      "latency": 934.0293407440186,
       "ssid": "Ethernet_or_Unknown"
     },
     "6b9de2736dfe52b7f273a6a1b5bbe253": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@91.148.135.31:990#%5B%F0%9F%87%A8%F0%9F%87%BE%20CY%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20769295",
-      "timestamp": 1772208608.5454187,
-      "latency": 427.2267818450928,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@91.148.135.31:990#%5B%F0%9F%87%A8%F0%9F%87%BE%20CY%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20467654",
+      "timestamp": 1772210472.5762255,
+      "latency": 566.1647319793701,
       "ssid": "Ethernet_or_Unknown"
     },
     "f36560019bc654388039d73e2380a1c9": {
@@ -5502,9 +5502,9 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "f74d94f9504ecf9ccb294c4f19f240b0": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNDZhN2YxODc2NDcyNTUy@38.60.203.155:11201#%5B%F0%9F%87%AD%F0%9F%87%B0%20HK%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20808790",
-      "timestamp": 1772208608.5464976,
-      "latency": 556.5781593322754,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTphNDZhN2YxODc2NDcyNTUy@38.60.203.155:11201#%5B%F0%9F%87%AD%F0%9F%87%B0%20HK%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20198210",
+      "timestamp": 1772210472.5762737,
+      "latency": 448.4515190124512,
       "ssid": "Ethernet_or_Unknown"
     },
     "d398770934e67b9f1a8f37574f52e6d4": {
@@ -5532,9 +5532,9 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "26cd948e2f790444bbdf5fb00102a4b5": {
-      "config": "ss://YWVzLTI1Ni1nY206akpIcTgwN2JRN1RNMHlPaA==@94.72.127.58:80#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20858118",
-      "timestamp": 1772208608.546006,
-      "latency": 383.56614112854004,
+      "config": "ss://YWVzLTI1Ni1nY206akpIcTgwN2JRN1RNMHlPaA==@94.72.127.58:80#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20539990",
+      "timestamp": 1772210472.5752125,
+      "latency": 208.93454551696777,
       "ssid": "Ethernet_or_Unknown"
     },
     "262425a0ba7e807ee668f4b807a3ab0e": {
@@ -5556,9 +5556,9 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "2aef99114911aed8a5bf31f0e1f6a9e0": {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNiBDQV0gXHVkODNjXHVkZmYzXHVmZTBmIFNoYXRha1ZQTiA0MTY4NjUiLCAiYWRkIjogIjUxLjc5LjEwMi4yNTMiLCAicG9ydCI6ICI4MCIsICJpZCI6ICI1OGZlMTU0Mi01MjkwLTQwYWQtODE1YS03NzcwN2E4MWFmZTUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiBudWxsLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIvSU9lYmhMTWhsMUNUYkZIYkw5NW15ZlJYMiIsICJ0bHMiOiAiIiwgInNuaSI6IG51bGwsICJhbHBuIjogIiJ9",
-      "timestamp": 1772208608.5489364,
-      "latency": 616.0309314727783,
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNiBDQV0gXHVkODNjXHVkZmYzXHVmZTBmIFNoYXRha1ZQTiA3MzYxOTYiLCAiYWRkIjogIjUxLjc5LjEwMi4yNTMiLCAicG9ydCI6ICI4MCIsICJpZCI6ICI1OGZlMTU0Mi01MjkwLTQwYWQtODE1YS03NzcwN2E4MWFmZTUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiBudWxsLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIvSU9lYmhMTWhsMUNUYkZIYkw5NW15ZlJYMiIsICJ0bHMiOiAiIiwgInNuaSI6IG51bGwsICJhbHBuIjogIiJ9",
+      "timestamp": 1772210472.5768435,
+      "latency": 222.78857231140137,
       "ssid": "Ethernet_or_Unknown"
     },
     "f3f5de33b9de21923b09fe88b7e15b49": {
