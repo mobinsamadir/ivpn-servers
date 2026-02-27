@@ -12,6 +12,8 @@ import socket
 import datetime
 import subprocess
 import traceback
+import json
+import shutil
 from collections import Counter
 from itertools import count
 
@@ -43,6 +45,9 @@ TCP_OUTPUT_FILE = 'tcp_passed.txt'
 REAL_DELAY_OUTPUT_FILE = 'real_delay_passed.txt'
 LOCAL_REPORTS_DIR = 'local_reports'
 DEBUG_LOG_FILE = 'local_execution_debug.log'
+DATA_DIR = 'data'
+LOCAL_CACHE_FILE = os.path.join(DATA_DIR, 'local_cache.json')
+GOLDEN_LIST_FILE = 'tested_configs/ultra_fast.txt'
 
 TEST_URLS = [
     'http://cp.cloudflare.com/generate_204',
@@ -53,6 +58,43 @@ TEST_URLS = [
 
 # --- Logging & SSID Helpers ---
 
+class StructuredLogger:
+    """Writes structured logs to both console and file."""
+    def __init__(self, filepath):
+        self.terminal = sys.stdout
+        self.log_file = open(filepath, "w", encoding="utf-8")
+
+    def log(self, level, phase, message, metadata=None):
+        """
+        Format: [TIMESTAMP] [LEVEL] [PHASE] [METADATA] Message
+        """
+        timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        metadata_str = f" [{json.dumps(metadata)}]" if metadata else ""
+        formatted_message = f"[{timestamp}] [{level}] [{phase}]{metadata_str} {message}\n"
+
+        self.terminal.write(formatted_message)
+        self.log_file.write(formatted_message)
+        self.log_file.flush()
+
+    def write(self, message):
+        # Compatibility with sys.stdout.write
+        self.terminal.write(message)
+        self.log_file.write(message)
+        self.log_file.flush()
+
+    def flush(self):
+        self.terminal.flush()
+        self.log_file.flush()
+
+# Initialize Global Logger (will be set in main)
+logger = None
+
+def log(level, phase, message, metadata=None):
+    if logger:
+        logger.log(level, phase, message, metadata)
+    else:
+        print(f"[{level}] [{phase}] {message} {metadata if metadata else ''}")
+
 def check_vpn_active():
     """Checks for active VPN/Proxy ports and identifies the process."""
     if IS_GITHUB_ACTIONS:
@@ -61,7 +103,7 @@ def check_vpn_active():
     vpn_ports = [1080, 2080, 7890, 10808, 10809]
     detected = []
 
-    print("🛡️  Running Pre-Flight VPN Check...")
+    log("INFO", "Pre-Flight", "Running VPN Check...")
     for port in vpn_ports:
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             s.settimeout(0.5)
@@ -69,7 +111,7 @@ def check_vpn_active():
                 detected.append(port)
 
     if detected:
-        print(f"\n\033[1;31m[CRITICAL WARNING] VPN/Proxy Detected on port(s): {detected}\033[0m")
+        log("CRITICAL", "Pre-Flight", f"VPN/Proxy Detected on port(s): {detected}")
 
         # Smart Process Identification (Windows)
         if sys.platform == 'win32':
@@ -90,15 +132,13 @@ def check_vpn_active():
                         task_out = subprocess.check_output(f"tasklist /FI \"PID eq {pid}\" /FO CSV /NH", shell=True).decode('utf-8', errors='ignore')
                         if task_out:
                             proc_name = task_out.split(',')[0].strip('"')
-                            print(f"   ↳ Port {port} is used by: {proc_name} (PID: {pid})")
+                            log("WARNING", "Pre-Flight", f"Port {port} is used by: {proc_name} (PID: {pid})")
 
                             keywords = ['xray', 'v2ray', 'clash', 'nekoray', 'v2rayN', 'sing-box']
                             if any(k.lower() in proc_name.lower() for k in keywords):
-                                print(f"   ⚠️  v2rayN/Proxy app is detected as ACTIVE on port {port}.")
-                                print(f"       Even if System Proxy is CLEAR, the APP IS STILL RUNNING.")
-                                print(f"       Please CLOSE the app completely for best results.")
+                                log("WARNING", "Pre-Flight", f"v2rayN/Proxy app is detected as ACTIVE on port {port}.")
             except Exception as e:
-                print(f"   (Could not identify process details: {e})")
+                log("ERROR", "Pre-Flight", f"Could not identify process details: {e}")
 
         print("\033[1;31mPLEASE DISABLE ALL VPNs/PROXIES BEFORE CONTINUING!\033[0m")
         try:
@@ -106,22 +146,7 @@ def check_vpn_active():
         except EOFError:
             pass
     else:
-        print("✅ No active VPN detected.")
-
-class DualLogger:
-    """Writes to both console and file."""
-    def __init__(self, filepath):
-        self.terminal = sys.stdout
-        self.log = open(filepath, "w", encoding="utf-8")
-
-    def write(self, message):
-        self.terminal.write(message)
-        self.log.write(message)
-        self.log.flush()
-
-    def flush(self):
-        self.terminal.flush()
-        self.log.flush()
+        log("INFO", "Pre-Flight", "No active VPN detected.")
 
 def get_ssid():
     """Detects the current WiFi SSID."""
@@ -147,12 +172,121 @@ def get_ssid():
         pass
     return "Ethernet_or_Unknown"
 
+# --- Persistence Layer ---
+
+class PersistenceManager:
+    """Handles persistent storage for blacklist and whitelist."""
+    def __init__(self, filepath):
+        self.filepath = filepath
+        self.data = {
+            "blacklist": {}, # {hash: timestamp}
+            "whitelist": {}  # {hash: {config, timestamp, latency, ssid}}
+        }
+        self.load()
+
+    def load(self):
+        if os.path.exists(self.filepath):
+            try:
+                with open(self.filepath, 'r', encoding='utf-8') as f:
+                    self.data = json.load(f)
+            except Exception as e:
+                log("WARNING", "Persistence", f"Failed to load persistence cache: {e}. Starting fresh.")
+
+        # Ensure structure
+        if "blacklist" not in self.data: self.data["blacklist"] = {}
+        if "whitelist" not in self.data: self.data["whitelist"] = {}
+
+        self._cleanup()
+
+    def save(self):
+        if not os.path.exists(DATA_DIR):
+            os.makedirs(DATA_DIR)
+
+        tmp_filepath = f"{self.filepath}.tmp"
+        try:
+            with open(tmp_filepath, 'w', encoding='utf-8') as f:
+                json.dump(self.data, f, indent=2)
+
+            # Atomic rename
+            shutil.move(tmp_filepath, self.filepath)
+        except Exception as e:
+            log("ERROR", "Persistence", f"Failed to save persistence cache: {e}")
+            if os.path.exists(tmp_filepath):
+                try: os.remove(tmp_filepath)
+                except: pass
+
+    def _cleanup(self):
+        """Removes expired entries."""
+        now = time.time()
+
+        # Blacklist TTL: 7 days
+        blacklist_ttl = 7 * 86400
+        self.data["blacklist"] = {
+            k: v for k, v in self.data["blacklist"].items()
+            if now - v < blacklist_ttl
+        }
+
+        # Whitelist TTL: 24 hours
+        whitelist_ttl = 24 * 3600
+        self.data["whitelist"] = {
+            k: v for k, v in self.data["whitelist"].items()
+            if now - v['timestamp'] < whitelist_ttl
+        }
+
+    def add_to_blacklist(self, config_line):
+        """Adds a config to the blacklist."""
+        parsed, _ = v2ray_utils.parse_config_line(config_line)
+        if parsed:
+            config_hash = v2ray_utils.get_config_hash(parsed)
+            self.data["blacklist"][config_hash] = time.time()
+            self.save()
+            log("INFO", "Persistence", f"Added to Blacklist: {parsed.get('ps', 'Unknown')}")
+
+    def is_blacklisted(self, config_line):
+        """Checks if a config is blacklisted."""
+        parsed, _ = v2ray_utils.parse_config_line(config_line)
+        if parsed:
+            config_hash = v2ray_utils.get_config_hash(parsed)
+            return config_hash in self.data["blacklist"]
+        return False
+
+    def add_to_whitelist(self, config_line, latency, ssid):
+        """Adds a config to the whitelist."""
+        parsed, _ = v2ray_utils.parse_config_line(config_line)
+        if parsed:
+            config_hash = v2ray_utils.get_config_hash(parsed)
+            self.data["whitelist"][config_hash] = {
+                "config": config_line,
+                "timestamp": time.time(),
+                "latency": latency,
+                "ssid": ssid
+            }
+            # Save is deferred or called explicitly to avoid IO spam
+
+    def get_whitelist_configs(self, current_ssid):
+        """Returns a list of valid whitelist config strings for the current SSID."""
+        self._cleanup()
+
+        # Filter by SSID
+        relevant_items = [
+            v for v in self.data["whitelist"].values()
+            if v.get("ssid") == current_ssid or v.get("ssid") == "Ethernet_or_Unknown" # Fallback if unknown
+        ]
+
+        # Sort by latency
+        relevant_items.sort(key=lambda x: x.get("latency", 9999))
+        return [item["config"] for item in relevant_items]
+
+# Global Persistence Instance
+pm = PersistenceManager(LOCAL_CACHE_FILE)
+
 # --- Core Logic ---
 
 class XrayBatchCrash(Exception):
-    def __init__(self, message="Xray startup failed", is_config_error=False):
+    def __init__(self, message="Xray startup failed", is_config_error=False, detailed_error=None):
         self.message = message
         self.is_config_error = is_config_error
+        self.detailed_error = detailed_error
         super().__init__(self.message)
 
 def find_free_port_block(count, min_port=10000, max_port=60000):
@@ -180,7 +314,7 @@ def find_free_port_block(count, min_port=10000, max_port=60000):
             continue
         return start_port
 
-    print(f"⚠️ Could not find guaranteed free port block of size {count}. Using random.")
+    log("WARNING", "Network", f"Could not find guaranteed free port block of size {count}. Using random.")
     return random.randint(min_port, max_port - count)
 
 class ProgressCounter:
@@ -197,7 +331,11 @@ class ProgressCounter:
             if self.current % 50 == 0 or self.current >= self.total:
                 elapsed = time.time() - self.start_time
                 rate = self.current / elapsed if elapsed > 0 else 0
-                print(f"[{self.name}] Progress: {min(self.current, self.total)}/{self.total} ({rate:.1f} cfg/s)...")
+                # Using sys.stdout directly for progress bar to avoid flooding logs
+                sys.stdout.write(f"\r[{self.name}] Progress: {min(self.current, self.total)}/{self.total} ({rate:.1f} cfg/s)...")
+                sys.stdout.flush()
+                if self.current >= self.total:
+                    sys.stdout.write("\n")
 
 async def check_tcp_task(sem, config_line, resolver, counter):
     parsed, _ = v2ray_utils.parse_config_line(config_line)
@@ -240,7 +378,7 @@ async def check_tcp_task(sem, config_line, resolver, counter):
 
 async def run_tcp_tests(configs):
     total = len(configs)
-    print(f"🚀 Starting TCP tests for {total} configs with concurrency {TCP_CONCURRENCY}...")
+    log("INFO", "TCP", f"Starting TCP tests for {total} configs with concurrency {TCP_CONCURRENCY}...")
 
     loop = asyncio.get_running_loop()
     resolver = aiodns.DNSResolver(loop=loop)
@@ -252,7 +390,7 @@ async def run_tcp_tests(configs):
     results = await asyncio.gather(*tasks, return_exceptions=True)
 
     passed = [r for r in results if r is not None and not isinstance(r, Exception)]
-    print(f"✅ TCP tests complete. {len(passed)}/{total} passed.")
+    log("INFO", "TCP", f"TCP tests complete. {len(passed)}/{total} passed.")
     return passed
 
 async def test_batch_real_delay(batch_configs, start_port_base, session, failure_reasons, batch_index=0):
@@ -306,14 +444,14 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
                 combined_log = (stdout_str + "\n" + stderr_str).lower()
 
                 if "address already in use" in combined_log or "too many open files" in combined_log:
-                    print(f"⚠️ [PORT RETRY] Port {current_start_port} busy. Retrying ({attempt+1}/{MAX_RETRIES})...")
+                    log("WARNING", "Xray", f"[PORT RETRY] Port {current_start_port} busy. Retrying ({attempt+1}/{MAX_RETRIES})...")
                     await asyncio.sleep(0.5)
                     continue
 
                 if "failed to load config files" in combined_log or "invalid uuid" in combined_log:
-                    raise XrayBatchCrash(f"Config Error: {stderr_str[:100]}", is_config_error=True)
+                    raise XrayBatchCrash(f"Config Error", is_config_error=True, detailed_error=stderr_str)
 
-                raise XrayBatchCrash(f"Unknown Crash: {stderr_str[:100]}", is_config_error=True)
+                raise XrayBatchCrash(f"Unknown Crash", is_config_error=True, detailed_error=stderr_str)
 
             except asyncio.TimeoutError:
                 pass
@@ -369,8 +507,8 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
         except XrayBatchCrash:
             raise
         except Exception as e:
-            print(f"⚠️ Unexpected Batch Error: {e}")
-            print(traceback.format_exc())
+            log("ERROR", "Xray", f"Unexpected Batch Error: {e}")
+            log("DEBUG", "Xray", traceback.format_exc())
             failure_reasons['BatchCrash'] += 1
             return [None] * len(batch_configs)
         finally:
@@ -385,18 +523,26 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
                     except: pass
                 except Exception: pass
 
-    print(f"❌ Failed to start Xray batch after {MAX_RETRIES} attempts.")
+    log("ERROR", "Xray", f"Failed to start Xray batch after {MAX_RETRIES} attempts.")
     failure_reasons['PortExhaustion'] += 1
     return [None] * len(batch_configs)
 
 async def recursive_test_batch(batch, start_port_base, session, failure_reasons, batch_index, depth=0):
     try:
         return await test_batch_real_delay(batch, start_port_base, session, failure_reasons, batch_index)
-    except XrayBatchCrash:
+    except XrayBatchCrash as e:
         if len(batch) <= 1:
             failure_reasons['PoisonConfig'] += 1
+            poison_config = batch[0]
+            error_detail = e.detailed_error.strip() if e.detailed_error else e.message
+
+            log("CRITICAL", "Poison", f"Poison Config Isolated", metadata={"error": error_detail, "config": poison_config[:50] + "..."})
+
+            # Integrated Poison Handling
+            pm.add_to_blacklist(poison_config)
+
             with open("debug_poison_configs.txt", "a", encoding="utf-8") as f:
-                f.write(f"[POISON] {batch[0]}\n")
+                f.write(f"[POISON] {poison_config}\n[ERROR] {error_detail}\n")
             return [None]
 
         if depth >= MAX_RECURSION_DEPTH:
@@ -408,7 +554,7 @@ async def recursive_test_batch(batch, start_port_base, session, failure_reasons,
         mid = len(batch) // 2
         left = batch[:mid]
         right = batch[mid:]
-        print(f"⚠️ [RECURSION] Splitting batch of size {len(batch)} (Depth {depth})...")
+        log("WARNING", "Recursion", f"Splitting batch of size {len(batch)} (Depth {depth})...")
 
         res_left = await recursive_test_batch(left, start_port_base, session, failure_reasons, batch_index, depth + 1)
         right_port_base = start_port_base + len(left) + 300
@@ -416,18 +562,19 @@ async def recursive_test_batch(batch, start_port_base, session, failure_reasons,
 
         return res_left + res_right
 
-async def run_real_delay_tests(configs):
+async def run_real_delay_tests(configs, phase_name="Real Delay"):
     total = len(configs)
     if total == 0: return [], 0
 
-    print(f"🚀 Starting Real Delay tests for {total} configs...")
-    print(f"ℹ️  Instances: {REAL_DELAY_INSTANCES}, Batch Size: {REAL_DELAY_BATCH_SIZE}")
+    log("INFO", phase_name, f"Starting tests for {total} configs...", metadata={"instances": REAL_DELAY_INSTANCES, "batch_size": REAL_DELAY_BATCH_SIZE})
+
+    start_time = time.time()
 
     if not v2ray_utils.check_and_install_xray():
-        print("❌ Xray setup failed.")
+        log("ERROR", phase_name, "Xray setup failed.")
         return [], 0
 
-    counter = ProgressCounter(total, "Real Delay")
+    counter = ProgressCounter(total, phase_name)
     failure_reasons = Counter()
     batches = [configs[i:i + REAL_DELAY_BATCH_SIZE] for i in range(0, total, REAL_DELAY_BATCH_SIZE)]
     sem = asyncio.Semaphore(REAL_DELAY_INSTANCES)
@@ -459,14 +606,24 @@ async def run_real_delay_tests(configs):
                         latencies.append(latency)
 
     avg_latency = sum(latencies) / len(latencies) if latencies else 0
-    print(f"✅ Real Delay tests complete. {len(final_configs)}/{total} passed. Avg Latency: {avg_latency:.0f}ms")
+    duration = time.time() - start_time
 
-    print("\n📊 Failure Summary:")
+    log("INFO", phase_name, f"Tests complete. {len(final_configs)}/{total} passed. Avg Latency: {avg_latency:.0f}ms",
+        metadata={"duration_sec": round(duration, 2), "efficiency": f"{len(final_configs)/duration:.2f} passed/sec"})
+
+    # Update Persistence Whitelist
+    current_ssid = get_ssid()
+    for config, latency in final_configs:
+        if latency is not None and latency < 1200:
+            pm.add_to_whitelist(config, latency, current_ssid)
+    pm.save()
+
+    log("INFO", phase_name, "Failure Summary:")
     if failure_reasons:
         for reason, count in failure_reasons.most_common():
-            print(f"  - {reason}: {count}")
+            log("INFO", phase_name, f"  - {reason}: {count}")
     else:
-        print("  No failures recorded.")
+        log("INFO", phase_name, "  No failures recorded.")
 
     return final_configs, avg_latency
 
@@ -526,10 +683,10 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats, avg_
         with open("README.md", "w", encoding="utf-8") as f:
             f.write(new_content)
 
-        print("✅ README.md updated.")
+        log("INFO", "Stats", "README.md updated.")
 
     except Exception as e:
-        print(f"⚠️ Failed to update README: {e}")
+        log("ERROR", "Stats", f"Failed to update README: {e}")
 
 def cleanup_old_reports():
     """Deletes local reports older than 7 days."""
@@ -548,7 +705,7 @@ def cleanup_old_reports():
         except Exception:
             pass
     if deleted > 0:
-        print(f"🧹 Cleaned up {deleted} old reports.")
+        log("INFO", "Cleanup", f"Cleaned up {deleted} old reports.")
 
 def save_local_report(results, ssid, avg_latency, total_tcp_count):
     """Saves timestamped report to local_reports/."""
@@ -577,19 +734,23 @@ def save_local_report(results, ssid, avg_latency, total_tcp_count):
             results.sort(key=lambda x: x[1] if x[1] is not None else 9999)
 
             for config, latency in results:
-                f.write(f"[{latency:.0f}ms] {config}\n")
+                parsed, _ = v2ray_utils.parse_config_line(config)
+                protocol = parsed.get("protocol", "unknown") if parsed else "unknown"
+                f.write(f"[{protocol.upper()}] [{latency:.0f}ms] {config}\n")
 
-        print(f"📄 Report saved to: {filepath}")
+        log("INFO", "Report", f"Report saved to: {filepath}")
     except Exception as e:
-        print(f"⚠️ Failed to save report: {e}")
+        log("ERROR", "Report", f"Failed to save report: {e}")
 
 async def main():
-    # Setup Dual Logging
-    sys.stdout = DualLogger(DEBUG_LOG_FILE)
-    sys.stderr = sys.stdout # Redirect stderr too
+    global logger
+    # Setup Structured Logging
+    logger = StructuredLogger(DEBUG_LOG_FILE)
+    # Redirect stderr to logger (manual handling needed for traceback, handled in exceptions)
 
     check_vpn_active()
-    print(f"Starting Test on [{get_ssid()}] at [{datetime.datetime.now(datetime.timezone.utc)}]")
+    current_ssid = get_ssid()
+    log("INFO", "Main", f"Starting Test on [{current_ssid}]")
 
     # Cleanup previous debug logs
     if os.path.exists("debug_poison_configs.txt"):
@@ -599,15 +760,59 @@ async def main():
     v2ray_utils.increase_file_limit()
     v2ray_utils.check_and_download_geoip_db()
 
+    # --- Phase 0: Priority Check (Whitelist) ---
+    log("INFO", "Phase 0", "Priority Check (Whitelist)")
+    whitelist_configs = pm.get_whitelist_configs(current_ssid)
+    ultra_fast_found = False
+    phase0_results = []
+
+    if whitelist_configs:
+        log("INFO", "Phase 0", f"Testing {len(whitelist_configs)} known fast configs for SSID '{current_ssid}'...")
+        phase0_results, _ = await run_real_delay_tests(whitelist_configs, "Phase 0")
+
+        phase0_ultra_fast = [c for c, l in phase0_results if l is not None and l < 500]
+        if phase0_ultra_fast:
+            ultra_fast_found = True
+            # Immediate Reporting
+            if not os.path.exists('tested_configs'):
+                os.makedirs('tested_configs')
+            with open(GOLDEN_LIST_FILE, 'w', encoding='utf-8') as f:
+                for c in phase0_ultra_fast:
+                    f.write(c + '\n')
+            log("INFO", "Phase 0", f"[READY] Instant Connection Available!", metadata={"count": len(phase0_ultra_fast)})
+    else:
+        log("INFO", "Phase 0", "No valid whitelist configs found.")
+
+
+    # --- Phase 1: Input File Audit ---
+    log("INFO", "Phase 1", "Full Audit")
     if not os.path.exists(INPUT_FILE):
-        print(f"⚠️ {INPUT_FILE} not found. Ensure previous steps ran correctly.")
+        log("ERROR", "Phase 1", f"{INPUT_FILE} not found. Ensure previous steps ran correctly.")
         return
 
     with open(INPUT_FILE, 'r', encoding='utf-8') as f:
-        configs = [line.strip() for line in f if line.strip()]
+        raw_configs = [line.strip() for line in f if line.strip()]
 
-    # 1. TCP Test
-    tcp_passed = await run_tcp_tests(configs)
+    # Filter Blacklist & Whitelist (already tested)
+    configs_to_test = []
+    skipped_blacklist = 0
+    skipped_whitelist = 0
+
+    phase0_config_set = set([c for c, _ in phase0_results])
+
+    for c in raw_configs:
+        if pm.is_blacklisted(c):
+            skipped_blacklist += 1
+            continue
+        if c in phase0_config_set:
+            skipped_whitelist += 1
+            continue
+        configs_to_test.append(c)
+
+    log("INFO", "Phase 1", "Queued Configs", metadata={"input": len(raw_configs), "blacklisted": skipped_blacklist, "already_tested": skipped_whitelist, "queued": len(configs_to_test)})
+
+    # 1. TCP Test (Phase 1)
+    tcp_passed = await run_tcp_tests(configs_to_test)
 
     if IS_GITHUB_ACTIONS:
         # Save TCP results only on GitHub
@@ -615,32 +820,40 @@ async def main():
             for c in tcp_passed:
                 f.write(c + '\n')
 
-    # 2. Real Delay Test
-    real_delay_results, avg_latency = await run_real_delay_tests(tcp_passed)
+    # 2. Real Delay Test (Phase 1)
+    phase1_results, avg_latency_p1 = await run_real_delay_tests(tcp_passed, "Phase 1")
 
-    # Extract just configs for standard output files
-    final_configs = [c for c, l in real_delay_results]
+    # Combine Results
+    all_results = phase0_results + phase1_results
+
+    # Recalculate global stats
+    total_passed_configs = [c for c, l in all_results]
+    valid_latencies = [l for c, l in all_results if l is not None]
+    global_avg_latency = sum(valid_latencies) / len(valid_latencies) if valid_latencies else 0
 
     # Always write standard output for compatibility (local tools might expect it)
     with open(REAL_DELAY_OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        for c in final_configs:
+        for c in total_passed_configs:
             f.write(c + '\n')
 
-    # Golden List (<500ms)
-    ultra_fast = [c for c, l in real_delay_results if l is not None and l < 500]
+    # Golden List (<500ms) - Refresh with ALL results
+    ultra_fast = [c for c, l in all_results if l is not None and l < 500]
     if not os.path.exists('tested_configs'):
         os.makedirs('tested_configs')
-    with open('tested_configs/ultra_fast.txt', 'w', encoding='utf-8') as f:
+    with open(GOLDEN_LIST_FILE, 'w', encoding='utf-8') as f:
         for c in ultra_fast:
             f.write(c + '\n')
+
     if ultra_fast:
-        print(f"🌟 Saved {len(ultra_fast)} ultra-fast configs (<500ms) to tested_configs/ultra_fast.txt")
+        log("INFO", "Main", f"Total Ultra-Fast Configs: {len(ultra_fast)}")
     else:
-        print("ℹ️  No ultra-fast configs (<500ms) found. Cleared Golden List.")
+        log("INFO", "Main", "No ultra-fast configs (<500ms) found.")
 
     if not IS_GITHUB_ACTIONS:
         # Local Mode: Save Detailed Report
-        save_local_report(real_delay_results, get_ssid(), avg_latency, len(tcp_passed))
+        # Total TCP count approximation: len(whitelist) + len(tcp_passed)
+        total_tcp_attempted = len(whitelist_configs) + len(tcp_passed)
+        save_local_report(all_results, current_ssid, global_avg_latency, total_tcp_attempted)
         cleanup_old_reports()
 
     # 3. Cleanup
@@ -650,7 +863,7 @@ async def main():
 
     # 4. Generate Stats (Update README)
     country_stats = Counter()
-    for config in final_configs:
+    for config in total_passed_configs:
         parsed, _ = v2ray_utils.parse_config_line(config)
         if parsed:
             ps = parsed.get('ps', '')
@@ -660,12 +873,12 @@ async def main():
             else:
                 country_stats['Unknown'] += 1
 
-    update_readme(len(tcp_passed), len(final_configs), country_stats, avg_latency)
+    update_readme(len(whitelist_configs) + len(tcp_passed), len(total_passed_configs), country_stats, global_avg_latency)
 
-    if len(final_configs) > 0:
-        print("✅ Process Finished Successfully")
+    if len(total_passed_configs) > 0:
+        log("INFO", "Main", "Process Finished Successfully")
     else:
-        print("⚠️ No valid configs passed the tests.")
+        log("WARNING", "Main", "No valid configs passed the tests.")
 
 if __name__ == "__main__":
     if sys.platform == 'win32':

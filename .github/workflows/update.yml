@@ -51,6 +51,16 @@ jobs:
         TCP_TIMEOUT: 1.5
         REAL_DELAY_TIMEOUT: 3.0
 
+    - name: Run Local Auditor (Phase 0/1 & Persistence)
+      run: |
+        # Run local_test.py to apply whitelist priority and update cache
+        python local_test.py
+      env:
+        TCP_TIMEOUT: 1.5
+        REAL_DELAY_TIMEOUT: 3.0
+        # Emulate high concurrency for actions even in local_test.py
+        GITHUB_ACTIONS: 'true'
+
     - name: Debug File List
       run: ls -lh
 
@@ -74,11 +84,20 @@ jobs:
         git config --global user.name "GitHub Action"
         git config --global user.email "action@github.com"
         
+        # Add core result files
         git add all_configs.txt tcp_passed.txt real_delay_passed.txt sources.txt
         
+        # Add Persistence Layer
+        git add data/local_cache.json
+
+        # Add Golden List
+        if [ -d "tested_configs" ]; then
+            git add tested_configs/*.txt
+        fi
+
         if output=$(git status --porcelain) && [ -z "$output" ]; then
           echo "⚠️ No changes detected to commit."
         else
-          git commit -m "🔄 Update server list [$(date)]"
+          git commit -m "🔄 Update server list & cache [$(date)]"
           git push
         fi
