@@ -4,17 +4,93 @@
 
 
 
-## 📊 Statistics (Last Updated: 2026-02-24 10:04:35 UTC)
+
+
+## 📊 Statistics (Last Updated: 2026-02-27 15:03:18 UTC)
 
 | Metric | Count |
 | :--- | :--- |
-| **TCP Passed** | `709` |
-| **Real Delay Passed** | `26` |
-| **Average Latency** | `732 ms` |
-| **Success Rate** | `3.7%` |
-| **System Health** | 🔴 Critical |
+| **TCP Passed** | `282` |
+| **Real Delay Passed** | `227` |
+| **Average Latency** | `823 ms` |
+| **Success Rate** | `80.5%` |
+| **System Health** | 🟢 Excellent |
 
 ### 🌍 Server Distribution
+
+| Country | Count |
+| :--- | :--- |
+| 🇩🇪 DE | 37 |
+| 🇫🇷 FR | 33 |
+| 🇳🇱 NL | 29 |
+| 🚩 Unknown | 28 |
+| 🇺🇸 US | 21 |
+| 🇷🇺 RU | 14 |
+| 🇱🇻 LV | 11 |
+| 🇸🇪 SE | 6 |
+| 🇲🇾 MY | 5 |
+| 🇭🇰 HK | 4 |
+| 🇯🇵 JP | 4 |
+| 🇬🇧 GB | 4 |
+| 🇹🇷 TR | 3 |
+| 🇨🇾 CY | 3 |
+| 🇦🇹 AT | 2 |
+| 🇪🇸 ES | 2 |
+| 🇦🇪 AE | 2 |
+| 🇷🇴 RO | 2 |
+| 🇦🇺 AU | 2 |
+| 🇫🇮 FI | 2 |
+| 🇵🇱 PL | 2 |
+| 🇮🇲 IM | 1 |
+| 🇱🇺 LU | 1 |
+| 🇮🇪 IE | 1 |
+| 🇸🇨 SC | 1 |
+| 🇪🇪 EE | 1 |
+| 🇰🇿 KZ | 1 |
+| 🇸🇮 SI | 1 |
+| 🇮🇳 IN | 1 |
+| 🇲🇴 MO | 1 |
+| 🇮🇱 IL | 1 |
+| 🇨🇦 CA | 1 |
+## 🌍 Server Distribution
+
+| Country | Count |
+| :--- | :--- |
+| 🇫🇷 FR | 45 |
+| 🇩🇪 DE | 44 |
+| 🚩 Unknown | 42 |
+| 🇳🇱 NL | 35 |
+| 🇺🇸 US | 25 |
+| 🇱🇻 LV | 15 |
+| 🇷🇺 RU | 14 |
+| 🇸🇪 SE | 8 |
+| 🇲🇾 MY | 6 |
+| 🇬🇧 GB | 6 |
+| 🇭🇰 HK | 5 |
+| 🇯🇵 JP | 4 |
+| 🇦🇪 AE | 3 |
+| 🇹🇷 TR | 3 |
+| 🇨🇾 CY | 3 |
+| 🇦🇹 AT | 2 |
+| 🇸🇨 SC | 2 |
+| 🇪🇸 ES | 2 |
+| 🇷🇴 RO | 2 |
+| 🇦🇺 AU | 2 |
+| 🇰🇿 KZ | 2 |
+| 🇫🇮 FI | 2 |
+| 🇲🇩 MD | 2 |
+| 🇵🇱 PL | 2 |
+| 🇮🇲 IM | 1 |
+| 🇱🇺 LU | 1 |
+| 🇮🇪 IE | 1 |
+| 🇪🇪 EE | 1 |
+| 🇲🇭 MH | 1 |
+| 🇸🇮 SI | 1 |
+| 🇮🇳 IN | 1 |
+| 🇲🇴 MO | 1 |
+| 🇮🇱 IL | 1 |
+| 🇨🇦 CA | 1 |
+## 🌍 Server Distribution
 
 | Country | Count |
 | :--- | :--- |

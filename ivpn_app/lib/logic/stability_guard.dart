@@ -16,6 +16,7 @@ class StabilityGuard {
     List<String> realDelay = await _configFetcher.fetchRealDelay();
 
     // 2. Combine list for fallback strategy
+    // Assuming backend sorts them by latency/priority.
     // Try top 3 ultra fast
     List<String> candidates = ultraFast.take(3).toList();
     // Then top 5 real delay
@@ -69,6 +70,22 @@ class StabilityGuard {
   }
 
   Future<bool> _checkWithProxy(String host, int port) async {
+    // Dual-Check: Cloudflare (204) -> Google (204)
+    if (await _checkUrlWithProxy('http://cp.cloudflare.com/generate_204', host, port)) {
+      return true;
+    }
+    return await _checkUrlWithProxy('https://www.google.com/generate_204', host, port);
+  }
+
+  Future<bool> _checkDirect() async {
+    // Dual-Check: Cloudflare (204) -> Google (204)
+    if (await _checkUrlDirect('http://cp.cloudflare.com/generate_204')) {
+        return true;
+    }
+    return await _checkUrlDirect('https://www.google.com/generate_204');
+  }
+
+  Future<bool> _checkUrlWithProxy(String url, String host, int port) async {
     try {
       final client = HttpClient();
       client.findProxy = (uri) {
@@ -76,25 +93,25 @@ class StabilityGuard {
       };
       client.connectionTimeout = const Duration(seconds: 2);
 
-      final request = await client.getUrl(Uri.parse('https://www.google.com/generate_204'));
+      final request = await client.getUrl(Uri.parse(url));
       final response = await request.close();
       return response.statusCode == 204 || response.statusCode == 200;
     } catch (e) {
-      print("Verification failed: $e");
+      print("Verification failed for $url: $e");
       return false;
     }
   }
 
-  Future<bool> _checkDirect() async {
+  Future<bool> _checkUrlDirect(String url) async {
      try {
       final client = HttpClient();
       client.connectionTimeout = const Duration(seconds: 2);
 
-      final request = await client.getUrl(Uri.parse('https://www.google.com/generate_204'));
+      final request = await client.getUrl(Uri.parse(url));
       final response = await request.close();
       return response.statusCode == 204 || response.statusCode == 200;
     } catch (e) {
-      print("Verification failed: $e");
+      print("Verification failed for $url: $e");
       return false;
     }
   }
