@@ -1,20 +1,21 @@
-[2026-02-27T15:03:12.643291+00:00] [INFO] [Pre-Flight] Running VPN Check...
-[2026-02-27T15:03:12.649792+00:00] [INFO] [Pre-Flight] No active VPN detected.
-[2026-02-27T15:03:12.652282+00:00] [INFO] [Main] Starting Test on [Ethernet_or_Unknown]
-[2026-02-27T15:03:12.652449+00:00] [INFO] [Phase 0] Priority Check (Whitelist)
-[2026-02-27T15:03:12.652648+00:00] [INFO] [Phase 0] No valid whitelist configs found.
-[2026-02-27T15:03:12.652664+00:00] [INFO] [Phase 1] Full Audit
-[2026-02-27T15:03:12.678896+00:00] [INFO] [Phase 1] [{"input": 286, "blacklisted": 0, "already_tested": 0, "queued": 286}] Queued Configs
-[2026-02-27T15:03:12.679049+00:00] [INFO] [TCP] Starting TCP tests for 286 configs with concurrency 64...
-[2026-02-27T15:03:14.584525+00:00] [INFO] [TCP] TCP tests complete. 282/286 passed.
-[2026-02-27T15:03:14.584678+00:00] [INFO] [Phase 1] [{"instances": 4, "batch_size": 100}] Starting tests for 282 configs...
-[2026-02-27T15:03:18.885600+00:00] [INFO] [Phase 1] [{"duration_sec": 4.3, "efficiency": "52.78 passed/sec"}] Tests complete. 227/282 passed. Avg Latency: 823ms
-[2026-02-27T15:03:18.914665+00:00] [INFO] [Phase 1] Failure Summary:
-[2026-02-27T15:03:18.914735+00:00] [INFO] [Phase 1]   - Timeout: 39
-[2026-02-27T15:03:18.914749+00:00] [INFO] [Phase 1]   - HighLatency: 10
-[2026-02-27T15:03:18.914758+00:00] [INFO] [Phase 1]   - HTTP_503: 5
-[2026-02-27T15:03:18.914767+00:00] [INFO] [Phase 1]   - HTTP_400: 1
-[2026-02-27T15:03:18.917870+00:00] [INFO] [Main] Total Ultra-Fast Configs: 11
-[2026-02-27T15:03:18.940653+00:00] [INFO] [Report] Report saved to: local_reports/Result_2026-02-27_15-03_Ethernet_or_Unknown.txt
-[2026-02-27T15:03:18.959319+00:00] [INFO] [Stats] README.md updated.
-[2026-02-27T15:03:18.959371+00:00] [INFO] [Main] Process Finished Successfully
+[2026-02-27T16:41:05.249475+00:00] [INFO] [Pre-Flight] Running VPN Check...
+[2026-02-27T16:41:05.255418+00:00] [INFO] [Pre-Flight] No active VPN detected.
+[2026-02-27T16:41:05.274078+00:00] [INFO] [Main] Starting Test on [Ethernet_or_Unknown]
+[2026-02-27T16:41:05.888091+00:00] [INFO] [Phase 0] Priority Check (Whitelist)
+[2026-02-27T16:41:05.890363+00:00] [INFO] [Phase 0] Testing 1974 known fast configs for SSID 'Ethernet_or_Unknown'...
+[2026-02-27T16:41:05.890416+00:00] [INFO] [Phase 0] [{"instances": 4, "batch_size": 100}] Starting tests for 1974 configs...
+[2026-02-27T16:41:06.023397+00:00] [ERROR] [Phase 0] Xray setup failed.
+[2026-02-27T16:41:06.023463+00:00] [INFO] [Phase 1] Full Audit
+[2026-02-27T16:41:06.147878+00:00] [INFO] [Phase 1] [{"input": 1620, "blacklisted": 0, "already_tested": 1554, "queued": 66}] Queued Configs
+[2026-02-27T16:41:06.147982+00:00] [INFO] [TCP] Starting TCP tests for 66 configs with concurrency 64...
+[2026-02-27T16:41:07.690856+00:00] [INFO] [TCP] TCP tests complete. 59/66 passed.
+[2026-02-27T16:41:07.690976+00:00] [INFO] [Phase 1] [{"instances": 4, "batch_size": 100}] Starting tests for 59 configs...
+[2026-02-27T16:41:12.573553+00:00] [INFO] [Phase 1] [{"duration_sec": 4.88, "efficiency": "11.47 passed/sec"}] Tests complete. 56/59 passed. Avg Latency: 559ms
+[2026-02-27T16:41:12.613476+00:00] [INFO] [Phase 1] Failure Summary:
+[2026-02-27T16:41:12.613572+00:00] [INFO] [Phase 1]   - HighLatency: 2
+[2026-02-27T16:41:12.613587+00:00] [INFO] [Phase 1]   - Timeout: 1
+[2026-02-27T16:41:12.614476+00:00] [INFO] [Main] Total Ultra-Fast Configs: 18
+[2026-02-27T16:41:12.617611+00:00] [INFO] [Report] Report saved to: local_reports/Result_2026-02-27_16-41_Ethernet_or_Unknown.txt
+[2026-02-27T16:41:12.621760+00:00] [INFO] [Stats] README.md updated.
+[2026-02-27T16:41:12.621801+00:00] [INFO] [Metrics] Memory Efficiency: 0 bad configs skipped via Blacklist.
+[2026-02-27T16:41:12.621812+00:00] [INFO] [Main] Process Finished Successfully

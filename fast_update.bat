@@ -15,7 +15,6 @@ echo [1/5] Checking System Dependencies...
 git --version >nul 2>&1
 if %errorlevel% neq 0 (
     echo ❌ Git is not installed or not in PATH.
-    pause
     exit /b 1
 )
 
@@ -29,7 +28,6 @@ if %errorlevel% equ 0 (
         set PYTHON_CMD=py
     ) else (
         echo ❌ Python is not installed or not in PATH.
-        pause
         exit /b 1
     )
 )
@@ -49,7 +47,6 @@ echo [3/5] Installing Python Dependencies...
 %PYTHON_CMD% -m pip install -q -r requirements.txt
 if %errorlevel% neq 0 (
     echo ❌ Failed to install dependencies.
-    pause
     exit /b 1
 )
 echo.
@@ -71,7 +68,6 @@ if not exist real_delay_passed.txt (
 %PYTHON_CMD% local_test.py
 if %errorlevel% neq 0 (
     echo ❌ Local Engine failed.
-    pause
     exit /b 1
 )
 echo.
@@ -105,4 +101,3 @@ echo.
 echo ========================================================
 echo       ✅ Process Finished Successfully
 echo ========================================================
-pause

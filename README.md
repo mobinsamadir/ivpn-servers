@@ -6,17 +6,44 @@
 
 
 
-## 📊 Statistics (Last Updated: 2026-02-27 15:03:18 UTC)
+
+## 📊 Statistics (Last Updated: 2026-02-27 16:41:12 UTC)
 
 | Metric | Count |
 | :--- | :--- |
-| **TCP Passed** | `282` |
-| **Real Delay Passed** | `227` |
-| **Average Latency** | `823 ms` |
-| **Success Rate** | `80.5%` |
-| **System Health** | 🟢 Excellent |
+| **TCP Passed** | `2033` |
+| **Real Delay Passed** | `56` |
+| **Average Latency** | `559 ms` |
+| **Success Rate** | `2.8%` |
+| **System Health** | 🔴 Critical |
 
 ### 🌍 Server Distribution
+
+| Country | Count |
+| :--- | :--- |
+| 🇸🇦 SA | 5 |
+| 🇦🇺 AU | 5 |
+| 🇪🇬 EG | 4 |
+| 🇧🇷 BR | 4 |
+| 🇯🇴 JO | 4 |
+| 🇮🇳 IN | 4 |
+| 🇸🇬 SG | 4 |
+| 🇰🇭 KH | 4 |
+| 🇳🇱 NL | 3 |
+| 🇩🇪 DE | 3 |
+| 🇻🇳 VN | 3 |
+| 🇺🇸 US | 2 |
+| 🇹🇷 TR | 2 |
+| 🇮🇱 IL | 1 |
+| 🇬🇧 GB | 1 |
+| 🇨🇾 CY | 1 |
+| 🇭🇰 HK | 1 |
+| 🇸🇪 SE | 1 |
+| 🇱🇻 LV | 1 |
+| 🇿🇦 ZA | 1 |
+| 🇨🇦 CA | 1 |
+| 🇮🇩 ID | 1 |
+## 🌍 Server Distribution
 
 | Country | Count |
 | :--- | :--- |
