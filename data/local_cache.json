@@ -28,14 +28,14 @@
     },
     "5c23b0194f643630dccfcdbecb9757cc": {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOVx1ZDgzY1x1ZGRmYyBUV10gVFcgXHVkODNjXHVkZGY5XHVkODNjXHVkZGZjIHwgQFJheWRpa2FseCB8IDgyNjUyNyIsICJhZGQiOiAiMTY1LjE1NC4xOTUuMzgiLCAicG9ydCI6ICIzNTAzNCIsICJpZCI6ICI5NTlhOGNhZi00Y2VhLTQzZDAtYTU0OC0zNjI4ZTdkZGZhZmMiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIiLCAidGxzIjogIm5vbmUiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
-      "timestamp": 1791871087.4065087,
-      "latency": 992.4604892730713,
+      "timestamp": 1791950586.6989832,
+      "latency": 334.6097469329834,
       "ssid": "Ethernet_or_Unknown"
     },
     "5818474dacfa894dfb6011bee2eace14": {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gVVMgXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4IHwgQFJheWRpa2FseCB8IDJCOTdDRiIsICJhZGQiOiAiMzguMTEwLjEuMjQ2IiwgInBvcnQiOiAiMTgwMDAiLCAiaWQiOiAiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ0Y3AiLCAidHlwZSI6IG51bGwsICJob3N0IjogIiIsICJwYXRoIjogIi8iLCAidGxzIjogIm5vbmUiLCAic25pIjogbnVsbCwgImFscG4iOiAiIn0=",
-      "timestamp": 1791871087.4065375,
-      "latency": 273.61226081848145,
+      "timestamp": 1791950586.6964326,
+      "latency": 224.6074676513672,
       "ssid": "Ethernet_or_Unknown"
     },
     "2f9db4035a7d9e0071307f3ed70d3d67": {
@@ -64,8 +64,8 @@
     },
     "a8fd0bc4df6981d1857d03e35016c18f": {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZVx1ZDgzY1x1ZGRmMyBJTl0gSU4gXHVkODNjXHVkZGVlXHVkODNjXHVkZGYzIHwgQFJheWRpa2FseCB8IDZFMDI1RSIsICJhZGQiOiAiMTUyLjY3LjguMjA1IiwgInBvcnQiOiAiODAiLCAiaWQiOiAiOWRiNGM3MDgtYWVmOC00MzU5LTgyMWItMzhlNDc5OTBiZTBkIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIiIsICJob3N0IjogIjE1Mi42Ny44LjIwNSIsICJwYXRoIjogIi8iLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
-      "timestamp": 1791871087.4066622,
-      "latency": 920.224666595459,
+      "timestamp": 1791950586.6989067,
+      "latency": 897.8769779205322,
       "ssid": "Ethernet_or_Unknown"
     },
     "b1e416697f5567dd3f072f7ea9ccd769": {
@@ -82,8 +82,8 @@
     },
     "e53147694ebf2573fc527e8a9c207d19": {
       "config": "ss://YWVzLTI1Ni1nY206Rm9PaUdsa0FBOXlQRUdQ@15.204.246.132:7307#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%BA%F0%9F%87%B8-Reston-40ms-OVH%20SAS",
-      "timestamp": 1791871087.406903,
-      "latency": 292.5424575805664,
+      "timestamp": 1791950586.6965306,
+      "latency": 207.67879486083984,
       "ssid": "Ethernet_or_Unknown"
     },
     "c29a780109ea9bc6ebdbddc59e878857": {
@@ -93,123 +93,123 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "f367ec2c42c879be0c9dde117564beea": {
-      "config": "ss://YWVzLTEyOC1nY206NGVmZTFhZjI3MmU3MjkyMTM5Yjg4OWY2YTYzZWUwNzE=@64.74.163.67:18764#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%A8%F0%9F%87%A6-Pointe-Claire-45ms-Dedicated.com",
-      "timestamp": 1791871087.407011,
-      "latency": 285.62116622924805,
+      "config": "ss://YWVzLTEyOC1nY206NGVmZTFhZjI3MmU3MjkyMTM5Yjg4OWY2YTYzZWUwNzE=@64.74.163.67:18764#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20906577",
+      "timestamp": 1791950619.8259692,
+      "latency": 766.2873268127441,
       "ssid": "Ethernet_or_Unknown"
     },
     "0730f454fde6cf55f691fe5bd5065d1c": {
-      "config": "ss://YWVzLTI1Ni1nY206WTZSOXBBdHZ4eHptR0M=@213.202.208.199:5000#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%A9%F0%9F%87%AA-D%C3%BCsseldorf-177ms-myLoc%20managed%20IT%20AG",
-      "timestamp": 1791871087.407065,
-      "latency": 334.822416305542,
+      "config": "ss://YWVzLTI1Ni1nY206WTZSOXBBdHZ4eHptR0M=@213.202.208.199:5000#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%A9%F0%9F%87%AA-D%C3%BCsseldorf-228ms-myLoc%20managed%20IT%20AG",
+      "timestamp": 1791950619.8251686,
+      "latency": 802.4094104766846,
       "ssid": "Ethernet_or_Unknown"
     },
     "07a81cdb4e7d4f9ce61f15ae635bc93a": {
       "config": "ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhH@213.202.208.199:7001#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%A9%F0%9F%87%AA-D%C3%BCsseldorf-181ms-myLoc%20managed%20IT%20AG",
-      "timestamp": 1791871087.407179,
-      "latency": 333.7886333465576,
+      "timestamp": 1791950586.6971128,
+      "latency": 1151.2784957885742,
       "ssid": "Ethernet_or_Unknown"
     },
     "9b938ae553ed4264d12222bde4647e6e": {
       "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.171:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-195ms-Greenhost%20BV",
-      "timestamp": 1791871087.4072258,
-      "latency": 337.53323554992676,
+      "timestamp": 1791950586.6971853,
+      "latency": 352.8578281402588,
       "ssid": "Ethernet_or_Unknown"
     },
     "d66af67fae5b555561a250343b1454e0": {
       "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.18:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-196ms-Greenhost%20BV",
-      "timestamp": 1791871087.4073052,
-      "latency": 333.68611335754395,
+      "timestamp": 1791950586.6970832,
+      "latency": 356.1720848083496,
       "ssid": "Ethernet_or_Unknown"
     },
     "794737d65d8903b6efc71c2c2da1f1c7": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.182:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-198ms-Greenhost%20BV",
-      "timestamp": 1791871087.4073575,
-      "latency": 346.25983238220215,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.182:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20GB%F0%9F%87%AC%F0%9F%87%A7%2B%7C%2B82.38.31.182-8080%2B%7C%2B101.63ms",
+      "timestamp": 1791950619.8272324,
+      "latency": 567.4209594726562,
       "ssid": "Ethernet_or_Unknown"
     },
     "026b41c9d5a922dd324907791feb9404": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.157:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-200ms-Greenhost%20BV",
-      "timestamp": 1791871087.4074006,
-      "latency": 332.9644203186035,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.157:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-245ms-Greenhost%20BV",
+      "timestamp": 1791950619.8253896,
+      "latency": 799.522876739502,
       "ssid": "Ethernet_or_Unknown"
     },
     "1644daecade4adcb05ca4ebef565f896": {
       "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@193.29.139.197:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-200ms-Greenhost%20BV",
-      "timestamp": 1791871087.4074442,
-      "latency": 331.91585540771484,
+      "timestamp": 1791950586.6970198,
+      "latency": 349.15661811828613,
       "ssid": "Ethernet_or_Unknown"
     },
     "75a1a95146e53544cb04389f8a82123d": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.175:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-201ms-Greenhost%20BV",
-      "timestamp": 1791871087.4074857,
-      "latency": 331.2685489654541,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.175:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-252ms-Greenhost%20BV",
+      "timestamp": 1791950619.8255248,
+      "latency": 795.111894607544,
       "ssid": "Ethernet_or_Unknown"
     },
     "2256af2e211668e2f0befe0494efdf4c": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.156:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-202ms-Greenhost%20BV",
-      "timestamp": 1791871087.4075274,
-      "latency": 331.30764961242676,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.156:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-251ms-Greenhost%20BV",
+      "timestamp": 1791950619.8255036,
+      "latency": 795.5389022827148,
       "ssid": "Ethernet_or_Unknown"
     },
     "9421a8edac7694fed55ad697c678673e": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.36:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-202ms-Greenhost%20BV",
-      "timestamp": 1791871087.407583,
-      "latency": 331.1316967010498,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.36:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-248ms-Greenhost%20BV",
+      "timestamp": 1791950619.8254583,
+      "latency": 797.0807552337646,
       "ssid": "Ethernet_or_Unknown"
     },
     "0fd181c8821ee1c78966ecb2d2699bb8": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.28:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-203ms-Greenhost%20BV",
-      "timestamp": 1791871087.4076242,
-      "latency": 329.35333251953125,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.28:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-244ms-Greenhost%20BV",
+      "timestamp": 1791950619.8253448,
+      "latency": 800.8127212524414,
       "ssid": "Ethernet_or_Unknown"
     },
     "7cfce29e4c6cc6f152e7d442bc47578a": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.69:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-203ms-Greenhost%20BV",
-      "timestamp": 1791871087.4076662,
-      "latency": 329.3776512145996,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.69:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-245ms-Greenhost%20BV",
+      "timestamp": 1791950619.8253682,
+      "latency": 799.7620105743408,
       "ssid": "Ethernet_or_Unknown"
     },
     "7bdca2cfd275e69b90e3f8235387ca42": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.175:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-203ms-Greenhost%20BV",
-      "timestamp": 1791871087.407707,
-      "latency": 329.5595645904541,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.175:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-242ms-Greenhost%20BV",
+      "timestamp": 1791950619.8252954,
+      "latency": 800.978422164917,
       "ssid": "Ethernet_or_Unknown"
     },
     "f09b9adab80e7134a4aa3ca70977c644": {
-      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@193.29.139.132:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-203ms-Greenhost%20BV",
-      "timestamp": 1791871087.4077477,
-      "latency": 328.9651870727539,
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@193.29.139.132:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20496485",
+      "timestamp": 1791950619.826658,
+      "latency": 771.0261344909668,
       "ssid": "Ethernet_or_Unknown"
     },
     "504c906834125495bb1786c7b75bed02": {
-      "config": "ss://YWVzLTI1Ni1nY206a0tFZDByQnJkNTZGdXJqeg==@2.58.81.221:80#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%A9%F0%9F%87%AA-Karlsruhe-204ms-Contabo%20GmbH",
-      "timestamp": 1791871087.4077923,
-      "latency": 330.7156562805176,
+      "config": "ss://YWVzLTI1Ni1nY206a0tFZDByQnJkNTZGdXJqeg==@2.58.81.221:80#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%A9%F0%9F%87%AA-Karlsruhe-244ms-Contabo%20GmbH",
+      "timestamp": 1791950619.8253188,
+      "latency": 800.774335861206,
       "ssid": "Ethernet_or_Unknown"
     },
     "e7b9bb56b7a067079a129883adae78a9": {
-      "config": "ss://YWVzLTI1Ni1nY206WlJwZ2FCZUd4dEVOSVhndmhwa1pCS3o5R25XUlMyZFljeDlPK2EyaXdOND0=@185.164.175.81:19999#%5B%F0%9F%87%BA%F0%9F%87%A6%20UA%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%AE%F0%9F%87%B9-Milan-209ms-Datacamp%20Limited",
-      "timestamp": 1791871087.4078372,
-      "latency": 334.34438705444336,
+      "config": "ss://YWVzLTI1Ni1nY206WlJwZ2FCZUd4dEVOSVhndmhwa1pCS3o5R25XUlMyZFljeDlPK2EyaXdOND0=@185.164.175.81:19999#%5B%F0%9F%87%BA%F0%9F%87%A6%20UA%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%AE%F0%9F%87%B9-Milan-262ms-Datacamp%20Limited",
+      "timestamp": 1791950619.8255823,
+      "latency": 795.5372333526611,
       "ssid": "Ethernet_or_Unknown"
     },
     "5602b879da67b142795e3264709e3135": {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gaHR0cHM6Ly90Lm1lL0ZvcmNlUnVuVlBOLVx1ZDgzY1x1ZGZjMS0yMzVtcy1Vbmtub3duIiwgImFkZCI6ICIzOC4xMTAuMS4yNDYiLCAicG9ydCI6ICIxODAwMCIsICJpZCI6ICJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIvIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
-      "timestamp": 1791871087.4078724,
-      "latency": 284.2097282409668,
+      "timestamp": 1791950586.696453,
+      "latency": 222.58353233337402,
       "ssid": "Ethernet_or_Unknown"
     },
     "7ddfc8fb1ee640872df16fd30c08f0ba": {
       "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo5ZXBwM285bmc4ZWo1OXV2@45.128.12.20:14249#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B8%F0%9F%87%AC-Singapore-452ms-Host%20Universal%20Pty%20Ltd",
-      "timestamp": 1791871087.4079251,
-      "latency": 831.4235210418701,
+      "timestamp": 1791950586.6987607,
+      "latency": 368.8175678253174,
       "ssid": "Ethernet_or_Unknown"
     },
     "2df9cb86047af643b494b6f84f304708": {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOVx1ZDgzY1x1ZGRmYyBUV10gaHR0cHM6Ly90Lm1lL0ZvcmNlUnVuVlBOLVx1ZDgzY1x1ZGRmOVx1ZDgzY1x1ZGRmYy1UYW95dWFuLTUxMW1zLVNjbG91ZCBQdGUgTHRkIiwgImFkZCI6ICIxNjUuMTU0LjE5NS4zOCIsICJwb3J0IjogIjM1MDM0IiwgImlkIjogIjk1OWE4Y2FmLTRjZWEtNDNkMC1hNTQ4LTM2MjhlN2RkZmFmYyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogInYycmF5TnBsdXMtLXYycmF5TnBsdXMtLXYycmF5TnBsdXMiLCAicGF0aCI6ICIiLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
-      "timestamp": 1791871087.4079561,
-      "latency": 825.1874446868896,
+      "timestamp": 1791950586.6987317,
+      "latency": 354.5975685119629,
       "ssid": "Ethernet_or_Unknown"
     },
     "aff1878dfa9807296564a1114f3579a1": {
@@ -220,8 +220,8 @@
     },
     "267da206ae3f5d3aeb89cd6251ca1eca": {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmMFx1ZDgzY1x1ZGRmNyBLUl0gaHR0cHM6Ly90Lm1lL0ZvcmNlUnVuVlBOLVx1ZDgzY1x1ZGRmMFx1ZDgzY1x1ZGRmNy1TZW91bC03MTZtcy1PcmFjbGUgQ29ycG9yYXRpb24iLCAiYWRkIjogIjEzMi4xNDUuODAuMjMwIiwgInBvcnQiOiAiODAiLCAiaWQiOiAiNTE1NTg2MGUtZDA3ZC00NmMzLTkxMjgtM2FmYmQ4NDYyNmM3IiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICJrcjAyLmEwYS54eXoiLCAicGF0aCI6ICIvY2N0djEzLm0zdTgiLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
-      "timestamp": 1791871087.4080305,
-      "latency": 880.8224201202393,
+      "timestamp": 1791950586.6988585,
+      "latency": 430.81116676330566,
       "ssid": "Ethernet_or_Unknown"
     },
     "96d50f5c646b6b50975eeb45ba420c86": {
@@ -249,9 +249,9 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "cfa3a5a837c4d273b5b85f8b2b8c31cf": {
-      "config": "vless://40cc9b52-25b8-4cd5-8b45-715ae26e6baf@163.172.214.188:80?type=ws&host=SC-TheNetherlands1.09vpn.com&path=/vless/#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20718937",
-      "timestamp": 1791871087.4084327,
-      "latency": 817.2190189361572,
+      "config": "vless://40cc9b52-25b8-4cd5-8b45-715ae26e6baf@163.172.214.188:80?type=ws&host=SC-TheNetherlands1.09vpn.com&path=/vless/#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20548039",
+      "timestamp": 1791950619.825788,
+      "latency": 1094.409465789795,
       "ssid": "Ethernet_or_Unknown"
     },
     "27684704ed583fe5276ffe71813b2d9d": {
@@ -273,27 +273,27 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "ba3b2c868aee3ad85610c0d60974b09b": {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOFx1ZDgzY1x1ZGRlYyBTR10gXHVkODNjXHVkZmYzXHVmZTBmIFNoYXRha1ZQTiA2MTc2OTEiLCAiYWRkIjogIjE0OS44OC4yMy4yMDciLCAicG9ydCI6ICIxODAwMCIsICJpZCI6ICJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICJUZWxlZ3JhbS1MZXZpa29fdjJyYXkiLCAicGF0aCI6ICIiLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
-      "timestamp": 1791871087.4086432,
-      "latency": 812.2966289520264,
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOFx1ZDgzY1x1ZGRlYyBTR10gXHVkODNjXHVkZmYzXHVmZTBmIFNoYXRha1ZQTiA2NDI5NzIiLCAiYWRkIjogIjE0OS44OC4yMy4yMDciLCAicG9ydCI6ICIxODAwMCIsICJpZCI6ICJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICJUZWxlZ3JhbS1MZXZpa29fdjJyYXkiLCAicGF0aCI6ICIiLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8260038,
+      "latency": 814.1779899597168,
       "ssid": "Ethernet_or_Unknown"
     },
     "2ff9a8d110c51463d48c5bde83bd25d5": {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOFx1ZDgzY1x1ZGRlYyBTR10gXHVkODNjXHVkZmYzXHVmZTBmIFNoYXRha1ZQTiA0ODc5MzUiLCAiYWRkIjogIjE0OS44OC4yMy4yMDciLCAicG9ydCI6ICIxODAwMCIsICJpZCI6ICJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICJUZWxlZ3JhbS1MZXZpa29fdjJyYXkiLCAicGF0aCI6ICIiLCAidGxzIjogIm5vbmUiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
-      "timestamp": 1791871087.40867,
-      "latency": 812.225341796875,
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOFx1ZDgzY1x1ZGRlYyBTR10gXHVkODNjXHVkZmYzXHVmZTBmIFNoYXRha1ZQTiAxNTExNzMiLCAiYWRkIjogIjE0OS44OC4yMy4yMDciLCAicG9ydCI6ICIxODAwMCIsICJpZCI6ICJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICJUZWxlZ3JhbS1MZXZpa29fdjJyYXkiLCAicGF0aCI6ICIiLCAidGxzIjogIm5vbmUiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8260186,
+      "latency": 781.3370227813721,
       "ssid": "Ethernet_or_Unknown"
     },
     "1f25970f59a8f8740f3541532600ccc7": {
-      "config": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.206:23576?security=reality&type=tcp&host=Telegram-Leviko_v2ray&sni=fuck.rkn&flow=xtls-rprx-vision&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&sid=01#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20770321",
-      "timestamp": 1791871087.4087288,
-      "latency": 307.64222145080566,
+      "config": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.206:23576?security=reality&type=tcp&host=Telegram-Leviko_v2ray&sni=fuck.rkn&flow=xtls-rprx-vision&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&sid=01#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20122068",
+      "timestamp": 1791950619.826075,
+      "latency": 759.0508460998535,
       "ssid": "Ethernet_or_Unknown"
     },
     "f9c3f19fe940c6eded8be1b64415599c": {
       "config": "vless://5504eaa8-1395-402f-8e0e-75ecd762e627@188.114.97.6:443?security=tls&type=ws&host=server5.9966338.xyz&path=/drsukitgreiusweqa9otrh983%3Fed%3D2560&sni=server5.9966338.xyz&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20671836",
-      "timestamp": 1791871087.4087903,
-      "latency": 295.32814025878906,
+      "timestamp": 1791950586.696571,
+      "latency": 336.72475814819336,
       "ssid": "Ethernet_or_Unknown"
     },
     "149b5d80544ad8d91f585429742c5dad": {
@@ -310,32 +310,32 @@
     },
     "02bb9d6ec0ccc2cbcef787e344060eb0": {
       "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.97.6:443?security=tls&type=ws&host=lucasjow.us.ci&path=/%3FTelegram---DailyConfigs---DailyConfigs---DailyConfigs#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20999461",
-      "timestamp": 1791871087.408958,
-      "latency": 244.42243576049805,
+      "timestamp": 1791950586.6962168,
+      "latency": 699.862003326416,
       "ssid": "Ethernet_or_Unknown"
     },
     "0a3353cc756bc9f6051a8cdef74ce133": {
       "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.97.6:443?security=tls&type=ws&host=lucasjow.us.ci&path=/&sni=lucasjow.us.ci&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20136695",
-      "timestamp": 1791871087.4090092,
-      "latency": 782.2175025939941,
+      "timestamp": 1791950586.698499,
+      "latency": 171.8909740447998,
       "ssid": "Ethernet_or_Unknown"
     },
     "214215b37438731f951ad8ed28f8aa44": {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNiBDQV0gQnkgRWJyYVNoYSBcdWQ4M2RcdWRkMmUiLCAiYWRkIjogIjEzNC4xOTUuMTk2LjIxMSIsICJwb3J0IjogIjE4MDAwIiwgImlkIjogImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAibm9uZSIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
-      "timestamp": 1791871087.4090369,
-      "latency": 574.5053291320801,
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNiBDQV0gaHR0cHM6Ly90Lm1lL0ZvcmNlUnVuVlBOLVx1ZDgzY1x1ZGRlNlx1ZDgzY1x1ZGRmYS1TeWRuZXktMTMzbXMtVGhlIENvbnN0YW50IENvbXBhbnkiLCAiYWRkIjogIjEzNC4xOTUuMTk2LjIxMSIsICJwb3J0IjogIjE4MDAwIiwgImlkIjogImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAibm9uZSIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.825124,
+      "latency": 786.517858505249,
       "ssid": "Ethernet_or_Unknown"
     },
     "27f5d2d6770d33354584f58a1b7bdd43": {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gQnkgRWJyYVNoYSBcdWQ4M2RcdWRjN2UiLCAiYWRkIjogIjEyOS4xNDYuNzcuMjQ4IiwgInBvcnQiOiAiMzk0OTUiLCAiaWQiOiAiZjgzNmM3MzYtODdmYy00ZmRlLWFhYmMtMDA4NTdlY2RmZjNlIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIi0tLSIsICJob3N0IjogIiIsICJwYXRoIjogIi9jY3R2MTMubTN1OCIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
-      "timestamp": 1791871087.40906,
-      "latency": 581.1772346496582,
+      "timestamp": 1791950586.6979003,
+      "latency": 156.233549118042,
       "ssid": "Ethernet_or_Unknown"
     },
     "ca84f3c2e2cf1a779416dfddb4d99e15": {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gQnkgRWJyYVNoYSBcdWQ4M2RcdWRkNzZcdWZlMGYiLCAiYWRkIjogIjE2OS4xOTcuMTQyLjIyIiwgInBvcnQiOiAiMTgwMDAiLCAiaWQiOiAiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ0Y3AiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIiLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
-      "timestamp": 1791871087.4090824,
-      "latency": 580.2674293518066,
+      "timestamp": 1791950586.697887,
+      "latency": 94.85125541687012,
       "ssid": "Ethernet_or_Unknown"
     },
     "9b97e3f344b335c19fc8f9dd20cb3136": {
@@ -352,8 +352,8 @@
     },
     "393a738f0ebe24979a337abc83a7459d": {
       "config": "trojan://UX82473651@54.238.153.132:443?security=tls&type=tcp&sni=obliging-louse.rooster465.autos&fp=chrome#%5B%F0%9F%87%AF%F0%9F%87%B5%20JP%5D%20%40vpnclashfa%20-%201224",
-      "timestamp": 1791871087.4092119,
-      "latency": 1087.2187614440918,
+      "timestamp": 1791950586.6991827,
+      "latency": 838.0148410797119,
       "ssid": "Ethernet_or_Unknown"
     },
     "c7c2c0b6bb64d20cb0abe75d93c557d9": {
@@ -364,50 +364,50 @@
     },
     "36f7399e929b9e9ae36b905c417cf2f3": {
       "config": "trojan://UX82473651@63.178.198.94:443?security=tls&type=tcp&sni=pleased-albacore.rooster465.autos#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%40vpnclashfa%20-%201228",
-      "timestamp": 1791871087.4093537,
-      "latency": 1075.6244659423828,
+      "timestamp": 1791950586.699157,
+      "latency": 498.59118461608887,
       "ssid": "Ethernet_or_Unknown"
     },
     "e1ddab4ca96342a7f3e37e7852847071": {
       "config": "trojan://nwilryafgkyvuxauc8pz@69.164.240.85:50875?security=tls&type=tcp#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%87%BA%F0%9F%87%B8192345%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
-      "timestamp": 1791871087.4094172,
-      "latency": 949.0869045257568,
+      "timestamp": 1791950586.6989682,
+      "latency": 253.06463241577148,
       "ssid": "Ethernet_or_Unknown"
     },
     "2dbf0fbc28216bbfae1e520c895b21a6": {
       "config": "vless://03790b11-e3d9-4966-859b-4e524bb04645@104.21.28.22:443?security=tls&type=ws&host=vFuHF4iQN9b0-pyQr62d.QFeM579eMmB5Z6NE0EjFcb.WorKers.Dev&path=/vl/JjVa6m2jVRuNUtMfj&sni=vFuHF4iQN9b0-pyQr62d.QFeM579eMmB5Z6NE0EjFcb.WorKers.Dev&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%A8%F0%9F%87%A6191954%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
-      "timestamp": 1791871087.4094863,
-      "latency": 355.4034233093262,
+      "timestamp": 1791950586.6972759,
+      "latency": 740.7801151275635,
       "ssid": "Ethernet_or_Unknown"
     },
     "07b8da35af4dbfcf8269acbd09d21a17": {
       "config": "vless://03a8d415-1d9c-470d-9e2d-ea0fd6aef9c0@104.21.6.82:8080?type=ws&host=server7.wimig16819.workers.dev&path=/eyJqdW5rIjoiSWdvVk5ETHBhRnNQamIiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iXX0#%5B%F0%9F%9A%A9%20Unknown%5D%20%40orangevpns_bot%20%D8%AA%D8%B3%D8%AA%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86",
-      "timestamp": 1791871087.4095485,
-      "latency": 308.8243007659912,
+      "timestamp": 1791950586.6967084,
+      "latency": 104.59256172180176,
       "ssid": "Ethernet_or_Unknown"
     },
     "bb2b801c1aa50047ed21071a9cf04e59": {
-      "config": "vless://06c4e938-2954-478f-a870-ca1b163e30e9@94.183.170.135:443?type=ws&host=estproxy4.lockdwn.com&path=/#%5B%F0%9F%87%AA%F0%9F%87%AA%20EE%5D%20%40vpnclashfa%20-%201834",
-      "timestamp": 1791871087.4096,
-      "latency": 547.0600128173828,
+      "config": "vless://06c4e938-2954-478f-a870-ca1b163e30e9@94.183.170.135:443?type=ws&host=estproxy4.lockdwn.com&path=/#%5B%F0%9F%87%AA%F0%9F%87%AA%20EE%5D%20%40vpnclashfa%20-%201196",
+      "timestamp": 1791950619.8277647,
+      "latency": 867.8579330444336,
       "ssid": "Ethernet_or_Unknown"
     },
     "afdbe8a67f77ba0c312f2fadfe1da40b": {
       "config": "vless://088b8483-f76b-46be-b710-4f756a0fe487@128.241.25.11:30021?security=tls&type=ws&host=8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev&path=/%40Marisa_kristi&sni=8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev&fp=chrome#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%20By%20EbraSha%20%F0%9F%8E%9B%EF%B8%8F",
-      "timestamp": 1791871087.40966,
-      "latency": 1075.2644538879395,
+      "timestamp": 1791950586.6991296,
+      "latency": 119.57621574401855,
       "ssid": "Ethernet_or_Unknown"
     },
     "9bae897b0b2225d71dd1d54bf63d3bd9": {
       "config": "vless://0985e268-5c1c-4141-9d96-139f8046c47c@203.137.165.164:57554?security=tls&type=ws&host=kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev&path=/%40Marisa_kristi&sni=kqjifhg9rw.tradsc8p9xp7wxyqmc1wy0ah.workers.dev&fp=chrome#%5B%F0%9F%87%AF%F0%9F%87%B5%20JP%5D%20%20By%20EbraSha%20%F0%9F%AA%96",
-      "timestamp": 1791871087.409729,
-      "latency": 1172.729253768921,
+      "timestamp": 1791950586.6994526,
+      "latency": 505.9936046600342,
       "ssid": "Ethernet_or_Unknown"
     },
     "4a6cbcbfdf176c053d60408c1638b949": {
       "config": "vless://0b2ea024-3ffd-46a7-87ce-86cbb79d7a48@172.67.171.191:8080?type=ws&host=server18.peekconfig2.workers.dev&path=/eyJqdW5rIjoiT3FNeW1sMVdGVHlvNTIiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iLCJbMjYwMjpmYzU5OmIwOjY0OjpdIiwiWzI2MDI6ZmM1OToxMTo2NDo6XSJdfQ%3D%3D#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F_%E6%9C%AA%E7%9F%A5_147",
-      "timestamp": 1791871087.409787,
-      "latency": 241.25981330871582,
+      "timestamp": 1791950586.6961691,
+      "latency": 164.11495208740234,
       "ssid": "Ethernet_or_Unknown"
     },
     "accf4a8fa597f8fce3f3bfc2c56ed342": {
@@ -418,38 +418,38 @@
     },
     "a775a04d1bbcb4951f023ef0cf57765e": {
       "config": "vless://18805ff3-b420-45de-af18-93be14024ae8@47.251.25.74:443?security=reality&type=tcp&sni=www.amazon.com&flow=xtls-rprx-vision&pbk=H56cOJhw0xw76lDEpt7IuJJmVGemK6_CK34KtHwDMX8&fp=chrome#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20-%20Santa%20Clara%20%F0%9F%8C%8E%20VL-TCP-RLT%204%E2%83%A3",
-      "timestamp": 1791871087.4099102,
-      "latency": 329.9572467803955,
+      "timestamp": 1791950586.696902,
+      "latency": 747.7645874023438,
       "ssid": "Ethernet_or_Unknown"
     },
     "2031c7f39d6acc1c4a1ae6be2cbf70df": {
       "config": "vless://1c5ed2e1-56da-41ab-9a78-159d9892ec17@130.17.25.67:443?security=reality&type=tcp&sni=github.com&flow=xtls-rprx-vision&pbk=lHCkAu_DOVFtE-iL2JGrPt44QeTCFijXuRfuGaSni3Q&sid=9e4eced6e98ed4d4#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%40vpnclashfa%20-%201981",
-      "timestamp": 1791871087.4099662,
-      "latency": 431.5779209136963,
+      "timestamp": 1791950586.697509,
+      "latency": 507.4748992919922,
       "ssid": "Ethernet_or_Unknown"
     },
     "c2ee8839d4a07868bf514b2deadf9d81": {
-      "config": "vless://1c81f6d3-5771-4c5d-9fdd-1655eff50634@95.216.27.15:2053?security=reality&type=tcp&sni=www.google.com&pbk=4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM&fp=chrome&sid=d368b94e275ab080#%5B%F0%9F%87%AB%F0%9F%87%AE%20FI%5D%20%40vpnclashfa%20-%201987",
-      "timestamp": 1791871087.4100204,
-      "latency": 695.4030990600586,
+      "config": "vless://1c81f6d3-5771-4c5d-9fdd-1655eff50634@95.216.27.15:2053?security=reality&type=tcp&sni=www.google.com&pbk=4nfogj5mHqNowtSn_2sXS3xTX8vcH75rFEU2BWvyekM&fp=chrome&sid=d368b94e275ab080#%5B%F0%9F%87%AB%F0%9F%87%AE%20FI%5D%20%40vpnclashfa%20-%201363",
+      "timestamp": 1791950619.8278627,
+      "latency": 706.8233489990234,
       "ssid": "Ethernet_or_Unknown"
     },
     "3fd079bcf1ebf597b5aec0fc320ba7ce": {
       "config": "vless://20dd9433-389e-4573-ba7b-689619cf13da@89.169.53.176:4443?security=reality&type=tcp&sni=gateway.icloud.com&flow=xtls-rprx-vision&pbk=YIyohkkCU5kw6J5iZYZkhILyDwlfftFPDTkbITlrAUw&sid=df3aff719526dc5a#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%40vpnclashfa%20-%202017",
-      "timestamp": 1791871087.4100702,
-      "latency": 686.11741065979,
+      "timestamp": 1791950586.6981018,
+      "latency": 555.5994510650635,
       "ssid": "Ethernet_or_Unknown"
     },
     "cb8b3d1baa254a6c4407a3f08d8d296d": {
       "config": "vless://22424ee2-6fe3-42ca-9749-6d4c5a8acc82@188.114.98.0:443?security=tls&type=ws&host=tn1r.eu.cc&path=/id-pusat&sni=tn1r.eu.cc&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%A8%F0%9F%87%A6191932%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
-      "timestamp": 1791871087.4101276,
-      "latency": 301.62596702575684,
+      "timestamp": 1791950586.6966102,
+      "latency": 708.9440822601318,
       "ssid": "Ethernet_or_Unknown"
     },
     "8596bf322915df3fa511cd082dc4f049": {
-      "config": "vless://25e16692-d097-4e69-9e2d-8415609c1968@78.135.73.47:443?security=reality&type=tcp&sni=www.datadoghq.com&flow=xtls-rprx-vision&pbk=sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8&sid=f46cd3ea3d1eb72d#%5B%F0%9F%87%B9%F0%9F%87%B7%20TR%5D%20%40vpnclashfa%20-%202060",
-      "timestamp": 1791871087.41018,
-      "latency": 924.3724346160889,
+      "config": "vless://25e16692-d097-4e69-9e2d-8415609c1968@78.135.73.47:443?security=reality&type=tcp&sni=www.datadoghq.com&flow=xtls-rprx-vision&pbk=sZAJkAu23wp1WKY-qeaeiwR38izP5OyfhumoE9xhbB8&sid=f46cd3ea3d1eb72d#%5B%F0%9F%87%B9%F0%9F%87%B7%20TR%5D%20%40vpnclashfa%20-%201437",
+      "timestamp": 1791950619.82794,
+      "latency": 1074.2716789245605,
       "ssid": "Ethernet_or_Unknown"
     },
     "f90f499f70c78fb849c8ad46d34ae5c5": {
@@ -466,20 +466,20 @@
     },
     "cbcbd2923759434c41968973be7b5731": {
       "config": "vless://36c3dcc2-17b6-4478-b8a7-3978e6d5afe9@23.81.36.148:1222?security=reality&type=tcp&sni=www.forvo.com&pbk=zpLKK8HuwXJDH9D0O3t5Z_tO3ajkj7VRtXdr6UGy1zE&sid=a25d0f#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20%F0%9F%87%AC%F0%9F%87%A7191875%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
-      "timestamp": 1791871087.4104202,
-      "latency": 448.57025146484375,
+      "timestamp": 1791950586.697577,
+      "latency": 513.4799480438232,
       "ssid": "Ethernet_or_Unknown"
     },
     "21b918141b92d22a552277f8538c06aa": {
       "config": "vless://40af9131-d540-448a-bc56-5bba147a1dc3@154.211.8.227:2087?security=tls&type=ws&host=proxy-34l.pages.dev&path=/&sni=proxy-34l.pages.dev&fp=chrome#%5B%F0%9F%87%B8%F0%9F%87%A8%20SC%5D%20UN%E3%80%90%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90%EF%BC%9Ahttps%3A//a9a.xyz%E3%80%91142",
-      "timestamp": 1791871087.4104884,
-      "latency": 784.8284244537354,
+      "timestamp": 1791950586.698537,
+      "latency": 79.6363353729248,
       "ssid": "Ethernet_or_Unknown"
     },
     "80c0dcf18c5008a4778d165561d54037": {
       "config": "vless://443d55c9-9b78-4ad4-ac34-5ada5b98e97e@107.149.159.190:4433?security=reality&type=tcp&sni=www.postgresql.org&flow=xtls-rprx-vision&pbk=ptrxM_lwiuXte-ynRSfM7AyayGbWrfCzkV1gQ5EgeSw&fp=chrome&sid=0fa5bc397af019a2#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20q_135",
-      "timestamp": 1791871087.4105508,
-      "latency": 750.6866455078125,
+      "timestamp": 1791950586.6983826,
+      "latency": 74.48339462280273,
       "ssid": "Ethernet_or_Unknown"
     },
     "d8d12b8080f6ef469fc229b7a0acd39d": {
@@ -490,14 +490,14 @@
     },
     "358306cd98f6f07b57df225fc917bca1": {
       "config": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.219:23576?security=reality&type=tcp&host=/%3Ftelegram--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI&sni=fuck.rkn&flow=xtls-rprx-vision&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%40vpnclashfa%20-%202373",
-      "timestamp": 1791871087.41067,
-      "latency": 722.6793766021729,
+      "timestamp": 1791950586.698352,
+      "latency": 88.30666542053223,
       "ssid": "Ethernet_or_Unknown"
     },
     "852e2ac7ec40b7d917e3f8a933d61feb": {
       "config": "vless://49c0ae46-767c-47d1-9703-8740e0c4b15a@172.67.219.21:443?security=tls&type=ws&host=flat-night-edd0.hosein9saleazhuongooyeh87.workers.dev&path=/eyJqdW5rIjoiZU1pQlVqNTBYVmpTeDlCIiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMjYwMjpmYzU5OmIwOjY0OjpdIl19&sni=flat-night-edd0.hosein9saleazhuongooyeh87.workers.dev&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%40VIProxys",
-      "timestamp": 1791871087.4107208,
-      "latency": 694.6878433227539,
+      "timestamp": 1791950586.6982503,
+      "latency": 170.90845108032227,
       "ssid": "Ethernet_or_Unknown"
     },
     "52f715e93dd53333984a3cd4b0d38a3c": {
@@ -507,33 +507,33 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "7d8a30eb7ef4b1709a7bcd4a55825013": {
-      "config": "vless://4d852af3-a121-41aa-9aed-4ca40a6f7b4d@157.228.155.238:443?security=reality&type=tcp&sni=addons.mozilla.org&flow=xtls-rprx-vision&pbk=5BDht3tAZdKEKpJymGlRK9JugOnieA-kMSWz_0FoE0I&sid=6f76ad09#%5B%F0%9F%87%A6%F0%9F%87%AA%20AE%5D%20%40vpnclashfa%20-%202448",
-      "timestamp": 1791871087.410823,
-      "latency": 689.9402141571045,
+      "config": "vless://4d852af3-a121-41aa-9aed-4ca40a6f7b4d@157.228.155.238:443?security=reality&type=tcp&sni=addons.mozilla.org&flow=xtls-rprx-vision&pbk=5BDht3tAZdKEKpJymGlRK9JugOnieA-kMSWz_0FoE0I&sid=6f76ad09#%5B%F0%9F%87%A6%F0%9F%87%AA%20AE%5D%20%40vpnclashfa%20-%201825",
+      "timestamp": 1791950619.8281536,
+      "latency": 757.3952674865723,
       "ssid": "Ethernet_or_Unknown"
     },
     "dc384b1ceb49b1157b104ae593a75b97": {
-      "config": "vless://4d852af3-a121-41aa-9aed-4ca40a6f7b4d@157.228.155.238:443?security=reality&type=tcp&host=/%3Ftelegram--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI&sni=addons.mozilla.org&flow=xtls-rprx-vision&pbk=5BDht3tAZdKEKpJymGlRK9JugOnieA-kMSWz_0FoE0I&fp=randomized&sid=6f76ad09#%5B%F0%9F%87%A6%F0%9F%87%AA%20AE%5D%20%40vpnclashfa%20-%202449",
-      "timestamp": 1791871087.4108837,
-      "latency": 690.4566287994385,
+      "config": "vless://4d852af3-a121-41aa-9aed-4ca40a6f7b4d@157.228.155.238:443?security=reality&type=tcp&host=/%3Ftelegram--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI&sni=addons.mozilla.org&flow=xtls-rprx-vision&pbk=5BDht3tAZdKEKpJymGlRK9JugOnieA-kMSWz_0FoE0I&fp=randomized&sid=6f76ad09#%5B%F0%9F%87%A6%F0%9F%87%AA%20AE%5D%20%40vpnclashfa%20-%201826",
+      "timestamp": 1791950619.8281898,
+      "latency": 711.620569229126,
       "ssid": "Ethernet_or_Unknown"
     },
     "446a87fc9ee34633221049a8706dbf2a": {
       "config": "vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@104.16.111.102:443?security=tls&type=ws&host=jp3.yohototo.top&path=/tyxyws&sni=jp3.yohototo.top&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%20By%20EbraSha%20%F0%9F%97%BF",
-      "timestamp": 1791871087.4109378,
-      "latency": 1089.5028114318848,
+      "timestamp": 1791950586.6992118,
+      "latency": 1160.9983444213867,
       "ssid": "Ethernet_or_Unknown"
     },
     "0d4dce648d6883f076c056dcf984414e": {
-      "config": "vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@104.17.210.74:443?security=tls&type=ws&host=jp3.yohototo.top&path=/tyxyws&sni=jp3.yohototo.top&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%20By%20EbraSha%20%E2%99%A0%EF%B8%8F",
-      "timestamp": 1791871087.4109895,
-      "latency": 1132.0977210998535,
+      "config": "vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@104.17.210.74:443?security=tls&type=ws&host=jp3.yohototo.top&path=/tyxyws&sni=jp3.yohototo.top&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%20By%20EbraSha%20%F0%9F%91%91",
+      "timestamp": 1791950619.8283749,
+      "latency": 819.3986415863037,
       "ssid": "Ethernet_or_Unknown"
     },
     "fbe2fb3ec6d4f693ef37a35c0aceb5df": {
       "config": "vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@104.19.33.237:443?security=tls&type=ws&host=jp3.yohototo.top&path=/tyxyws&sni=jp3.yohototo.top&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%20By%20EbraSha%20%F0%9F%A6%87",
-      "timestamp": 1791871087.411039,
-      "latency": 1159.9006652832031,
+      "timestamp": 1791950586.6993597,
+      "latency": 1153.9463996887207,
       "ssid": "Ethernet_or_Unknown"
     },
     "23a2f15298cbdb04b8ef7fb9af17b2c1": {
@@ -550,20 +550,20 @@
     },
     "6a4d57c033e49d28620efb1cf265a7c3": {
       "config": "vless://51a1fd52-fd88-4905-a976-35e44be28e4b@2.26.225.89:8443?security=tls&type=tcp&sni=pl.flen-vpn.xyz#%5B%F0%9F%87%B5%F0%9F%87%B1%20PL%5D%20qq_060",
-      "timestamp": 1791871087.411202,
-      "latency": 691.2100315093994,
+      "timestamp": 1791950586.69822,
+      "latency": 1195.340633392334,
       "ssid": "Ethernet_or_Unknown"
     },
     "9b39901f00a137c934541fae8ac615aa": {
       "config": "vless://572b2f63-62b5-4e79-a6c8-d2211bf33576@129.153.71.28:28863?security=tls&type=ws&host=wjwkhoaftdgrt8qus.mp8pmwdgwf3sdapasouszjobjr57nrxxgtx9n.workers.dev&path=/%40Marisa_kristi&sni=wjwkhoaftdgrt8qus.mp8pmwdgwf3sdapasouszjobjr57nrxxgtx9n.workers.dev&fp=chrome#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%E7%BE%8E%E5%9B%BD%28yudou99.com%20%E7%8E%89%E8%B1%86%E5%88%86%E4%BA%AB%29",
-      "timestamp": 1791871087.4113016,
-      "latency": 793.032169342041,
+      "timestamp": 1791950586.6986547,
+      "latency": 228.2869815826416,
       "ssid": "Ethernet_or_Unknown"
     },
     "53d102a2b7f364a61930272117c69f7f": {
       "config": "vless://57beeeb0-03fc-4fc9-94da-7604488a7134@154.21.203.106:21033?security=reality&type=tcp&sni=www.kaidee.com&flow=xtls-rprx-vision&pbk=EG-jzQw1RyOwAM4L9rMKondSx7cyFmPyv1OP7xXkIk4&fp=firefox&sid=cbd39bea0805e2#%5B%F0%9F%87%AD%F0%9F%87%B0%20HK%5D%20qq_074",
-      "timestamp": 1791871087.411362,
-      "latency": 1125.0431537628174,
+      "timestamp": 1791950586.6992412,
+      "latency": 731.5757274627686,
       "ssid": "Ethernet_or_Unknown"
     },
     "bec7a3c1d11fe750c609cf11f887ca36": {
@@ -586,26 +586,26 @@
     },
     "9a700a0c8a132db9b0d09afba555e868": {
       "config": "vless://6202b230-417c-4d8e-b624-0f71afa9c75d@185.162.229.30:8880?type=ws&host=vms.lifetime61.workers.dev&path=/#%5B%F0%9F%87%AE%F0%9F%87%B2%20IM%5D%20%F0%9F%87%B8%F0%9F%87%AC%5Bwww.v2nodes.com%5D%20vless-SG%20%233",
-      "timestamp": 1791871087.4115865,
-      "latency": 564.8794174194336,
+      "timestamp": 1791950586.6978254,
+      "latency": 66.97916984558105,
       "ssid": "Ethernet_or_Unknown"
     },
     "19a4cfd2608ccbe158c317a8716f4cca": {
       "config": "vless://6ba2eac6-0ec9-44ca-a42b-a8e23aafb530@204.216.216.23:1114?security=reality&type=tcp&sni=yahoo.com&flow=xtls-rprx-vision&pbk=WfkCF0eEuIoO0MyJsKOddU89QrTzCZ4y2dzCJbH99CQ&sid=79a1e14b#%5B%F0%9F%87%AE%F0%9F%87%B9%20IT%5D%20%F0%9F%91%89%F0%9F%86%94%40v2ray_configs_pool%F0%9F%93%A1%F0%9F%87%AE%F0%9F%87%B9%C2%AE%EF%B8%8FItaly%C2%A9%EF%B8%8FSiziano%F0%9F%85%BF%EF%B8%8Fping%3A42.81ms",
-      "timestamp": 1791871087.411663,
-      "latency": 865.9451007843018,
+      "timestamp": 1791950586.6988103,
+      "latency": 781.5108299255371,
       "ssid": "Ethernet_or_Unknown"
     },
     "c20222efe6c87af1005203e12fca2cae": {
       "config": "vless://6d613d5f-1d65-48ca-b2e8-d83a2c3a17d9@172.67.179.98:8880?type=ws&host=tight-star-08eb.331-729.workers.dev&path=/pyip%3DProxyIP.JP.CMLiussss.net#%5B%F0%9F%9A%A9%20Unknown%5D%20%40VIProxys",
-      "timestamp": 1791871087.411714,
-      "latency": 375.68163871765137,
+      "timestamp": 1791950586.6973433,
+      "latency": 61.73372268676758,
       "ssid": "Ethernet_or_Unknown"
     },
     "5f32fbf13d59b067eca35967b3d335bd": {
       "config": "vless://7d90f043-ed7f-40c9-ac2f-352987904958@57.129.41.216:80?type=ws&host=ov-germany1.09vpn.com&path=/vless/#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%40vpnclashfa%20-%202889",
-      "timestamp": 1791871087.4117615,
-      "latency": 782.1855545043945,
+      "timestamp": 1791950586.6984677,
+      "latency": 490.13757705688477,
       "ssid": "Ethernet_or_Unknown"
     },
     "cbe1ca1c92f40a11e672b21b9c2a57ab": {
@@ -622,8 +622,8 @@
     },
     "6fe630da94d21b632f4bd9e1b20d8157": {
       "config": "vless://8be461cb-a0df-47cf-bc0d-4d9e6a22fa74@188.114.97.6:443?security=tls&type=ws&host=ccs2g.pai50288.uk&path=/pai50288&sni=ccs2g.pai50288.uk&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20qq_023",
-      "timestamp": 1791871087.4119143,
-      "latency": 353.076696395874,
+      "timestamp": 1791950586.6972387,
+      "latency": 945.3597068786621,
       "ssid": "Ethernet_or_Unknown"
     },
     "15888fbd4e109e2bd4b38cb42425990a": {
@@ -639,9 +639,9 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "f8f4919c1e612fbb72ccb53f4185f573": {
-      "config": "vless://8e8e2034-33eb-4ccc-938f-ba86d877c449@188.114.97.6:443?security=tls&type=ws&host=icy-hall-8013.386-58c.workers.dev&path=/pyip%3DProxyIP.SG.CMLiussss.net&sni=icy-hall-8013.386-58c.workers.dev#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%203049",
-      "timestamp": 1791871087.4120715,
-      "latency": 174.91531372070312,
+      "config": "vless://8e8e2034-33eb-4ccc-938f-ba86d877c449@188.114.97.6:443?security=tls&type=ws&host=icy-hall-8013.386-58c.workers.dev&path=/pyip%3DProxyIP.SG.CMLiussss.net&sni=icy-hall-8013.386-58c.workers.dev#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%202428",
+      "timestamp": 1791950619.8288274,
+      "latency": 302.63328552246094,
       "ssid": "Ethernet_or_Unknown"
     },
     "b7dce9b267f0ee136b834f8dd6a6b30c": {
@@ -664,8 +664,8 @@
     },
     "c176e95812701356cdbd124e64df03c9": {
       "config": "vless://9c79aceb-4649-44ea-9698-b5e9ecf6d6da@156.229.161.107:10001?security=reality&type=tcp&sni=www.icloud.com&flow=xtls-rprx-vision&pbk=4jNz4Bw-FZlaX-WtfAdwK0hegY28W_k8AttGd-7hZn4&fp=chrome&sid=fb2c6678#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%40vpnclashfa%20-%203153",
-      "timestamp": 1791871087.4123333,
-      "latency": 465.20090103149414,
+      "timestamp": 1791950586.6976755,
+      "latency": 328.59134674072266,
       "ssid": "Ethernet_or_Unknown"
     },
     "fc0b92055ebc2b9a001d9fe2a0453252": {
@@ -676,8 +676,8 @@
     },
     "d28ad2277c963b2cbf7a002d9481af17": {
       "config": "vless://a1de0630-5786-48a0-84f6-dc6f2de10d6d@104.18.35.86:2083?security=tls&type=ws&host=vlsovip.1d.mom&path=/&sni=vlsovip.1d.mom&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%20By%20EbraSha%20%F0%9F%A6%87",
-      "timestamp": 1791871087.4124389,
-      "latency": 502.8235912322998,
+      "timestamp": 1791950586.6977434,
+      "latency": 154.9816131591797,
       "ssid": "Ethernet_or_Unknown"
     },
     "9de15d1f069996562c45fc52ba81b759": {
@@ -688,26 +688,26 @@
     },
     "c4f65a4fd0c3a23e79aa5570c7f8e34d": {
       "config": "vless://a6d20e79-d326-42c1-bc20-f4cecc6dc42d@45.134.9.133:8443?security=tls&type=ws&path=/vless/&sni=ul-mexico1.09vpn.com#%5B%F0%9F%87%B2%F0%9F%87%BD%20MX%5D%20%F0%9F%87%B2%F0%9F%87%BD%20Mexico%20-%20Mexico%20City%20%F0%9F%8C%8E%20VL-WS-TLS%204%E2%83%A3",
-      "timestamp": 1791871087.4125485,
-      "latency": 772.7992534637451,
+      "timestamp": 1791950586.6984406,
+      "latency": 523.0495929718018,
       "ssid": "Ethernet_or_Unknown"
     },
     "ef73236ab5fe56db917c1d83cf18552e": {
       "config": "vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@2.59.253.251:443?security=reality&type=tcp&sni=nvidia.com&flow=xtls-rprx-vision&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&fp=firefox&sid=db04ce8bdb8900f1&spx=/#%5B%F0%9F%87%B5%F0%9F%87%B1%20PL%5D%20%E6%B3%A2%E5%85%B0-08",
-      "timestamp": 1791871087.4126139,
-      "latency": 451.3356685638428,
+      "timestamp": 1791950586.6976109,
+      "latency": 565.3269290924072,
       "ssid": "Ethernet_or_Unknown"
     },
     "7e6276c21d1c0210323982232a639918": {
       "config": "vless://b0a100ee-c397-43f2-bdae-2adfb7a0d4e5@5.199.0.226:443?security=tls&type=ws&host=rnxq-1lpi3m.linmeisoft.com&path=/b0a100ee-c397-43f2-bdae-2adfb7a0d4e5%3Fed%23Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET&sni=rnxq-1lpi3m.linmeisoft.com&fp=firefox#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20YFZ%206%20%40Outline_Vpn",
-      "timestamp": 1791871087.4126713,
-      "latency": 457.57484436035156,
+      "timestamp": 1791950586.697645,
+      "latency": 744.5099353790283,
       "ssid": "Ethernet_or_Unknown"
     },
     "7a611393848ae8cc244029c125f0a896": {
       "config": "vless://b3a15df4-c8ad-4e98-b427-7a679aee2b18@129.153.71.28:28863?security=tls&type=ws&host=8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev&path=/%40Marisa_kristi&sni=8n9qi6t-owl.gevc9s4n60cc3wzcmwhjyezydpmbchocxp.workers.dev&fp=chrome#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%E7%BE%8E%E5%9B%BD%28yudou99.com%20%E7%8E%89%E8%B1%86%E5%88%86%E4%BA%AB%29",
-      "timestamp": 1791871087.4127305,
-      "latency": 618.9813613891602,
+      "timestamp": 1791950586.697971,
+      "latency": 185.65821647644043,
       "ssid": "Ethernet_or_Unknown"
     },
     "127278bb42a623284f36ad712aed158e": {
@@ -736,14 +736,14 @@
     },
     "3d2986316c989d186a6636936b3af468": {
       "config": "vless://c29d39bd-92a4-45db-bb61-56013998617c@104.18.109.147:80?type=ws&host=www.speedtest.net.www.1google.com.bing.com.visa.com.tls.xv98.ip-ddns.com&path=/telegram-xv2ry2#%5B%F0%9F%9A%A9%20Unknown%5D%20%40VIProxys",
-      "timestamp": 1791871087.4129848,
-      "latency": 519.3216800689697,
+      "timestamp": 1791950586.697772,
+      "latency": 265.58923721313477,
       "ssid": "Ethernet_or_Unknown"
     },
     "93b7e81f00921cdd5bb6177a871780a6": {
       "config": "vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@104.16.10.135:443?security=tls&type=ws&host=a.cwvps.eu.org&path=/ws%23/%3FTELEGRAM--MTMVPN--mtmvpn%3Fed%3D512&sni=a.cwvps.eu.org&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%203574",
-      "timestamp": 1791871087.413042,
-      "latency": 1160.0348949432373,
+      "timestamp": 1791950586.6994185,
+      "latency": 161.5922451019287,
       "ssid": "Ethernet_or_Unknown"
     },
     "8dfb0fa6fd410e68dd850b7d0d0a6418": {
@@ -753,15 +753,15 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "08ae5c669a90a459bcff61fa28061d79": {
-      "config": "vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@104.17.189.78:443?security=tls&type=ws&host=a.cwvps.eu.org&path=/ws&sni=a.cwvps.eu.org&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%20By%20EbraSha%20%E2%9A%A1",
-      "timestamp": 1791871087.4131474,
-      "latency": 1150.7446765899658,
+      "config": "vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@104.17.189.78:443?security=tls&type=ws&host=a.cwvps.eu.org&path=/ws&sni=a.cwvps.eu.org&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%202941",
+      "timestamp": 1791950619.8292363,
+      "latency": 1070.7805156707764,
       "ssid": "Ethernet_or_Unknown"
     },
     "a60dbae19968ed5969f1336da5cdc2ec": {
       "config": "vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@104.18.176.145:443?security=tls&type=ws&host=a.cwvps.eu.org&path=/ws&sni=a.cwvps.eu.org&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%20By%20EbraSha%20%F0%9F%9B%B0%EF%B8%8F",
-      "timestamp": 1791871087.4132016,
-      "latency": 1149.8243808746338,
+      "timestamp": 1791950586.6993313,
+      "latency": 715.3327465057373,
       "ssid": "Ethernet_or_Unknown"
     },
     "ad3a390c3d6f93d487cac902fb2f89ad": {
@@ -778,14 +778,14 @@
     },
     "71b15fe42afa2fe6395dd15c9172a941": {
       "config": "vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@104.24.156.153:443?security=tls&type=ws&host=a.cwvps.eu.org&path=/ws&sni=a.cwvps.eu.org&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%20By%20EbraSha%20%F0%9F%A7%A9",
-      "timestamp": 1791871087.4133937,
-      "latency": 1160.0315570831299,
+      "timestamp": 1791950586.699387,
+      "latency": 496.1395263671875,
       "ssid": "Ethernet_or_Unknown"
     },
     "2bcf6d98b412a86a78f72c3baacbe55e": {
       "config": "vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@104.24.18.119:443?security=tls&type=ws&host=a.cwvps.eu.org&path=/ws&sni=a.cwvps.eu.org&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%20By%20EbraSha%20%F0%9F%8C%91",
-      "timestamp": 1791871087.4134436,
-      "latency": 1182.199239730835,
+      "timestamp": 1791950586.6994803,
+      "latency": 685.0192546844482,
       "ssid": "Ethernet_or_Unknown"
     },
     "844df987efaf95a0c622c036299b1b7f": {
@@ -807,33 +807,33 @@
       "ssid": "Ethernet_or_Unknown"
     },
     "d9eae162ac73ad44067330461e5b4a81": {
-      "config": "vless://ca990a85-cb33-44af-bb17-61b30b43d51e@72.56.85.221:443?security=reality&type=tcp&sni=apple.com&flow=xtls-rprx-vision&pbk=uTOxHZkQuw_YnO3GEIV0jDkVNOsOPQrTIPdRb2Rk8DQ&sid=00353c#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%40vpnclashfa%20-%203663",
-      "timestamp": 1791871087.4136531,
-      "latency": 391.34860038757324,
+      "config": "vless://ca990a85-cb33-44af-bb17-61b30b43d51e@72.56.85.221:443?security=reality&type=tcp&sni=apple.com&flow=xtls-rprx-vision&pbk=uTOxHZkQuw_YnO3GEIV0jDkVNOsOPQrTIPdRb2Rk8DQ&sid=00353c#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%40vpnclashfa%20-%203040",
+      "timestamp": 1791950619.829476,
+      "latency": 770.8773612976074,
       "ssid": "Ethernet_or_Unknown"
     },
     "6c19aeff8ac93d4c15eb0c9ea0e2334b": {
       "config": "vless://cb2dbb6a-a1ea-4023-9ace-6466cee57241@51.81.203.63:443?security=reality&type=tcp&host=www.icloud.com&sni=www.icloud.com&flow=xtls-rprx-vision&pbk=nqwCf6oW49tEtmQ0EzxigZ0uu1pg0E30CS54G40Iti0&fp=chrome&sid=4477382ff6d3d41c#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%87%BA%F0%9F%87%B8_%E7%BE%8E%E5%9B%BD_66",
-      "timestamp": 1791871087.4137106,
-      "latency": 411.0102653503418,
+      "timestamp": 1791950586.6974497,
+      "latency": 211.578369140625,
       "ssid": "Ethernet_or_Unknown"
     },
     "44e2be97cc02a3538fe4002dc2ad4c55": {
-      "config": "vless://ce18d0eb-5c71-41f9-96e5-1632e22456e4@195.123.240.65:443?security=reality&type=tcp&sni=www.cloudflare.com&flow=xtls-rprx-vision&pbk=StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE&sid=19296c9f1bf9c7b1#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%40vpnclashfa%20-%203696",
-      "timestamp": 1791871087.4137602,
-      "latency": 417.30546951293945,
+      "config": "vless://ce18d0eb-5c71-41f9-96e5-1632e22456e4@195.123.240.65:443?security=reality&type=tcp&sni=www.cloudflare.com&flow=xtls-rprx-vision&pbk=StPbcmBuzpuYUfa4oZ5SI3Bq1OSF_-oU1vp2AcyvQVE&sid=19296c9f1bf9c7b1#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%40vpnclashfa%20-%203069",
+      "timestamp": 1791950619.8295043,
+      "latency": 340.88802337646484,
       "ssid": "Ethernet_or_Unknown"
     },
     "072db2602a795edaa940485e8c977560": {
-      "config": "vless://d342d11e-d224-4463-b982-532309285094@104.26.4.2:443?security=tls&type=ws&host=ccc.010304.xyz&path=/&sni=ccc.010304.xyz&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%A8%F0%9F%87%A6191596%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
-      "timestamp": 1791871087.4138184,
-      "latency": 269.43469047546387,
+      "config": "vless://d342d11e-d224-4463-b982-532309285094@104.26.4.2:443?security=tls&type=ws&host=ccc.010304.xyz&path=/&sni=ccc.010304.xyz&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%40VIProxys",
+      "timestamp": 1791950619.829562,
+      "latency": 974.2250442504883,
       "ssid": "Ethernet_or_Unknown"
     },
     "342f6fcd8296013ec135bee97dffcbfc": {
       "config": "vless://d342d11e-d224-4463-b982-532309285094@141.11.139.215:443?security=tls&type=ws&host=ccc.010304.xyz&path=/fp&sni=ccc.010304.xyz#%5B%F0%9F%87%AF%F0%9F%87%B5%20JP%5D%20q_055",
-      "timestamp": 1791871087.4138658,
-      "latency": 1020.2057361602783,
+      "timestamp": 1791950586.699094,
+      "latency": 490.3275966644287,
       "ssid": "Ethernet_or_Unknown"
     },
     "b02c1c282dd856091eb62af3ccce299c": {
@@ -844,20 +844,20 @@
     },
     "98f27fb277c61daad82ce1453ad1ab7a": {
       "config": "vless://d342d11e-d224-4463-b982-532309285094@172.64.152.241:443?security=tls&type=ws&host=ccc.010304.xyz&path=/&sni=ccc.010304.xyz#%5B%F0%9F%9A%A9%20Unknown%5D%20qq_016",
-      "timestamp": 1791871087.4139714,
-      "latency": 265.1858329772949,
+      "timestamp": 1791950586.6962924,
+      "latency": 98.51980209350586,
       "ssid": "Ethernet_or_Unknown"
     },
     "e930a221c53e2b42e82ea8b348545721": {
       "config": "vless://d342d11e-d224-4463-b982-532309285094@172.67.76.40:443?security=tls&type=ws&host=ccc.010304.xyz&path=/fp%3Dchrome&sni=ccc.010304.xyz#%5B%F0%9F%9A%A9%20Unknown%5D%20%40VIProxys",
-      "timestamp": 1791871087.4140234,
-      "latency": 268.3722972869873,
+      "timestamp": 1791950586.6963243,
+      "latency": 103.41477394104004,
       "ssid": "Ethernet_or_Unknown"
     },
     "53adb7f7eaa104fa85d4db42a24eaa71": {
       "config": "vless://d342d11e-d224-4463-b982-532309285094@188.164.248.216:443?security=tls&type=ws&host=ccc.010304.xyz&path=/fp%3Dchrome&sni=ccc.010304.xyz#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%87%B8%F0%9F%87%AC%5Bwww.v2nodes.com%5D%20vless-SG",
-      "timestamp": 1791871087.414079,
-      "latency": 264.5101547241211,
+      "timestamp": 1791950586.6962588,
+      "latency": 98.87051582336426,
       "ssid": "Ethernet_or_Unknown"
     },
     "33d6f6510382c4338882878098698482": {
@@ -868,62 +868,62 @@
     },
     "63ccb0e3628d5d565a48faec12a9e26e": {
       "config": "vless://d342d11e-d224-4463-b982-532309285094@77.110.97.245:443?security=tls&type=ws&host=ccc.010304.xyz&path=/fp%3Dchrome&sni=ccc.010304.xyz#%5B%F0%9F%87%B8%F0%9F%87%AA%20SE%5D%20qq_029",
-      "timestamp": 1791871087.4141855,
-      "latency": 1005.8486461639404,
+      "timestamp": 1791950586.6990645,
+      "latency": 963.1695747375488,
       "ssid": "Ethernet_or_Unknown"
     },
     "24e23961d5490f0b4127e034d3a871f8": {
       "config": "vless://d56624b2-35bb-468c-9b2a-e0b0df7230c1@154.31.114.248:50159?security=reality&type=tcp&sni=www.cloudflare.com&flow=xtls-rprx-vision&pbk=j4QXngGuJkUGwRj4XIrfHRohYYuEfnJlX4cvCE-WklA&fp=chrome&sid=091e1c5db8451757#%5B%F0%9F%87%AF%F0%9F%87%B5%20JP%5D%20q_150",
-      "timestamp": 1791871087.4142358,
-      "latency": 895.878791809082,
+      "timestamp": 1791950586.6988912,
+      "latency": 360.94069480895996,
       "ssid": "Ethernet_or_Unknown"
     },
     "bcfcfa4294cf943a8d4e6cc5efaa73a8": {
       "config": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.179:443?security=reality&type=tcp&host=/%3Ftelegram--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI&sni=yahoo.com&flow=xtls-rprx-vision&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&fp=ios&sid=c39cc7310a#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%40MARAMBASHI%20%F0%9F%87%A6%F0%9F%87%B2",
-      "timestamp": 1791871087.4143324,
-      "latency": 367.79141426086426,
+      "timestamp": 1791950586.6973138,
+      "latency": 282.7792167663574,
       "ssid": "Ethernet_or_Unknown"
     },
     "19b67e6ad9fb6f645f090ccba5a0fe93": {
       "config": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.52:443?security=reality&type=tcp&sni=yahoo.com&flow=xtls-rprx-vision&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&fp=ios&sid=c39cc7310a&spx=/#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%E7%BE%8E%E5%9B%BD-32",
-      "timestamp": 1791871087.4143896,
-      "latency": 311.77544593811035,
+      "timestamp": 1791950586.696749,
+      "latency": 377.4566650390625,
       "ssid": "Ethernet_or_Unknown"
     },
     "2c1ac9022b3a643bf8c00187e1ebd9dd": {
       "config": "vless://d6d58f01-b5ce-4d47-bce0-b8a806155852@136.107.170.196:443?security=reality&type=tcp&sni=www.cloudflare.com&pbk=L1S0DpFtHPBeyENZUvJPcrFZIct6kcHUPxuzNaGXIFY&sid=4c69c4b51c580d60#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%40vpnclashfa%20-%203859",
-      "timestamp": 1791871087.4144392,
-      "latency": 228.24478149414062,
+      "timestamp": 1791950586.6961036,
+      "latency": 573.1396675109863,
       "ssid": "Ethernet_or_Unknown"
     },
     "fe61e05f0b0f7cf0cd38a57f5d2dd18b": {
       "config": "vless://dc620cd6-a9d8-4a0f-8f18-006b895db77e@66.70.179.198:2053?security=reality&type=tcp&sni=www.cloudflare.com&pbk=k4l6TxwkBbx9DhZAFpByq5rfCWFSgyOex3f_eFe9CWU&sid=83f8317a948bb769#%5B%F0%9F%87%A8%F0%9F%87%A6%20CA%5D%20Free%20x305%20%40Outline_Vpn",
-      "timestamp": 1791871087.4144878,
-      "latency": 208.7998390197754,
+      "timestamp": 1791950586.6960227,
+      "latency": 262.8495693206787,
       "ssid": "Ethernet_or_Unknown"
     },
     "fa4ad5e5a40e1522b21e5e91ce4613a2": {
       "config": "vless://df53b6c2-8005-475c-9eb9-74e1be785dc8@157.228.160.166:443?security=reality&type=tcp&host=/%3FTelegram---V2ray_confiig&sni=addons.mozilla.org&flow=xtls-rprx-vision&pbk=NOw-idkk3OCn-N0IRS93leujH4ik-E749O2T5BYJQ0M&fp=chrome&sid=3cef317b#%5B%F0%9F%87%A6%F0%9F%87%AA%20AE%5D%20EPODONIOS",
-      "timestamp": 1791871087.414546,
-      "latency": 1005.3098201751709,
+      "timestamp": 1791950586.6990163,
+      "latency": 675.9288311004639,
       "ssid": "Ethernet_or_Unknown"
     },
     "ae1854ee4ee65ae2e475e307570c4731": {
       "config": "vless://df53b6c2-8005-475c-9eb9-74e1be785dc8@2.27.69.117:443?security=reality&type=tcp&sni=addons.mozilla.org&flow=xtls-rprx-vision&pbk=-bn-69fLm8-ZIN4AWcFJTvliohVXnevdOK6E0HJF90Y&sid=123c2bff#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%40vpnclashfa%20-%203948",
-      "timestamp": 1791871087.4145935,
-      "latency": 790.3647422790527,
+      "timestamp": 1791950586.6985662,
+      "latency": 543.3330535888672,
       "ssid": "Ethernet_or_Unknown"
     },
     "7beff37f90a5350056150f27715addbd": {
       "config": "vless://df53b6c2-8005-475c-9eb9-74e1be785dc8@2.27.71.48:443?security=reality&type=tcp&sni=addons.mozilla.org&flow=xtls-rprx-vision&pbk=FTB4bvTP-3JAbScj_vvkIOPFGjtN2TaNTUfeY-Ew8EU&fp=randomized&sid=4d767145#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%40orangevpns_bot%20%D8%AA%D8%B3%D8%AA%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%EF%BF%BD",
-      "timestamp": 1791871087.4146514,
-      "latency": 791.3827896118164,
+      "timestamp": 1791950586.6985996,
+      "latency": 528.076171875,
       "ssid": "Ethernet_or_Unknown"
     },
     "869befe786cf8fa634afeb555d59e879": {
       "config": "vless://e332f028-d343-5b44-8016-b3130f39e133@81.208.170.142:1500?security=reality&type=grpc&sni=www.ebay.com&pbk=VQxVgczORkbSNdDrkNOYs6zMBINpViztTKDuWCeQsVE&fp=chrome&sid=775eb6408888248e#%5B%F0%9F%87%B8%F0%9F%87%A6%20SA%5D%20%F0%9F%87%B8%F0%9F%87%A6%20Saudi%20Arabia%20-%20NA%20%F0%9F%8C%8F%20VL-GRPC-RLT%204%E2%83%A3",
-      "timestamp": 1791871087.414707,
-      "latency": 1147.9291915893555,
+      "timestamp": 1791950586.6993027,
+      "latency": 1030.8277606964111,
       "ssid": "Ethernet_or_Unknown"
     },
     "2fa95b938bb80bb29b296744494aab5b": {
@@ -940,14 +940,14 @@
     },
     "179f47f6fc7351d95c15bdc9e9d44458": {
       "config": "vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@104.18.35.86:2082?type=ws&host=hhlfy.twiladaphne.ndjp.net&path=/fp&sni=hhlfy.twiladaphne.ndjp.net#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%B8%F0%9F%87%AC%5Bwww.v2nodes.com%5D%20vless-SG%20%234",
-      "timestamp": 1791871087.4148817,
-      "latency": 434.1273307800293,
+      "timestamp": 1791950586.697539,
+      "latency": 159.1660976409912,
       "ssid": "Ethernet_or_Unknown"
     },
     "ae10267bb67b45766502db28c323bffe": {
-      "config": "vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@172.64.150.28:2082?type=ws&host=hhlfy.twiladaphne.ndjp.net&sni=hhlfy.twiladaphne.ndjp.net#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%204126",
-      "timestamp": 1791871087.4149272,
-      "latency": 597.7251529693604,
+      "config": "vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@172.64.150.28:2082?type=ws&host=hhlfy.twiladaphne.ndjp.net&sni=hhlfy.twiladaphne.ndjp.net#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%203502",
+      "timestamp": 1791950619.829958,
+      "latency": 257.7991485595703,
       "ssid": "Ethernet_or_Unknown"
     },
     "53fc274155033748da65b0640f64dad2": {
@@ -958,20 +958,20 @@
     },
     "4925191861a8a05d76a587176cbb8223": {
       "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.97.6:443?security=tls&type=ws&host=lucasjow.us.ci&path=/cart/docs/www/proxyip%3D108.160.132.132%3Fed%23Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET&sni=lucasjow.us.ci&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%40VIProxys",
-      "timestamp": 1791871087.4150293,
-      "latency": 601.7007827758789,
+      "timestamp": 1791950586.697933,
+      "latency": 204.06103134155273,
       "ssid": "Ethernet_or_Unknown"
     },
     "34c7f9facc6c60b3da07f68e74666cb5": {
-      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.97.6:443?security=tls&type=ws&host=lucasjow.us.ci&path=/cart/docs/www/proxyip%3D108.160.132.132%3Fed%23Telegram---TOOTFARANGI&sni=lucasjow.us.ci&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%204136",
-      "timestamp": 1791871087.415081,
-      "latency": 568.5005187988281,
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.97.6:443?security=tls&type=ws&host=lucasjow.us.ci&path=/cart/docs/www/proxyip%3D108.160.132.132%3Fed%23Telegram---TOOTFARANGI&sni=lucasjow.us.ci&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%203514",
+      "timestamp": 1791950619.8301425,
+      "latency": 973.7875461578369,
       "ssid": "Ethernet_or_Unknown"
     },
     "33a0c893f6f58006a15649fde7b57c19": {
       "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.97.6:443?security=tls&type=ws&host=lucasjow.us.ci&path=/cart/docs/www/proxyip%3D108.160.132.132%3Fed%23Telegram---bored_vpn&sni=lucasjow.us.ci&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%40VIProxys",
-      "timestamp": 1791871087.4151316,
-      "latency": 625.6370544433594,
+      "timestamp": 1791950586.6980174,
+      "latency": 293.2922840118408,
       "ssid": "Ethernet_or_Unknown"
     },
     "6e4d48056ffd4fbf7936156a8bc7c83d": {
@@ -982,14 +982,14 @@
     },
     "7a397acf6a19de16acc09bf6c62ca5cf": {
       "config": "vless://ee18d188-14cc-417e-beb1-70e4add6d023@142.91.108.25:443?security=reality&type=tcp&sni=jp3.nztvpn.com&flow=xtls-rprx-vision&pbk=9ZCYjybxMQ7JpE39B8u_Bo-alI1LIbt5ER0E-4yMjiM&fp=edge&sid=ea36c03d86f91287#%5B%F0%9F%87%AF%F0%9F%87%B5%20JP%5D%20qqq_67",
-      "timestamp": 1791871087.415229,
-      "latency": 875.5536079406738,
+      "timestamp": 1791950586.698842,
+      "latency": 361.57822608947754,
       "ssid": "Ethernet_or_Unknown"
     },
     "be7f82cd28d4fb23d034e264f6b61b88": {
       "config": "vless://ee18d188-14cc-417e-beb1-70e4add6d023@147.45.39.4:443?security=reality&type=tcp&host=de5.nztvpn.com&path=/&sni=de5.nztvpn.com&flow=xtls-rprx-vision&pbk=7vGRh29DmlE13UV_fLUfl2bUpqkmJprSenLZXS8XJEc&fp=random&sid=3560f3d77a767c3a#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%87%A9%F0%9F%87%AA%20%E5%BE%B7%E5%9B%BD%20%7C%20DEU",
-      "timestamp": 1791871087.4153264,
-      "latency": 708.1639766693115,
+      "timestamp": 1791950586.6983204,
+      "latency": 523.9236354827881,
       "ssid": "Ethernet_or_Unknown"
     },
     "866af50cee9fcea003caf1a8d09a4650": {
@@ -1018,50 +1018,1634 @@
     },
     "27dc177fc6a683491af5a484ffb5025b": {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZlx1ZDgzY1x1ZGRmNSBKUF0gXHVkODNjXHVkZGVmXHVkODNjXHVkZGY1SlBfMThfQFN1cmZib2FyZHYycmF5IiwgImFkZCI6ICIxNzIuMTExLjE0Ni42NCIsICJwb3J0IjogIjgwIiwgImlkIjogIjA1YjhjNzgzLTdmNTktNDdmOS05OTIzLTA2YTQ2NTY3OWY2YSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6IG51bGwsICJob3N0IjogbnVsbCwgInBhdGgiOiAiL3ZtZXNzLyIsICJ0bHMiOiAiIiwgInNuaSI6IG51bGwsICJhbHBuIjogIiJ9",
-      "timestamp": 1791871087.4155607,
-      "latency": 791.4175987243652,
+      "timestamp": 1791950586.6986167,
+      "latency": 587.1021747589111,
       "ssid": "Ethernet_or_Unknown"
     },
     "b7fd9b1dcf4baebc930376c863f216d1": {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNiBDQV0gXHU2NzJhXHU3N2U1MTIgMi45TUIvcyIsICJhZGQiOiAiMTM0LjE5NS4xOTYuMjExIiwgInBvcnQiOiAiMTgwMDAiLCAiaWQiOiAiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ0Y3AiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAiIiwgInBhdGgiOiAiL0BQcm94eVZQTjExIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
-      "timestamp": 1791871087.415583,
-      "latency": 383.1958770751953,
+      "timestamp": 1791950586.6973796,
+      "latency": 229.4600009918213,
       "ssid": "Ethernet_or_Unknown"
     },
     "810bc46088da48607b07aa815e64855d": {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNiBDQV0gXHU1MmEwXHU2MmZmXHU1OTI3LTAyIiwgImFkZCI6ICIxMzQuMTk1LjE5Ni4yMTEiLCAicG9ydCI6ICIxODAwMCIsICJpZCI6ICJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIiLCAidGxzIjogIiIsICJzbmkiOiAiQHByb3h5dnBuMTEiLCAiYWxwbiI6ICIifQ==",
-      "timestamp": 1791871087.4156053,
-      "latency": 377.4995803833008,
+      "timestamp": 1791950586.6973636,
+      "latency": 193.81213188171387,
       "ssid": "Ethernet_or_Unknown"
     },
     "931d8ff6d8e3c6740b57fcc903b83319": {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gXHU3ZjhlXHU1NmZkLTAxIiwgImFkZCI6ICIxMjkuMTQ2Ljc3LjI0OCIsICJwb3J0IjogIjM5NDk1IiwgImlkIjogImY4MzZjNzM2LTg3ZmMtNGZkZS1hYWJjLTAwODU3ZWNkZmYzZSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJ3cyIsICJob3N0IjogIiIsICJwYXRoIjogIi9jY3R2MTMubTN1OCIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
-      "timestamp": 1791871087.415626,
-      "latency": 467.47684478759766,
+      "timestamp": 1791950586.6976914,
+      "latency": 93.56021881103516,
       "ssid": "Ethernet_or_Unknown"
     },
     "8e64d7c3b0d86f19022c58f97968f1ad": {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gXHVkODNkXHVkZDEyIFZNLVdTLU5BIFx1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVUy0xMjkuMTQ2Ljc3LjI0ODozOTQ5NSIsICJhZGQiOiAiMTI5LjE0Ni43Ny4yNDgiLCAicG9ydCI6ICIzOTQ5NSIsICJpZCI6ICJmODM2YzczNi04N2ZjLTRmZGUtYWFiYy0wMDg1N2VjZGZmM2UiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAiLS0tIiwgImhvc3QiOiAiMTI5LjE0Ni43Ny4yNDgiLCAicGF0aCI6ICIvY2N0djEzLm0zdTgiLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
-      "timestamp": 1791871087.4156475,
-      "latency": 493.02124977111816,
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4VVNfMTE5X0BTdXJmYm9hcmR2MnJheSIsICJhZGQiOiAiMTI5LjE0Ni43Ny4yNDgiLCAicG9ydCI6ICIzOTQ5NSIsICJpZCI6ICJmODM2YzczNi04N2ZjLTRmZGUtYWFiYy0wMDg1N2VjZGZmM2UiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAiLS0tIiwgImhvc3QiOiAiMTI5LjE0Ni43Ny4yNDgiLCAicGF0aCI6ICIvY2N0djEzLm0zdTgiLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8304436,
+      "latency": 112.1053695678711,
       "ssid": "Ethernet_or_Unknown"
     },
     "88acc4c33a1ff4c74905df8415f91b1c": {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBIS10gXHVkODNkXHVkZDEyIFZNLVdTLU5BIFx1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBISy0xNTYuMjQ1LjIzMi4yMzk6MzUwNDMiLCAiYWRkIjogIjE1Ni4yNDUuMjMyLjIzOSIsICJwb3J0IjogIjM1MDQzIiwgImlkIjogImIxNWU0ODFkLTE3ZTQtNDFhOC04NGMyLTIzZDRmMDUxNGQ5YSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIvIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
-      "timestamp": 1791871087.415675,
-      "latency": 1090.3704166412354,
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBIS10gQHZwbmNsYXNoZmEgLSAxMDRcbiIsICJhZGQiOiAiMTU2LjI0NS4yMzIuMjM5IiwgInBvcnQiOiAiMzUwNDMiLCAiaWQiOiAiYjE1ZTQ4MWQtMTdlNC00MWE4LTg0YzItMjNkNGYwNTE0ZDlhIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIiIsICJob3N0IjogIiIsICJwYXRoIjogIi8iLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.830543,
+      "latency": 710.6719017028809,
       "ssid": "Ethernet_or_Unknown"
     },
     "67368e981010f312cb092440b264e823": {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlY1x1ZDgzY1x1ZGRlNyBHQl0gQHZwbmNsYXNoZmEgLSA1ODNcbiIsICJhZGQiOiAiNTcuMTI5LjEzMi4yMjMiLCAicG9ydCI6ICI4MCIsICJpZCI6ICJhMjVjYmYxMS0yOTA4LTRhMWItYTNhOC05YTU3MTc3N2RjYTMiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAiIiwgImhvc3QiOiAiZ29vZ2xlLmNvbSIsICJwYXRoIjogIi92bWVzcy8iLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
-      "timestamp": 1791871087.415695,
-      "latency": 624.9897480010986,
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlY1x1ZDgzY1x1ZGRlNyBHQl0gQHZwbmNsYXNoZmEgLSAxMVxuIiwgImFkZCI6ICI1Ny4xMjkuMTMyLjIyMyIsICJwb3J0IjogIjgwIiwgImlkIjogImEyNWNiZjExLTI5MDgtNGExYi1hM2E4LTlhNTcxNzc3ZGNhMyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICJnb29nbGUuY29tIiwgInBhdGgiOiAiL3ZtZXNzLyIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8304846,
+      "latency": 747.8363513946533,
       "ssid": "Ethernet_or_Unknown"
     },
     "47527760d3a078147b9b13f00c2c1936": {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOFx1ZDgzY1x1ZGRlYyBTR10gQHZwbmNsYXNoZmEgLSA2NjJcbiIsICJhZGQiOiAiMTQ5Ljg4LjIzLjIwNyIsICJwb3J0IjogIjE4MDAwIiwgImlkIjogImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
-      "timestamp": 1791871087.4157138,
-      "latency": 772.4552154541016,
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOFx1ZDgzY1x1ZGRlYyBTR10gQHZwbmNsYXNoZmEgLSA5N1xuIiwgImFkZCI6ICIxNDkuODguMjMuMjA3IiwgInBvcnQiOiAiMTgwMDAiLCAiaWQiOiAiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ0Y3AiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAiIiwgInBhdGgiOiAiIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8305137,
+      "latency": 388.32664489746094,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2d5f5f88c1fecce0ec7ebf2faf23ba66": {
+      "config": "vless://b4a16091-a25d-4d33-aee3-f5ae04f34b14@172.67.151.243:2086?type=ws&host=blue-brook-cc73.karren391.workers.dev&path=/eyJqdW5rIjoiRjJEdlF3U251aCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbIjE0Ni4xMDMuMTEzLjE1OCIsIjEwMy45Ny44OC4xMzMiLCIxOTQuMTgwLjE4OC4yNDEiLCIxMTYuMjAyLjEzMi4yMDUiXX0#%5B%F0%9F%9A%A9%20Unknown%5D%20EPODONIOS",
+      "timestamp": 1791950619.822468,
+      "latency": 1173.0108261108398,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "b9996da2a9e0f2f1e992402e834df53e": {
+      "config": "vless://d7a8ae86-9904-4f71-8fe4-d754ded610d7@104.21.11.152:8080?type=ws&host=server6.diwir81236.workers.dev&path=/eyJqdW5rIjoiOHNqQ3Bqc2dTZlppTEl1IiwicHJvdG9jb2wiOiJ2bCIsIm1vZGUiOiJwcmVmaXgiLCJwYW5lbElQcyI6WyJbMmEwMjo4OTg6MTQ2OjY0OjpdIl19&sni=server6.diwir81236.workers.dev#%5B%F0%9F%9A%A9%20Unknown%5D%20EPODONIOS",
+      "timestamp": 1791950619.8226657,
+      "latency": 1196.110486984253,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "f661d3ffedd45d91d820d52ff338bcff": {
+      "config": "vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@104.18.35.86:8080?type=ws&host=hhlfy.twiladaphne.ndjp.net&path=/sg-melbi&sni=hhlfy.twiladaphne.ndjp.net#%5B%F0%9F%9A%A9%20Unknown%5D%20EPODONIOS",
+      "timestamp": 1791950619.8227153,
+      "latency": 1182.3196411132812,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "a2eab0d0ffba9c7d0b7bbb0f97cfef5c": {
+      "config": "vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@172.64.150.28:2082?type=ws&host=hhlfy.twiladaphne.ndjp.net&path=/fp&sni=hhlfy.twiladaphne.ndjp.net&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20EPODONIOS",
+      "timestamp": 1791950619.8227677,
+      "latency": 1197.6675987243652,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "d5afef445a179b47516f979417cfc255": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNiBDQV0gRVBPRE9OSU9TIiwgImFkZCI6ICIxMzQuMTk1LjE5Ni4yMTEiLCAicG9ydCI6ICIxODAwMCIsICJpZCI6ICJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIiLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8228455,
+      "latency": 1160.6316566467285,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "ea03b0ae4b958767ccfa65ffa16fbaff": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOFx1ZDgzY1x1ZGRlYyBTR10gRVBPRE9OSU9TIiwgImFkZCI6ICIxNDkuODguMjMuMjA3IiwgInBvcnQiOiAiMTgwMDAiLCAiaWQiOiAiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ0Y3AiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAiIiwgInBhdGgiOiAiLyIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8228703,
+      "latency": 1158.1239700317383,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "13ea2d0237469ac4eb440aecdf8a09c2": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOFx1ZDgzY1x1ZGRlYyBTR10gRVBPRE9OSU9TIiwgImFkZCI6ICIxNDkuODguMjMuMjA3IiwgInBvcnQiOiAiMTgwMDAiLCAiaWQiOiAiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ0Y3AiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAiIiwgInBhdGgiOiAiLyIsICJ0bHMiOiAibm9uZSIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8228962,
+      "latency": 1159.440040588379,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "7943a8dc165e18ece60656eb4216a162": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOVx1ZDgzY1x1ZGRmYyBUV10gRVBPRE9OSU9TIiwgImFkZCI6ICIxNjUuMTU0LjE5NS4zOCIsICJwb3J0IjogIjM1MDM0IiwgImlkIjogIjk1OWE4Y2FmLTRjZWEtNDNkMC1hNTQ4LTM2MjhlN2RkZmFmYyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8229225,
+      "latency": 1157.4211120605469,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "e319f151c0cfe17730d958d386e1c794": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOVx1ZDgzY1x1ZGRmYyBUV10gRVBPRE9OSU9TIiwgImFkZCI6ICIxNjUuMTU0LjE5NS4zOCIsICJwb3J0IjogIjM1MDM0IiwgImlkIjogIjk1OWE4Y2FmLTRjZWEtNDNkMC1hNTQ4LTM2MjhlN2RkZmFmYyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAiIiwgImhvc3QiOiAiIiwgInBhdGgiOiAiIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8229373,
+      "latency": 1152.2345542907715,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "4e86fcc1e7092b7def4e76ef21a32f5c": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOVx1ZDgzY1x1ZGRlYSBERV0gRVBPRE9OSU9TIiwgImFkZCI6ICIzMS43Ni4xMS44MyIsICJwb3J0IjogIjIyMjY2IiwgImlkIjogIjJkOGY1N2JkLTEyYjUtNDFhZC1hODA2LTY1MDE3NTNjMjY0YyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.822955,
+      "latency": 1186.4254474639893,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "0febe98ac2b93150a5b086163c975b49": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.186:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8230104,
+      "latency": 1182.837724685669,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "489b536dda3c3a4443301ed8cfa31794": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.198:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8230598,
+      "latency": 1185.7936382293701,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "a927d38d2e93a6a828b10f5066c5952a": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.201:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.82309,
+      "latency": 1183.7594509124756,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2e1c1a707f49e79cf6115506fd58882d": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.218:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8231146,
+      "latency": 1185.0535869598389,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "07616319a4991c16826f707d169c2ab2": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@193.29.139.151:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20EPODONIOS",
+      "timestamp": 1791950619.8231447,
+      "latency": 1186.382532119751,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "365641083f6b71fe1199c669e9c57f4c": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.155:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8231673,
+      "latency": 1186.0265731811523,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "f0b343c3fb3eac0c1efdcec3bab9fda5": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.9:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8231897,
+      "latency": 1185.917615890503,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "83acca5f74016e0a7f806c56d0d755ca": {
+      "config": "ss://YWVzLTI1Ni1nY206aXR6dnBuQDMyMQ==@57.131.48.45:8388#%5B%F0%9F%87%AE%F0%9F%87%B9%20IT%5D%20EPODONIOS",
+      "timestamp": 1791950619.8232133,
+      "latency": 1190.2310848236084,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9f90e560f5d05a933bd8bbfbb122e832": {
+      "config": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.198:23576?security=reality&type=tcp&sni=fuck.rkn&flow=xtls-rprx-vision&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&fp=chrome&sid=01#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20EPODONIOS",
+      "timestamp": 1791950619.8232622,
+      "latency": 1131.8295001983643,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "1c335c9137b398f1f65ab0d1dfe8460d": {
+      "config": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@15.204.97.214:23576?security=reality&type=tcp&sni=fuck.rkn&flow=xtls-rprx-vision&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&fp=chrome&sid=01#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20EPODONIOS",
+      "timestamp": 1791950619.8232956,
+      "latency": 1137.8319263458252,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "1aa807eebc1a9e88a69bd45fca696dc3": {
+      "config": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.12:23576?security=reality&type=tcp&sni=fuck.rkn&flow=xtls-rprx-vision&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&fp=chrome&sid=01#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20EPODONIOS",
+      "timestamp": 1791950619.8233283,
+      "latency": 1198.9099979400635,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "6d2c5f0ba5cc3fb9789647fafee1484c": {
+      "config": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.20:23576?security=reality&type=tcp&sni=fuck.rkn&flow=xtls-rprx-vision&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&sid=01#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20EPODONIOS",
+      "timestamp": 1791950619.8233604,
+      "latency": 1198.702096939087,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "5fff161296a58170f2a89d2f4dd64b8c": {
+      "config": "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.87:23576?security=reality&type=tcp&sni=fuck.rkn&flow=xtls-rprx-vision&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&sid=01#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20EPODONIOS",
+      "timestamp": 1791950619.8233922,
+      "latency": 1196.6309547424316,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "66349343efad54c048fc83db33cfe1f0": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.187:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8234165,
+      "latency": 1168.4818267822266,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "3807f5c594628955c76e04b5c2efe7af": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.194:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8234396,
+      "latency": 1164.3567085266113,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "8f05e9a0dbc3c1dae49ade652fd4569f": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.202:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8234613,
+      "latency": 1166.4836406707764,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "88b45c939baef9970581bc457c1d9fa9": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.210:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.823484,
+      "latency": 1139.094591140747,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9cde2a5e3a0c75ade4b1bc2045235160": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.214:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8235073,
+      "latency": 1165.069580078125,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "19ff492e33f164ea5313359d54212c64": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.217:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8235264,
+      "latency": 1166.072130203247,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "ee622b31ede50e0ab74d13a074e93471": {
+      "config": "ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@138.199.42.68:8080#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20EPODONIOS",
+      "timestamp": 1791950619.8235497,
+      "latency": 707.0555686950684,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "c8f952c1787b42d9c55a057dab95dcb9": {
+      "config": "ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@137.184.174.93:8080#%5B%F0%9F%87%A8%F0%9F%87%A6%20CA%5D%20EPODONIOS",
+      "timestamp": 1791950619.8235693,
+      "latency": 709.6297740936279,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "b840c8e2949eaf57eec8a7141d42e580": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.174:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.823589,
+      "latency": 707.4179649353027,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "d5d7a144b84f9f4b5e228173efa396e8": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.159:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8236089,
+      "latency": 704.6260833740234,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "36ad7376c48d23cd7e906a4fc57e265e": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.207:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8236299,
+      "latency": 693.4230327606201,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "531633980c834f1fd2450a1d80621010": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.212:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8236496,
+      "latency": 710.2711200714111,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "5f6037a8401d16551c0d0ebccdaad2bc": {
+      "config": "ss://YWVzLTI1Ni1nY206WlJwZ2FCZUd4dEVOSVhndmhwa1pCS3o5R25XUlMyZFljeDlPK2EyaXdOND0=@82.110.60.9:19999#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.823674,
+      "latency": 713.9992713928223,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "414ba531313fd6dd0c4427700d832873": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@193.29.139.204:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20EPODONIOS",
+      "timestamp": 1791950619.823696,
+      "latency": 704.3466567993164,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "249c3db2553165b48d105a68c5bba7c8": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.174:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8237152,
+      "latency": 703.789234161377,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "fd61f6b9af35f55ada760cfcc78ce781": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.193:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8237345,
+      "latency": 712.9678726196289,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "0865933b49135972dbc0b8b8f55c7a4e": {
+      "config": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@173.244.56.9:443#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20EPODONIOS",
+      "timestamp": 1791950619.8237548,
+      "latency": 209.79046821594238,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "17e1fa27612301fa1812d454136e041e": {
+      "config": "ss://YWVzLTI1Ni1nY206QXhJWVd0c2tKV0lJYWVmVw==@70.34.212.124:8388#%5B%F0%9F%87%B8%F0%9F%87%AA%20SE%5D%20EPODONIOS",
+      "timestamp": 1791950619.823776,
+      "latency": 703.0045986175537,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "274f2520845dcac9d08d564c0fa2f7b5": {
+      "config": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@158.173.20.171:443#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20EPODONIOS",
+      "timestamp": 1791950619.8237956,
+      "latency": 690.427303314209,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "ec3ee4ee3be363455177392578e31c44": {
+      "config": "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@13.40.25.145:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8238146,
+      "latency": 706.2609195709229,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "65ac810a828744d49d8e20bdcc8d8a5a": {
+      "config": "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@13.135.199.253:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8238451,
+      "latency": 703.9628028869629,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "cdcacd9d5276db1039cc7ea2741131ce": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.3:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8238766,
+      "latency": 701.8551826477051,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "3b84029be55adcbd6a287499726fe2c0": {
+      "config": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@149.22.87.241:443#%5B%F0%9F%87%AF%F0%9F%87%B5%20JP%5D%20EPODONIOS",
+      "timestamp": 1791950619.8238952,
+      "latency": 334.43546295166016,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "3aa152001ffb9d552e95aa9d66c1ff6f": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.34:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.823916,
+      "latency": 706.0725688934326,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "b0ce9fdf43e064d0a0904f7150c12de1": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.82:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8239388,
+      "latency": 702.7790546417236,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "23d4a4975b4e7dd470eaa35901d6105d": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.2:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8239594,
+      "latency": 701.5261650085449,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "5c6727fcaaff1465594b078c0921f348": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.149:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8239806,
+      "latency": 701.2002468109131,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "bd3de28471f7cf43e300cb2dec006d1d": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.46:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8239996,
+      "latency": 700.8616924285889,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "7279cc4c8eb21cb2c73c511373796d13": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.47:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8240201,
+      "latency": 705.6088447570801,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "d6b43cc916969316f36327a730f6adef": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.48:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.824057,
+      "latency": 705.3191661834717,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "3046e675111df1c252e19dbffa35a826": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.61:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8240783,
+      "latency": 702.1315097808838,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "65f760e1f55c1a8b03a00c995f61230c": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.42:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8240995,
+      "latency": 701.1139392852783,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "f47ee7c214acde31b760860cc110f00d": {
+      "config": "ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@68.183.227.4:8080#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20EPODONIOS",
+      "timestamp": 1791950619.8241208,
+      "latency": 697.6897716522217,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "f195055bee2c620ef4dfc2296a6c84d1": {
+      "config": "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@141.98.101.181:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.824141,
+      "latency": 697.6358890533447,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "81010dca29aef585b66c670a884337ed": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.16:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8241608,
+      "latency": 700.6361484527588,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "1f58bff53d7d9ca209521166775c0853": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBIS10gRVBPRE9OSU9TIiwgImFkZCI6ICI4LjIxOC4xOTUuNjEiLCAicG9ydCI6ICI0NDMiLCAiaWQiOiAiZjIzYmI0MjctYzFmOS00MzczLTg3NmMtMmY0M2U5Zjc5MGYzIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogImF1dG8iLCAiaG9zdCI6ICJFWDFvR3Q3M056UFFLQWMyLnYuM2Rucy52aXAiLCAicGF0aCI6ICIvd3Mtdm1lc3MiLCAidGxzIjogInRscyIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8241873,
+      "latency": 879.9023628234863,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "42f8a363775e05edd3329b3f961420e9": {
+      "config": "ss://YWVzLTI1Ni1nY206UmV4bkJnVTdFVjVBRHhH@94.156.250.148:7001#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8242085,
+      "latency": 879.8379898071289,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "e3174a53277f832507bbedad28d49b3d": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZlx1ZDgzY1x1ZGRmNSBKUF0gRVBPRE9OSU9TIiwgImFkZCI6ICIxNzIuMTExLjE0Ni42NCIsICJwb3J0IjogIjgwIiwgImlkIjogIjA1YjhjNzgzLTdmNTktNDdmOS05OTIzLTA2YTQ2NTY3OWY2YSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJhdXRvIiwgImhvc3QiOiAiIiwgInBhdGgiOiAiL3ZtZXNzLyIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8242254,
+      "latency": 1194.5979595184326,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "b5dd20e42c0fa3b9438343a17d8b51ba": {
+      "config": "ss://YWVzLTI1Ni1nY206cEtFVzhKUEJ5VFZUTHRN@15.204.247.206:4444#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20EPODONIOS",
+      "timestamp": 1791950619.8242471,
+      "latency": 323.27771186828613,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "deacdaeeee3befd15128b25ee195903b": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpBUmd2R1p5d0ErZ2FjZ0dWMjZCdm11MDUrd1ptUlcvaitBZFUrWjhCdDQ0PQ==@185.213.23.63:990#%5B%F0%9F%87%B3%F0%9F%87%B4%20NO%5D%20EPODONIOS",
+      "timestamp": 1791950619.8242714,
+      "latency": 706.3496112823486,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "8f44a2ad2163f2715413ff05270be150": {
+      "config": "ss://YWVzLTI1Ni1nY206a0RXdlhZWm9UQmNHa0M0@51.222.136.236:8882#%5B%F0%9F%87%A8%F0%9F%87%A6%20CA%5D%20EPODONIOS",
+      "timestamp": 1791950619.8242908,
+      "latency": 216.22037887573242,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "321b7c79743282b8f8759fa7456ed53d": {
+      "config": "ss://YWVzLTI1Ni1jZmI6cXdlclJFV1FAQA==@211.178.105.134:6123#%5B%F0%9F%87%B0%F0%9F%87%B7%20KR%5D%20EPODONIOS",
+      "timestamp": 1791950619.8243105,
+      "latency": 697.763204574585,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "3841b275e84a8b41b163ccffb938784f": {
+      "config": "ss://YWVzLTI1Ni1nY206ZzVoNWpsZVRSU3lPM1JrNA==@149.102.132.184:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.8243334,
+      "latency": 685.0426197052002,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "1d5a9a5946860d5e22d2263aabb9b165": {
+      "config": "ss://YWVzLTI1Ni1nY206WTZSOXBBdHZ4eHptR0M=@51.222.200.165:5000#%5B%F0%9F%87%A8%F0%9F%87%A6%20CA%5D%20EPODONIOS",
+      "timestamp": 1791950619.824353,
+      "latency": 232.40351676940918,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "905298dffaadc6db0eb8847c226acafc": {
+      "config": "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@15.175.220.220:443#%5B%F0%9F%87%A8%F0%9F%87%A6%20CA%5D%20EPODONIOS",
+      "timestamp": 1791950619.8243732,
+      "latency": 698.7783908843994,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "38192f349667b42b503a891e37f69965": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZVx1ZDgzY1x1ZGRmMyBJTl0gRVBPRE9OSU9TIiwgImFkZCI6ICIxNTIuNjcuOC4yMDUiLCAicG9ydCI6ICI4MCIsICJpZCI6ICI5ZGI0YzcwOC1hZWY4LTQzNTktODIxYi0zOGU0Nzk5MGJlMGQiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAiYXV0byIsICJob3N0IjogIiIsICJwYXRoIjogIi8iLCAidGxzIjogIiIsICJzbmkiOiAiMTUyLjY3LjguMjA1IiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8243942,
+      "latency": 1193.591833114624,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "aa6a3c68fdc58dd8418cfe3576716f10": {
+      "config": "ss://YWVzLTEyOC1nY206ZjkzMDBhOWJmMzlhZTAzNDdjM2EzYmZiYzRkZDc3NTQ=@185.103.110.68:18283#%5B%F0%9F%87%AB%F0%9F%87%AE%20FI%5D%20EPODONIOS",
+      "timestamp": 1791950619.8244162,
+      "latency": 706.7427635192871,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "bb9216771b13b287ad4cf8c92d28d0d1": {
+      "config": "ss://YWVzLTEyOC1nY206ZjkzMDBhOWJmMzlhZTAzNDdjM2EzYmZiYzRkZDc3NTQ=@185.103.110.66:18280#%5B%F0%9F%87%AB%F0%9F%87%AE%20FI%5D%20EPODONIOS",
+      "timestamp": 1791950619.82444,
+      "latency": 706.2597274780273,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "602986e7a4cf9a15c3472b7754217d69": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zjphc2QxMjM0NTY=@103.149.182.79:8388#%5B%F0%9F%87%AD%F0%9F%87%B0%20HK%5D%20EPODONIOS",
+      "timestamp": 1791950619.8244612,
+      "latency": 697.1044540405273,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9cf31255fddf30d33581d7fb4eb155b4": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zjphc2QxMjM0NTY=@103.141.221.124:8388#%5B%F0%9F%87%AD%F0%9F%87%B0%20HK%5D%20EPODONIOS",
+      "timestamp": 1791950619.8244808,
+      "latency": 695.84059715271,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "b987172955a4c1962f97207541f84927": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zjphc2QxMjM0NTY=@103.141.221.101:8388#%5B%F0%9F%87%AD%F0%9F%87%B0%20HK%5D%20EPODONIOS",
+      "timestamp": 1791950619.8245008,
+      "latency": 694.9841976165771,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "83279c8e6644912964e9ed67afe1753b": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zjphc2QxMjM0NTY=@103.149.182.105:8388#%5B%F0%9F%87%AD%F0%9F%87%B0%20HK%5D%20EPODONIOS",
+      "timestamp": 1791950619.8245213,
+      "latency": 695.371150970459,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "33202cd39d992befc9d46ecb2a853e01": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBIS10gRVBPRE9OSU9TIiwgImFkZCI6ICI4LjIxNy4xMy4xMDMiLCAicG9ydCI6ICI0NDMiLCAiaWQiOiAiZjIzYmI0MjctYzFmOS00MzczLTg3NmMtMmY0M2U5Zjc5MGYzIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogImF1dG8iLCAiaG9zdCI6ICJxdGtkcjhqeGUzd2VmeGptLnYuM2Rucy52aXAiLCAicGF0aCI6ICIvd3Mtdm1lc3MiLCAidGxzIjogInRscyIsICJzbmkiOiAicXRrZHI4anhlM3dlZnhqbS52LjNkbnMudmlwIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8245447,
+      "latency": 875.6289482116699,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "f14281efcf7983c8016275f7297e41cd": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.189:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "timestamp": 1791950619.824565,
+      "latency": 1192.7554607391357,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "b8ed9d358e7c400861e9c064a4c8c07d": {
+      "config": "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@3.97.11.240:443#%5B%F0%9F%87%A8%F0%9F%87%A6%20CA%5D%20EPODONIOS",
+      "timestamp": 1791950619.824584,
+      "latency": 696.0678100585938,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "c746f9e2ac3ea108dda52bd7c1749b44": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBDQSBcdWQ4M2NcdWRkZThcdWQ4M2NcdWRkZTYgfCBAUmF5ZGlrYWx4IHwgNjVGQTFBIiwgImFkZCI6ICIxMDQuMTkuMTM4LjE5NyIsICJwb3J0IjogIjQ0MyIsICJpZCI6ICJmMmYxNDQ1Ny04MGM4LTRmNGMtOWM0Mi0zMzdjOGU3MGQ0YjYiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInhodHRwIiwgInR5cGUiOiAiYXV0byIsICJob3N0IjogInhjcm91c2UyM2VkLmlyYW5wdWxzLmlyIiwgInBhdGgiOiAiL3ZpZGVvIiwgInRscyI6ICJ0bHMiLCAic25pIjogInhjcm91c2UyM2VkLmlyYW5wdWxzLmlyIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8246055,
+      "latency": 685.6701374053955,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "478c869ec5eec42615e7a5b21d79e460": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNiBDQV0gQ0EgXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2IHwgQFJheWRpa2FseCB8IDhGOEFCOCIsICJhZGQiOiAiMTM0LjE5NS4xOTYuMjExIiwgInBvcnQiOiAiMTgwMDAiLCAiaWQiOiAiZjhjOGRjM2QtMGQzNy00NmIwLThiMzQtYTcyMzI4ODJmY2ZlIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ0Y3AiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAiQFByb3h5VlBOMTEiLCAicGF0aCI6ICIvQFByb3h5VlBOMTEiLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.824621,
+      "latency": 304.415225982666,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "ec5389979ee16452f05fbc869e443a12": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBDQSBcdWQ4M2NcdWRkZThcdWQ4M2NcdWRkZTYgfCBAUmF5ZGlrYWx4IHwgRTVBQkJBIiwgImFkZCI6ICIxNzIuNjcuMTYxLjE0NCIsICJwb3J0IjogIjg0NDMiLCAiaWQiOiAiNjA0NDE1NDgtYjY4ZS00M2IyLTgxOTEtZTNiODg0YmU0YjNjIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIiIsICJob3N0IjogInYycmF5MS5kb3phcHAueHl6IiwgInBhdGgiOiAiL2xNbnNaVU40LyIsICJ0bHMiOiAidGxzIiwgInNuaSI6ICJ2MnJheTEuZG96YXBwLnh5eiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8246357,
+      "latency": 1151.108741760254,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "1b23ae1fed7a647665f5c9bfb89d521e": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBIS10gSEsgXHVkODNjXHVkZGVkXHVkODNjXHVkZGYwIHwgQFJheWRpa2FseCB8IEIwREUzQiIsICJhZGQiOiAiNDcuMjQzLjE5NC4xMjUiLCAicG9ydCI6ICI0NDMiLCAiaWQiOiAiZjIzYmI0MjctYzFmOS00MzczLTg3NmMtMmY0M2U5Zjc5MGYzIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICJueWNxZzE5emt3YWNwbTFiLnYuM2Rucy52aXAiLCAicGF0aCI6ICIvd3Mtdm1lc3MiLCAidGxzIjogInRscyIsICJzbmkiOiAibnljcWcxOXprd2FjcG0xYi52LjNkbnMudmlwIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8246522,
+      "latency": 1168.9887046813965,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "3273898e89b76229031e0e1d24f975d6": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmMFx1ZDgzY1x1ZGRmZiBLWl0gS1ogXHVkODNjXHVkZGYwXHVkODNjXHVkZGZmIHwgQFJheWRpa2FseCB8IEQwQkRDOSIsICJhZGQiOiAiMzguMTA3LjIzNC41NyIsICJwb3J0IjogIjgwIiwgImlkIjogIjU2N2Y0YmU1LTEyYWItNDJlMS1iOGQ5LWRiNmZkMWZkZDMxYyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICJ2aWJlci5jb20iLCAicGF0aCI6ICIvdm1lc3MvIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.824668,
+      "latency": 1149.1835117340088,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "b09e68b04061d77b75e22552902ad858": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOVx1ZDgzY1x1ZGRlYSBERV0gREUgXHVkODNjXHVkZGU5XHVkODNjXHVkZGVhIHwgQFJheWRpa2FseCB8IEIxNTc5NCIsICJhZGQiOiAiODguMTk4LjkxLjEwMCIsICJwb3J0IjogIjQ0MyIsICJpZCI6ICJjZDE0NDQ1YS1hMzBhLTQ5NzMtYjY4YS0wNDM3YTkzNzliMmMiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIiIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8246825,
+      "latency": 1153.6297798156738,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "8b4e212d505739c7ba35f17e1abcd548": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOVx1ZDgzY1x1ZGRmYyBUV10gVFcgXHVkODNjXHVkZGY5XHVkODNjXHVkZGZjIHwgQFJheWRpa2FseCB8IDlCRTkxOCIsICJhZGQiOiAiMTY1LjE1NC4xOTUuMzgiLCAicG9ydCI6ICIzNTAzNCIsICJpZCI6ICI5NTlhOGNhZi00Y2VhLTQzZDAtYTU0OC0zNjI4ZTdkZGZhZmMiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInJhdyIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIvY2N0djEzLm0zdTgiLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8246958,
+      "latency": 660.4025363922119,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9615e4cd031890c99c5c9b1180bf0787": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gVVMiLCAiYWRkIjogIjE5OS4yMzIuNzguMTcwIiwgInBvcnQiOiAiNDQzIiwgImlkIjogIjZiYTY4YzY5LWUxMDgtNTAyZC03YjFjLWU4MDZmYmMzY2NjZCIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAieGh0dHAiLCAidHlwZSI6ICJhdXRvIiwgImhvc3QiOiAiaHNic2hpanNidWRlbnl5b3VyLW5hbWUuZ2xvYmFsLnNzbC5mYXN0bHkubmV0IiwgInBhdGgiOiAiL2NvbmZpZ3VyZS9zZXJ2aWNlcy9MRFZ2aUk5V00wVUdsekFTNVBnRVQ3IiwgInRscyI6ICJ0bHMiLCAic25pIjogInNzbC5mYXN0bHkuY29tIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8247132,
+      "latency": 656.4252376556396,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2c82de62ed258f3f387518c92abc31c9": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmMFx1ZDgzY1x1ZGRmZiBLWl0gS1ogXHVkODNjXHVkZGYwXHVkODNjXHVkZGZmIHwgQFJheWRpa2FseCB8IEFFMjc0RCIsICJhZGQiOiAiMzguMTA3LjIzNC41NyIsICJwb3J0IjogIjgwIiwgImlkIjogIjU2N2Y0YmU1LTEyYWItNDJlMS1iOGQ5LWRiNmZkMWZkZDMxYyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICIzaC1rYXpha2hzdGFuMS4wOXZwbi5jb20iLCAicGF0aCI6ICIvdm1lc3MvIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8247275,
+      "latency": 1037.1289253234863,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "98c479263d95174d4cef839935009671": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBDQSBcdWQ4M2NcdWRkZThcdWQ4M2NcdWRkZTYgfCBAUmF5ZGlrYWx4IHwgQzc5ODZBIiwgImFkZCI6ICIxMDQuMjEuNTcuODQiLCAicG9ydCI6ICI4NDQzIiwgImlkIjogIjYwNDQxNTQ4LWI2OGUtNDNiMi04MTkxLWUzYjg4NGJlNGIzYyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICJ2MnJheTEuZG96YXBwLnh5eiIsICJwYXRoIjogIi9sTW5zWlVONC8iLCAidGxzIjogInRscyIsICJzbmkiOiAidjJyYXkxLmRvemFwcC54eXoiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8247435,
+      "latency": 1033.3828926086426,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2cecac605d574ba98e9e3b3701a382ea": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlYlx1ZDgzY1x1ZGRmNyBGUl0gREUgXHVkODNjXHVkZGU5XHVkODNjXHVkZGVhIHwgQFJheWRpa2FseCB8IDhCQzIzRiIsICJhZGQiOiAiMTYyLjE5LjIwNC43MSIsICJwb3J0IjogIjEyMzQiLCAiaWQiOiAiNWMwNDBmMWQtNDVkYi00M2JkLThkNDYtZTQ5NTBlNDMzNzM1IiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ0Y3AiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIiLCAidGxzIjogInRscyIsICJzbmkiOiAic3VwZXJ2cG4uc3VwZXIuY29tIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8247585,
+      "latency": 1013.721227645874,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "ee42def0f65fe0322c1eaa12afe5042e": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBDQSBcdWQ4M2NcdWRkZThcdWQ4M2NcdWRkZTYgfCBAUmF5ZGlrYWx4IHwgMzM1M0I3IiwgImFkZCI6ICIxNzIuNjYuMjAzLjY3IiwgInBvcnQiOiAiNDQzIiwgImlkIjogIjBjZjZkOTcwLTNmMWQtNGFhZS1hOTg5LTkyYThmNzZhZTNkYiIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAidm1lc3MubGJ3NjY2LmRwZG5zLm9yZyIsICJwYXRoIjogIi93cz9lZD0yMDQ4IiwgInRscyI6ICJ0bHMiLCAic25pIjogInZtZXNzLmxidzY2Ni5kcGRucy5vcmciLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8247755,
+      "latency": 548.0427742004395,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "765bb889fc35d3eb003096f22d6e83d8": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gVVMgXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4IHwgQFJheWRpa2FseCB8IDEwMTI2OSIsICJhZGQiOiAiODQuMTcuNDEuMiIsICJwb3J0IjogIjE4MDAwIiwgImlkIjogImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiBudWxsLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIvIiwgInRscyI6ICJub25lIiwgInNuaSI6IG51bGwsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8247929,
+      "latency": 161.2262725830078,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "ac5bf843e72f081e85c1af122f75c6ac": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlYlx1ZDgzY1x1ZGRmNyBGUl0gRlIgXHVkODNjXHVkZGViXHVkODNjXHVkZGY3IHwgQFJheWRpa2FseCB8IEI5RDNCOCIsICJhZGQiOiAiMTQ1LjIzOS41NS4yMTAiLCAicG9ydCI6ICI4MCIsICJpZCI6ICIwNjdmY2Q2My1iMjE1LTRhYmQtODUyOS1hZTkyOWE5OTcxYTkiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAiIiwgImhvc3QiOiAiZ29vZ2xlLndoYXRzYXBwLnNuYXBwLnRvcm9iLmJhc2FsYW0uZm9ydHJlc3Nob3N0LmlyLiIsICJwYXRoIjogIi8iLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8248081,
+      "latency": 1016.7431831359863,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "282c8d58f27aa2c4184e038fcc581677": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBDQSBcdWQ4M2NcdWRkZThcdWQ4M2NcdWRkZTYgfCBAUmF5ZGlrYWx4IHwgQjc1NEQ1IiwgImFkZCI6ICIxMDQuMTcuNzcuNzciLCAicG9ydCI6ICI4NDQzIiwgImlkIjogIjYwNDQxNTQ4LWI2OGUtNDNiMi04MTkxLWUzYjg4NGJlNGIzYyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICItLS0iLCAiaG9zdCI6ICJ2MnJheTEuZG96YXBwLnh5eiIsICJwYXRoIjogIi9sTW5zWlVONC8iLCAidGxzIjogInRscyIsICJzbmkiOiAidjJyYXkxLmRvemFwcC54eXoiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8248239,
+      "latency": 1016.7176723480225,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2f00d77a584299f3c74d0e8cb2f878d1": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gVVMgXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4IHwgQFJheWRpa2FseCB8IEIwMDYwOCIsICJhZGQiOiAiNjcuMjIwLjk1LjMiLCAicG9ydCI6ICIxODAwMCIsICJpZCI6ICJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogbnVsbCwgImhvc3QiOiBudWxsLCAicGF0aCI6ICIvIiwgInRscyI6ICJub25lIiwgInNuaSI6IG51bGwsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8248365,
+      "latency": 520.3397274017334,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "bce1aac7c460b35f9cf52b1ec74e3b42": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBDQSBcdWQ4M2NcdWRkZThcdWQ4M2NcdWRkZTYgfCBAUmF5ZGlrYWx4IHwgNUQ3NDU0IiwgImFkZCI6ICIxNzIuNjcuMTY3Ljc4IiwgInBvcnQiOiAiODQ0MyIsICJpZCI6ICI2MDQ0MTU0OC1iNjhlLTQzYjItODE5MS1lM2I4ODRiZTRiM2MiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAiIiwgImhvc3QiOiAidjJyYXkxLmRvemFwcC54eXoiLCAicGF0aCI6ICIvbE1uc1pVTjQvIiwgInRscyI6ICJ0bHMiLCAic25pIjogInYycmF5MS5kb3phcHAueHl6IiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.824851,
+      "latency": 1015.1844024658203,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2af11f8c76c525963da47b0297df35ea": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gVVMgXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4IHwgQFJheWRpa2FseCB8IEUzOEREQiIsICJhZGQiOiAiMTY5LjE5Ny4xNDIuMjIiLCAicG9ydCI6ICIxODAwMCIsICJpZCI6ICJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogbnVsbCwgImhvc3QiOiAiIiwgInBhdGgiOiAiLyIsICJ0bHMiOiAibm9uZSIsICJzbmkiOiBudWxsLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8248649,
+      "latency": 462.04519271850586,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "6adadeb9bc19ce79dd9a03a4ff61d532": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBDQSBcdWQ4M2NcdWRkZThcdWQ4M2NcdWRkZTYgfCBAUmF5ZGlrYWx4IHwgOEIxMjg5IiwgImFkZCI6ICIxNzIuNjQuMjI5LjIxIiwgInBvcnQiOiAiNDQzIiwgImlkIjogIjBjZjZkOTcwLTNmMWQtNGFhZS1hOTg5LTkyYThmNzZhZTNkYiIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICJ2bWVzcy5sYnc2NjYuZHBkbnMub3JnIiwgInBhdGgiOiAiL3dzP2VkPTIwNDgiLCAidGxzIjogInRscyIsICJzbmkiOiAidm1lc3MubGJ3NjY2LmRwZG5zLm9yZyIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.824881,
+      "latency": 468.9314365386963,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9a13d287bb384c595279af3027c193c4": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmM1x1ZDgzY1x1ZGRmMSBOTF0gTkwgXHVkODNjXHVkZGYzXHVkODNjXHVkZGYxIHwgQFJheWRpa2FseCB8IEI0QTVBMiIsICJhZGQiOiAiMTU5LjIyMy4xMy4xMDkiLCAicG9ydCI6ICIxMjM0IiwgImlkIjogIjVjMDQwZjFkLTQ1ZGItNDNiZC04ZDQ2LWU0OTUwZTQzMzczNSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAiIiwgImhvc3QiOiAiIiwgInBhdGgiOiAiIiwgInRscyI6ICJ0bHMiLCAic25pIjogInN1cGVydnBuLnN1cGVyLmNvbSIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8248954,
+      "latency": 921.1678504943848,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "e3428553e6233094960d0945c584f083": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZlx1ZDgzY1x1ZGRmNSBKUF0gSlAgXHVkODNjXHVkZGVmXHVkODNjXHVkZGY1IHwgQFJheWRpa2FseCB8IDdCNEVEOCIsICJhZGQiOiAiMTcyLjExMS4xNDYuNjQiLCAicG9ydCI6ICI4MCIsICJpZCI6ICIwNWI4Yzc4My03ZjU5LTQ3ZjktOTkyMy0wNmE0NjU2NzlmNmEiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiBudWxsLCAiaG9zdCI6IG51bGwsICJwYXRoIjogIi92bWVzcy8iLCAidGxzIjogIm5vbmUiLCAic25pIjogbnVsbCwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.824911,
+      "latency": 488.70182037353516,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "240f5ad045e1da1b2fa1e17c8bb8af9f": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBDQSBcdWQ4M2NcdWRkZThcdWQ4M2NcdWRkZTYgfCBAUmF5ZGlrYWx4IHwgMjEyOTQ2IiwgImFkZCI6ICIxMDQuMTcuNzcuNzciLCAicG9ydCI6ICI4NDQzIiwgImlkIjogIjYwNDQxNTQ4LWI2OGUtNDNiMi04MTkxLWUzYjg4NGJlNGIzYyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICJ2MnJheTEuZG96YXBwLnh5eiIsICJwYXRoIjogIi9sTW5zWlVONC8iLCAidGxzIjogInRscyIsICJzbmkiOiAidjJyYXkxLmRvemFwcC54eXoiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8249264,
+      "latency": 936.7167949676514,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "6aa01358d9d458bbde394dc854743c51": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlYlx1ZDgzY1x1ZGRmNyBGUl0gUEwgXHVkODNjXHVkZGY1XHVkODNjXHVkZGYxIHwgQFJheWRpa2FseCB8IEZBQzJGQSIsICJhZGQiOiAiNTQuMzcuMTMxLjEyNiIsICJwb3J0IjogIjgwIiwgImlkIjogIjZkZWVmOWFkLTEzNTctNDQzZC1mOTVjLWNiMTg5NTJjMjBiMyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICJnb29nbGUud2hhdHNhcHAuc25hcHAudG9yb2IuYmFzYWxhbS5oZXNhbmlkOC5pci4iLCAicGF0aCI6ICIvIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8249433,
+      "latency": 901.1609554290771,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "87b3fc698067b52bbec4880284c2cfce": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBIS10gSEsgXHVkODNjXHVkZGVkXHVkODNjXHVkZGYwIHwgQFJheWRpa2FseCB8IEI4RUYzOCIsICJhZGQiOiAiOC4yMTAuMjQuMTgxIiwgInBvcnQiOiAiNDQzIiwgImlkIjogImYyM2JiNDI3LWMxZjktNDM3My04NzZjLTJmNDNlOWY3OTBmMyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAiNmpkdmFyYXpndTNxcXI2cS52LjNkbnMudmlwIiwgInBhdGgiOiAiL3dzLXZtZXNzIiwgInRscyI6ICJ0bHMiLCAic25pIjogIjZqZHZhcmF6Z3UzcXFyNnEudi4zZG5zLnZpcCIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8249583,
+      "latency": 1103.5404205322266,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "cf3a8d7dcaf5bbb38641374504e0d7f9": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBIS10gSEsgXHVkODNjXHVkZGVkXHVkODNjXHVkZGYwIHwgQFJheWRpa2FseCB8IEI4NDk1MCIsICJhZGQiOiAiMTU2LjI0NS4yMzIuMjM5IiwgInBvcnQiOiAiMzUwNDMiLCAiaWQiOiAiYjE1ZTQ4MWQtMTdlNC00MWE4LTg0YzItMjNkNGYwNTE0ZDlhIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIi0tLSIsICJob3N0IjogIiIsICJwYXRoIjogIi8iLCAidGxzIjogIm5vbmUiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8249712,
+      "latency": 892.3225402832031,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "f649f1d3b4c77f0226dd1140839b6845": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlYlx1ZDgzY1x1ZGRmNyBGUl0gREUgXHVkODNjXHVkZGU5XHVkODNjXHVkZGVhIHwgQFJheWRpa2FseCB8IDc5Q0NCQiIsICJhZGQiOiAiMTQxLjk1LjY1LjkiLCAicG9ydCI6ICIxMjM0IiwgImlkIjogIjVjMDQwZjFkLTQ1ZGItNDNiZC04ZDQ2LWU0OTUwZTQzMzczNSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAiIiwgImhvc3QiOiAiIiwgInBhdGgiOiAiIiwgInRscyI6ICJ0bHMiLCAic25pIjogInN1cGVydnBuLnN1cGVyLmNvbSIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.824985,
+      "latency": 865.9408092498779,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "69596f2420771396a3ca3562a927e895": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gVVMgXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4IHwgQFJheWRpa2FseCB8IDQ1MkVENSIsICJhZGQiOiAiMTI5LjE0Ni43Ny4yNDgiLCAicG9ydCI6ICIzOTQ5NSIsICJpZCI6ICJmODM2YzczNi04N2ZjLTRmZGUtYWFiYy0wMDg1N2VjZGZmM2UiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiBudWxsLCAiaG9zdCI6IG51bGwsICJwYXRoIjogIi9jY3R2MTMubTN1OCIsICJ0bHMiOiAibm9uZSIsICJzbmkiOiBudWxsLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8249993,
+      "latency": 401.8254280090332,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "17b9834c63a2b3df4f7a797045103d4b": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBDQSBcdWQ4M2NcdWRkZThcdWQ4M2NcdWRkZTYgfCBAUmF5ZGlrYWx4IHwgQTI0MDdEIiwgImFkZCI6ICIxNzIuNjQuODAuMSIsICJwb3J0IjogIjg0NDMiLCAiaWQiOiAiNjA0NDE1NDgtYjY4ZS00M2IyLTgxOTEtZTNiODg0YmU0YjNjIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIiIsICJob3N0IjogInYycmF5MS5kb3phcHAueHl6IiwgInBhdGgiOiAiL2xNbnNaVU40LyIsICJ0bHMiOiAidGxzIiwgInNuaSI6ICJ2MnJheTEuZG96YXBwLnh5eiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.825014,
+      "latency": 882.3835849761963,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "4a90cb22d63cef1c099ce6c523c5dc04": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBDQSBcdWQ4M2NcdWRkZThcdWQ4M2NcdWRkZTYgfCBAUmF5ZGlrYWx4IHwgMURGQjQ4IiwgImFkZCI6ICIxMDQuMjEuOTEuNTMiLCAicG9ydCI6ICI4NDQzIiwgImlkIjogIjYwNDQxNTQ4LWI2OGUtNDNiMi04MTkxLWUzYjg4NGJlNGIzYyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICJ2MnJheTEuZG96YXBwLnh5eiIsICJwYXRoIjogIi9sTW5zWlVONC8iLCAidGxzIjogInRscyIsICJzbmkiOiAidjJyYXkxLmRvemFwcC54eXoiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.825028,
+      "latency": 873.2097148895264,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "50fea38951d8ff58a711644727cfe8da": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmMFx1ZDgzY1x1ZGRmNyBLUl0gXHU2NzJhXHU3N2U1MTE5IDgyMi4zS0IvcyIsICJhZGQiOiAiMTMyLjE0NS44MC4yMzAiLCAicG9ydCI6ICI4MCIsICJpZCI6ICI1MTU1ODYwZS1kMDdkLTQ2YzMtOTEyOC0zYWZiZDg0NjI2YzciLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIi9jY3R2MTMubTN1OCIsICJ0bHMiOiAiIiwgInNuaSI6ICJrcjAyLmEwYS54eXoiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8250656,
+      "latency": 875.7588863372803,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2ad25899faad2be1ffd76ae6e5017144": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBIS10gSEsgXHVkODNjXHVkZGVkXHVkODNjXHVkZGYwIHwgQFJheWRpa2FseCB8IDMxNUVFQiIsICJhZGQiOiAiNDcuMjQzLjE5NC4xMjUiLCAicG9ydCI6ICI0NDMiLCAiaWQiOiAiZjIzYmI0MjctYzFmOS00MzczLTg3NmMtMmY0M2U5Zjc5MGYzIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICJueWNxZzE5emt3YWNwbTFiLnYuM2Rucy52aXAiLCAicGF0aCI6ICIvd3Mtdm1lc3MiLCAidGxzIjogInRscyIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8250825,
+      "latency": 1049.5147705078125,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "968876d79fb69748459886b170d3bd63": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBodHRwczovL3QubWUvRm9yY2VSdW5WUE4tXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4LUNoaWNhZ28tNzNtcy1PcmFjbGUgQ29ycG9yYXRpb24iLCAiYWRkIjogIjEwNC4yMS43LjEzMyIsICJwb3J0IjogIjgwIiwgImlkIjogIjBjZjZkOTcwLTNmMWQtNGFhZS1hOTg5LTkyYThmNzZhZTNkYiIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAidm1lc3MubGJ3NjY2LmRwZG5zLm9yZyIsICJwYXRoIjogIi93cz9lZD0yMDQ4IiwgInRscyI6ICJub25lIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8250976,
+      "latency": 797.3892688751221,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "147a074f177730019f7ab031e6b0d897": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gaHR0cHM6Ly90Lm1lL0ZvcmNlUnVuVlBOLVx1ZDgzY1x1ZGRlNlx1ZDgzY1x1ZGRmYS1TeWRuZXktMTE2bXMtVGhlIENvbnN0YW50IENvbXBhbnkiLCAiYWRkIjogIjY3LjIyMC44NS40NiIsICJwb3J0IjogIjE4MDAwIiwgImlkIjogImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiBudWxsLCAiaG9zdCI6IG51bGwsICJwYXRoIjogIi8iLCAidGxzIjogIm5vbmUiLCAic25pIjogbnVsbCwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8251102,
+      "latency": 787.0681285858154,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "85772a065d5703de610d9afefa9a4498": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.54:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-235ms-Greenhost%20BV",
+      "timestamp": 1791950619.8252034,
+      "latency": 802.6642799377441,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "b70beb141f7d89edea4112bdc8f0675f": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.26:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-238ms-Greenhost%20BV",
+      "timestamp": 1791950619.8252292,
+      "latency": 801.2845516204834,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "291f49f8444093c65b9cdd624ac8ed92": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@193.29.139.202:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-240ms-Greenhost%20BV",
+      "timestamp": 1791950619.8252501,
+      "latency": 801.7270565032959,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "7bfea5974451e7a7898985667d186c1a": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@193.29.139.179:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-242ms-Greenhost%20BV",
+      "timestamp": 1791950619.825272,
+      "latency": 801.0256290435791,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "a908b62ec54d6a9238c6683bc1cf0c39": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.185:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-248ms-Greenhost%20BV",
+      "timestamp": 1791950619.8254135,
+      "latency": 800.6579875946045,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2501d7a0874c2c8ebfd234daab37d198": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.39:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-248ms-Greenhost%20BV",
+      "timestamp": 1791950619.8254352,
+      "latency": 797.893762588501,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "cd269447d37075dce847ec0a5e698877": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.220:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B3%F0%9F%87%B1-Amsterdam-251ms-Greenhost%20BV",
+      "timestamp": 1791950619.825482,
+      "latency": 798.3484268188477,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9269f080a522badb065cd2baed8165a5": {
+      "config": "ss://MjAyMi1ibGFrZTMtY2hhY2hhMjAtcG9seTEzMDU6ZDRNNmZBajlRMDd1SzRIZVBudEFUVUFzMUtCY2VNenE4aEdQeTFBRnhGQT0=@43.114.183.117:443#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%A9%F0%9F%87%AA-FrankfurtamMain-256ms-Tempest%20Hosting%20LLC",
+      "timestamp": 1791950619.825557,
+      "latency": 795.7754135131836,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "d6faf46a7287afff44559dcc6a35a7c9": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTplNWM2NXBo@54.36.174.140:443#%5B%F0%9F%87%AB%F0%9F%87%B7%20FR%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B5%F0%9F%87%B1-Wroclaw-305ms-OVH%20SAS",
+      "timestamp": 1791950619.8256037,
+      "latency": 809.5653057098389,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9d029f3ac0d3c03a37a903dd3a6d1a20": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo1MitnZ29DdktGVkp5VDFORGl1V09adzJySEl2QWczdGdxZ0psOGFlQ3dZPQ==@130.49.189.158:43558#%5B%F0%9F%87%B7%F0%9F%87%BA%20RU%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%A6%F0%9F%87%B1-Tirana-391ms-Global%20Connectivity%20Solutions%20LLP",
+      "timestamp": 1791950619.8256333,
+      "latency": 828.2248973846436,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "8e2200aca2f8d2ece92a5e740eafc429": {
+      "config": "ss://MjAyMi1ibGFrZTMtYWVzLTI1Ni1nY206c1VSNk55OFk2UFN2SGhsL0RVeGNvbnd4ZzZWWnlGZHNkZmFWQ3ZFYXRKbz06N2JURWhIZ3BFcktpUmpFMWVnYStINnBjcEpzTkxGQjBDalFzZXVqQUhyQT0=@129.150.59.74:14384#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%B8%F0%9F%87%AC-Singapore-418ms-Oracle%20Corporation",
+      "timestamp": 1791950619.825664,
+      "latency": 950.4213333129883,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "728b85e19cdeff67d246f82a890159ad": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gaHR0cHM6Ly90Lm1lL0ZvcmNlUnVuVlBOLVx1ZDgzY1x1ZGRlZlx1ZDgzY1x1ZGRmNS1Ub2t5by04MTltcy1PcmFjbGUgQ29ycG9yYXRpb24iLCAiYWRkIjogIjE2Mi4xNTkuMTMwLjIzNCIsICJwb3J0IjogIjIwODMiLCAiaWQiOiAiYWMyNTEyMzctNTc2Zi00MGM4LWE1NDMtNTU0OTYwYzk1OGIxIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICJvcjMuc2ZhY2cudWsiLCAicGF0aCI6ICIvb3IzIiwgInRscyI6ICJ0bHMiLCAic25pIjogIm9yMy5zZmFjZy51ayIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8256834,
+      "latency": 940.7615661621094,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "12514f6fea3d4c5c9889e84f4fd9810e": {
+      "config": "ss://YWVzLTI1Ni1nY206Y2RCSURWNDJEQ3duZklO@51.79.64.198:8119#%5B%F0%9F%87%A8%F0%9F%87%A6%20CA%5D%20https%3A//t.me/ForceRunVPN-%F0%9F%87%A8%F0%9F%87%A6-Montreal-1139ms-OVH%20SAS",
+      "timestamp": 1791950619.8257089,
+      "latency": 784.4395637512207,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "5e436ed7978f11fce6f705dc6588d91e": {
+      "config": "vless://ea50b1a3-3a98-4c5e-a150-48ada40d68d7@172.67.222.62:443?security=tls&type=ws&host=cf-vless-4cf55824.aimall.fr&path=/connect&sni=cf-vless-4cf55824.aimall.fr&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%BA%F0%9F%87%B8%20ShatakVPN%20103100",
+      "timestamp": 1791950619.825749,
+      "latency": 1097.3131656646729,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "a7f44902211168273405fadb07d81257": {
+      "config": "vless://a5db5ab5-8d28-49c0-ad55-0ad4724e5c0d@94.103.168.219:2087?security=tls&type=ws&host=ops5788tugfuy.localip.ir&path=/hokm&sni=ops5788tugfuy.localip.ir#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20455657",
+      "timestamp": 1791950619.825821,
+      "latency": 985.8407974243164,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "7b265fc897992127e79f0f5940941f3f": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlYlx1ZDgzY1x1ZGRmNyBGUl0gXHVkODNjXHVkZmYzXHVmZTBmIFNoYXRha1ZQTiA0NDE4MDAiLCAiYWRkIjogIjE0NS4yMzkuNTUuMjEwIiwgInBvcnQiOiAiODAiLCAiaWQiOiAiMDY3ZmNkNjMtYjIxNS00YWJkLTg1MjktYWU5MjlhOTk3MWE5IiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIi0tLSIsICJob3N0IjogImdvb2dsZS53aGF0c2FwcC5zbmFwcC50b3JvYi5iYXNhbGFtLmZvcnRyZXNzaG9zdC5pci4iLCAicGF0aCI6ICIvIiwgInRscyI6ICJub25lIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8258379,
+      "latency": 1176.2325763702393,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "31ee8b9c1e6fed883f268ea8f2b3291d": {
+      "config": "vless://7d74eae4-8a06-4306-a923-ad686f30bf26@57.129.41.216:80?type=ws&host=OV-Germany1.09vpn.com&path=/vless/#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20943552",
+      "timestamp": 1791950619.8258655,
+      "latency": 824.4204521179199,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "17b65a65876066bd16d026123ceccd61": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlY1x1ZDgzY1x1ZGRlNyBHQl0gXHVkODNjXHVkZmYzXHVmZTBmIFNoYXRha1ZQTiAxNjc3MjgiLCAiYWRkIjogIjU3LjEyOS4xMzIuMjIzIiwgInBvcnQiOiAiODAiLCAiaWQiOiAiYTI1Y2JmMTEtMjkwOC00YTFiLWEzYTgtOWE1NzE3NzdkY2EzIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogbnVsbCwgImhvc3QiOiAidmliZXIuY29tIiwgInBhdGgiOiAiL3ZtZXNzLyIsICJ0bHMiOiAibm9uZSIsICJzbmkiOiBudWxsLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8258808,
+      "latency": 1068.1064128875732,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "3383d91a5ef5ff488b4a207602d803ea": {
+      "config": "vless://019fbe0f-2d9f-4b89-9f81-e1e36129892a@77.110.105.122:443?security=tls&type=tcp&sni=co-pl.speedtec.ru&flow=xtls-rprx-vision#%5B%F0%9F%87%B7%F0%9F%87%BA%20RU%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20361252",
+      "timestamp": 1791950619.8259103,
+      "latency": 1020.3635692596436,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "a36f046bdf20e6b8ef03459081df40ab": {
+      "config": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.16:443?security=reality&type=tcp&path=/&sni=yahoo.com&flow=xtls-rprx-vision&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&sid=c39cc7310a#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20343447",
+      "timestamp": 1791950619.8259447,
+      "latency": 781.4409732818604,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "bc418d1de7e3d53ca70e46bb3e7af86e": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gXHVkODNjXHVkZmYzXHVmZTBmIFNoYXRha1ZQTiA1NTU4ODEiLCAiYWRkIjogIjEyOS4xNDYuNzcuMjQ4IiwgInBvcnQiOiAiMzk0OTUiLCAiaWQiOiAiZjgzNmM3MzYtODdmYy00ZmRlLWFhYmMtMDA4NTdlY2RmZjNlIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogbnVsbCwgImhvc3QiOiAiMTI5LjE0Ni43Ny4yNDgiLCAicGF0aCI6ICIvY2N0djEzLm0zdTgiLCAidGxzIjogIm5vbmUiLCAic25pIjogbnVsbCwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.825989,
+      "latency": 760.5865001678467,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "1c2e288960640ca07b35823b5e4251ee": {
+      "config": "vless://06c4e938-2954-478f-a870-ca1b163e30e9@94.183.170.135:8443?security=tls&type=tcp&sni=estproxy4.lockdwn.com#%5B%F0%9F%87%AA%F0%9F%87%AA%20EE%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20502991",
+      "timestamp": 1791950619.8261046,
+      "latency": 889.3506526947021,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "82809980ff4f521f6927c2797bd7c0e5": {
+      "config": "vless://20ff936a-8eb5-4d27-9cce-93f2016d467b@188.114.98.0:443?security=tls&type=ws&host=free.nadun.store&path=/&sni=free.nadun.store&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20213412",
+      "timestamp": 1791950619.8261378,
+      "latency": 1176.8882274627686,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "339efa5ae247570b8e6edae9871cfb3b": {
+      "config": "vless://5504eaa8-1395-402f-8e0e-75ecd762e627@188.114.98.0:443?security=tls&type=ws&host=server5.9966338.xyz&path=/drsukitgreiusweqa9otrh983%3Fed%3D2560&sni=server5.9966338.xyz&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20244971",
+      "timestamp": 1791950619.8261724,
+      "latency": 1055.0048351287842,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "63bb4ff60c5d0dd0729471b053a0a79b": {
+      "config": "vless://5504eaa8-1395-402f-8e0e-75ecd762e627@188.114.98.0:443?security=tls&type=ws&host=server5.9966338.xyz&path=/drsukitgreiusweqa9otrh983&sni=server5.9966338.xyz&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20671545",
+      "timestamp": 1791950619.8262053,
+      "latency": 775.7587432861328,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "152d5a6be85ad9b700f4e8116bb37620": {
+      "config": "vless://8be461cb-a0df-47cf-bc0d-4d9e6a22fa74@188.114.98.0:443?security=tls&type=ws&host=ccs2g.pai50288.uk&path=/pai50288&sni=ccs2g.pai50288.uk&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20944335",
+      "timestamp": 1791950619.8262367,
+      "latency": 883.2292556762695,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "db92b13e0de698959f1121ab9e98ae73": {
+      "config": "vless://a5db5ab5-8d28-49c0-ad55-0ad4724e5c0d@94.103.168.133:2087?security=tls&type=ws&host=fert6.localip.ir&path=/hokm&sni=fert6.localip.ir#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20569962",
+      "timestamp": 1791950619.8262663,
+      "latency": 1007.6086521148682,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "908ece64daa6be54549635ca54c95bae": {
+      "config": "vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@188.114.98.0:443?security=tls&type=ws&host=a.cwvps.eu.org&path=/ws#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20707081",
+      "timestamp": 1791950619.8262951,
+      "latency": 772.1803188323975,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "a5719ac2256b9554352cc7fecd3b0346": {
+      "config": "vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@188.114.98.0:443?security=tls&type=ws&host=a.cwvps.eu.org&path=/ws&sni=a.cwvps.eu.org&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20714813",
+      "timestamp": 1791950619.8263237,
+      "latency": 1184.0684413909912,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "27a28b7dda57225a7a4f9322a8afb7f3": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.98.0:443?security=tls&type=ws&host=lucasjow.us.ci&path=/%3FTELEGRAM---MARAMBASHI---MARAMBASHI---MARAMBASHI---MARAMBASHI&sni=lucasjow.us.ci&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20980774",
+      "timestamp": 1791950619.8263617,
+      "latency": 752.467155456543,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "be70dd7ae7f9e8ce843fc5d67a0b918b": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.98.0:443?security=tls&type=ws&host=lucasjow.us.ci&path=/%3FTELEGRAM--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI&sni=lucasjow.us.ci&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20858004",
+      "timestamp": 1791950619.8263938,
+      "latency": 752.3531913757324,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "07ca136ddff217744c8767f682a9d67d": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.98.0:443?security=tls&type=ws&host=lucasjow.us.ci&path=/%3FTELEGRAM-TOOTFFARANGI&sni=lucasjow.us.ci&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20520012",
+      "timestamp": 1791950619.8264246,
+      "latency": 751.9302368164062,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "c6e256288dc0ad18ae1bbe673c42c814": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.98.0:443?security=tls&type=ws&host=lucasjow.us.ci&path=/%3FTelegram---DailyConfigs---DailyConfigs---DailyConfigs#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20399909",
+      "timestamp": 1791950619.8264525,
+      "latency": 1165.769338607788,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "c3452bbbd5d140d896cacb38a66136e8": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.98.0:443?security=tls&type=ws&host=lucasjow.us.ci&path=/%3FTelegram---DailyConfigs---DailyConfigs---DailyConfigs&sni=lucasjow.us.ci&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20310406",
+      "timestamp": 1791950619.8264852,
+      "latency": 754.4820308685303,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2eaa137126ed3a6ea1101dcf558fd487": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.98.0:443?security=tls&type=ws&host=lucasjow.us.ci&path=/%3FTelegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET&sni=lucasjow.us.ci&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20654921",
+      "timestamp": 1791950619.826518,
+      "latency": 1062.2437000274658,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "5265cb48006abaa00aa32f0e1f72c88b": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.98.0:443?security=tls&type=ws&host=lucasjow.us.ci&path=/%3FTelegram---mehrosaboran&sni=lucasjow.us.ci&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20115212",
+      "timestamp": 1791950619.8265493,
+      "latency": 771.2023258209229,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "3e1ee448b2c42ccb487295eb035c1f6c": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.98.0:443?security=tls&type=ws&host=lucasjow.us.ci&path=/cart/docs/www/proxyip%3D108.160.132.132%3Fed&sni=lucasjow.us.ci&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20573284",
+      "timestamp": 1791950619.8265817,
+      "latency": 765.0437355041504,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "59091313dba7f2a3dc629bc41d58894f": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.98.0:443?security=tls&type=ws&host=lucasjow.us.ci&sni=lucasjow.us.ci&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20465967",
+      "timestamp": 1791950619.8266096,
+      "latency": 1086.5247249603271,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "258d38fa5fac472833816994e0151720": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTp5N0tlUlR6bUgwdlhUMmtw@40.113.154.234:443#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20644019",
+      "timestamp": 1791950619.8266351,
+      "latency": 768.9516544342041,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9873a7f45dae06f2b515b51073df3850": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@193.29.139.198:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20698453",
+      "timestamp": 1791950619.8266811,
+      "latency": 769.7339057922363,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "5987dee5edb40b8490d3aadb47a0b42f": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@193.29.139.188:8080#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20593890",
+      "timestamp": 1791950619.8267033,
+      "latency": 768.7933444976807,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "6f1ecc5d431e3f95966ad7491f2514f8": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.11:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20670978",
+      "timestamp": 1791950619.8267262,
+      "latency": 769.0308094024658,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "cf2b6d40f6992501018e12d4ba1ebf3a": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@82.38.31.149:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20%F0%9F%8F%B3%EF%B8%8F%20ShatakVPN%20340848",
+      "timestamp": 1791950619.8267484,
+      "latency": 769.4356441497803,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "081309269c26e8d5d85de7bd4142b081": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZlx1ZDgzY1x1ZGRmNSBKUF0gQnkgRWJyYVNoYSBcdWQ4M2VcdWRkZWMiLCAiYWRkIjogIjE2OC4xMzguNDMuNzUiLCAicG9ydCI6ICI4MCIsICJpZCI6ICIxMWMzNjI3Zi0zMWU4LTQ2OTUtZGZiZC0zNDA3NmUyZjFmNWQiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiBudWxsLCAiaG9zdCI6ICIxNjguMTM4LjQzLjc1IiwgInBhdGgiOiAiL2NjdHYxMy5tM3U4IiwgInRscyI6ICJub25lIiwgInNuaSI6IG51bGwsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8267715,
+      "latency": 763.5877132415771,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "7a23fdbe196b10d83c10ffb3b2345abd": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmOFx1ZDgzY1x1ZGRlYyBTR10gQnkgRWJyYVNoYSBcdWQ4M2VcdWRkODIiLCAiYWRkIjogIjE0OS44OC4yMy4yMDciLCAicG9ydCI6ICIxODAwMCIsICJpZCI6ICJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogbnVsbCwgImhvc3QiOiAid3cxMS5sZXZpa29namdmZGQuaXIiLCAicGF0aCI6ICIvIiwgInRscyI6ICJub25lIiwgInNuaSI6IG51bGwsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8267853,
+      "latency": 761.9369029998779,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "cc49bfbe92ec8f91b331fa279ae38232": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZlx1ZDgzY1x1ZGRmNSBKUF0gQnkgRWJyYVNoYSBcdWQ4M2NcdWRjY2YiLCAiYWRkIjogIjE0MC4yMzguNTUuODQiLCAicG9ydCI6ICIyMDgzIiwgImlkIjogImFjMjUxMjM3LTU3NmYtNDBjOC1hNTQzLTU1NDk2MGM5NThiMSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICIiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIvb3IzIiwgInRscyI6ICJ0bHMiLCAic25pIjogIm9yLjUyMTE2Ni54eXoiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8268,
+      "latency": 796.4484691619873,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "16d926c96c89c2f3d7de083073ee773b": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmM1x1ZDgzY1x1ZGRmMSBOTF0gQnkgRWJyYVNoYSBcdWQ4M2VcdWRlOTYiLCAiYWRkIjogIjE1OS4yMjMuMTMuMTA5IiwgInBvcnQiOiAiMTIzNCIsICJpZCI6ICI1YzA0MGYxZC00NWRiLTQzYmQtOGQ0Ni1lNDk1MGU0MzM3MzUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIiIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAidGxzIiwgInNuaSI6ICJla2IuZWciLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8268142,
+      "latency": 686.7213249206543,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "8010deaf88afd62a793722e55cb377bd": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBCeSBFYnJhU2hhIFx1ZDgzZVx1ZGRlYSIsICJhZGQiOiAiMTcyLjY0LjgwLjEiLCAicG9ydCI6ICI4NDQzIiwgImlkIjogIjYwNDQxNTQ4LWI2OGUtNDNiMi04MTkxLWUzYjg4NGJlNGIzYyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJhdXRvIiwgImhvc3QiOiAidjJyYXkxLmRvemFwcC54eXoiLCAicGF0aCI6ICIvbE1uc1pVTjQvIiwgInRscyI6ICJ0bHMiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8268297,
+      "latency": 1123.6565113067627,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "0e38597cd0f43f07b8e5ba67887eb7bf": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmM1x1ZDgzY1x1ZGRmMSBOTF0gQnkgRWJyYVNoYSBcdWQ4M2NcdWRmMDAiLCAiYWRkIjogIjQ1LjkwLjEwNi4yNCIsICJwb3J0IjogIjEyMzQiLCAiaWQiOiAiNWMwNDBmMWQtNDVkYi00M2JkLThkNDYtZTQ5NTBlNDMzNzM1IiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ0Y3AiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAiIiwgInBhdGgiOiAiLyIsICJ0bHMiOiAidGxzIiwgInNuaSI6ICI0NS45MC4xMDYuMjQiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8268428,
+      "latency": 739.0730381011963,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "f1962919f657d83d3fd870f1cdc3a3b2": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBIS10gQnkgRWJyYVNoYSBcdWQ4M2NcdWRmMTEiLCAiYWRkIjogIjQ3LjI0My42NS4yNDMiLCAicG9ydCI6ICI0NDMiLCAiaWQiOiAiZjIzYmI0MjdjMWY5NDM3Mzg3NmMyZjQzZTlmNzkwZjMiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiBudWxsLCAiaG9zdCI6ICJsY3Y4djlsN095YW14eGZaLnYuM2Rucy52aXAiLCAicGF0aCI6ICIvd3Mtdm1lc3MiLCAidGxzIjogInRscyIsICJzbmkiOiBudWxsLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8268578,
+      "latency": 999.2952346801758,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "5819172fd8eab8c85b719d7ec861d7ab": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmMFx1ZDgzY1x1ZGRmNyBLUl0gQnkgRWJyYVNoYSBcdWQ4M2RcdWRjOGUiLCAiYWRkIjogIjEzMi4xNDUuODAuMjMwIiwgInBvcnQiOiAiODAiLCAiaWQiOiAiNTE1NTg2MGUtZDA3ZC00NmMzLTkxMjgtM2FmYmQ4NDYyNmM3IiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIvY2N0djEzLm0zdTgiLCAidGxzIjogIm5vbmUiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8268738,
+      "latency": 699.6333599090576,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "cbef562369eacf52bc39dc1849d48f5f": {
+      "config": "vless://6202b230-417c-4d8e-b624-0f71afa9c75d@104.129.164.30:8880?type=ws&host=vms.lifetime40.workers.dev&path=/#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%87%BA%F0%9F%87%B8193790%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/SOSkeyNET",
+      "timestamp": 1791950619.8269203,
+      "latency": 576.4145851135254,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "76d772e38a55635d84c64a361ea13463": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@104.21.91.244:443?security=tls&type=ws&host=lucasjow.us.ci&path=/cart/docs/www/proxyip%3D108.160.132.132%3Fed%23Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET&sni=lucasjow.us.ci&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%A8%F0%9F%87%A6193639%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/SOSkeyNET",
+      "timestamp": 1791950619.8269684,
+      "latency": 587.7888202667236,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "66095b3eea786682cb3a49447faafe6b": {
+      "config": "vless://9c60369d-e5f9-4cec-9e63-1560e88e119a@195.123.221.36:443?security=reality&type=tcp&sni=gateway.icloud.com&flow=xtls-rprx-vision&pbk=dIv6pPS-x6IzbiPyHX8nNdRrwI2yZl4y3YCeRWy9UgE&sid=3e67326f98ddb407#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%86%94%EF%B8%8F%20%7C%20%40Eag1e_YT%E3%80%8E%F0%9F%87%B3%F0%9F%87%B1%E3%80%8F",
+      "timestamp": 1791950619.8270123,
+      "latency": 739.5346164703369,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "1f213fd0d5c6c0e88d603eeddc98ab9d": {
+      "config": "vless://84ed0e09-6803-4ef9-a977-74b657d971e5@31.70.111.146:443?security=reality&type=tcp&sni=www.apple.com&flow=xtls-rprx-vision&pbk=ZNmuzIn-zyJi2C0sWRpL9fsMYCgYauXpJElXTqY_LEE&fp=chrome&sid=d7de3a6ff4018957#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%86%94%EF%B8%8F%20%7C%20%40Eag1e_YT%E3%80%8E%F0%9F%87%A9%F0%9F%87%AA%E3%80%8F",
+      "timestamp": 1791950619.8270686,
+      "latency": 747.0719814300537,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "68c9e44299835de28877881774f873a2": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNiBDQV0gXHVkODNjXHVkZDk0XHVmZTBmIHwgQEVhZzFlX1lUXHUzMDBlXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2XHUzMDBmIiwgImFkZCI6ICIyMy4xNjIuMjAwLjE5OCIsICJwb3J0IjogIjE4MDAwIiwgImlkIjogImY4YzhkYzNkLTBkMzctNDZiMC04YjM0LWE3MjMyODgyZmNmZSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAibm9uZSIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.82709,
+      "latency": 587.8746509552002,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "0da8fa4e761334f17adba834b23aefd5": {
+      "config": "trojan://UX82473651@3.75.93.113:443?security=tls&type=tcp&sni=meet-goshawk.rooster465.autos&fp=chrome#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%86%94%EF%B8%8F%20%7C%20%40Eag1e_YT%E3%80%8E%F0%9F%87%A9%F0%9F%87%AA%E3%80%8F",
+      "timestamp": 1791950619.827126,
+      "latency": 926.3677597045898,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "be045c130a1209f109fd39d7136d1d91": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.97.6:443?security=tls&type=ws&host=lucasjow.us.ci&path=/%3F%40EVAY_VPN&sni=lucasjow.us.ci&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%86%94%EF%B8%8F%20%7C%20%40Eag1e_YT%E3%80%8E%F0%9F%87%A9%F0%9F%87%AA%E3%80%8F",
+      "timestamp": 1791950619.827188,
+      "latency": 1024.3117809295654,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "0e2442c6ec8877fb0c25300a22fa7ca7": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBcdWQ4M2NcdWRkZmFcdWQ4M2NcdWRkZjggNTYgLSBVUyAtIFZNZXNzL1dTIC0gODAiLCAiYWRkIjogIjEwNC4xNy4xNDcuMjIyIiwgInBvcnQiOiAiODAiLCAiaWQiOiAiMGNmNmQ5NzAtM2YxZC00YWFlLWE5ODktOTJhOGY3NmFlM2RiIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIi0tLSIsICJob3N0IjogInZtZXNzLmxidzY2Ni5kcGRucy5vcmciLCAicGF0aCI6ICIvd3M/ZWQ9MjA0OCIsICJ0bHMiOiAibm9uZSIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8272033,
+      "latency": 584.6264362335205,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "ef3a869f7145931d96b2eea641293ec0": {
+      "config": "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTprMWRCT21PQjRvcWk3VW1wMzdhMWJR@82.38.31.200:8080#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20%40vpnclashfa%20-%204183",
+      "timestamp": 1791950619.8272603,
+      "latency": 557.6777458190918,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "f46740fb782f8488a0d76c73dabf93e8": {
+      "config": "trojan://UX82473651@13.230.139.12:443?security=tls&type=tcp&sni=brief-glider.rooster465.autos#%5B%F0%9F%87%AF%F0%9F%87%B5%20JP%5D%20%40vpnclashfa%20-%20624",
+      "timestamp": 1791950619.8272903,
+      "latency": 584.8469734191895,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "e0ec3b338719e9184baf8ed7353b0dfd": {
+      "config": "trojan://UX82473651@176.34.5.100:443?security=tls&type=tcp&sni=assuring-skink.rooster465.autos#%5B%F0%9F%87%AF%F0%9F%87%B5%20JP%5D%20%F0%9F%87%AF%F0%9F%87%B5_%E6%97%A5%E6%9C%AC_53",
+      "timestamp": 1791950619.827322,
+      "latency": 628.3628940582275,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "d2a00020f4f3f6edb5c08bd1af4b213e": {
+      "config": "trojan://UX82473651@18.183.167.216:443?security=tls&type=tcp&sni=amazed-mako.rooster465.autos#%5B%F0%9F%87%AF%F0%9F%87%B5%20JP%5D%20%F0%9F%87%AF%F0%9F%87%B5_%E6%97%A5%E6%9C%AC_27",
+      "timestamp": 1791950619.8273497,
+      "latency": 581.9110870361328,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "e6186d0b1f74311fd1fea837877735fc": {
+      "config": "trojan://UX82473651@3.1.252.137:443?security=tls&type=tcp&sni=brave-tomcat.rooster465.autos#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20%F0%9F%87%B8%F0%9F%87%AC_%E6%96%B0%E5%8A%A0%E5%9D%A1_73",
+      "timestamp": 1791950619.827384,
+      "latency": 1015.0108337402344,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "41afc84a73628032243fa7747bba09e8": {
+      "config": "trojan://UX82473651@3.112.188.176:443?security=tls&type=tcp&sni=live-stallion.rooster465.autos#%5B%F0%9F%87%AF%F0%9F%87%B5%20JP%5D%20%F0%9F%87%AF%F0%9F%87%B5_%E6%97%A5%E6%9C%AC_33",
+      "timestamp": 1791950619.827413,
+      "latency": 579.4534683227539,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "de346c868df214d815b6c36bf12567f0": {
+      "config": "trojan://UX82473651@3.120.109.26:443?security=tls&type=tcp&sni=actual-squid.rooster465.autos#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%87%A9%F0%9F%87%AA_%E5%BE%B7%E5%9B%BD_157",
+      "timestamp": 1791950619.82744,
+      "latency": 646.1007595062256,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "244376643b314d728be6992d8abda8da": {
+      "config": "trojan://UX82473651@3.34.192.47:443?security=tls&type=tcp&sni=central-jawfish.rooster465.autos#%5B%F0%9F%87%B0%F0%9F%87%B7%20KR%5D%20%F0%9F%87%B0%F0%9F%87%B7_%E9%9F%A9%E5%9B%BD_66",
+      "timestamp": 1791950619.8274667,
+      "latency": 825.9773254394531,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9df900412cc53fcce0679a9fa382bdfc": {
+      "config": "trojan://UX82473651@3.35.168.225:443?security=tls&type=tcp&sni=noted-cougar.rooster465.autos#%5B%F0%9F%87%B0%F0%9F%87%B7%20KR%5D%20%F0%9F%87%B0%F0%9F%87%B7_%E9%9F%A9%E5%9B%BD_77",
+      "timestamp": 1791950619.8274944,
+      "latency": 567.5094127655029,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "d9f49d89602dea14e21d7bcb11efe928": {
+      "config": "trojan://UX82473651@3.35.207.188:443?security=tls&type=tcp&sni=main-fawn.rooster465.autos#%5B%F0%9F%87%B0%F0%9F%87%B7%20KR%5D%20%F0%9F%87%B0%F0%9F%87%B7_%E9%9F%A9%E5%9B%BD_80",
+      "timestamp": 1791950619.8275259,
+      "latency": 696.8035697937012,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "10b10b8f7d7bc776f992898e6c573079": {
+      "config": "trojan://UX82473651@3.36.50.213:443?security=tls&type=tcp&sni=pure-kodiak.rooster465.autos#%5B%F0%9F%87%B0%F0%9F%87%B7%20KR%5D%20%F0%9F%87%B0%F0%9F%87%B7193309%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/SOSkeyNET",
+      "timestamp": 1791950619.8275573,
+      "latency": 983.1597805023193,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "b439fa0b569719f491faed7ba42cfd9c": {
+      "config": "trojan://UX82473651@43.201.100.203:443?security=tls&type=tcp&sni=optimum-snapper.rooster465.autos#%5B%F0%9F%87%B0%F0%9F%87%B7%20KR%5D%20%40vpnclashfa%20-%20635",
+      "timestamp": 1791950619.8275867,
+      "latency": 685.614824295044,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "63ad41ae1687dfeb766b46ffa1e619ad": {
+      "config": "trojan://UX82473651@43.206.225.188:443?security=tls&type=tcp&sni=warm-krill.rooster465.autos#%5B%F0%9F%87%AF%F0%9F%87%B5%20JP%5D%20%F0%9F%87%AF%F0%9F%87%B5_%E6%97%A5%E6%9C%AC_39",
+      "timestamp": 1791950619.8276155,
+      "latency": 645.8821296691895,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "20eda5035195cacbf4fbf20416e1ec40": {
+      "config": "trojan://UX82473651@54.72.130.222:443?security=tls&type=tcp&sni=adapting-basilisk.rooster465.autos#%5B%F0%9F%87%AE%F0%9F%87%AA%20IE%5D%20%F0%9F%87%AE%F0%9F%87%AA_%E7%88%B1%E5%B0%94%E5%85%B0_104",
+      "timestamp": 1791950619.827648,
+      "latency": 801.0044097900391,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "576b68dbeabbfa0dcb015c5aa47f0768": {
+      "config": "vless://03fcc618-b93d-6796-6aed-8a38c975d581@186.190.211.188:443?security=tls&type=tcp&sni=186.190.211.188&fp=chrome#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20%F0%9F%8F%B3%5Bwww.v2nodes.com%5D%20vless-%20%2318",
+      "timestamp": 1791950619.8276782,
+      "latency": 863.4274005889893,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9c13b37bae6b0e32b30ac11223578943": {
+      "config": "vless://0590ab38-cb22-41d3-8312-6f396a5cec58@129.150.51.127:49289?security=tls&type=tcp&sni=www.microsoft.com&fp=chrome#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20%F0%9F%87%B8%F0%9F%87%AC%5Bwww.v2nodes.com%5D%20vless-SG-1...%20%232",
+      "timestamp": 1791950619.8277137,
+      "latency": 866.8718338012695,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "7fa9e7389335da06534eb05d2f10440e": {
+      "config": "vless://06c4e938-2954-478f-a870-ca1b163e30e9@94.183.170.135:443?type=ws&host=estproxy4.lockdwn.com#%5B%F0%9F%87%AA%F0%9F%87%AA%20EE%5D%20%40vpnclashfa%20-%201195",
+      "timestamp": 1791950619.8277395,
+      "latency": 869.4074153900146,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "adfb1a7a8b91e26173494e084ce9243c": {
+      "config": "vless://0ab273e4-cea6-41d0-bbab-41071d2fc455@5.252.179.15:443?security=reality&type=tcp&sni=www.bing.com&flow=xtls-rprx-vision&pbk=XQB2zIgrhD8AtxgYFM8UiiWYt1sLVBLhMg1M4-sGMAY&fp=qq&sid=296f27de82dad7ff#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%40vpnclashfa%20-%201216",
+      "timestamp": 1791950619.8277972,
+      "latency": 861.6435527801514,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "69229f0cd44add62837d226a15fff2c2": {
+      "config": "vless://0c67a72c-0aa3-4c7a-9237-dbf86890d372@104.24.228.77:443?security=tls&type=ws&host=alala.gex214.dpdns.org&path=/%3Fed%3D2560&sni=alala.gex214.dpdns.org&fp=random#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%201232",
+      "timestamp": 1791950619.8278337,
+      "latency": 324.56254959106445,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "d76d6342b318b87e4b4932a0f0f03375": {
+      "config": "vless://25b3faeb-89b0-4dff-b0a3-0e70997dc962@103.193.173.51:39485?security=reality&type=tcp&host=www.icloud.com&path=/&sni=www.icloud.com&flow=xtls-rprx-vision&pbk=pzmFiyOtVaKJpJlXYC_hJcDw0hiPvPZ661uZn4NO0Xs&fp=chrome&sid=b9#%5B%F0%9F%87%AD%F0%9F%87%B0%20HK%5D%20%F0%9F%87%AD%F0%9F%87%B0%20%E9%A6%99%E6%B8%AF%20%7C%20HKG",
+      "timestamp": 1791950619.8279095,
+      "latency": 867.7659034729004,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "fc79dd583f7fb9b085aa9aeb83c6cdfe": {
+      "config": "vless://2b8738de-1af5-4267-b101-c05707769ed4@172.67.130.187:2053?security=tls&type=ws&host=fans.liverpool.qzz.io&path=/eyJqdW5rIjoiZXlpMnFWRURmWkp5ZCIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0%3D&sni=FaNs.livErpoOl.qZZ.io&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%40VIProxys",
+      "timestamp": 1791950619.8279767,
+      "latency": 600.8076667785645,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "bb9f017472e5a7ec8c998431c441b7a3": {
+      "config": "vless://2b8738de-1af5-4267-b101-c05707769ed4@172.67.130.187:2083?security=tls&type=ws&host=fans.liverpool.qzz.io&path=/eyJqdW5rIjoiY0Y0cENQUmxsNyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0%3D&sni=fans.liverpool.qzz.io&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%201481",
+      "timestamp": 1791950619.8280082,
+      "latency": 602.4749279022217,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "f48274b6b6e5f3c1de44ccbd9868d96c": {
+      "config": "vless://2eb3f6a0-df6e-49b6-994c-177acdd50a97@138.124.96.88:41826?security=tls&type=httpupgrade&path=/&sni=sweden.homyak.app&fp=random#%5B%F0%9F%87%A8%F0%9F%87%AD%20CH%5D%20%F0%9F%87%B8%F0%9F%87%AA193226%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
+      "timestamp": 1791950619.8280537,
+      "latency": 1102.5669574737549,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2a2487363b0d0cd0f2fefa7d9a3ff98e": {
+      "config": "vless://49a9aa25-443b-4fab-9a85-066dd5396c57@104.17.170.132:8880?type=ws&host=mute-river-6aee.421-bd7.workers.dev&path=/pyip%3DProxyIP.KR.CMLiussss.net#%5B%F0%9F%9A%A9%20Unknown%5D%20%E9%9F%A9%E5%9B%BD-01",
+      "timestamp": 1791950619.8280928,
+      "latency": 369.5399761199951,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "64f6093ce4c66cedf1a968f0b54e54d0": {
+      "config": "vless://4c37df21-0a34-41bf-8bc7-78efd823c03b@188.114.97.6:443?security=tls&type=ws&host=shiny-salad-e491.479.workers.dev&path=/pyip%3DProxyIP.SG.CMLiussss.net&sni=shiny-salad-e491.479.workers.dev&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%201814",
+      "timestamp": 1791950619.8281252,
+      "latency": 504.03308868408203,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "937a4b75161ce82fbbf344018d6db6fc": {
+      "config": "vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@104.16.10.56:443?security=tls&type=ws&host=jp3.yohototo.top&path=/tyxyws&sni=jp3.yohototo.top&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%20By%20EbraSha%20%F0%9F%A6%82",
+      "timestamp": 1791950619.8282223,
+      "latency": 1005.5539608001709,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "33df21f85cf22cd8c77f7f937986899f": {
+      "config": "vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@104.16.10.72:443?security=tls&type=ws&host=jp3.yohototo.top&path=/tyxyws&sni=jp3.yohototo.top&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%20By%20EbraSha%20%E2%9B%93%EF%B8%8F",
+      "timestamp": 1791950619.828252,
+      "latency": 833.5127830505371,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "255e74d54f0d696af370a303d0362c10": {
+      "config": "vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@104.16.10.84:443?security=tls&type=ws&host=jp3.yohototo.top&path=/tyxyws&sni=jp3.yohototo.top#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%A8%F0%9F%87%A6192969%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonU",
+      "timestamp": 1791950619.8282833,
+      "latency": 809.7522258758545,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "ffc5e7083ef2d898aea168e9c0500b5e": {
+      "config": "vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@104.16.111.195:443?security=tls&type=ws&host=jp3.yohototo.top&path=/tyxyws&sni=jp3.yohototo.top&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%20By%20EbraSha%20%F0%9F%A7%AC",
+      "timestamp": 1791950619.828314,
+      "latency": 1079.908847808838,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9270d396e7789acefda229d340fb375b": {
+      "config": "vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@104.16.111.202:443?security=tls&type=ws&host=jp3.yohototo.top&path=/tyxyws&sni=jp3.yohototo.top&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%A8%F0%9F%87%A6193039%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
+      "timestamp": 1791950619.8283467,
+      "latency": 946.509599685669,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "88a6d3e784f1ba2855ee4061f87298f7": {
+      "config": "vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@104.17.50.53:443?security=tls&type=ws&host=jp3.yohototo.top&path=/tyxyws&sni=jp3.yohototo.top#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%A8%F0%9F%87%A6192897%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
+      "timestamp": 1791950619.8284056,
+      "latency": 779.2983055114746,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "34fd8add6e79822ec456473fa372f171": {
+      "config": "vless://4e4f1f70-5e56-4a76-bb9d-db087f4690c4@143.20.156.116:443?security=tls&type=ws&host=jp3.yohototo.top&path=/tyxyws&sni=jp3.yohototo.top&fp=unsafe#%5B%F0%9F%87%AD%F0%9F%87%B0%20HK%5D%20qq_014",
+      "timestamp": 1791950619.8284354,
+      "latency": 1176.4750480651855,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "3c392c39416779430354ad1d3782c5ed": {
+      "config": "vless://52450a53-ac49-42ff-be36-0899178d34b9@172.67.213.26:2053?security=tls&type=ws&host=little-violet-8ade.vpnstoregod.workers.dev&path=/eyJqdW5rIjoiOHBjT0w3NmxvazAiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByZWZpeCIsInBhbmVsSVBzIjpbIlsyYTAyOjg5ODoxNDY6NjQ6Ol0iXX0&sni=little-violet-8ade.vpnstoregod.workers.dev#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%A8%F0%9F%87%A6193211%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
+      "timestamp": 1791950619.8284686,
+      "latency": 469.49172019958496,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "4d95bc7c19071f2efabd6f237cdad190": {
+      "config": "vless://5567cac6-2a32-4318-83cd-7df3a9eebbd7@34.87.113.18:443?security=reality&type=tcp&sni=www.cloudflare.com&pbk=hJCcmOf_ECJ3GUfHUjsgfcFKcgGb22H7cz_m_FvcVm4&fp=chrome&sid=eb97ce837da2f6ad#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20%F0%9F%87%B8%F0%9F%87%AC193098%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
+      "timestamp": 1791950619.8285017,
+      "latency": 934.9193572998047,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9c18d0cd287323927c6258eb765b0d3d": {
+      "config": "vless://58756a39-0472-5f8a-89e3-a80fa94af59e@193.70.85.96:443?security=tls&type=tcp&sni=7q4eiwcseu-193708596-direct.rahbarii.com&flow=xtls-rprx-vision&fp=firefox#%5B%F0%9F%87%AB%F0%9F%87%B7%20FR%5D%20%F0%9F%87%AB%F0%9F%87%B7192359%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_Msocks5%3A//31.77.19.92%3A443%23%F0%9F%87%A9%F0%9F%87%AA192360%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
+      "timestamp": 1791950619.8285654,
+      "latency": 712.6257419586182,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "8b64e3970e38666d4986543ad8287094": {
+      "config": "vless://5ac49a12-f275-44b4-b11d-26505f3f268e@177.1.192.81:443?security=reality&type=tcp&sni=addons.mozilla.org&flow=xtls-rprx-vision&pbk=JNr60Nnq_sdeAz5jd25bxNDx_c9CeYLu7DRbQH3P5xk&fp=chrome&sid=85766a81#%5B%F0%9F%87%B5%F0%9F%87%B1%20PL%5D%20%40vpnclashfa%20-%201945",
+      "timestamp": 1791950619.8285985,
+      "latency": 782.5345993041992,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "bb18541f7b303cabd74af6390f6d3e48": {
+      "config": "vless://5ac49a12-f275-44b4-b11d-26505f3f268e@177.1.192.81:443?security=reality&type=tcp&host=/%3Ftelegram--MARAMBASHI--MARAMBASHI--MARAMBASHI--MARAMBASHI&sni=addons.mozilla.org&flow=xtls-rprx-vision&pbk=JNr60Nnq_sdeAz5jd25bxNDx_c9CeYLu7DRbQH3P5xk&fp=chrome&sid=85766a81#%5B%F0%9F%87%B5%F0%9F%87%B1%20PL%5D%20%40MARAMBASHI%20%F0%9F%87%A9%F0%9F%87%AA",
+      "timestamp": 1791950619.8286343,
+      "latency": 835.1278305053711,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "3a9822cba632d20b291c34ed3b921905": {
+      "config": "vless://6202b230-417c-4d8e-b624-0f71afa9c75d@185.18.250.30:8880?type=ws&host=vms.lifetime47.workers.dev&path=/#%5B%F0%9F%87%A8%F0%9F%87%AD%20CH%5D%20%F0%9F%87%AA%F0%9F%87%B8%20%E8%A5%BF%E7%8F%AD%E7%89%99%20%7C%20ESP",
+      "timestamp": 1791950619.8286664,
+      "latency": 215.5930995941162,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "e995ecf4dc4ffa10821319c7180d30ba": {
+      "config": "vless://633f424e-2b11-48da-a6b3-a849dd71456f@45.12.75.242:26424?security=reality&type=tcp&sni=ya.ru&pbk=l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0&fp=chrome&sid=23103e1e#%5B%F0%9F%87%B7%F0%9F%87%BA%20RU%5D%20%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20St%20Petersburg%20%F0%9F%8C%8D%20VL-TCP-RLT%204%E2%83%A3",
+      "timestamp": 1791950619.828706,
+      "latency": 1145.1454162597656,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "262c978af0327b36d84c0ec7ea8f82ca": {
+      "config": "vless://871f3020-6158-4829-88ed-81843bb956e1@104.17.98.5:443?security=tls&type=ws&host=newcf.3xxx.de5.net&path=/&sni=newcf.3xxx.de5.net#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%A8%F0%9F%87%A6192346%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
+      "timestamp": 1791950619.8287394,
+      "latency": 171.75555229187012,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "d4b1f6c0271a824ea5f6d9095d985e7e": {
+      "config": "vless://8892e34a-339b-4526-b88d-cf68c516231c@152.70.58.201:443?security=reality&type=tcp&sni=www.nvidia.com&flow=xtls-rprx-vision&pbk=Hg_ivwbClYmR-SEHdoGgq4yEk6ltbjS5c4yiQRa4_28&sid=52c723e0fad49689#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%40vpnclashfa%20-%202373",
+      "timestamp": 1791950619.828769,
+      "latency": 633.155345916748,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "889a265d9ebaddfbb7fa7c791592a2bb": {
+      "config": "vless://8be461cb-a0df-47cf-bc0d-4d9e6a22fa74@104.21.3.219:443?security=tls&type=ws&host=ccs2g.pai50288.uk&path=/pai50288&sni=ccs2g.pai50288.uk&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20q_029",
+      "timestamp": 1791950619.8287969,
+      "latency": 846.2462425231934,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "e948349d0e210e9aaca6041044f3c8e6": {
+      "config": "vless://904f8ffa-4652-4076-8f2f-e586807840ec@172.111.146.64:80?type=ws&path=/vless/#%5B%F0%9F%87%AF%F0%9F%87%B5%20JP%5D%20%F0%9F%87%AF%F0%9F%87%B5%20Japan%20-%20Tokyo%20%F0%9F%8C%8F%20VL-WS-NA%204%E2%83%A3",
+      "timestamp": 1791950619.8288612,
+      "latency": 477.03075408935547,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "0b7f5eef9f10bdb52c075b28592fd983": {
+      "config": "vless://928e6cce-8ced-4243-9a48-a6642edd09b0@47.238.210.5:13779?security=reality&type=tcp&sni=tesla.com&pbk=llTyp52oRXnJmQ3I9UUrmlwbMA79B-wLCRHCu-8dLGg&fp=chrome&sid=af1bdd293097b664#%5B%F0%9F%87%AD%F0%9F%87%B0%20HK%5D%20q_263",
+      "timestamp": 1791950619.8288918,
+      "latency": 1141.801118850708,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "b0978eefcd68ccf7bcfda56bbb1e69c4": {
+      "config": "vless://a16bd0e2-ff2e-4e4c-a955-0c684255a065@67.159.52.81:443?security=reality&type=tcp&sni=sg.fasti.win&flow=xtls-rprx-vision&pbk=-YTGWg5DjsLDyaDfr1D83kiUK22LVcrK3yC53lqqigs&fp=chrome&sid=feedbacc#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20qq_105",
+      "timestamp": 1791950619.8289225,
+      "latency": 679.5201301574707,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "caa107474fc75211ea7131781fbefd35": {
+      "config": "vless://a18f7c2d-9e45-4b8a-af3c-1d5e7f9c8b2a@83.168.71.216:443?security=reality&type=tcp&host=/%3FTELEGRAM--MARAMBASHI--MARAMBASHI&sni=ads.x5.ru&pbk=8h8t5eBWL9oERK7xWHQLFJE5j6sZdgNDQAs3EGnNbho&fp=chrome&sid=2f49bccf11150ef2#%5B%F0%9F%87%B5%F0%9F%87%B1%20PL%5D%20Free%20x255%20%40Outline_Vpn",
+      "timestamp": 1791950619.8289564,
+      "latency": 714.7531509399414,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "4b1f1d6e830d4707766399d1bc7c6300": {
+      "config": "vless://a8c23fe7-d2bb-46ba-a14e-8847f1944642@104.16.100.215:8880?type=ws&host=billowing-fire-a10b.301-d6c.workers.dev&path=/pyip%3DProxyIP.SG.CMLiussss.net#%5B%F0%9F%9A%A9%20Unknown%5D%20%40VIProxys",
+      "timestamp": 1791950619.8289862,
+      "latency": 203.16219329833984,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "6564c60129caece6d84aa1c2c61ef4dd": {
+      "config": "vless://a8c23fe7-d2bb-46ba-a14e-8847f1944642@188.114.97.6:8080?type=ws&host=billowing-fire-a10b.301-d6c.workers.dev&path=/pyip%3DProxyIP.SG.CMLiussss.net#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%202692",
+      "timestamp": 1791950619.829013,
+      "latency": 650.1309871673584,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "0ccb937221d0fc2729e8444fda9e63fd": {
+      "config": "vless://adc11f30-e4cb-4985-bf5e-f9ded69c019f@144.31.131.38:443?security=reality&type=tcp&sni=prod.pl-node-01.security-sbrf.ru&flow=xtls-rprx-vision&pbk=fNfokzklCF4l_c8k8PciOCjm5ecNoF_sNLjEtaO-xzI&fp=firefox&sid=db04ce8bdb8900f1#%5B%F0%9F%87%A6%F0%9F%87%B1%20AL%5D%20%40vpnclashfa%20-%202733",
+      "timestamp": 1791950619.8290548,
+      "latency": 639.2555236816406,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "27bf03f30d14aac67531df3db47cf4df": {
+      "config": "vless://af5eac96-e478-488a-bc8c-45269d7e8847@5.253.28.224:40443?security=reality&type=tcp&sni=deepl.com&flow=xtls-rprx-vision&pbk=g77ZJbm18JEotapmVRjaXi133MzkbhkU2lxhVeXx8zw&fp=firefox&sid=68a8#%5B%F0%9F%87%A8%F0%9F%87%BE%20CY%5D%20q_269",
+      "timestamp": 1791950619.8290877,
+      "latency": 867.39182472229,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "a26575f9b873cc8a79094e99b584bb30": {
+      "config": "vless://b18d5990-96eb-4587-a386-7f8ef7591e6a@31.77.13.19:2063?security=reality&type=tcp&host=/%3FTELEGRAM--MARAMBASHI--MARAMBASHI&sni=rusbid.de&flow=xtls-rprx-vision&pbk=MMpt_jWc4J3oySBdf5sPDVRkiWlZmOObth6A1scM9BM&fp=chrome#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%40vpnclashfa%20-%202772",
+      "timestamp": 1791950619.8291202,
+      "latency": 741.8274879455566,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "e96e32c52c55678452bdd44f3b378f6b": {
+      "config": "vless://bf16ee0c-8b3c-41e4-ab3a-8b48033c404e@51.77.217.70:2053?security=reality&type=tcp&sni=www.apple.com&pbk=g63cT3uI0Y5iUtj3m__RYz7nmR1eIK4AYikdnZCl63w&sid=bfe58beb41f1d09f#%5B%F0%9F%87%AB%F0%9F%87%B7%20FR%5D%20%40vpnclashfa%20-%202869",
+      "timestamp": 1791950619.8291485,
+      "latency": 540.7602787017822,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9443707095325a542ef4cfe1df4e2567": {
+      "config": "vless://c0dd6d59-1573-43af-8b70-1470b2632a6d@208.69.78.217:2053?security=reality&type=tcp&sni=www.apple.com&pbk=A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0&sid=ad86e2d52ff40ebd#%5B%F0%9F%87%A8%F0%9F%87%AD%20CH%5D%20%40vpnclashfa%20-%202885",
+      "timestamp": 1791950619.8291738,
+      "latency": 694.6814060211182,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "99b54ba47ec4a10020ae61c01e47b1e1": {
+      "config": "vless://c3db7657-88ce-42a6-b998-1e0364b277ac@87.242.127.113:4510?security=reality&type=tcp&sni=9c99da.usecache.net&flow=xtls-rprx-vision&pbk=hkvjyE8WMKHvdGfMta7PAIGz6HAv2WiXvWvAQmsE_DM&fp=random&sid=2d0c188798bae174#%5B%F0%9F%87%B7%F0%9F%87%BA%20RU%5D%20%F0%9F%87%B7%F0%9F%87%BA_%E4%BF%84%E7%BD%97%E6%96%AF_193",
+      "timestamp": 1791950619.829207,
+      "latency": 899.6796607971191,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "d724590163cd3ce35715d3baafa041c7": {
+      "config": "vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@104.18.42.98:443?security=tls&type=ws&host=a.cwvps.eu.org&path=/ws%23/%3FTELEGRAM--MARAMBASHI--MARAMBASHI%3Fed%3D512&sni=a.cwvps.eu.org&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%40VIProxys",
+      "timestamp": 1791950619.8292694,
+      "latency": 773.8997936248779,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "6b1adcb88052126d69271eed4a33f536": {
+      "config": "vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@162.159.192.125:443?security=tls&type=ws&host=a.cwvps.eu.org&path=/ws&sni=a.cwvps.eu.org#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%202943",
+      "timestamp": 1791950619.829296,
+      "latency": 982.0535182952881,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9919fa53bcb122bc99858a3d6cdcb541": {
+      "config": "vless://c4edb87e-8544-4fa4-bd1c-b0cda9a34b46@188.114.97.6:443?security=tls&type=ws&host=a.cwvps.eu.org&path=/ws%3Fed%23&sni=a.cwvps.eu.org#%5B%F0%9F%9A%A9%20Unknown%5D%20%40VIProxys",
+      "timestamp": 1791950619.8293252,
+      "latency": 547.5790500640869,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "56f63383b39f21d671047e327ad3612f": {
+      "config": "vless://c538c9dd-2e3f-488f-a8ca-ac5b7c0773f3@47.237.74.17:16263?type=tcp#%5B%F0%9F%87%B8%F0%9F%87%AC%20SG%5D%20%F0%9F%8F%B3%5Bwww.v2nodes.com%5D%20vless-%20%2328",
+      "timestamp": 1791950619.8293529,
+      "latency": 642.8184509277344,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "71cabee2f9564835c3eb0848387396d9": {
+      "config": "vless://c5db14f6-2a21-401c-8160-a8093ff4ffd3@188.114.97.3:443?security=tls&type=ws&host=mxp6jvjacystdp-s4f.kjnnv3i410u6mq-itd.workers.dev&path=/vl/14m2B3TtxW5N85ews%3Fed%3D2560&sni=MxP6JvJACYStDP-s4f.KJNnV3I410u6MQ-ITd.WorkerS.dev&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%E2%99%A5%EF%B8%8F%F0%9F%99%8F%20%D8%AD%D9%85%D8%A7%DB%8C%D8%AA%20%D8%A7%D8%B2%20%DA%A9%D8%A7%D9%86%D8%A7%D9%84%20%DB%8C%D8%A7%D8%AF%D8%AA%20%D9%86",
+      "timestamp": 1791950619.8294075,
+      "latency": 972.1810817718506,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "7f835694f88c406ad62509ac58c37515": {
+      "config": "vless://c5db14f6-2a21-401c-8160-a8093ff4ffd3@188.114.97.3:443?security=tls&type=ws&host=mxp6jvjacystdp-s4f.kjnnv3i410u6mq-itd.workers.dev&path=/vl/14m2B3TtxW5N85ews&sni=mxp6jvjacystdp-s4f.kjnnv3i410u6mq-itd.workers.dev#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%A8%F0%9F%87%A6193207%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
+      "timestamp": 1791950619.8294444,
+      "latency": 550.5425930023193,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "49174b4816e9c8ab1f49aab85127c38e": {
+      "config": "vless://d342d11e-d224-4463-b982-532309285094@104.18.37.127:443?security=tls&type=ws&host=ccc.010304.xyz&path=/&sni=ccc.010304.xyz&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20qq_006",
+      "timestamp": 1791950619.8295343,
+      "latency": 327.16965675354004,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "d29619b42196c6652dbd0bbc195247a2": {
+      "config": "vless://d342d11e-d224-4463-b982-532309285094@107.189.26.160:443?security=tls&type=ws&host=ccc.010304.xyz&path=/fp%23TELEGRAM--MARAMBASHI--MARAMBASHI%3Fed%3D512&sni=ccc.010304.xyz#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%40MARAMBASHI%20%F0%9F%87%B3%F0%9F%87%B1",
+      "timestamp": 1791950619.8295944,
+      "latency": 859.978199005127,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "05a47eac56fe13864780412028110cd9": {
+      "config": "vless://d342d11e-d224-4463-b982-532309285094@172.64.158.170:443?security=tls&type=ws&host=ccc.010304.xyz&path=/&sni=ccc.010304.xyz&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20qq_017",
+      "timestamp": 1791950619.8296235,
+      "latency": 493.99852752685547,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "7150d3d4084a72292a60e5b7aaf37601": {
+      "config": "vless://d342d11e-d224-4463-b982-532309285094@77.110.97.245:443?security=tls&type=ws&host=ccc.010304.xyz&path=/&sni=ccc.010304.xyz&fp=chrome#%5B%F0%9F%87%B8%F0%9F%87%AA%20SE%5D%20qq_030",
+      "timestamp": 1791950619.829651,
+      "latency": 1181.0612678527832,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "37e7ea2fbcc2a5c78a5bf4dafe42fe95": {
+      "config": "vless://d4b08cd6-0903-411a-9dac-45dbdf5c9712@57.131.38.163:2053?security=reality&type=tcp&sni=www.apple.com&pbk=Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc&fp=firefox&sid=5b8a942318178e7b#%5B%F0%9F%87%AE%F0%9F%87%B9%20IT%5D%20%40vpnclashfa%20-%203150",
+      "timestamp": 1791950619.8296807,
+      "latency": 753.5417079925537,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "0bc56927a4ec617a562ae0a5aed83be4": {
+      "config": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.173:443?security=reality&type=tcp&host=v2raynplus--v2raynplus--v2raynplus&sni=yahoo.com&flow=xtls-rprx-vision&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&fp=edge&sid=c39cc7310a#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9F%87%BA%F0%9F%87%B8193144%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
+      "timestamp": 1791950619.8297157,
+      "latency": 498.1534481048584,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "6d49527a8aea29c48b66cc0ce1914a86": {
+      "config": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.202:443?security=reality&type=tcp&sni=yahoo.com&flow=xtls-rprx-vision&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&fp=chrome&sid=c39cc7310a#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%F0%9D%97%9D%F0%9D%97%BC%F0%9D%97%B6%F0%9D%97%BB%20%E2%9E%A0%20%40vpnplusee_free%20%7C%20%F0%9F%87%BA%F0%9F%87%B8",
+      "timestamp": 1791950619.829759,
+      "latency": 536.4501476287842,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "50427fd6e40c337b720ad48d751ab3d6": {
+      "config": "vless://d65cc14c-f53f-4fe2-b262-97856601319c@169.40.42.235:443?security=reality&type=tcp&host=/%3FTELEGRAM--MARAMBASHI--MARAMBASHI&sni=yahoo.com&flow=xtls-rprx-vision&pbk=e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg&fp=ios&sid=c39cc7310a#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%40vpnclashfa%20-%203188",
+      "timestamp": 1791950619.8297954,
+      "latency": 584.79905128479,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "eb7a380c2e422d05d0f6680dc88a9e70": {
+      "config": "vless://df53b6c2-8005-475c-9eb9-74e1be785dc8@157.228.150.34:443?security=reality&type=tcp&sni=addons.mozilla.org&flow=xtls-rprx-vision&pbk=NOw-idkk3OCn-N0IRS93leujH4ik-E749O2T5BYJQ0M&fp=chrome&sid=3cef317b#%5B%F0%9F%87%A6%F0%9F%87%AA%20AE%5D%20%E8%8B%B1%E5%9B%BD%28yudou99.com%20%E7%8E%89%E8%B1%86%E5%88%86%E4%BA%AB%29",
+      "timestamp": 1791950619.8298297,
+      "latency": 722.2259044647217,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "e3b91b29f6f406eb1717fc0198408ac5": {
+      "config": "vless://df53b6c2-8005-475c-9eb9-74e1be785dc8@157.228.150.34:443?security=reality&type=tcp&host=addons.mozilla.org&sni=addons.mozilla.org&flow=xtls-rprx-vision&pbk=NOw-idkk3OCn-N0IRS93leujH4ik-E749O2T5BYJQ0M&fp=chrome&sid=3cef317b#%5B%F0%9F%87%A6%F0%9F%87%AA%20AE%5D%20%F0%9F%87%A6%F0%9F%87%AA_%E9%98%BF%E6%8B%89%E4%BC%AF%E8%81%94%E5%90%88%E9%85%8B%E9%95%BF%E5%9B%BD_197",
+      "timestamp": 1791950619.8298748,
+      "latency": 924.3016242980957,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "ac7d6f5e7f425417977e3b441fb3cfd3": {
+      "config": "vless://df53b6c2-8005-475c-9eb9-74e1be785dc8@2.27.69.128:443?security=reality&type=tcp&sni=addons.mozilla.org&flow=xtls-rprx-vision&pbk=RTG-xTU5UuKTRrkk8_COe04GiUWrqrSdt9mqSak_XEc&sid=e696e744#%5B%F0%9F%87%A9%F0%9F%87%AA%20DE%5D%20%40vpnclashfa%20-%203304",
+      "timestamp": 1791950619.829904,
+      "latency": 763.8194561004639,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "6eb8ec4132e1b13c0ec7e6b63c07eea5": {
+      "config": "vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@172.64.150.28:2082?type=ws&host=hhlfy.twiladaphne.ndjp.net#%5B%F0%9F%9A%A9%20Unknown%5D%20%40orangevpns_bot%20%D8%AA%D8%B3%D8%AA%20%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86",
+      "timestamp": 1791950619.8299332,
+      "latency": 228.96409034729004,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "e5d7bd2fcd2ae998f26309959254d8af": {
+      "config": "vless://e5cc16a6-ea42-46b2-82ae-ad2157e1641b@172.64.150.43:2082?type=ws&host=hhlfy.twiladaphne.ndjp.net&sni=hhlfy.twiladaphne.ndjp.net&fp=unsafe#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%203503",
+      "timestamp": 1791950619.8299847,
+      "latency": 220.794677734375,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "6c78828ca0fdaa3d35ee16e40eea2568": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@104.18.43.174:443?security=tls&type=ws&host=lucasjow.us.ci&path=/cart/docs/www/proxyip%3D108.160.132.132&sni=lucasjow.us.ci&fp=qq#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%A8%F0%9F%87%A6192564%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
+      "timestamp": 1791950619.8300204,
+      "latency": 259.36126708984375,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "63e57dc0c25617364678241fbb3e9bcb": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@107.189.26.160:443?security=tls&type=ws&host=lucasjow.us.ci&path=/cart/docs/www/proxyip%3D108.160.132.132&sni=lucasjow.us.ci&fp=chrome#%5B%F0%9F%87%B3%F0%9F%87%B1%20NL%5D%20%F0%9F%87%B3%F0%9F%87%B1192364%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/LonUp_M",
+      "timestamp": 1791950619.8300707,
+      "latency": 749.3391036987305,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "291aabe1a8d3e9507fd22533a940da50": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.97.6:443?security=tls&type=ws&host=lucasjow.us.ci&path=/cart/docs/www/proxyip%3D108.160.132.132fp%3Dchrome&sni=lucasjow.us.ci#%5B%F0%9F%9A%A9%20Unknown%5D%20%F0%9F%87%AE%F0%9F%87%B9%5Bwww.v2nodes.com%5D%20vless-IT-2...",
+      "timestamp": 1791950619.8301094,
+      "latency": 267.2240734100342,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2456ddc1deaee5f6d5f8599a753edb19": {
+      "config": "vless://e6df2095-a73c-4043-8693-8d5a03686870@188.114.97.6:443?security=tls&type=ws&host=lucasjow.us.ci&path=/cart/docs/www/proxyip%3D108.160.132.132%3Fed%23Telegram---DailyConfigs&sni=lucasjow.us.ci&fp=chrome#%5B%F0%9F%9A%A9%20Unknown%5D%20%40vpnclashfa%20-%203518",
+      "timestamp": 1791950619.8301764,
+      "latency": 831.148624420166,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "94f220f7bacd01aa0db405d5ec56cc03": {
+      "config": "vless://e8a432c8-5d84-49a5-b822-67ed761a58f9@54.37.136.194:2053?security=reality&type=tcp&host=/%3FTELEGRAM--MARAMBASHI--MARAMBASHI&sni=www.cloudflare.com&pbk=Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A&sid=50ba05992b05c1c3#%5B%F0%9F%87%AB%F0%9F%87%B7%20FR%5D%20%40vpnclashfa%20-%203546",
+      "timestamp": 1791950619.8302083,
+      "latency": 658.6034297943115,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "93214629d738b1519e0bfbc05f36ea21": {
+      "config": "vless://ee18d188-14cc-417e-beb1-70e4add6d023@185.31.242.61:443?security=reality&type=tcp&host=/%3FTelegram---pirozi_ArGaP---pirozi_ArGaP---pirozi_ArGaP---pirozi_ArGaP&sni=est.nztvpn.com&flow=xtls-rprx-vision&pbk=7mRrVzTchVLWWBru5fCgTvtdkL7lVJ_qRj9HW8Rd8X0&fp=random&sid=0da7e14db353e7d0#%5B%F0%9F%87%AA%F0%9F%87%AA%20EE%5D%20%F0%9F%87%AA%F0%9F%87%AA193465%20%7C%20%E2%9A%A1%EF%B8%8FTelegram%20%3D%20t.me/SOSkeyNET",
+      "timestamp": 1791950619.8302467,
+      "latency": 597.5911617279053,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "1099bc8c1d0ab1889c48bec91673b7c2": {
+      "config": "vless://f8c9d2a1-da40-4f90-b671-11772a0b13d6@103.172.197.3:16006?security=reality&type=tcp&sni=www.cloudflare.com&flow=xtls-rprx-vision&pbk=ll7JTP628PuBMZJvx6fuhGSmCRSURnReAetmhCEL8GU&fp=chrome#%5B%F0%9F%87%AE%F0%9F%87%A9%20ID%5D%20q_128",
+      "timestamp": 1791950619.8302746,
+      "latency": 749.992847442627,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "24100c9c882acf935b089b7257072c43": {
+      "config": "vless://fe0721ac-c577-4938-b7ca-8ab5f43bb8da@38.180.137.143:9443?security=reality&type=tcp&sni=www.amazon.com&flow=xtls-rprx-vision&pbk=0hIFPaEn4RdFib8_eP8HYxMywR5izEwM3JA2W1Zo8U4&fp=random&sid=b390142456517acc#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%87%BA%F0%9F%87%B8_%E7%BE%8E%E5%9B%BD_192",
+      "timestamp": 1791950619.8303077,
+      "latency": 274.28722381591797,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "14d947c1154cd22dec0c0b6c60d5391d": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmMFx1ZDgzY1x1ZGRmZiBLWl0gW09wZW5SYXldIFx1ZDgzY1x1ZGRmMFx1ZDgzY1x1ZGRmZiBLWi01NyIsICJhZGQiOiAiMzguMTA3LjIzNC41NyIsICJwb3J0IjogIjgwIiwgImlkIjogIjU2N2Y0YmU1LTEyYWItNDJlMS1iOGQ5LWRiNmZkMWZkZDMxYyIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAiZ29vZ2xlLmNvbSIsICJwYXRoIjogIi92bWVzcy8iLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.830328,
+      "latency": 985.5921268463135,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "9af32158fb172d438216a8aa9780b07a": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBIS10gXHVkODNjXHVkZGVkXHVkODNjXHVkZGYwSEstNDcuMjQzLjE1My4xNTMtMTAxNiIsICJhZGQiOiAiNDcuMjQzLjE1My4xNTMiLCAicG9ydCI6ICI0NDMiLCAiaWQiOiAiZjIzYmI0MjctYzFmOS00MzczLTg3NmMtMmY0M2U5Zjc5MGYzIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogImF1dG8iLCAiaG9zdCI6ICJpMnBzbTNrbm9mNXFqaml4LnYuM2Rucy52aXAiLCAicGF0aCI6ICIvd3Mtdm1lc3MiLCAidGxzIjogInRscyIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8303437,
+      "latency": 714.5769596099854,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "fc72beb9dc78e606ecaa41053a6e537b": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBcdWQ4M2NcdWRmYzFSRUxBWS0xNzIuNjYuMjAzLjY3LTA5NjkiLCAiYWRkIjogIjE3Mi42Ni4yMDMuNjciLCAicG9ydCI6ICI0NDMiLCAiaWQiOiAiMGNmNmQ5NzAtM2YxZC00YWFlLWE5ODktOTJhOGY3NmFlM2RiIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogImF1dG8iLCAiaG9zdCI6ICJ2bWVzcy5sYnc2NjYuZHBkbnMub3JnIiwgInBhdGgiOiAiL3dzP2VkPTIwNDgiLCAidGxzIjogInRscyIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8303585,
+      "latency": 265.7766342163086,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "b4870d2db01e4a0b2e98c6ded9e65e0d": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmMFx1ZDgzY1x1ZGRmZiBLWl0gXHVkODNjXHVkZGYwXHVkODNjXHVkZGZmS1otMzguMTA3LjIzNC41Ny0wOTcxIiwgImFkZCI6ICIzOC4xMDcuMjM0LjU3IiwgInBvcnQiOiAiODAiLCAiaWQiOiAiNTY3ZjRiZTUtMTJhYi00MmUxLWI4ZDktZGI2ZmQxZmRkMzFjIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogImF1dG8iLCAiaG9zdCI6ICJ2aWJlci5jb20iLCAicGF0aCI6ICIvdm1lc3MvIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8303728,
+      "latency": 1014.5809650421143,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2bf8016bda4f7ab90e07f9cab4cd7d0b": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBcdWQ4M2NcdWRkZThcdWQ4M2NcdWRkZTYxOTMyNzAgfCBcdTI2YTFcdWZlMGZUZWxlZ3JhbSA9IHQubWUvU09Ta2V5TkVUIiwgImFkZCI6ICIxMDQuMTcuMTQ3LjIyMiIsICJwb3J0IjogIjgwIiwgImlkIjogIjBjZjZkOTcwLTNmMWQtNGFhZS1hOTg5LTkyYThmNzZhZTNkYiIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAidm1lc3MubGJ3NjY2LmRwZG5zLm9yZyIsICJwYXRoIjogIi93cz9lZD0yMDQ4IiwgInRscyI6ICJub25lIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8303878,
+      "latency": 285.2659225463867,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "41e635ae87373e7c3215145e0b994965": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZlx1ZDgzY1x1ZGRmNSBKUF0gXHVkODNjXHVkZGVmXHVkODNjXHVkZGY1X1x1NjVlNVx1NjcyY18yOTEiLCAiYWRkIjogIjE3Mi4xMTEuMTQ2LjY0IiwgInBvcnQiOiAiODAiLCAiaWQiOiAiMDViOGM3ODMtN2Y1OS00N2Y5LTk5MjMtMDZhNDY1Njc5ZjZhIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIvdm1lc3MvIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8304024,
+      "latency": 622.0686435699463,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "f922efbdb9361a4a8ac87e70a59b8090": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZVx1ZDgzY1x1ZGRmMyBJTl0gXHVkODNjXHVkZGVlXHVkODNjXHVkZGYzX1x1NTM3MFx1NWVhNl8zMDgiLCAiYWRkIjogIjE1Mi42Ny44LjIwNSIsICJwb3J0IjogIjgwIiwgImlkIjogIjlkYjRjNzA4LWFlZjgtNDM1OS04MjFiLTM4ZTQ3OTkwYmUwZCIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAiIiwgInBhdGgiOiAiLyIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.830417,
+      "latency": 904.1447639465332,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "e40ea4eba7498a8f2f85624096391e4f": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmMFx1ZDgzY1x1ZGRmNyBLUl0gXHVkODNjXHVkZGYwXHVkODNjXHVkZGY3X1x1OTdlOVx1NTZmZF8zMDIiLCAiYWRkIjogIjEzMi4xNDUuODAuMjMwIiwgInBvcnQiOiAiODAiLCAiaWQiOiAiNTE1NTg2MGUtZDA3ZC00NmMzLTkxMjgtM2FmYmQ4NDYyNmM3IiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIvY2N0djEzLm0zdTgiLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.830429,
+      "latency": 509.16337966918945,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "507cc20b9c190d072e58269e6e0eb791": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOVx1ZDgzY1x1ZGRlYSBERV0gXHVkODNjXHVkZGU5XHVkODNjXHVkZGVhREVfMTc1X0BTdXJmYm9hcmR2MnJheSIsICJhZGQiOiAiMzEuNzYuMTEuODMiLCAicG9ydCI6ICIyMjI2NiIsICJpZCI6ICIyZDhmNTdiZC0xMmI1LTQxYWQtYTgwNi02NTAxNzUzYzI2NGMiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIiIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8304584,
+      "latency": 360.6457710266113,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "3692ad5917deb3b634d910199ad7e0d2": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmMlx1ZDgzY1x1ZGRmZSBNWV0gXHVkODNjXHVkZGYyXHVkODNjXHVkZGZlTVlfNDRfQFN1cmZib2FyZHYycmF5IiwgImFkZCI6ICI0Ny4yNTAuMTM1LjI0NCIsICJwb3J0IjogIjEwMDAwIiwgImlkIjogImFlZGM2NmI4LTk5ZDctNGEyMS04MzEwLTYxODcwZTdmODcwZCIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAidGNwIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.8304706,
+      "latency": 410.5689525604248,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "23e95327ef255f837a5c7dc71a1eab11": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gQHZwbmNsYXNoZmEgLSA4MVxuIiwgImFkZCI6ICIxMjkuMTQ2Ljc3LjI0OCIsICJwb3J0IjogIjM5NDk1IiwgImlkIjogImY4MzZjNzM2LTg3ZmMtNGZkZS1hYWJjLTAwODU3ZWNkZmYzZSIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAiMTI5LjE0Ni43Ny4yNDgiLCAicGF0aCI6ICIvY2N0djEzLm0zdTgiLCAidGxzIjogIiIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "timestamp": 1791950619.8305001,
+      "latency": 139.5587921142578,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "95d8025aa3caa41e7ab26e40bdbca4ed": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlZFx1ZDgzY1x1ZGRmMCBIS10gQHZwbmNsYXNoZmEgLSAxMDJcbiIsICJhZGQiOiAiMTU2LjI0NS4yMzIuMjM5IiwgInBvcnQiOiAiMzUwNDMiLCAiaWQiOiAiYjE1ZTQ4MWQtMTdlNC00MWE4LTg0YzItMjNkNGYwNTE0ZDlhIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogImF1dG8iLCAiaG9zdCI6ICIiLCAicGF0aCI6ICIvIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
+      "timestamp": 1791950619.8305285,
+      "latency": 942.0664310455322,
+      "ssid": "Ethernet_or_Unknown"
+    },
+    "2a0cc240db5aff27fd722e14f70dc6f5": {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRlOFx1ZDgzY1x1ZGRlNiBDQV0gQHZwbmNsYXNoZmEgLSAxNjhcbiIsICJhZGQiOiAiMjMuMTYyLjIwMC4xOTgiLCAicG9ydCI6ICIxODAwMCIsICJpZCI6ICJmOGM4ZGMzZC0wZDM3LTQ2YjAtOGIzNC1hNzIzMjg4MmZjZmUiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCIsICJ0eXBlIjogIiIsICJob3N0IjogIiIsICJwYXRoIjogIiIsICJ0bHMiOiAiIiwgInNuaSI6ICIiLCAiYWxwbiI6ICIifQ==",
+      "timestamp": 1791950619.830556,
+      "latency": 265.03896713256836,
       "ssid": "Ethernet_or_Unknown"
     }
   }
