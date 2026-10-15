@@ -2,56 +2,50 @@
 
 
 
-## 📊 Statistics (Last Updated: 2026-10-15 02:09:05 UTC)
+
+
+## 📊 Statistics (Last Updated: 2026-10-15 03:44:56 UTC)
 
 | Metric | Count |
 | :--- | :--- |
-| **TCP Passed** | `1563` |
-| **Real Delay Passed** | `1295` |
-| **Average Latency** | `615 ms` |
-| **Success Rate** | `82.9%` |
+| **TCP Passed** | `1856` |
+| **Real Delay Passed** | `1417` |
+| **Average Latency** | `635 ms` |
+| **Success Rate** | `76.3%` |
 | **System Health** | 🟢 Excellent |
 
 ### 🌍 Server Distribution
 
 | Country | Count |
 | :--- | :--- |
-| 🚩 Unknown | 937 |
-| 🇬🇧 GB | 68 |
-| 🇺🇸 US | 53 |
-| 🇳🇱 NL | 37 |
-| 🇭🇰 HK | 29 |
-| 🇩🇪 DE | 28 |
-| 🇸🇬 SG | 28 |
-| 🇯🇵 JP | 23 |
-| 🇨🇦 CA | 16 |
-| 🇷🇺 RU | 12 |
-| 🇫🇷 FR | 10 |
-| 🇦🇪 AE | 10 |
-| 🇹🇼 TW | 5 |
-| 🇰🇷 KR | 5 |
-| 🇫🇮 FI | 4 |
-| 🇸🇪 SE | 3 |
-| 🇮🇹 IT | 3 |
-| 🇵🇱 PL | 3 |
-| 🇸🇨 SC | 2 |
-| 🇹🇷 TR | 2 |
-| 🇮🇳 IN | 2 |
-| 🇲🇽 MX | 1 |
-| 🇨🇭 CH | 1 |
-| 🇺🇦 UA | 1 |
-| 🇦🇹 AT | 1 |
-| 🇦🇱 AL | 1 |
-| 🇪🇸 ES | 1 |
-| 🇨🇾 CY | 1 |
+| 🚩 Unknown | 1318 |
+| 🇺🇸 US | 24 |
+| 🇰🇷 KR | 9 |
+| 🇭🇰 HK | 9 |
+| 🇩🇪 DE | 7 |
+| 🇳🇱 NL | 6 |
+| 🇷🇺 RU | 6 |
+| 🇯🇵 JP | 5 |
+| 🇸🇬 SG | 5 |
+| 🇦🇪 AE | 3 |
+| 🇲🇽 MX | 2 |
+| 🇹🇼 TW | 2 |
+| 🇵🇱 PL | 2 |
+| 🇬🇧 GB | 2 |
+| 🇫🇷 FR | 2 |
+| 🇸🇪 SE | 2 |
+| 🇰🇿 KZ | 2 |
+| 🇮🇲 IM | 1 |
+| 🇸🇨 SC | 1 |
+| 🇨🇦 CA | 1 |
+| 🇳🇴 NO | 1 |
 | 🇮🇱 IL | 1 |
-| 🇪🇪 EE | 1 |
+| 🇨🇭 CH | 1 |
+| 🇮🇹 IT | 1 |
+| 🇦🇱 AL | 1 |
 | 🇨🇳 CN | 1 |
-| 🇹🇭 TH | 1 |
+| 🇮🇩 ID | 1 |
 | 🇱🇻 LV | 1 |
-| 🇮🇸 IS | 1 |
-| 🇰🇿 KZ | 1 |
-| 🇲🇾 MY | 1 |
 
 ## Architecture
 
