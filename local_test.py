@@ -753,10 +753,7 @@ async def main():
     current_ssid = get_ssid()
     log("INFO", "Main", f"Starting Test on [{current_ssid}]")
 
-    # Cleanup previous debug logs
-    if os.path.exists("debug_poison_configs.txt"):
-        try: os.remove("debug_poison_configs.txt")
-        except OSError: pass
+    # Debug logs will be appended and preserved for GitHub Artifacts
 
     v2ray_utils.increase_file_limit()
     v2ray_utils.check_and_download_geoip_db()

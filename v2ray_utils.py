@@ -144,25 +144,51 @@ def parse_vmess(vmess_url):
         add = sanitize_host(data.get("add", ""))
         if not add: return None, "VMess_InvalidHost"
 
-        # Validate UUID
-        id_val = unquote(data.get("id", ""))
+        # Validate & repair UUID
+        id_val = unquote(str(data.get("id", ""))).strip()
         if not validate_uuid(id_val):
             return None, "VMess_InvalidUUID"
+
+        try:
+            port = int(str(data.get("port", 0)).strip())
+            if port < 1 or port > 65535:
+                return None, "VMess_InvalidPort"
+        except (ValueError, TypeError):
+            return None, "VMess_InvalidPort"
+
+        try:
+            aid = int(str(data.get("aid", "0")).strip())
+        except (ValueError, TypeError):
+            aid = 0
+
+        net_val = str(data.get("net", "tcp")).strip().lower() or "tcp"
+        tls_val = str(data.get("tls", "")).strip().lower()
+        if not tls_val and port in [443, 8443, 2053, 2083, 2087, 2096, 2052]:
+            tls_val = "tls"
+
+        path_val = str(data.get("path", "")).strip()
+        if net_val == "ws" and path_val and not path_val.startswith("/"):
+            path_val = "/" + path_val
+
+        host_val = str(data.get("host", "")).strip()
+        sni_val = str(data.get("sni", "")).strip()
+        if not sni_val and tls_val == "tls":
+            sni_val = host_val or add
 
         # Normalize fields
         return {
             "protocol": "vmess",
             "add": add,
-            "port": int(data.get("port", 0)),
+            "port": port,
             "id": id_val,
-            "aid": int(data.get("aid", "0")),
-            "net": data.get("net", "tcp"),
-            "type": data.get("type", "none"),
-            "host": data.get("host", ""),
-            "path": data.get("path", ""),
-            "tls": data.get("tls", ""),
-            "sni": data.get("sni", ""), # vmess json sometimes has sni
-            "ps": data.get("ps", "")
+            "aid": aid,
+            "net": net_val,
+            "type": str(data.get("type", "none")).strip() or "none",
+            "host": host_val,
+            "path": path_val,
+            "tls": tls_val,
+            "sni": sni_val,
+            "ps": str(data.get("ps", "")).strip()
         }, None
     except Exception:
         return None, "VMess_ParseError"
@@ -182,7 +208,7 @@ def parse_vless_trojan(url, protocol):
         except (ValueError, TypeError):
             return None, f"{protocol}_InvalidPort"
 
-        id_val = unquote(parsed.username) if parsed.username else ""
+        id_val = unquote(parsed.username).strip() if parsed.username else ""
         if protocol == "vless":
              if not validate_uuid(id_val):
                  return None, "VLESS_InvalidUUID"
@@ -190,35 +216,60 @@ def parse_vless_trojan(url, protocol):
              if not validate_password(id_val):
                  return None, "Trojan_InvalidPassword"
 
-        sec = params.get("security", [""])[0]
+        sec = params.get("security", [""])[0].strip().lower()
         # Allow 'reality' to be passed through for proper Flow validation later
         tls_val = sec if sec in ["tls", "reality"] else ""
 
+        # Auto-repair Trojan TLS: Trojan in Xray requires TLS/Reality
+        if protocol == "trojan" and not tls_val:
+            sni_val = params.get("sni", [""])[0].strip()
+            host_val = params.get("host", [""])[0].strip()
+            # If standard TLS port or SNI/host exists, repair to TLS
+            if port in [443, 8443, 2053, 2083, 2087, 2096, 2052] or sni_val or host_val:
+                tls_val = "tls"
+
         # Validate REALITY pbk length
-        pbk_val = params.get("pbk", [""])[0]
+        pbk_val = params.get("pbk", [""])[0].strip()
         if tls_val == "reality":
             if len(pbk_val) not in [43, 44]:
                 return None, f"{protocol}_InvalidRealityKey"
 
         flow_val = params.get("flow", [""])[0].strip()
 
+        # Auto-repair network transport: support both 'type' and 'net' query params
+        net_val = (params.get("type", [""])[0] or params.get("net", ["tcp"])[0] or "tcp").strip().lower()
+
+        # Auto-repair path: ensure leading slash for ws
+        path_val = params.get("path", [""])[0].strip()
+        if net_val == "ws" and path_val and not path_val.startswith("/"):
+            path_val = "/" + path_val
+
+        # Auto-repair SNI fallback
+        sni_val = params.get("sni", [""])[0].strip()
+        if not sni_val and tls_val in ["tls", "reality"]:
+            sni_val = params.get("host", [""])[0].strip() or add
+
+        fp_val = params.get("fp", [""])[0].strip()
+        if tls_val == "reality" and not fp_val:
+            fp_val = "chrome"
+
         config = {
             "protocol": protocol,
             "add": add,
             "port": port,
             "id": id_val,
-            "net": params.get("type", ["tcp"])[0],
-            "type": params.get("headerType", ["none"])[0], # for tcp
-            "host": params.get("host", [""])[0],
-            "path": params.get("path", [""])[0],
+            "net": net_val,
+            "type": params.get("headerType", ["none"])[0].strip() or "none",
+            "host": params.get("host", [""])[0].strip(),
+            "path": path_val,
             "tls": tls_val,
-            "sni": params.get("sni", [""])[0],
+            "sni": sni_val,
             "flow": flow_val,
             "pbk": pbk_val,
-            "sid": params.get("sid", [""])[0],
-            "fp": params.get("fp", [""])[0],
-            "spx": params.get("spx", [""])[0],
-            "ps": unquote(parsed.fragment)
+            "sid": params.get("sid", [""])[0].strip(),
+            "fp": fp_val,
+            "spx": params.get("spx", [""])[0].strip(),
+            "ps": unquote(parsed.fragment).strip() if parsed.fragment else ""
         }
         return config, None
     except Exception:
@@ -551,9 +602,16 @@ def _create_outbound_object(outbound_config, tag):
     if (protocol == 'shadowsocks' or protocol == 'trojan') and not outbound_config.get('id'):
         return None
 
-    # Trojan requires TLS or REALITY in Xray client outbound
-    if protocol == 'trojan' and outbound_config.get('tls') not in ['tls', 'reality']:
-        return None
+    tls_mode = outbound_config.get('tls', 'none') or 'none'
+    if tls_mode not in ['tls', 'reality', 'none']:
+        tls_mode = 'none'
+
+    # Auto-repair Trojan: requires TLS or REALITY in Xray client outbound
+    if protocol == 'trojan' and tls_mode not in ['tls', 'reality']:
+        if port_num in [443, 8443, 2053, 2083, 2087, 2096, 2052] or outbound_config.get('sni') or outbound_config.get('host'):
+            tls_mode = 'tls'
+        else:
+            return None
 
     # 3. Check for deprecated ciphers and invalid characters in Shadowsocks
     if cipher in ['aes-128-cfb', 'aes-256-cfb', 'rc4-md5', 'chacha20-ietf', 'ss']:
@@ -563,13 +621,9 @@ def _create_outbound_object(outbound_config, tag):
         return None
 
     # 4. Check for supported transport protocols
-    valid_nets = {'tcp', 'ws', 'grpc', 'http', 'quic', 'httpupgrade'}
+    valid_nets = {'tcp', 'ws', 'grpc', 'http', 'quic', 'httpupgrade', 'h2'}
     if net not in valid_nets:
         return None
-
-    tls_mode = outbound_config.get('tls', 'none') or 'none'
-    if tls_mode not in ['tls', 'reality', 'none']:
-        tls_mode = 'none'
 
     outbound = {
         "tag": tag,
@@ -583,12 +637,16 @@ def _create_outbound_object(outbound_config, tag):
 
     # Protocol-specific Settings
     if protocol == 'vmess':
+        user_id = str(outbound_config.get('id', '')).strip()
+        if not validate_uuid(user_id):
+            return None
+
         outbound['settings'] = {
             "vnext": [{
                 "address": outbound_config['add'],
                 "port": port_num,
                 "users": [{
-                    "id": outbound_config['id'],
+                    "id": user_id,
                     "alterId": int(outbound_config.get('aid', 0)),
                     "security": "aes-128-gcm"
                 }]
@@ -596,12 +654,16 @@ def _create_outbound_object(outbound_config, tag):
         }
 
     elif protocol == 'vless':
+        user_id = str(outbound_config.get('id', '')).strip()
+        if not validate_uuid(user_id):
+            return None
+
         if outbound_config.get('flow') == 'xtls-rprx-vision':
             if tls_mode not in ['tls', 'reality']:
                 return None
 
         user_obj = {
-            "id": outbound_config['id'],
+            "id": user_id,
             "encryption": "none"
         }
         flow_val = outbound_config.get('flow')
@@ -637,44 +699,71 @@ def _create_outbound_object(outbound_config, tag):
 
     # Common Transport Settings
     if net == 'ws':
+        path_ws = outbound_config.get('path', '/').strip() or '/'
+        if not path_ws.startswith('/'):
+            path_ws = '/' + path_ws
         outbound['streamSettings']['wsSettings'] = {
-            "path": outbound_config.get('path', '/'),
-            "headers": {"Host": outbound_config.get('host', '')}
+            "path": path_ws,
+            "headers": {"Host": outbound_config.get('host', '').strip()}
         }
     elif net == 'grpc':
         outbound['streamSettings']['grpcSettings'] = {
-            "serviceName": outbound_config.get('path', '')
+            "serviceName": outbound_config.get('path', '').strip()
         }
     elif net in ['http', 'h2']:
+        path_http = outbound_config.get('path', '/').strip() or '/'
+        if not path_http.startswith('/'):
+            path_http = '/' + path_http
         outbound['streamSettings']['httpSettings'] = {
-            "path": outbound_config.get('path', '/'),
-            "host": [outbound_config.get('host', '')] if outbound_config.get('host') else []
+            "path": path_http,
+            "host": [outbound_config.get('host', '').strip()] if outbound_config.get('host') else []
+        }
+    elif net == 'quic':
+        outbound['streamSettings']['quicSettings'] = {
+            "security": "none",
+            "key": "",
+            "header": {
+                "type": outbound_config.get('type') or "none"
+            }
+        }
+    elif net == 'httpupgrade':
+        path_up = outbound_config.get('path', '/').strip() or '/'
+        if not path_up.startswith('/'):
+            path_up = '/' + path_up
+        outbound['streamSettings']['httpupgradeSettings'] = {
+            "path": path_up,
+            "host": outbound_config.get('host', '').strip()
         }
 
     # Common Security Settings (TLS / Reality)
     if tls_mode == 'tls':
+        sni_clean = (outbound_config.get('sni') or outbound_config.get('host') or outbound_config.get('add') or '').strip()
+        sni_clean = re.sub(r'^https?://', '', sni_clean).split(':')[0].split('/')[0].strip()
         outbound['streamSettings']['tlsSettings'] = {
-            "serverName": outbound_config.get('sni') or outbound_config.get('host') or outbound_config.get('add'),
+            "serverName": sni_clean,
             "allowInsecure": True
         }
         alpn = outbound_config.get('alpn')
         if alpn:
             outbound['streamSettings']['tlsSettings']['alpn'] = [s.strip() for s in alpn.split(',') if s.strip()]
     elif tls_mode == 'reality':
-        pub_key = outbound_config.get('pbk')
+        pub_key = (outbound_config.get('pbk') or '').strip()
         if not pub_key or len(pub_key) not in [43, 44]:
             return None
 
-        fp = outbound_config.get('fp') or 'chrome'
-        sid = outbound_config.get('sid', '')
+        fp = (outbound_config.get('fp') or 'chrome').strip() or 'chrome'
+        sid = (outbound_config.get('sid') or '').strip()
         if sid:
             if len(sid) % 2 != 0 or not all(c in '0123456789abcdefABCDEF' for c in sid):
                 return None
 
+        sni_clean = (outbound_config.get('sni') or outbound_config.get('add') or '').strip()
+        sni_clean = re.sub(r'^https?://', '', sni_clean).split(':')[0].split('/')[0].strip()
+
         outbound['streamSettings']['realitySettings'] = {
             "show": False,
             "fingerprint": fp,
-            "serverName": outbound_config.get('sni') or outbound_config.get('add'),
+            "serverName": sni_clean,
             "publicKey": pub_key,
             "shortId": sid,
             "spiderX": outbound_config.get('spx', '')

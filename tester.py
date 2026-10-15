@@ -12,6 +12,42 @@ import socket
 from itertools import count
 from collections import Counter
 import datetime
+import json
+
+DATA_DIR = 'data'
+LOCAL_CACHE_FILE = os.path.join(DATA_DIR, 'local_cache.json')
+
+def load_blacklist():
+    if os.path.exists(LOCAL_CACHE_FILE):
+        try:
+            with open(LOCAL_CACHE_FILE, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                return set(data.get("blacklist", {}).keys())
+        except Exception:
+            pass
+    return set()
+
+def add_to_blacklist(config_line, reason="Config Error"):
+    try:
+        if not os.path.exists(DATA_DIR):
+            os.makedirs(DATA_DIR)
+        data = {"blacklist": {}, "whitelist": {}}
+        if os.path.exists(LOCAL_CACHE_FILE):
+            try:
+                with open(LOCAL_CACHE_FILE, 'r', encoding='utf-8') as f:
+                    data = json.load(f)
+            except Exception:
+                pass
+        if "blacklist" not in data:
+            data["blacklist"] = {}
+        parsed, _ = v2ray_utils.parse_config_line(config_line)
+        if parsed:
+            chash = v2ray_utils.get_config_hash(parsed)
+            data["blacklist"][chash] = time.time()
+            with open(LOCAL_CACHE_FILE, 'w', encoding='utf-8') as f:
+                json.dump(data, f, indent=2)
+    except Exception as e:
+        print(f"⚠️ Failed to update blacklist: {e}")
 
 # Configuration
 # TCP Concurrency: High because it's just handshake
@@ -132,7 +168,10 @@ async def check_tcp_task(sem, config_line, resolver, counter):
             except ValueError:
                 # Resolve
                 try:
-                    result = await resolver.query(host, 'A')
+                    if hasattr(resolver, 'query_dns'):
+                        result = await resolver.query_dns(host, 'A')
+                    else:
+                        result = await resolver.query(host, 'A')
                     if result:
                         ip_addr = result[0].host
                 except Exception:
@@ -267,6 +306,14 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
                     start_t = time.time()
                     try:
                         resp = await session.get(url, proxy=proxy, timeout=timeout)
+                        if hasattr(resp, 'status') and resp.status == 503:
+                            # Fallback check against Google in case Cloudflare WAF blocked the IP
+                            fallback_url = 'http://www.gstatic.com/generate_204'
+                            if url != fallback_url:
+                                resp_fb = await session.get(fallback_url, proxy=proxy, timeout=timeout)
+                                if hasattr(resp_fb, 'status') and resp_fb.status in (200, 204):
+                                    latency = (time.time() - start_t) * 1000
+                                    return resp_fb, latency
                         latency = (time.time() - start_t) * 1000
                         return resp, latency
                     except Exception as e:
@@ -352,9 +399,11 @@ async def recursive_test_batch(batch, start_port_base, session, failure_reasons,
         if len(batch) <= 1:
             # Poison config found
             failure_reasons['PoisonConfig'] += 1
+            poison_cfg = batch[0]
+            add_to_blacklist(poison_cfg, "PoisonConfig Xray Crash")
             # Log to debug file
             with open("debug_poison_configs.txt", "a", encoding="utf-8") as f:
-                f.write(f"[POISON] {batch[0]}\n")
+                f.write(f"[POISON] {poison_cfg}\n")
             return [None]
 
         # Base case 2: Max recursion depth reached
@@ -387,6 +436,20 @@ async def recursive_test_batch(batch, start_port_base, session, failure_reasons,
         return res_left + res_right
 
 async def run_real_delay_tests(configs):
+    blacklist = load_blacklist()
+    filtered_configs = []
+    skipped_blacklisted = 0
+    for c in configs:
+        parsed, _ = v2ray_utils.parse_config_line(c)
+        if parsed and v2ray_utils.get_config_hash(parsed) in blacklist:
+            skipped_blacklisted += 1
+            continue
+        filtered_configs.append(c)
+
+    if skipped_blacklisted > 0:
+        print(f"🛡️  Skipped {skipped_blacklisted} known bad/poison configs from blacklist.")
+
+    configs = filtered_configs
     total = len(configs)
     if total == 0:
         return [], 0

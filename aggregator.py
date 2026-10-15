@@ -48,8 +48,10 @@ async def resolve_hosts(hosts):
                     pass
 
             # Resolve Domain (A record only for now, as GeoIP is mainly IPv4 focused for this use case)
-            # aiodns 3.1+ uses query(host, type)
-            res = await resolver.query(host, 'A')
+            if hasattr(resolver, 'query_dns'):
+                res = await resolver.query_dns(host, 'A')
+            else:
+                res = await resolver.query(host, 'A')
             if res:
                 return host, res[0].host
         except:
