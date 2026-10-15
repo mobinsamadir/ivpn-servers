@@ -536,22 +536,40 @@ def _create_outbound_object(outbound_config, tag):
     net = outbound_config.get('net', 'tcp')
     cipher = outbound_config.get('method', '')
 
-    # 1. Check for missing password in Shadowsocks or Trojan
+    # 1. Validate Port
+    try:
+        port_num = int(outbound_config.get('port', 0))
+        if port_num < 1 or port_num > 65535:
+            return None
+    except (ValueError, TypeError):
+        return None
+
+    if not outbound_config.get('add'):
+        return None
+
+    # 2. Check for missing password in Shadowsocks or Trojan
     if (protocol == 'shadowsocks' or protocol == 'trojan') and not outbound_config.get('id'):
         return None
 
-    # 2. Check for deprecated ciphers and invalid characters
+    # Trojan requires TLS or REALITY in Xray client outbound
+    if protocol == 'trojan' and outbound_config.get('tls') not in ['tls', 'reality']:
+        return None
+
+    # 3. Check for deprecated ciphers and invalid characters in Shadowsocks
     if cipher in ['aes-128-cfb', 'aes-256-cfb', 'rc4-md5', 'chacha20-ietf', 'ss']:
         return None
 
     if cipher and re.search(r'[^a-zA-Z0-9\-]', cipher):
         return None
 
-    # 3. Check for supported transport protocols
+    # 4. Check for supported transport protocols
     valid_nets = {'tcp', 'ws', 'grpc', 'http', 'quic', 'httpupgrade'}
     if net not in valid_nets:
         return None
-    # -------------------------
+
+    tls_mode = outbound_config.get('tls', 'none') or 'none'
+    if tls_mode not in ['tls', 'reality', 'none']:
+        tls_mode = 'none'
 
     outbound = {
         "tag": tag,
@@ -559,15 +577,16 @@ def _create_outbound_object(outbound_config, tag):
         "settings": {},
         "streamSettings": {
             "network": net,
-            "security": outbound_config.get('tls', 'none') or 'none',
+            "security": tls_mode,
         }
     }
 
+    # Protocol-specific Settings
     if protocol == 'vmess':
         outbound['settings'] = {
             "vnext": [{
                 "address": outbound_config['add'],
-                "port": int(outbound_config['port']),
+                "port": port_num,
                 "users": [{
                     "id": outbound_config['id'],
                     "alterId": int(outbound_config.get('aid', 0)),
@@ -575,34 +594,12 @@ def _create_outbound_object(outbound_config, tag):
                 }]
             }]
         }
-        net = outbound_config.get('net', 'tcp')
-        outbound['streamSettings']['network'] = net
-
-        if net == 'ws':
-            outbound['streamSettings']['wsSettings'] = {
-                "path": outbound_config.get('path', '/'),
-                "headers": {
-                    "Host": outbound_config.get('host', '')
-                }
-            }
-        elif net == 'grpc':
-            outbound['streamSettings']['grpcSettings'] = {
-                 "serviceName": outbound_config.get('path', '')
-            }
-
-        if outbound_config.get('tls') == 'tls':
-            outbound['streamSettings']['tlsSettings'] = {
-                "serverName": outbound_config.get('sni') or outbound_config.get('host') or outbound_config.get('add'),
-                "allowInsecure": True
-            }
 
     elif protocol == 'vless':
-        # Flow/Vision Fix
         if outbound_config.get('flow') == 'xtls-rprx-vision':
-             if outbound_config.get('tls') not in ['tls', 'reality']:
-                 return None
+            if tls_mode not in ['tls', 'reality']:
+                return None
 
-        # Clean Flow Logic: Only include 'flow' if truthy
         user_obj = {
             "id": outbound_config['id'],
             "encryption": "none"
@@ -614,72 +611,73 @@ def _create_outbound_object(outbound_config, tag):
         outbound['settings'] = {
             "vnext": [{
                 "address": outbound_config['add'],
-                "port": int(outbound_config['port']),
+                "port": port_num,
                 "users": [user_obj]
             }]
         }
-        net = outbound_config.get('net', 'tcp')
-        outbound['streamSettings']['network'] = net
-        if net == 'ws':
-             outbound['streamSettings']['wsSettings'] = {
-                "path": outbound_config.get('path', '/'),
-                "headers": {"Host": outbound_config.get('host', '')}
-            }
-
-        if outbound_config.get('tls') == 'tls':
-            outbound['streamSettings']['tlsSettings'] = {
-                "serverName": outbound_config.get('sni') or outbound_config.get('host') or outbound_config.get('add'),
-                "allowInsecure": True
-            }
-        elif outbound_config.get('tls') == 'reality':
-            # Hardened REALITY Validation
-            pub_key = outbound_config.get('pbk')
-            if not pub_key or len(pub_key) not in [43, 44]:
-                return None  # Discard if publicKey is missing or invalid length
-
-            # Robust REALITY Defaults
-            fp = outbound_config.get('fp')
-            if not fp:
-                fp = 'chrome'
-
-            sid = outbound_config.get('sid', '')
-            # Strict shortId validation
-            if sid:
-                # Check if hex and even length
-                if len(sid) % 2 != 0 or not all(c in '0123456789abcdefABCDEF' for c in sid):
-                    return None # Discard config
-
-            outbound['streamSettings']['realitySettings'] = {
-                "show": False,
-                "fingerprint": fp,
-                "serverName": outbound_config.get('sni') or outbound_config.get('add'),
-                "publicKey": pub_key,
-                "shortId": sid,
-                "spiderX": outbound_config.get('spx', '')
-            }
 
     elif protocol == 'trojan':
         outbound['settings'] = {
             "servers": [{
                 "address": outbound_config['add'],
-                "port": int(outbound_config['port']),
+                "port": port_num,
                 "password": outbound_config['id']
             }]
         }
-        if outbound_config.get('tls') == 'tls':
-             outbound['streamSettings']['tlsSettings'] = {
-                "serverName": outbound_config.get('sni') or outbound_config.get('host') or outbound_config.get('add'),
-                "allowInsecure": True
-            }
 
     elif protocol == 'shadowsocks':
         outbound['settings'] = {
             "servers": [{
                 "address": outbound_config['add'],
-                "port": int(outbound_config['port']),
+                "port": port_num,
                 "method": outbound_config.get('method', 'aes-256-gcm'),
                 "password": outbound_config['id']
             }]
+        }
+
+    # Common Transport Settings
+    if net == 'ws':
+        outbound['streamSettings']['wsSettings'] = {
+            "path": outbound_config.get('path', '/'),
+            "headers": {"Host": outbound_config.get('host', '')}
+        }
+    elif net == 'grpc':
+        outbound['streamSettings']['grpcSettings'] = {
+            "serviceName": outbound_config.get('path', '')
+        }
+    elif net in ['http', 'h2']:
+        outbound['streamSettings']['httpSettings'] = {
+            "path": outbound_config.get('path', '/'),
+            "host": [outbound_config.get('host', '')] if outbound_config.get('host') else []
+        }
+
+    # Common Security Settings (TLS / Reality)
+    if tls_mode == 'tls':
+        outbound['streamSettings']['tlsSettings'] = {
+            "serverName": outbound_config.get('sni') or outbound_config.get('host') or outbound_config.get('add'),
+            "allowInsecure": True
+        }
+        alpn = outbound_config.get('alpn')
+        if alpn:
+            outbound['streamSettings']['tlsSettings']['alpn'] = [s.strip() for s in alpn.split(',') if s.strip()]
+    elif tls_mode == 'reality':
+        pub_key = outbound_config.get('pbk')
+        if not pub_key or len(pub_key) not in [43, 44]:
+            return None
+
+        fp = outbound_config.get('fp') or 'chrome'
+        sid = outbound_config.get('sid', '')
+        if sid:
+            if len(sid) % 2 != 0 or not all(c in '0123456789abcdefABCDEF' for c in sid):
+                return None
+
+        outbound['streamSettings']['realitySettings'] = {
+            "show": False,
+            "fingerprint": fp,
+            "serverName": outbound_config.get('sni') or outbound_config.get('add'),
+            "publicKey": pub_key,
+            "shortId": sid,
+            "spiderX": outbound_config.get('spx', '')
         }
 
     return outbound

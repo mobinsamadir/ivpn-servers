@@ -517,7 +517,7 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats, avg_
         # But doing regex replacement on markdown is tricky.
         # Let's just create a header "## 📊 Statistics" and replace everything until next header?
 
-        pattern = r"## 📊 Statistics.*?(?=## |\Z)"
+        pattern = r"## 📊 Statistics.*?(?=\n## [^#]|\Z)"
         import re
         if re.search(pattern, content, re.DOTALL):
             new_content = re.sub(pattern, stats_md, content, flags=re.DOTALL)

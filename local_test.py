@@ -21,19 +21,18 @@ from itertools import count
 IS_GITHUB_ACTIONS = os.getenv('GITHUB_ACTIONS') == 'true'
 
 # 1. Environment-Aware Configuration
+INPUT_FILE = os.getenv('INPUT_FILE', 'real_delay_passed.txt')
 if IS_GITHUB_ACTIONS:
-    INPUT_FILE = 'all_configs.txt'
     TCP_CONCURRENCY = 1500
     REAL_DELAY_BATCH_SIZE = 250
     REAL_DELAY_INSTANCES = 8
-    print("🌍 Environment: GitHub Actions (High Concurrency)")
+    print(f"🌍 Environment: GitHub Actions (High Concurrency) | Source: {INPUT_FILE}")
 else:
     # Local Mode (Windows/Home)
-    INPUT_FILE = 'real_delay_passed.txt'
     TCP_CONCURRENCY = 64
     REAL_DELAY_BATCH_SIZE = 100
     REAL_DELAY_INSTANCES = 4
-    print("🏠 Environment: Local/Windows (Safe Concurrency)")
+    print(f"🏠 Environment: Local/Windows (Safe Concurrency) | Source: {INPUT_FILE}")
 
 TCP_TIMEOUT = float(os.environ.get('TCP_TIMEOUT', 1.5))
 REAL_DELAY_TIMEOUT = float(os.environ.get('REAL_DELAY_TIMEOUT', 3.0))
@@ -671,7 +670,7 @@ def update_readme(tcp_passed_count, real_delay_passed_count, country_stats, avg_
             flag = v2ray_utils.get_country_flag(country)
             stats_md += f"| {flag} {country} | {count} |\n"
 
-        pattern = r"## 📊 Statistics.*?(?=## |\Z)"
+        pattern = r"## 📊 Statistics.*?(?=\n## [^#]|\Z)"
         if re.search(pattern, content, re.DOTALL):
             new_content = re.sub(pattern, stats_md, content, flags=re.DOTALL)
         else:
