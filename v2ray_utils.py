@@ -39,14 +39,23 @@ def increase_file_limit():
         print(f"⚠️ Failed to increase file limit: {e}")
 
 def safe_decode(data):
-    """Robust Base64 decoding (standard and URL-safe)."""
+    """Robust Base64 decoding (standard and URL-safe, tolerant to non-utf8 and padding)."""
+    if not data:
+        return ""
     data = data.strip()
+    if '#' in data:
+        data = data.split('#')[0]
+    if '?' in data:
+        data = data.split('?')[0]
+    data = unquote(data)
     data = data.replace('-', '+').replace('_', '/')
-    missing_padding = len(data) % 4
+    cleaned = re.sub(r'[^A-Za-z0-9+/=]', '', data)
+    missing_padding = len(cleaned) % 4
     if missing_padding:
-        data += '=' * (4 - missing_padding)
+        cleaned += '=' * (4 - missing_padding)
     try:
-        return base64.b64decode(data).decode('utf-8')
+        decoded_bytes = base64.b64decode(cleaned)
+        return decoded_bytes.decode('utf-8', errors='ignore')
     except Exception:
         return data
 
@@ -137,7 +146,11 @@ def get_config_hash(config_data):
 def parse_vmess(vmess_url):
     """Parses a vmess:// URL."""
     try:
-        b64_part = vmess_url.replace("vmess://", "")
+        b64_part = vmess_url.replace("vmess://", "").strip()
+        if '#' in b64_part:
+            b64_part = b64_part.split('#')[0]
+        if '?' in b64_part:
+            b64_part = b64_part.split('?')[0]
         json_str = safe_decode(b64_part)
         data = json.loads(json_str)
 
@@ -276,18 +289,74 @@ def parse_vless_trojan(url, protocol):
         return None, f"{protocol}_ParseError"
 
 def parse_ss(url):
-    """Parses ss:// URLs."""
+    """Parses ss:// URLs with full support for unencoded user:pass, SIP002 base64, and authority base64."""
     try:
         parsed = urlparse(url)
         user_info = parsed.username
+        pass_info = parsed.password
         host = parsed.hostname
         port = parsed.port
 
-        # Check if the whole authority is base64 encoded (old style)
+        # Case 1: Standard unencoded ss://method:password@host:port#ps
+        if user_info and pass_info:
+            method = unquote(user_info).strip()
+            password = unquote(pass_info).strip()
+            host = sanitize_host(host)
+            if not host: return None, "SS_InvalidHost"
+            try:
+                port = int(port)
+            except (ValueError, TypeError):
+                return None, "SS_InvalidPort"
+            if not validate_password(password):
+                return None, "SS_InvalidPassword"
+            return {
+                "protocol": "shadowsocks",
+                "add": host,
+                "port": port,
+                "id": password,
+                "method": method,
+                "net": "tcp",
+                "ps": unquote(parsed.fragment).strip() if parsed.fragment else ""
+            }, None
+
+        # Case 2: SIP002 format where user_info is base64(method:password) or method:password
+        if user_info and not pass_info:
+            method, password = "", ""
+            decoded_auth = safe_decode(user_info)
+            if ':' in decoded_auth:
+                method, password = decoded_auth.split(':', 1)
+            elif ':' in user_info:
+                method, password = user_info.split(':', 1)
+            else:
+                return None, "SS_AuthParseError"
+
+            method = unquote(method).strip()
+            password = unquote(password).strip()
+            host = sanitize_host(host)
+            if not host: return None, "SS_InvalidHost"
+            try:
+                port = int(port)
+            except (ValueError, TypeError):
+                return None, "SS_InvalidPort"
+            if not password:
+                return None, "SS_MissingPassword"
+            if not validate_password(password):
+                return None, "SS_InvalidPassword"
+            return {
+                "protocol": "shadowsocks",
+                "add": host,
+                "port": port,
+                "id": password,
+                "method": method,
+                "net": "tcp",
+                "ps": unquote(parsed.fragment).strip() if parsed.fragment else ""
+            }, None
+
+        # Case 3: Old style: the whole authority is base64 encoded ss://base64(method:password@host:port)#ps
         if not user_info and not port and parsed.netloc:
              decoded = safe_decode(parsed.netloc)
              if '@' in decoded:
-                 parts = decoded.split('@')
+                 parts = decoded.split('@', 1)
                  auth = parts[0]
                  addr = parts[1]
                  if ':' in auth:
@@ -295,71 +364,39 @@ def parse_ss(url):
                  else:
                      method, password = "", auth
 
+                 # Clean trailing query or path from addr (e.g. host:port/?plugin=...)
+                 if '/' in addr:
+                     addr = addr.split('/')[0]
+                 if '?' in addr:
+                     addr = addr.split('?')[0]
+
                  if ':' in addr:
-                     host, port = addr.split(':', 1)
-                     port = int(port)
+                     host, port_str = addr.rsplit(':', 1)
+                     try:
+                         port = int(port_str.strip())
+                     except (ValueError, TypeError):
+                         port = 80
                  else:
                      host = addr
                      port = 80
 
                  host = sanitize_host(host)
                  if not host: return None, "SS_InvalidHost"
-
                  if not password:
                      return None, "SS_MissingPassword"
-
-                 pwd = unquote(password)
+                 pwd = unquote(password).strip()
                  if not validate_password(pwd):
                      return None, "SS_InvalidPassword"
 
                  return {
                      "protocol": "shadowsocks",
                      "add": host,
-                     "port": int(port),
+                     "port": port,
                      "id": pwd,
-                     "method": method,
+                     "method": method.strip(),
                      "net": "tcp",
-                     "ps": unquote(parsed.fragment)
+                     "ps": unquote(parsed.fragment).strip() if parsed.fragment else ""
                  }, None
-
-        # New style: user_info is base64(method:password) or just method:password
-        if user_info:
-             try:
-                 decoded_auth = safe_decode(user_info)
-                 if ':' in decoded_auth:
-                     method, password = decoded_auth.split(':', 1)
-                 else:
-                     method, password = user_info.split(':', 1)
-             except:
-                 if ':' in user_info:
-                     method, password = user_info.split(':', 1)
-                 else:
-                     return None, "SS_AuthParseError"
-
-             host = sanitize_host(host)
-             if not host: return None, "SS_InvalidHost"
-
-             try:
-                 port = int(port)
-             except (ValueError, TypeError):
-                 return None, "SS_InvalidPort"
-
-             if not password:
-                 return None, "SS_MissingPassword"
-
-             pwd = unquote(password)
-             if not validate_password(pwd):
-                 return None, "SS_InvalidPassword"
-
-             return {
-                 "protocol": "shadowsocks",
-                 "add": host,
-                 "port": int(port),
-                 "id": pwd,
-                 "method": method,
-                 "net": "tcp",
-                 "ps": unquote(parsed.fragment)
-             }, None
 
         return None, "SS_InvalidFormat"
     except Exception:

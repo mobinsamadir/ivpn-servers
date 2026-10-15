@@ -48,11 +48,17 @@ DATA_DIR = 'data'
 LOCAL_CACHE_FILE = os.path.join(DATA_DIR, 'local_cache.json')
 GOLDEN_LIST_FILE = 'tested_configs/ultra_fast.txt'
 
+DEFAULT_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+    'Accept': '*/*',
+    'Connection': 'keep-alive'
+}
+
 TEST_URLS = [
-    'http://cp.cloudflare.com/generate_204',
-    'http://clients3.google.com/generate_204',
     'http://www.gstatic.com/generate_204',
-    'http://www.apple.com/library/test/success.html'
+    'http://clients3.google.com/generate_204',
+    'http://www.apple.com/library/test/success.html',
+    'http://cp.cloudflare.com/generate_204'
 ]
 
 # --- Logging & SSID Helpers ---
@@ -467,6 +473,14 @@ async def test_batch_real_delay(batch_configs, start_port_base, session, failure
                     start_t = time.time()
                     try:
                         resp = await session.get(url, proxy=proxy, timeout=timeout)
+                        if hasattr(resp, 'status') and resp.status == 503:
+                            # Fallback check against Google in case Cloudflare WAF blocked the IP
+                            fallback_url = 'http://www.gstatic.com/generate_204'
+                            if url != fallback_url:
+                                resp_fb = await session.get(fallback_url, proxy=proxy, timeout=timeout)
+                                if hasattr(resp_fb, 'status') and resp_fb.status in (200, 204):
+                                    latency = (time.time() - start_t) * 1000
+                                    return resp_fb, latency
                         latency = (time.time() - start_t) * 1000
                         return resp, latency
                     except Exception as e:
@@ -581,7 +595,7 @@ async def run_real_delay_tests(configs, phase_name="Real Delay"):
     sem = asyncio.Semaphore(REAL_DELAY_INSTANCES)
 
     connector = aiohttp.TCPConnector(limit=0)
-    async with aiohttp.ClientSession(connector=connector) as session:
+    async with aiohttp.ClientSession(connector=connector, headers=DEFAULT_HEADERS) as session:
         async def run_batch_with_sem(batch_index, batch):
             async with sem:
                 port_offset = (batch_index * REAL_DELAY_BATCH_SIZE) % 20000

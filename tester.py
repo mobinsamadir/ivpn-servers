@@ -59,11 +59,17 @@ REAL_DELAY_INSTANCES = int(os.environ.get('REAL_DELAY_INSTANCES', 8))
 TCP_TIMEOUT = float(os.environ.get('TCP_TIMEOUT', 1.5))
 REAL_DELAY_TIMEOUT = float(os.environ.get('REAL_DELAY_TIMEOUT', 3.0))
 
+DEFAULT_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+    'Accept': '*/*',
+    'Connection': 'keep-alive'
+}
+
 TEST_URLS = [
-    'http://cp.cloudflare.com/generate_204',
-    'http://clients3.google.com/generate_204',
     'http://www.gstatic.com/generate_204',
-    'http://www.apple.com/library/test/success.html'
+    'http://clients3.google.com/generate_204',
+    'http://www.apple.com/library/test/success.html',
+    'http://cp.cloudflare.com/generate_204'
 ]
 
 INPUT_FILE = 'all_configs.txt'
@@ -473,7 +479,7 @@ async def run_real_delay_tests(configs):
 
     # Use TCPConnector with limit=0 (Unlimited)
     connector = aiohttp.TCPConnector(limit=0)
-    async with aiohttp.ClientSession(connector=connector) as session:
+    async with aiohttp.ClientSession(connector=connector, headers=DEFAULT_HEADERS) as session:
         async def run_batch_with_sem(batch_index, batch):
             async with sem:
                 # Dynamic port allocation: START_PORT + (batch_index * BATCH_SIZE)
