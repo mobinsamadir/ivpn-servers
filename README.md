@@ -1,32 +1,57 @@
 # V2Ray Config Aggregator & Tester
 
-## 📊 Statistics (Last Updated: 2026-10-15 01:21:36 UTC)
+
+
+## 📊 Statistics (Last Updated: 2026-10-15 02:09:05 UTC)
 
 | Metric | Count |
 | :--- | :--- |
-| **TCP Passed** | `8265` |
-| **Real Delay Passed** | `310` |
-| **Average Latency** | `633 ms` |
-| **Success Rate** | `3.8%` |
-| **System Health** | 🔴 Critical |
+| **TCP Passed** | `1563` |
+| **Real Delay Passed** | `1295` |
+| **Average Latency** | `615 ms` |
+| **Success Rate** | `82.9%` |
+| **System Health** | 🟢 Excellent |
 
 ### 🌍 Server Distribution
 
 | Country | Count |
 | :--- | :--- |
-| 🇩🇪 DE | 37 |
-| 🇫🇷 FR | 33 |
-| 🇳🇱 NL | 29 |
-| 🚩 Unknown | 28 |
-| 🇺🇸 US | 21 |
-| 🇷🇺 RU | 14 |
-| 🇱🇻 LV | 11 |
-| 🇸🇪 SE | 6 |
-| 🇲🇾 MY | 5 |
-| 🇭🇰 HK | 4 |
-| 🇯🇵 JP | 4 |
-
-This tool aggregates V2Ray/Xray subscription URLs, deduplicates configurations, and tests them for TCP connectivity and Real Delay (latency). It automatically updates the list of valid configurations every 24 hours via GitHub Actions.
+| 🚩 Unknown | 937 |
+| 🇬🇧 GB | 68 |
+| 🇺🇸 US | 53 |
+| 🇳🇱 NL | 37 |
+| 🇭🇰 HK | 29 |
+| 🇩🇪 DE | 28 |
+| 🇸🇬 SG | 28 |
+| 🇯🇵 JP | 23 |
+| 🇨🇦 CA | 16 |
+| 🇷🇺 RU | 12 |
+| 🇫🇷 FR | 10 |
+| 🇦🇪 AE | 10 |
+| 🇹🇼 TW | 5 |
+| 🇰🇷 KR | 5 |
+| 🇫🇮 FI | 4 |
+| 🇸🇪 SE | 3 |
+| 🇮🇹 IT | 3 |
+| 🇵🇱 PL | 3 |
+| 🇸🇨 SC | 2 |
+| 🇹🇷 TR | 2 |
+| 🇮🇳 IN | 2 |
+| 🇲🇽 MX | 1 |
+| 🇨🇭 CH | 1 |
+| 🇺🇦 UA | 1 |
+| 🇦🇹 AT | 1 |
+| 🇦🇱 AL | 1 |
+| 🇪🇸 ES | 1 |
+| 🇨🇾 CY | 1 |
+| 🇮🇱 IL | 1 |
+| 🇪🇪 EE | 1 |
+| 🇨🇳 CN | 1 |
+| 🇹🇭 TH | 1 |
+| 🇱🇻 LV | 1 |
+| 🇮🇸 IS | 1 |
+| 🇰🇿 KZ | 1 |
+| 🇲🇾 MY | 1 |
 
 ## Architecture
 
