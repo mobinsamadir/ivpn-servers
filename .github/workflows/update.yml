@@ -98,5 +98,10 @@ jobs:
           echo "⚠️ No changes detected to commit."
         else
           git commit -m "🔄 Update server list & cache [$(date)]"
-          git push
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push origin main && break || {
+              echo "⚠️ Push/rebase failed, retrying in 3s..."
+              sleep 3
+            }
+          done
         fi
