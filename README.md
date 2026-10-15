@@ -7,17 +7,27 @@
 
 
 
-## 📊 Statistics (Last Updated: 2026-02-27 16:41:12 UTC)
+
+
+## 📊 Statistics (Last Updated: 2026-10-15 00:53:09 UTC)
 
 | Metric | Count |
 | :--- | :--- |
-| **TCP Passed** | `2033` |
-| **Real Delay Passed** | `56` |
-| **Average Latency** | `559 ms` |
-| **Success Rate** | `2.8%` |
+| **TCP Passed** | `7235` |
+| **Real Delay Passed** | `0` |
+| **Average Latency** | `0 ms` |
+| **Success Rate** | `0.0%` |
 | **System Health** | 🔴 Critical |
 
 ### 🌍 Server Distribution
+
+| Country | Count |
+| :--- | :--- |
+## 🌍 Server Distribution
+
+| Country | Count |
+| :--- | :--- |
+## 🌍 Server Distribution
 
 | Country | Count |
 | :--- | :--- |

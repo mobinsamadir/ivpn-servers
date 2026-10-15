@@ -389,7 +389,7 @@ async def recursive_test_batch(batch, start_port_base, session, failure_reasons,
 async def run_real_delay_tests(configs):
     total = len(configs)
     if total == 0:
-        return []
+        return [], 0
 
     print(f"🚀 Starting Real Delay tests for {total} configs...")
     print(f"ℹ️  Instances: {REAL_DELAY_INSTANCES}, Batch Size: {REAL_DELAY_BATCH_SIZE}")
@@ -397,7 +397,7 @@ async def run_real_delay_tests(configs):
     # Ensure Xray is ready
     if not v2ray_utils.check_and_install_xray():
         print("❌ Xray setup failed. Skipping real delay tests.")
-        return []
+        return [], 0
 
     passed_results = []
     counter = ProgressCounter(total, "Real Delay")
@@ -453,7 +453,14 @@ async def run_real_delay_tests(configs):
     else:
         print("  No failures recorded.")
 
-    return final_configs, avg_latency
+    final_configs_with_latencies = []
+    for res in batch_results:
+        if isinstance(res, list):
+            for item in res:
+                if item:
+                    # Item is (config, latency)
+                    final_configs_with_latencies.append(item)
+    return final_configs_with_latencies, avg_latency
 
 def update_readme(tcp_passed_count, real_delay_passed_count, country_stats, avg_latency=0):
     """Updates README.md with the latest statistics."""
@@ -558,34 +565,137 @@ async def main():
             f.write(c + '\n')
 
     # 2. Real Delay Test
-    real_delay_passed, avg_latency = await run_real_delay_tests(tcp_passed)
+    real_delay_results, avg_latency = await run_real_delay_tests(tcp_passed)
+
+    # Sort by latency
+    real_delay_results.sort(key=lambda x: x[1])
+
+    # 3. GeoIP & Standardized URI Remark
+    import urllib.parse
+    import json
+    ip_cache = {}
+    servers_json_data = []
+    final_passed_configs = []
+    country_stats = Counter()
+
+    import aiohttp
+
+    async def fetch_geoip(ip, session):
+        if ip in ip_cache:
+            return ip_cache[ip]
+        try:
+            async with session.get(f"http://ip-api.com/json/{ip}?fields=status,countryCode,country,city,org", timeout=2) as resp:
+                data = await resp.json()
+                if data.get('status') == 'success':
+                    ip_cache[ip] = data
+                    return data
+        except Exception:
+            pass
+
+        # Fallback to local
+        country_code = v2ray_utils.get_country_code(ip)
+        if country_code:
+            data = {'status': 'success', 'countryCode': country_code, 'country': country_code, 'city': '', 'org': ''}
+            ip_cache[ip] = data
+            return data
+        return None
+
+    # We need a quick way to resolve hosts to IPs synchronously or we can do it async.
+    # Since resolving takes time, we should probably do a quick async pass or just use the cache.
+    # Actually let's just resolve synchronously or semi-async since it's the end of the script.
+    async with aiohttp.ClientSession() as session:
+        for idx, (config, latency) in enumerate(real_delay_results):
+            parsed, _ = v2ray_utils.parse_config_line(config)
+            if not parsed:
+                continue
+
+            host = parsed.get('add')
+            ip = host
+            try:
+                import ipaddress
+                ipaddress.ip_address(host)
+            except ValueError:
+                # Need to resolve
+                import socket
+                try:
+                    ip = socket.gethostbyname(host)
+                except Exception:
+                    pass
+
+            geoip_data = await fetch_geoip(ip, session)
+
+            country_code = "Unknown"
+            country_name = "Unknown"
+            city = ""
+            org = ""
+
+            if geoip_data and geoip_data.get('status') == 'success':
+                country_code = geoip_data.get('countryCode', 'Unknown')
+                country_name = geoip_data.get('country', country_code)
+                city = geoip_data.get('city', '')
+                org = geoip_data.get('org', '')
+
+            if country_code == 'Unknown':
+                # Try fallback from old remark or just leave it
+                pass
+
+            flag = v2ray_utils.get_country_flag(country_code) if country_code != 'Unknown' else "🚩"
+
+            location_str = city if city else org
+            if not location_str:
+                location_str = country_name if country_name != 'Unknown' else "Server"
+
+            # Construct standard remark
+            if country_code != 'Unknown':
+                remark_raw = f"{flag} [{country_code}] {location_str} - {int(latency)}ms"
+                country_stats[country_code] += 1
+            else:
+                remark_raw = f"{flag} [UN] {location_str} - {int(latency)}ms"
+                country_stats['Unknown'] += 1
+
+            parsed['ps'] = remark_raw
+            new_config_raw = v2ray_utils.construct_config_line(parsed)
+
+            # For JSON, we need to url-encode the fragment for the uri
+            parsed_url_encoded = dict(parsed)
+            parsed_url_encoded['ps'] = urllib.parse.quote(remark_raw, safe='')
+            new_config_url_encoded = v2ray_utils.construct_config_line(parsed_url_encoded)
+
+            final_passed_configs.append(new_config_raw)
+
+            servers_json_data.append({
+                "id": idx + 1,
+                "protocol": parsed.get("protocol"),
+                "name": remark_raw,
+                "country_code": country_code if country_code != 'Unknown' else "UN",
+                "country_name": country_name,
+                "flag": flag,
+                "city": city,
+                "ping": int(latency),
+                "uri": new_config_url_encoded
+            })
 
     with open(REAL_DELAY_OUTPUT_FILE, 'w', encoding='utf-8') as f:
-        for c in real_delay_passed:
+        for c in final_passed_configs:
             f.write(c + '\n')
 
-    # 3. Cleanup
+    # Write servers.json
+    servers_json_output = {
+        "updated_at": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "total_passed": len(servers_json_data),
+        "servers": servers_json_data
+    }
+    with open('servers.json', 'w', encoding='utf-8') as f:
+        json.dump(servers_json_output, f, indent=2, ensure_ascii=False)
+
+    # 4. Cleanup
     for f in glob.glob("crashed_batch_*.json"):
         try:
             os.remove(f)
         except:
             pass
 
-    # 4. Generate Stats
-    country_stats = Counter()
-    for config in real_delay_passed:
-        # Extract country code from ps "[🇩🇪 DE] ..."
-        parsed, _ = v2ray_utils.parse_config_line(config)
-        if parsed:
-            ps = parsed.get('ps', '')
-            # Regex to find [XX] or [Flag XX]
-            match = re.search(r'\[.*? ([A-Z]{2})\]', ps)
-            if match:
-                country_stats[match.group(1)] += 1
-            else:
-                country_stats['Unknown'] += 1
-
-    update_readme(len(tcp_passed), len(real_delay_passed), country_stats, avg_latency)
+    update_readme(len(tcp_passed), len(final_passed_configs), country_stats, avg_latency)
 
     print("🎉 All tests finished.")
 

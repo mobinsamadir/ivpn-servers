@@ -85,7 +85,7 @@ jobs:
         git config --global user.email "action@github.com"
         
         # Add core result files
-        git add all_configs.txt tcp_passed.txt real_delay_passed.txt sources.txt
+        git add all_configs.txt tcp_passed.txt real_delay_passed.txt servers.json sources.txt
         
         # Add Persistence Layer
         git add data/local_cache.json
