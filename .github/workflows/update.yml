@@ -94,6 +94,11 @@ jobs:
             git add tested_configs/*.txt
         fi
 
+        # Add Iran VPS Results if present
+        if [ -f "servers_iran.json" ]; then
+            git add servers_iran.json
+        fi
+
         # Discard any remaining unstaged temporary files to keep tree clean
         git checkout -- . 2>/dev/null || true
 

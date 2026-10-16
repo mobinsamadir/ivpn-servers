@@ -306,8 +306,12 @@ class IranAuditor:
         try:
             subprocess.run(["git", "config", "user.name", "Iran-Auditor-Bot"], check=True)
             subprocess.run(["git", "config", "user.email", "iran-bot@ivpn.local"], check=True)
-            subprocess.run(["git", "add", PASSED_FILE, ULTRA_FILE, JSON_FILE], check=True)
-            subprocess.run(["git", "commit", "-m", f"🇮🇷 Update Iran-verified servers [{time.strftime('%Y-%m-%d %H:%M')}]"], check=True)
+            subprocess.run(["git", "add", "tested_configs/iran_passed.txt", "tested_configs/iran_ultra.txt", "servers_iran.json"], check=True)
+            diff_check = subprocess.run(["git", "diff", "--cached", "--quiet"])
+            if diff_check.returncode == 0:
+                print("ℹ️ No changes detected in tested results. Everything is already up to date on GitHub.")
+                return
+            subprocess.run(["git", "commit", "-m", f"🇮🇷 Update Iran-verified servers [{time.strftime('%Y-%m-%d %H:%M UTC', time.gmtime())}]"], check=True)
             subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], check=True)
             subprocess.run(["git", "push", "origin", "main"], check=True)
             print("🎉 Successfully pushed Iran-verified servers to GitHub!")
