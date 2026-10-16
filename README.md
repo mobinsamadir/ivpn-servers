@@ -61,8 +61,14 @@
 
 ## Output Files
 
-* `real_delay_passed.txt`: Configs that passed full Xray connection test.
-* `servers.json`: Full metadata of passed servers.
+### 🇮🇷 Iran VPS Verified (Bypasses Iran DPI / Filtering)
+* [`tested_configs/iran_passed.txt`](tested_configs/iran_passed.txt): All configs verified from inside Iran (Google/YouTube bypass).
+* [`tested_configs/iran_ultra.txt`](tested_configs/iran_ultra.txt): Ultra-fast Iran-verified configs (< 1.5s latency).
+* [`servers_iran.json`](servers_iran.json): Full JSON metadata with live latencies from the Iran node.
+
+### 🌐 Global GitHub Actions Output
+* `real_delay_passed.txt`: Configs that passed full Xray connection test on GitHub runners.
+* `servers.json`: Full metadata of globally passed servers.
 * `tested_configs/ultra_fast.txt`: Ultra-fast servers (< 500ms latency).
 
 ## Local Testing
