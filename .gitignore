@@ -7,3 +7,5 @@ debug_poison_configs.txt
 all_configs.txt
 tcp_passed.txt
 Country.mmdb
+*.log
+local_execution_debug.log

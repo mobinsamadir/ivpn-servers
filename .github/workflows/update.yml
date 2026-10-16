@@ -94,12 +94,15 @@ jobs:
             git add tested_configs/*.txt
         fi
 
+        # Discard any remaining unstaged temporary files to keep tree clean
+        git checkout -- . 2>/dev/null || true
+
         if output=$(git status --porcelain) && [ -z "$output" ]; then
           echo "⚠️ No changes detected to commit."
         else
           git commit -m "🔄 Update server list & cache [$(date)]"
           for i in 1 2 3; do
-            git pull --rebase -X theirs origin main && git push origin main && break || {
+            git pull --rebase --autostash -X theirs origin main && git push origin main && break || {
               echo "⚠️ Push/rebase failed, retrying in 3s..."
               sleep 3
             }
