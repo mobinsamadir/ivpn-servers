@@ -4,7 +4,7 @@ ivpn-servers - Iran VPS Auditor
 Dedicated, ultra-lightweight tester designed to run inside Iran.
 - Safe high port range (45000+) to prevent conflict with web servers (80, 443, 22).
 - Low memory & CPU footprint (2 instances, ~35MB RAM, safe for 1 vCPU / 2GB RAM).
-- Tests connectivity against strictly filtered endpoints (YouTube, Google, Telegram).
+- Tests connectivity against strictly filtered endpoints (Google, YouTube, Telegram).
 """
 
 import asyncio
@@ -15,7 +15,6 @@ import random
 import aiohttp
 import json
 import subprocess
-from collections import Counter
 
 # Ensure current dir is in sys.path
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -42,9 +41,9 @@ MAX_ULTRA_LATENCY = 1000
 
 # Targets that are strictly filtered inside Iran
 IRAN_FILTERED_TARGETS = [
-    'https://www.youtube.com/generate_204',
     'http://www.google.com/generate_204',
-    'https://api.telegram.org'
+    'https://www.youtube.com/generate_204',
+    'http://clients3.google.com/generate_204'
 ]
 
 BROWSER_HEADERS = {
@@ -57,6 +56,8 @@ class IranAuditor:
     def __init__(self, input_file=INPUT_FILE):
         self.input_file = input_file
         os.makedirs(OUTPUT_DIR, exist_ok=True)
+        self.completed_count = 0
+        self.passed_count = 0
 
     def load_configs(self):
         if not os.path.exists(self.input_file):
@@ -78,8 +79,8 @@ class IranAuditor:
         if not parsed_batch:
             return [None] * len(batch_configs)
 
-        # Generate Xray config for this small batch
-        xray_json_str = v2ray_utils.generate_xray_config(parsed_batch, start_port=start_port)
+        # Generate Xray config for this batch
+        xray_json_str = v2ray_utils.generate_xray_batch_config(parsed_batch, start_port=start_port)
         if not xray_json_str:
             return [None] * len(batch_configs)
 
@@ -92,14 +93,19 @@ class IranAuditor:
                 stdout=asyncio.subprocess.DEVNULL,
                 stderr=asyncio.subprocess.PIPE
             )
-            # Send config
+
+            # Send config to stdin
             proc.stdin.write(xray_json_str.encode('utf-8'))
             await proc.stdin.drain()
             proc.stdin.close()
+            await proc.stdin.wait_closed()
 
-            # Brief pause to verify startup
-            await asyncio.sleep(0.3)
+            # Wait for startup
+            await asyncio.sleep(0.5)
             if proc.returncode is not None:
+                _, stderr = await proc.communicate()
+                err_msg = stderr.decode(errors='replace').strip() if stderr else "unknown"
+                print(f"\n⚠️ Xray batch error: {err_msg[:80]}")
                 return [None] * len(batch_configs)
 
             # Test through local proxy
@@ -107,20 +113,20 @@ class IranAuditor:
             for i in range(len(parsed_batch)):
                 port = start_port + i
                 proxy_url = f"http://127.0.0.1:{port}"
-                target_url = random.choice(IRAN_FILTERED_TARGETS)
 
-                async def measure(url, pxy):
-                    t0 = time.time()
-                    try:
-                        resp = await session.get(url, proxy=pxy, timeout=REAL_DELAY_TIMEOUT)
-                        if hasattr(resp, 'status') and resp.status in (200, 204):
-                            lat = (time.time() - t0) * 1000
-                            return resp, lat
-                        return None, None
-                    except Exception:
-                        return None, None
+                async def measure(pxy):
+                    for target_url in IRAN_FILTERED_TARGETS:
+                        t0 = time.time()
+                        try:
+                            resp = await session.get(target_url, proxy=pxy, timeout=REAL_DELAY_TIMEOUT)
+                            if hasattr(resp, 'status') and resp.status in (200, 204):
+                                lat = (time.time() - t0) * 1000
+                                return resp, lat
+                        except Exception:
+                            continue
+                    return None, None
 
-                tasks.append(measure(target_url, proxy_url))
+                tasks.append(measure(proxy_url))
 
             responses = await asyncio.gather(*tasks, return_exceptions=True)
             batch_results = [None] * len(batch_configs)
@@ -131,6 +137,9 @@ class IranAuditor:
                     batch_results[orig_idx] = (batch_configs[orig_idx], res_tuple[1])
 
             return batch_results
+        except Exception as e:
+            print(f"\n⚠️ Batch exception: {e}")
+            return [None] * len(batch_configs)
         finally:
             if proc and proc.returncode is None:
                 try:
@@ -155,13 +164,14 @@ class IranAuditor:
             print("⚠️ No configs to test.")
             return
 
-        print(f"🚀 Verifying {total} configs against filtered targets (YouTube/Google/Telegram)...")
+        print(f"🚀 Verifying {total} configs against filtered targets (Google/YouTube)...")
         batches = [configs[i:i + REAL_DELAY_BATCH_SIZE] for i in range(0, total, REAL_DELAY_BATCH_SIZE)]
         sem = asyncio.Semaphore(REAL_DELAY_INSTANCES)
         connector = aiohttp.TCPConnector(limit=0)
 
         passed_results = []
         start_time = time.time()
+        self.completed_count = 0
 
         async with aiohttp.ClientSession(connector=connector, headers=BROWSER_HEADERS) as session:
             async def run_batch_with_sem(batch_idx, batch):
@@ -170,6 +180,11 @@ class IranAuditor:
                     current_port = START_PORT + port_offset
                     await asyncio.sleep(0.1)
                     results = await self.test_batch(batch, current_port, session)
+                    self.completed_count += len(batch)
+                    batch_passed = sum(1 for r in results if r is not None)
+                    self.passed_count += batch_passed
+                    pct = round((self.completed_count / total) * 100, 1)
+                    print(f"[Iran Test] Progress: {self.completed_count}/{total} ({pct}%) | Verified Working: {self.passed_count}")
                     return results
 
             tasks = [run_batch_with_sem(i, b) for i, b in enumerate(batches)]
@@ -210,7 +225,7 @@ class IranAuditor:
         with open(JSON_FILE, 'w', encoding='utf-8') as f:
             json.dump(json_data, f, indent=2, ensure_ascii=False)
 
-        print(f"📁 Results saved:")
+        print(f"\n📁 Results saved:")
         print(f"   - All Passed: {PASSED_FILE} ({len(passed_results)} configs)")
         print(f"   - Ultra Fast (<1s): {ULTRA_FILE} ({len(ultra_results)} configs)")
         print(f"   - JSON Metadata: {JSON_FILE}")
