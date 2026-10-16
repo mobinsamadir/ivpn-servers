@@ -16,7 +16,10 @@ if sys.platform != 'win32':
     import resource
 import uuid
 from urllib.parse import urlparse, parse_qs, unquote, quote
-import geoip2.database
+try:
+    import geoip2.database
+except ImportError:
+    geoip2 = None
 
 # Constants
 # Using a stable version. Update this as needed.
@@ -512,6 +515,8 @@ def get_country_code(ip, db_path=None):
     """
     Returns the ISO country code for an IP address.
     """
+    if geoip2 is None:
+        return None
     if not db_path:
         db_path = os.path.join(BIN_DIR, "Country.mmdb")
 
