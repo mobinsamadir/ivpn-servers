@@ -1,121 +1,125 @@
 {
-  "updated_at": "2026-10-16 20:10:28 UTC",
+  "updated_at": "2026-10-16 20:20:49 UTC",
   "total_tested": 1417,
-  "passed_count": 28,
-  "ultra_count": 26,
+  "passed_count": 29,
+  "ultra_count": 25,
   "test_location": "Iran VPS",
   "servers": [
     {
-      "config": "vless://5744e593-1cc8-48fa-b8ca-57cd494fe35b@172.64.229.129:2052?type=ws&host=eu02.123450908.xyz&path=/rain1226#%F0%9F%87%A8%F0%9F%87%A6%20%5BCA%5D%20Toronto%20-%201821ms",
-      "latency_ms": 577.7
-    },
-    {
-      "config": "vless://d342d11e-d224-4463-b982-532309285094@157.230.101.36:443?security=tls&type=ws&host=ccc.010304.xyz&path=/&sni=ccc.010304.xyz&fp=chrome#%F0%9F%87%A9%F0%9F%87%AA%20%5BDE%5D%20DE%20-%201204ms",
-      "latency_ms": 612.3
-    },
-    {
       "config": "vless://d342d11e-d224-4463-b982-532309285094@104.18.37.127:443?security=tls&type=ws&host=ccc.010304.xyz&path=/&sni=ccc.010304.xyz&fp=chrome#%F0%9F%87%A8%F0%9F%87%A6%20%5BCA%5D%20Toronto%20-%20452ms",
-      "latency_ms": 657.0
+      "latency_ms": 644.0
     },
     {
       "config": "vless://d342d11e-d224-4463-b982-532309285094@157.230.101.36:443?security=tls&type=ws&host=ccc.010304.xyz&path=/&sni=ccc.010304.xyz&fp=chrome#%F0%9F%87%A9%F0%9F%87%AA%20%5BDE%5D%20DE%20-%202050ms",
-      "latency_ms": 701.6
-    },
-    {
-      "config": "vless://d342d11e-d224-4463-b982-532309285094@104.18.37.127:443?security=tls&type=ws&host=ccc.010304.xyz&path=/&sni=ccc.010304.xyz&fp=chrome#%F0%9F%9A%A9%20%5BUN%5D%20Server%20-%20344ms",
-      "latency_ms": 711.2
-    },
-    {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2IFtDQV0gVG9yb250byAtIDY5MG1zIiwgImFkZCI6ICIxMDQuMjEuNy4xMzMiLCAicG9ydCI6ICI4MCIsICJpZCI6ICIwY2Y2ZDk3MC0zZjFkLTRhYWUtYTk4OS05MmE4Zjc2YWUzZGIiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogInZtZXNzLmxidzY2Ni5kcGRucy5vcmciLCAicGF0aCI6ICIvd3M/ZWQ9MjA0OCIsICJ0bHMiOiAibm9uZSIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
-      "latency_ms": 762.7
-    },
-    {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2IFtDQV0gVG9yb250byAtIDc4M21zIiwgImFkZCI6ICIxMDQuMjEuNy4xMzMiLCAicG9ydCI6ICI4MCIsICJpZCI6ICIwY2Y2ZDk3MC0zZjFkLTRhYWUtYTk4OS05MmE4Zjc2YWUzZGIiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogInZtZXNzLmxidzY2Ni5kcGRucy5vcmciLCAicGF0aCI6ICIvd3M/ZWQ9MjA0OCIsICJ0bHMiOiAibm9uZSIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
-      "latency_ms": 771.9
+      "latency_ms": 731.7
     },
     {
       "config": "trojan://mitivpn@151.101.38.6:443?security=tls&type=ws&host=mitivpn--s3.global.ssl.fastly.net&path=/---%40MetiVIP---%40MetiVIP/---%40MetiVIP---%40MetiVIP/---%40MetiVIP---%40MetiVIP/des---%40MetiVIP---%40MetiVIP/---%40MetiVIP---%40%40MetiVIP/---%40%40MetiVIP---%40MetiVIP&sni=www.firefox.com&fp=chrome#%F0%9F%87%BA%F0%9F%87%B8%20%5BUS%5D%20US%20-%201319ms",
-      "latency_ms": 871.4
+      "latency_ms": 749.5
     },
     {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2IFtDQV0gVG9yb250byAtIDU5Mm1zIiwgImFkZCI6ICIxNzIuNjYuMjAzLjY3IiwgInBvcnQiOiAiNDQzIiwgImlkIjogIjBjZjZkOTcwLTNmMWQtNGFhZS1hOTg5LTkyYThmNzZhZTNkYiIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAidm1lc3MubGJ3NjY2LmRwZG5zLm9yZyIsICJwYXRoIjogIi93cz9lZD0yMDQ4IiwgInRscyI6ICJ0bHMiLCAic25pIjogInZtZXNzLmxidzY2Ni5kcGRucy5vcmciLCAiYWxwbiI6ICIifQ==",
-      "latency_ms": 966.4
+      "config": "vless://d342d11e-d224-4463-b982-532309285094@157.230.101.36:443?security=tls&type=ws&host=ccc.010304.xyz&path=/&sni=ccc.010304.xyz&fp=chrome#%F0%9F%87%A9%F0%9F%87%AA%20%5BDE%5D%20DE%20-%201204ms",
+      "latency_ms": 764.7
+    },
+    {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2IFtDQV0gVG9yb250byAtIDc4M21zIiwgImFkZCI6ICIxMDQuMjEuNy4xMzMiLCAicG9ydCI6ICI4MCIsICJpZCI6ICIwY2Y2ZDk3MC0zZjFkLTRhYWUtYTk4OS05MmE4Zjc2YWUzZGIiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogInZtZXNzLmxidzY2Ni5kcGRucy5vcmciLCAicGF0aCI6ICIvd3M/ZWQ9MjA0OCIsICJ0bHMiOiAibm9uZSIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "latency_ms": 815.9
+    },
+    {
+      "config": "vless://d342d11e-d224-4463-b982-532309285094@104.18.37.127:443?security=tls&type=ws&host=ccc.010304.xyz&path=/&sni=ccc.010304.xyz&fp=chrome#%F0%9F%9A%A9%20%5BUN%5D%20Server%20-%20344ms",
+      "latency_ms": 828.0
     },
     {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2IFtDQV0gVG9yb250byAtIDc2MW1zIiwgImFkZCI6ICIxMDQuMTcuMTM2LjE5OCIsICJwb3J0IjogIjQ0MyIsICJpZCI6ICIwY2Y2ZDk3MC0zZjFkLTRhYWUtYTk4OS05MmE4Zjc2YWUzZGIiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogIndzIiwgInR5cGUiOiAibm9uZSIsICJob3N0IjogInZtZXNzLmxidzY2Ni5kcGRucy5vcmciLCAicGF0aCI6ICIvd3M/ZWQ9MjA0OCIsICJ0bHMiOiAidGxzIiwgInNuaSI6ICJ2bWVzcy5sYnc2NjYuZHBkbnMub3JnIiwgImFscG4iOiAiIn0=",
-      "latency_ms": 986.5
+      "latency_ms": 866.1
     },
     {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNkXHVkZWE5IFtVTl0gU2VydmVyIC0gNDU0bXMiLCAiYWRkIjogIjEwNC4xNy4xMzYuMTk4IiwgInBvcnQiOiAiNDQzIiwgImlkIjogIjBjZjZkOTcwLTNmMWQtNGFhZS1hOTg5LTkyYThmNzZhZTNkYiIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAidm1lc3MubGJ3NjY2LmRwZG5zLm9yZyIsICJwYXRoIjogIi93cz9lZD0yMDQ4IiwgInRscyI6ICJ0bHMiLCAic25pIjogInZtZXNzLmxidzY2Ni5kcGRucy5vcmciLCAiYWxwbiI6ICIifQ==",
-      "latency_ms": 1006.7
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2IFtDQV0gVG9yb250byAtIDU5Mm1zIiwgImFkZCI6ICIxNzIuNjYuMjAzLjY3IiwgInBvcnQiOiAiNDQzIiwgImlkIjogIjBjZjZkOTcwLTNmMWQtNGFhZS1hOTg5LTkyYThmNzZhZTNkYiIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAidm1lc3MubGJ3NjY2LmRwZG5zLm9yZyIsICJwYXRoIjogIi93cz9lZD0yMDQ4IiwgInRscyI6ICJ0bHMiLCAic25pIjogInZtZXNzLmxidzY2Ni5kcGRucy5vcmciLCAiYWxwbiI6ICIifQ==",
+      "latency_ms": 927.6
     },
     {
       "config": "ss://Y2hhY2hhMjAtaWV0Zjphc2QxMjM0NTY=@103.141.221.124:8388#%5B%F0%9F%87%AD%F0%9F%87%B0%20HK%5D%20EPODONIOS",
-      "latency_ms": 1009.7
+      "latency_ms": 957.8
     },
     {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gVVMiLCAiYWRkIjogIjE5OS4yMzIuNzguMTcwIiwgInBvcnQiOiAiNDQzIiwgImlkIjogIjZiYTY4YzY5LWUxMDgtNTAyZC03YjFjLWU4MDZmYmMzY2NjZCIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAieGh0dHAiLCAidHlwZSI6ICJhdXRvIiwgImhvc3QiOiAiaHNic2hpanNidWRlbnl5b3VyLW5hbWUuZ2xvYmFsLnNzbC5mYXN0bHkubmV0IiwgInBhdGgiOiAiL2NvbmZpZ3VyZS9zZXJ2aWNlcy9MRFZ2aUk5V00wVUdsekFTNVBnRVQ3IiwgInRscyI6ICJ0bHMiLCAic25pIjogInNzbC5mYXN0bHkuY29tIiwgImFscG4iOiAiIn0=",
-      "latency_ms": 1023.3
-    },
-    {
-      "config": "ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@68.183.227.4:8080#%F0%9F%87%B8%F0%9F%87%AC%20%5BSG%5D%20SG%20-%20934ms",
-      "latency_ms": 1032.7
-    },
-    {
-      "config": "vless://e1df1966-4d5e-43ec-b2da-bb935a258351@85.209.70.13:443?security=tls&type=xhttp&host=api.fastload.site&path=/&sni=api.fastload.site&fp=chrome#%5B%F0%9F%87%B7%F0%9F%87%BA%20RU%5D%20%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20NA%20%F0%9F%8C%8D%20VL-XHTTP-TLS%204%E2%83%A3",
-      "latency_ms": 1042.6
-    },
-    {
-      "config": "vless://e1df1966-4d5e-43ec-b2da-bb935a258351@128.75.228.190:443?security=tls&type=xhttp&host=greone.dnsttlocate.ru&sni=greone.dnsttlocate.ru&fp=chrome#%5B%F0%9F%87%B7%F0%9F%87%BA%20RU%5D%20%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20NA%20%F0%9F%8C%8D%20VL-XHTTP-TLS%204%E2%83%A3",
-      "latency_ms": 1049.4
-    },
-    {
-      "config": "vless://da7cb41e-c12f-4a88-91e0-486c87adccad@104.167.196.205:443?security=reality&type=xhttp&sni=deepl.com&pbk=vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8&fp=chrome&sid=15affa0af66dfc79#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20-%20Miami%20%F0%9F%8C%8E%20VL-XHTTP-RLT%204%E2%83%A3",
-      "latency_ms": 1058.6
+      "latency_ms": 982.5
     },
     {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNjXHVkZGZhXHVkODNjXHVkZGY4IFtVU10gVVMgLSAyNDI3bXMiLCAiYWRkIjogIjguOC44LjgiLCAicG9ydCI6ICI1MyIsICJpZCI6ICJkMTNmYzJmNS0zZTA1LTQ3OTUtODFlYi00NDE0M2EwOWU1NTIiLCAiYWlkIjogIjAiLCAic2N5IjogImF1dG8iLCAibmV0IjogInRjcCx1ZHAiLCAidHlwZSI6ICJodHRwIiwgImhvc3QiOiAiIiwgInBhdGgiOiAiIiwgInRscyI6ICIiLCAic25pIjogIiIsICJhbHBuIjogIiJ9",
-      "latency_ms": 1059.1
+      "latency_ms": 992.8
     },
     {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2IFtDQV0gVG9yb250byAtIDYzMm1zIiwgImFkZCI6ICIxNzIuNjYuMjAzLjY3IiwgInBvcnQiOiAiNDQzIiwgImlkIjogIjBjZjZkOTcwLTNmMWQtNGFhZS1hOTg5LTkyYThmNzZhZTNkYiIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAidm1lc3MubGJ3NjY2LmRwZG5zLm9yZyIsICJwYXRoIjogIi93cz9lZD0yMDQ4IiwgInRscyI6ICJ0bHMiLCAic25pIjogInZtZXNzLmxidzY2Ni5kcGRucy5vcmciLCAiYWxwbiI6ICIifQ==",
-      "latency_ms": 1068.4
-    },
-    {
-      "config": "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@13.40.25.145:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
-      "latency_ms": 1068.9
-    },
-    {
-      "config": "vless://d977e7ec-ff45-d4a9-5b52-9c1cc5c04c43@83.143.106.7:443?security=reality&type=xhttp&path=/&sni=res.cdn.office.net&pbk=4g8R0-Acc1LjppgvUopldH0Wg3JA2tPXvYB96aJnigo&fp=chrome#%5B%F0%9F%87%AE%F0%9F%87%B1%20IL%5D%20%40vpnclashfa%20-%203740",
-      "latency_ms": 1087.3
+      "config": "vless://da7cb41e-c12f-4a88-91e0-486c87adccad@104.167.196.205:443?security=reality&type=xhttp&sni=deepl.com&pbk=vnjp7zIK2H3CGdjSis_79KXqS6IG-opmpbETPUD-EC8&fp=chrome&sid=15affa0af66dfc79#%5B%F0%9F%87%BA%F0%9F%87%B8%20US%5D%20%F0%9F%87%BA%F0%9F%87%B8%20United%20States%20-%20Miami%20%F0%9F%8C%8E%20VL-XHTTP-RLT%204%E2%83%A3",
+      "latency_ms": 1007.7
     },
     {
       "config": "vless://e1df1966-4d5e-43ec-b2da-bb935a258351@185.40.154.13:443?security=tls&type=xhttp&host=api.fastload.site&path=/&sni=api.fastload.site&fp=chrome#%5B%F0%9F%87%B7%F0%9F%87%BA%20RU%5D%20%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20NA%20%F0%9F%8C%8D%20VL-XHTTP-TLS%204%E2%83%A3",
-      "latency_ms": 1089.0
+      "latency_ms": 1011.6
     },
     {
-      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBcdWQ4M2NcdWRmYzFSRUxBWS0xNzIuNjYuMjAzLjY3LTA5NjkiLCAiYWRkIjogIjE3Mi42Ni4yMDMuNjciLCAicG9ydCI6ICI0NDMiLCAiaWQiOiAiMGNmNmQ5NzAtM2YxZC00YWFlLWE5ODktOTJhOGY3NmFlM2RiIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogImF1dG8iLCAiaG9zdCI6ICJ2bWVzcy5sYnc2NjYuZHBkbnMub3JnIiwgInBhdGgiOiAiL3dzP2VkPTIwNDgiLCAidGxzIjogInRscyIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
-      "latency_ms": 1096.4
+      "config": "vless://d977e7ec-ff45-d4a9-5b52-9c1cc5c04c43@83.143.106.7:443?security=reality&type=xhttp&path=/&sni=res.cdn.office.net&pbk=4g8R0-Acc1LjppgvUopldH0Wg3JA2tPXvYB96aJnigo&fp=chrome#%5B%F0%9F%87%AE%F0%9F%87%B1%20IL%5D%20%40vpnclashfa%20-%203740",
+      "latency_ms": 1027.4
     },
     {
-      "config": "vless://e332f028-d343-5b44-8016-b3130f39e133@81.208.170.142:1500?security=reality&type=grpc&sni=www.ebay.com&pbk=VQxVgczORkbSNdDrkNOYs6zMBINpViztTKDuWCeQsVE&fp=chrome&sid=775eb6408888248e#%F0%9F%87%B8%F0%9F%87%A6%20%5BSA%5D%20Jeddah%20-%201951ms",
-      "latency_ms": 1142.0
+      "config": "vless://e1df1966-4d5e-43ec-b2da-bb935a258351@85.209.70.13:443?security=tls&type=xhttp&host=api.fastload.site&path=/&sni=api.fastload.site&fp=chrome#%5B%F0%9F%87%B7%F0%9F%87%BA%20RU%5D%20%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20NA%20%F0%9F%8C%8D%20VL-XHTTP-TLS%204%E2%83%A3",
+      "latency_ms": 1035.2
+    },
+    {
+      "config": "ss://cmM0LW1kNToxNGZGUHJiZXpFM0hEWnpzTU9yNg==@68.183.227.4:8080#%F0%9F%87%B8%F0%9F%87%AC%20%5BSG%5D%20SG%20-%20934ms",
+      "latency_ms": 1039.5
     },
     {
       "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2IFtDQV0gVG9yb250byAtIDMwM21zIiwgImFkZCI6ICIxNzIuNjYuMjAzLjY3IiwgInBvcnQiOiAiNDQzIiwgImlkIjogIjBjZjZkOTcwLTNmMWQtNGFhZS1hOTg5LTkyYThmNzZhZTNkYiIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJhdXRvIiwgImhvc3QiOiAidm1lc3MubGJ3NjY2LmRwZG5zLm9yZyIsICJwYXRoIjogIi93cyIsICJ0bHMiOiAidGxzIiwgInNuaSI6ICJ2bWVzcy5sYnc2NjYuZHBkbnMub3JnIiwgImFscG4iOiAiIn0=",
-      "latency_ms": 1215.3
+      "latency_ms": 1042.9
+    },
+    {
+      "config": "ss://YWVzLTI1Ni1jZmI6YW1hem9uc2tyMDU=@13.40.25.145:443#%5B%F0%9F%87%AC%F0%9F%87%A7%20GB%5D%20EPODONIOS",
+      "latency_ms": 1072.4
+    },
+    {
+      "config": "vless://e1df1966-4d5e-43ec-b2da-bb935a258351@128.75.228.190:443?security=tls&type=xhttp&host=greone.dnsttlocate.ru&sni=greone.dnsttlocate.ru&fp=chrome#%5B%F0%9F%87%B7%F0%9F%87%BA%20RU%5D%20%F0%9F%87%B7%F0%9F%87%BA%20Russian%20Federation%20-%20NA%20%F0%9F%8C%8D%20VL-XHTTP-TLS%204%E2%83%A3",
+      "latency_ms": 1095.8
+    },
+    {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiXHVkODNjXHVkZGU4XHVkODNjXHVkZGU2IFtDQV0gVG9yb250byAtIDYzMm1zIiwgImFkZCI6ICIxNzIuNjYuMjAzLjY3IiwgInBvcnQiOiAiNDQzIiwgImlkIjogIjBjZjZkOTcwLTNmMWQtNGFhZS1hOTg5LTkyYThmNzZhZTNkYiIsICJhaWQiOiAiMCIsICJzY3kiOiAiYXV0byIsICJuZXQiOiAid3MiLCAidHlwZSI6ICJub25lIiwgImhvc3QiOiAidm1lc3MubGJ3NjY2LmRwZG5zLm9yZyIsICJwYXRoIjogIi93cz9lZD0yMDQ4IiwgInRscyI6ICJ0bHMiLCAic25pIjogInZtZXNzLmxidzY2Ni5kcGRucy5vcmciLCAiYWxwbiI6ICIifQ==",
+      "latency_ms": 1126.2
+    },
+    {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzZFx1ZGVhOSBVbmtub3duXSBcdWQ4M2NcdWRmYzFSRUxBWS0xNzIuNjYuMjAzLjY3LTA5NjkiLCAiYWRkIjogIjE3Mi42Ni4yMDMuNjciLCAicG9ydCI6ICI0NDMiLCAiaWQiOiAiMGNmNmQ5NzAtM2YxZC00YWFlLWE5ODktOTJhOGY3NmFlM2RiIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogImF1dG8iLCAiaG9zdCI6ICJ2bWVzcy5sYnc2NjYuZHBkbnMub3JnIiwgInBhdGgiOiAiL3dzP2VkPTIwNDgiLCAidGxzIjogInRscyIsICJzbmkiOiAiIiwgImFscG4iOiAiIn0=",
+      "latency_ms": 1132.7
     },
     {
       "config": "vless://efe19c5a-0ea1-4666-8a4c-4a33f4670775@104.21.70.22:443?security=tls&type=ws&host=brightlux.forum&path=/raccoonwsvless&sni=brightlux.forum#%F0%9F%9A%A9%20%5BUN%5D%20Server%20-%20929ms",
-      "latency_ms": 1345.1
+      "latency_ms": 1136.3
+    },
+    {
+      "config": "vless://8be461cb-a0df-47cf-bc0d-4d9e6a22fa74@188.114.97.6:443?security=tls&type=ws&host=ccs2g.pai50288.uk&path=/pai50288&sni=ccs2g.pai50288.uk&fp=chrome#%F0%9F%87%A8%F0%9F%87%A6%20%5BCA%5D%20Toronto%20-%20613ms",
+      "latency_ms": 1151.0
+    },
+    {
+      "config": "vless://8be461cb-a0df-47cf-bc0d-4d9e6a22fa74@188.114.97.6:443?security=tls&type=ws&host=ccs2g.pai50288.uk&path=/pai50288&sni=ccs2g.pai50288.uk&fp=chrome#%F0%9F%87%A8%F0%9F%87%A6%20%5BCA%5D%20Toronto%20-%20612ms",
+      "latency_ms": 1199.2
+    },
+    {
+      "config": "vless://e332f028-d343-5b44-8016-b3130f39e133@81.208.170.142:1500?security=reality&type=grpc&sni=www.ebay.com&pbk=VQxVgczORkbSNdDrkNOYs6zMBINpViztTKDuWCeQsVE&fp=chrome&sid=775eb6408888248e#%F0%9F%87%B8%F0%9F%87%A6%20%5BSA%5D%20Jeddah%20-%201951ms",
+      "latency_ms": 1264.7
     },
     {
       "config": "vless://20ff936a-8eb5-4d27-9cce-93f2016d467b@188.114.97.6:443?security=tls&type=ws&host=free.nadun.store&path=/&sni=free.nadun.store&fp=chrome#%F0%9F%87%A8%F0%9F%87%A6%20%5BCA%5D%20Toronto%20-%20866ms",
-      "latency_ms": 2431.9
+      "latency_ms": 1611.6
     },
     {
-      "config": "vless://5504eaa8-1395-402f-8e0e-75ecd762e627@188.114.97.6:443?security=tls&type=ws&host=server13.9966338.xyz&path=/resiouhgggggggggg%3Fed%3D2560fp%3Dchrome&sni=server13.9966338.xyz&fp=chrome#%F0%9F%87%A8%F0%9F%87%A6%20%5BCA%5D%20Toronto%20-%201787ms",
-      "latency_ms": 2630.2
+      "config": "vless://20ff936a-8eb5-4d27-9cce-93f2016d467b@188.114.97.6:443?security=tls&type=ws&host=free.nadun.store&path=/&sni=free.nadun.store&fp=chrome#%F0%9F%87%A8%F0%9F%87%A6%20%5BCA%5D%20Toronto%20-%201112ms",
+      "latency_ms": 2116.8
+    },
+    {
+      "config": "vless://5744e593-1cc8-48fa-b8ca-57cd494fe35b@172.64.229.129:2052?type=ws&host=eu02.123450908.xyz&path=/rain1226#%F0%9F%87%A8%F0%9F%87%A6%20%5BCA%5D%20Toronto%20-%201821ms",
+      "latency_ms": 4484.6
+    },
+    {
+      "config": "vmess://eyJ2IjogIjIiLCAicHMiOiAiW1x1ZDgzY1x1ZGRmYVx1ZDgzY1x1ZGRmOCBVU10gXHVkODNkXHVkZDEyIFZNLVdTLVRMUyBcdWQ4M2NcdWRkZmFcdWQ4M2NcdWRkZjggVVMtMTYyLjE1OS4xMzUuMjM0OjIwODMiLCAiYWRkIjogIjE2Mi4xNTkuMTM1LjIzNCIsICJwb3J0IjogIjIwODMiLCAiaWQiOiAiYWMyNTEyMzctNTc2Zi00MGM4LWE1NDMtNTU0OTYwYzk1OGIxIiwgImFpZCI6ICIwIiwgInNjeSI6ICJhdXRvIiwgIm5ldCI6ICJ3cyIsICJ0eXBlIjogIm5vbmUiLCAiaG9zdCI6ICJvcjMuc2ZhY2cudWsiLCAicGF0aCI6ICIvb3IzIiwgInRscyI6ICJ0bHMiLCAic25pIjogImNkbi5zZmFjZy51ayIsICJhbHBuIjogIiJ9",
+      "latency_ms": 5635.7
     }
   ]
 }
