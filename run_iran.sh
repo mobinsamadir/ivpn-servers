@@ -15,7 +15,7 @@ echo "📥 Fetching latest candidate configs from GitHub..."
 git pull --rebase --autostash origin main
 
 # 2. Activate Python virtualenv if exists
-if [ -d ".venv" ]; then
+if [ -f ".venv/bin/activate" ]; then
     source .venv/bin/activate
 fi
 
