@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
-ivpn-servers - Iran VPS Auditor
-Dedicated, ultra-lightweight tester designed to run inside Iran.
-- Safe high port range (45000+) to prevent conflict with web servers (80, 443, 22).
-- Low memory & CPU footprint (2 instances, ~35MB RAM, safe for 1 vCPU / 2GB RAM).
-- Tests connectivity against strictly filtered endpoints (Google, YouTube, Telegram).
+ivpn-servers - Iran VPS Dedicated Auditor (Resilient & Safe)
+- Gentle on CPU/RAM: batch_size=30, instances=2, ~20MB RAM, safe for 1 vCPU.
+- Safe ports: 42000-55000 with socket pre-check (find_free_port_block).
+- High Timeout: 5.0s for high-latency / throttled networks in Iran.
+- Recursive batch splitting: isolates poison configs without dropping good configs.
+- Full debug logging to iran_test_debug.log.
 """
 
 import asyncio
@@ -12,6 +13,7 @@ import os
 import sys
 import time
 import random
+import socket
 import aiohttp
 import json
 import subprocess
@@ -23,21 +25,24 @@ if BASE_DIR not in sys.path:
 
 import v2ray_utils
 
-# --- Configuration (Tuned for Iran Server Safety) ---
+# --- Configuration ---
 INPUT_FILE = os.getenv('INPUT_FILE', 'real_delay_passed.txt')
 OUTPUT_DIR = os.path.join(BASE_DIR, 'tested_configs')
 PASSED_FILE = os.path.join(OUTPUT_DIR, 'iran_passed.txt')
 ULTRA_FILE = os.path.join(OUTPUT_DIR, 'iran_ultra.txt')
 JSON_FILE = os.path.join(BASE_DIR, 'servers_iran.json')
+DEBUG_LOG_FILE = os.path.join(BASE_DIR, 'iran_test_debug.log')
 
 # Safe port range: far away from 80, 443, 22, 10808
-START_PORT = 45000
+MIN_PORT = 42000
+MAX_PORT = 55000
 
-# Low concurrency to ensure zero impact on existing websites
-REAL_DELAY_BATCH_SIZE = 100
+# Tuned for Iran network conditions: small gentle batches, generous timeout
+REAL_DELAY_BATCH_SIZE = 30
 REAL_DELAY_INSTANCES = 2
-REAL_DELAY_TIMEOUT = 3.5
-MAX_ULTRA_LATENCY = 1000
+REAL_DELAY_TIMEOUT = 5.0
+MAX_ULTRA_LATENCY = 1500
+MAX_RECURSION_DEPTH = 5
 
 # Targets that are strictly filtered inside Iran
 IRAN_FILTERED_TARGETS = [
@@ -51,6 +56,37 @@ BROWSER_HEADERS = {
     'Accept': '*/*',
     'Connection': 'keep-alive'
 }
+
+class XrayBatchCrash(Exception):
+    def __init__(self, message, is_config_error=True):
+        self.message = message
+        self.is_config_error = is_config_error
+        super().__init__(self.message)
+
+def log_debug(msg):
+    ts = time.strftime('%Y-%m-%d %H:%M:%S')
+    with open(DEBUG_LOG_FILE, 'a', encoding='utf-8') as f:
+        f.write(f"[{ts}] {msg}\n")
+
+def find_free_port_block(count, min_port=MIN_PORT, max_port=MAX_PORT):
+    """Finds a contiguous block of `count` free ports on 127.0.0.1."""
+    for _ in range(50):
+        start_port = random.randint(min_port, max_port - count)
+        is_free = True
+        for port in range(start_port, start_port + count):
+            s = None
+            try:
+                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+                s.bind(('127.0.0.1', port))
+            except OSError:
+                is_free = False
+                break
+            finally:
+                if s: s.close()
+        if is_free:
+            return start_port
+    return random.randint(min_port, max_port - count)
 
 class IranAuditor:
     def __init__(self, input_file=INPUT_FILE):
@@ -67,7 +103,7 @@ class IranAuditor:
             configs = [line.strip() for line in f if line.strip() and not line.startswith('#')]
         return configs
 
-    async def test_batch(self, batch_configs, start_port, session):
+    async def execute_xray_batch(self, batch_configs, start_port, session):
         parsed_batch = []
         valid_indices = []
         for idx, cfg in enumerate(batch_configs):
@@ -79,36 +115,44 @@ class IranAuditor:
         if not parsed_batch:
             return [None] * len(batch_configs)
 
-        # Generate Xray config for this batch
-        xray_json_str = v2ray_utils.generate_xray_batch_config(parsed_batch, start_port=start_port)
-        if not xray_json_str:
+        # Set asset environment
+        xray_assets_path = os.path.dirname(os.path.abspath(v2ray_utils.XRAY_PATH))
+        env = os.environ.copy()
+        env["XRAY_LOCATION_ASSET"] = xray_assets_path
+
+        # Generate Xray config
+        config_json = v2ray_utils.generate_xray_batch_config(parsed_batch, start_port)
+        if not config_json:
             return [None] * len(batch_configs)
 
         proc = None
         try:
-            xray_bin = v2ray_utils.XRAY_PATH
             proc = await asyncio.create_subprocess_exec(
-                xray_bin, "-c", "stdin:",
+                v2ray_utils.XRAY_PATH, "-c", "stdin:",
                 stdin=asyncio.subprocess.PIPE,
-                stdout=asyncio.subprocess.DEVNULL,
-                stderr=asyncio.subprocess.PIPE
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+                env=env
             )
 
-            # Send config to stdin
-            proc.stdin.write(xray_json_str.encode('utf-8'))
+            # Write config to stdin
+            proc.stdin.write(config_json.encode('utf-8'))
             await proc.stdin.drain()
             proc.stdin.close()
             await proc.stdin.wait_closed()
 
-            # Wait for startup
-            await asyncio.sleep(0.5)
-            if proc.returncode is not None:
-                _, stderr = await proc.communicate()
-                err_msg = stderr.decode(errors='replace').strip() if stderr else "unknown"
-                print(f"\n⚠️ Xray batch error: {err_msg[:80]}")
-                return [None] * len(batch_configs)
+            # Startup wait
+            await asyncio.sleep(0.6)
 
-            # Test through local proxy
+            # Check if crashed
+            if proc.returncode is not None:
+                stdout_data, stderr_data = await proc.communicate()
+                out_str = stdout_data.decode(errors='replace').strip() if stdout_data else ""
+                err_str = stderr_data.decode(errors='replace').strip() if stderr_data else ""
+                log_debug(f"Xray Crash on port {start_port}: stdout={out_str[:120]} stderr={err_str[:120]}")
+                raise XrayBatchCrash(f"{out_str} {err_str}", is_config_error=True)
+
+            # Run proxy requests
             tasks = []
             for i in range(len(parsed_batch)):
                 port = start_port + i
@@ -137,9 +181,6 @@ class IranAuditor:
                     batch_results[orig_idx] = (batch_configs[orig_idx], res_tuple[1])
 
             return batch_results
-        except Exception as e:
-            print(f"\n⚠️ Batch exception: {e}")
-            return [None] * len(batch_configs)
         finally:
             if proc and proc.returncode is None:
                 try:
@@ -149,10 +190,34 @@ class IranAuditor:
                     try: proc.kill()
                     except Exception: pass
 
+    async def recursive_test_batch(self, batch, session, depth=0):
+        """Recursively splits the batch if Xray crashes, isolating poison configs."""
+        start_port = find_free_port_block(len(batch))
+        try:
+            return await self.execute_xray_batch(batch, start_port, session)
+        except XrayBatchCrash:
+            if len(batch) <= 1:
+                log_debug(f"Isolated Poison Config: {batch[0] if batch else ''}")
+                return [None] * len(batch)
+            if depth >= MAX_RECURSION_DEPTH:
+                log_debug(f"Max recursion depth reached for batch size {len(batch)}")
+                return [None] * len(batch)
+
+            mid = len(batch) // 2
+            left = batch[:mid]
+            right = batch[mid:]
+            print(f"⚠️ Splitting batch ({len(batch)} -> {len(left)} + {len(right)}) to isolate bad config...")
+            res_left = await self.recursive_test_batch(left, session, depth + 1)
+            res_right = await self.recursive_test_batch(right, session, depth + 1)
+            return res_left + res_right
+
     async def run(self):
-        print("🇮🇷 Starting Iran Network Verification Test...")
+        print("==========================================")
+        print("🇮🇷 Starting Iran Network Verification Test")
         print(f"📦 Input Source: {self.input_file}")
-        print(f"⚙️  Concurrency: {REAL_DELAY_INSTANCES} instances | Batch: {REAL_DELAY_BATCH_SIZE} | Safe Ports: {START_PORT}+")
+        print(f"⚙️  Gentle Mode: batch={REAL_DELAY_BATCH_SIZE} | timeout={REAL_DELAY_TIMEOUT}s | ports={MIN_PORT}-{MAX_PORT}")
+        print(f"📝 Debug log: {DEBUG_LOG_FILE}")
+        print("==========================================")
 
         if not v2ray_utils.check_and_install_xray():
             print("❌ Failed to initialize Xray binary.")
@@ -164,7 +229,7 @@ class IranAuditor:
             print("⚠️ No configs to test.")
             return
 
-        print(f"🚀 Verifying {total} configs against filtered targets (Google/YouTube)...")
+        print(f"🚀 Testing {total} configs against filtered targets (Google/YouTube)...")
         batches = [configs[i:i + REAL_DELAY_BATCH_SIZE] for i in range(0, total, REAL_DELAY_BATCH_SIZE)]
         sem = asyncio.Semaphore(REAL_DELAY_INSTANCES)
         connector = aiohttp.TCPConnector(limit=0)
@@ -172,14 +237,14 @@ class IranAuditor:
         passed_results = []
         start_time = time.time()
         self.completed_count = 0
+        self.passed_count = 0
 
         async with aiohttp.ClientSession(connector=connector, headers=BROWSER_HEADERS) as session:
-            async def run_batch_with_sem(batch_idx, batch):
+            async def run_batch_with_sem(batch):
                 async with sem:
-                    port_offset = (batch_idx * REAL_DELAY_BATCH_SIZE) % 5000
-                    current_port = START_PORT + port_offset
-                    await asyncio.sleep(0.1)
-                    results = await self.test_batch(batch, current_port, session)
+                    # Gentle pause between batches to prevent socket congestion
+                    await asyncio.sleep(0.3)
+                    results = await self.recursive_test_batch(batch, session)
                     self.completed_count += len(batch)
                     batch_passed = sum(1 for r in results if r is not None)
                     self.passed_count += batch_passed
@@ -187,7 +252,7 @@ class IranAuditor:
                     print(f"[Iran Test] Progress: {self.completed_count}/{total} ({pct}%) | Verified Working: {self.passed_count}")
                     return results
 
-            tasks = [run_batch_with_sem(i, b) for i, b in enumerate(batches)]
+            tasks = [run_batch_with_sem(b) for b in batches]
             batch_results = await asyncio.gather(*tasks, return_exceptions=True)
 
             for res_list in batch_results:
@@ -197,8 +262,10 @@ class IranAuditor:
                             passed_results.append(item)
 
         elapsed = round(time.time() - start_time, 2)
-        print(f"\n✅ Iran Test Complete in {elapsed}s!")
+        print("\n==========================================")
+        print(f"✅ Iran Test Complete in {elapsed}s!")
         print(f"🎯 Passed: {len(passed_results)} / {total} configs successfully bypassed Iran censorship.")
+        print("==========================================")
 
         # Sort by latency
         passed_results.sort(key=lambda x: x[1])
@@ -225,9 +292,9 @@ class IranAuditor:
         with open(JSON_FILE, 'w', encoding='utf-8') as f:
             json.dump(json_data, f, indent=2, ensure_ascii=False)
 
-        print(f"\n📁 Results saved:")
+        print(f"📁 Results saved:")
         print(f"   - All Passed: {PASSED_FILE} ({len(passed_results)} configs)")
-        print(f"   - Ultra Fast (<1s): {ULTRA_FILE} ({len(ultra_results)} configs)")
+        print(f"   - Ultra Fast (<1.5s): {ULTRA_FILE} ({len(ultra_results)} configs)")
         print(f"   - JSON Metadata: {JSON_FILE}")
 
         # Auto-Push if requested
