@@ -4,48 +4,23 @@
 
 
 
-## 📊 Statistics (Last Updated: 2026-10-15 03:44:56 UTC)
+
+
+## 📊 Statistics (Last Updated: 2026-10-17 03:27:15 UTC)
 
 | Metric | Count |
 | :--- | :--- |
-| **TCP Passed** | `1856` |
-| **Real Delay Passed** | `1417` |
-| **Average Latency** | `635 ms` |
-| **Success Rate** | `76.3%` |
+| **TCP Passed** | `1068` |
+| **Real Delay Passed** | `937` |
+| **Average Latency** | `487 ms` |
+| **Success Rate** | `87.7%` |
 | **System Health** | 🟢 Excellent |
 
 ### 🌍 Server Distribution
 
 | Country | Count |
 | :--- | :--- |
-| 🚩 Unknown | 1318 |
-| 🇺🇸 US | 24 |
-| 🇰🇷 KR | 9 |
-| 🇭🇰 HK | 9 |
-| 🇩🇪 DE | 7 |
-| 🇳🇱 NL | 6 |
-| 🇷🇺 RU | 6 |
-| 🇯🇵 JP | 5 |
-| 🇸🇬 SG | 5 |
-| 🇦🇪 AE | 3 |
-| 🇲🇽 MX | 2 |
-| 🇹🇼 TW | 2 |
-| 🇵🇱 PL | 2 |
-| 🇬🇧 GB | 2 |
-| 🇫🇷 FR | 2 |
-| 🇸🇪 SE | 2 |
-| 🇰🇿 KZ | 2 |
-| 🇮🇲 IM | 1 |
-| 🇸🇨 SC | 1 |
-| 🇨🇦 CA | 1 |
-| 🇳🇴 NO | 1 |
-| 🇮🇱 IL | 1 |
-| 🇨🇭 CH | 1 |
-| 🇮🇹 IT | 1 |
-| 🇦🇱 AL | 1 |
-| 🇨🇳 CN | 1 |
-| 🇮🇩 ID | 1 |
-| 🇱🇻 LV | 1 |
+| 🚩 Unknown | 937 |
 
 ## Architecture
 
