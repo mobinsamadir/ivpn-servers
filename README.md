@@ -16,21 +16,23 @@
 
 
 
-## 📊 Statistics (Last Updated: 2026-10-22 03:47:43 UTC)
+
+
+## 📊 Statistics (Last Updated: 2026-10-23 03:50:58 UTC)
 
 | Metric | Count |
 | :--- | :--- |
-| **TCP Passed** | `911` |
-| **Real Delay Passed** | `776` |
-| **Average Latency** | `638 ms` |
-| **Success Rate** | `85.2%` |
+| **TCP Passed** | `927` |
+| **Real Delay Passed** | `756` |
+| **Average Latency** | `568 ms` |
+| **Success Rate** | `81.6%` |
 | **System Health** | 🟢 Excellent |
 
 ### 🌍 Server Distribution
 
 | Country | Count |
 | :--- | :--- |
-| 🚩 Unknown | 776 |
+| 🚩 Unknown | 756 |
 
 ## Architecture
 
