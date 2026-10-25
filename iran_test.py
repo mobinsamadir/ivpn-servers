@@ -17,6 +17,7 @@ import socket
 import aiohttp
 import json
 import subprocess
+import base64
 
 # Ensure current dir is in sys.path
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -30,6 +31,8 @@ INPUT_FILE = os.getenv('INPUT_FILE', 'real_delay_passed.txt')
 OUTPUT_DIR = os.path.join(BASE_DIR, 'tested_configs')
 PASSED_FILE = os.path.join(OUTPUT_DIR, 'iran_passed.txt')
 ULTRA_FILE = os.path.join(OUTPUT_DIR, 'iran_ultra.txt')
+PASSED_BASE64_FILE = os.path.join(OUTPUT_DIR, 'iran_passed_base64.txt')
+ULTRA_BASE64_FILE = os.path.join(OUTPUT_DIR, 'iran_ultra_base64.txt')
 JSON_FILE = os.path.join(BASE_DIR, 'servers_iran.json')
 DEBUG_LOG_FILE = os.path.join(BASE_DIR, 'iran_test_debug.log')
 
@@ -271,14 +274,18 @@ class IranAuditor:
         passed_results.sort(key=lambda x: x[1])
 
         # Save to output files
+        passed_text = "".join(f"{cfg}\n" for cfg, lat in passed_results)
         with open(PASSED_FILE, 'w', encoding='utf-8') as f:
-            for cfg, lat in passed_results:
-                f.write(f"{cfg}\n")
+            f.write(passed_text)
+        with open(PASSED_BASE64_FILE, 'w', encoding='utf-8') as f:
+            f.write(base64.b64encode(passed_text.encode('utf-8')).decode('utf-8'))
 
         ultra_results = [item for item in passed_results if item[1] <= MAX_ULTRA_LATENCY]
+        ultra_text = "".join(f"{cfg}\n" for cfg, lat in ultra_results)
         with open(ULTRA_FILE, 'w', encoding='utf-8') as f:
-            for cfg, lat in ultra_results:
-                f.write(f"{cfg}\n")
+            f.write(ultra_text)
+        with open(ULTRA_BASE64_FILE, 'w', encoding='utf-8') as f:
+            f.write(base64.b64encode(ultra_text.encode('utf-8')).decode('utf-8'))
 
         # JSON metadata
         json_data = {
@@ -306,7 +313,7 @@ class IranAuditor:
         try:
             subprocess.run(["git", "config", "user.name", "Iran-Auditor-Bot"], check=True)
             subprocess.run(["git", "config", "user.email", "iran-bot@ivpn.local"], check=True)
-            subprocess.run(["git", "add", "tested_configs/iran_passed.txt", "tested_configs/iran_ultra.txt", "servers_iran.json"], check=True)
+            subprocess.run(["git", "add", "tested_configs/iran_passed.txt", "tested_configs/iran_ultra.txt", "tested_configs/iran_passed_base64.txt", "tested_configs/iran_ultra_base64.txt", "servers_iran.json"], check=True)
             diff_check = subprocess.run(["git", "diff", "--cached", "--quiet"])
             if diff_check.returncode == 0:
                 print("ℹ️ No changes detected in tested results. Everything is already up to date on GitHub.")

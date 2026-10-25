@@ -54,7 +54,9 @@
 
 ### 🇮🇷 Iran VPS Verified (Bypasses Iran DPI / Filtering)
 * [`tested_configs/iran_passed.txt`](tested_configs/iran_passed.txt): All configs verified from inside Iran (Google/YouTube bypass).
+* [	ested_configs/iran_passed_base64.txt](tested_configs/iran_passed_base64.txt): All configs in standard **Base64** subscription format (for Android & V2Ray apps).
 * [`tested_configs/iran_ultra.txt`](tested_configs/iran_ultra.txt): Ultra-fast Iran-verified configs (< 1.5s latency).
+* [	ested_configs/iran_ultra_base64.txt](tested_configs/iran_ultra_base64.txt): Ultra-fast configs in **Base64** subscription format.
 * [`servers_iran.json`](servers_iran.json): Full JSON metadata with live latencies from the Iran node.
 
 ### 🌐 Global GitHub Actions Output
